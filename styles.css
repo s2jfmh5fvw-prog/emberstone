@@ -78,7 +78,7 @@ select {
 }
 
 .hero__brand img {
-  width: min(100%, 480px);
+  width: min(100%, 620px);
   max-width: 100%;
   border-radius: 1.2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -447,8 +447,8 @@ h2 {
 }
 
 .goal-card h3 {
-  margin: 0 0 0.45rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;

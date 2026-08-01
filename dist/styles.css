@@ -78,7 +78,7 @@ select {
 }
 
 .hero__brand img {
-  width: min(100%, 480px);
+  width: min(100%, 620px);
   max-width: 100%;
   border-radius: 1.2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -280,6 +280,14 @@ h2 {
   font-family: 'Press Start 2P', monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-align: center;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.feature-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .about-card {
@@ -348,7 +356,7 @@ h2 {
   position: relative;
   z-index: 1;
   margin-bottom: 1.25rem;
-  text-align: left;
+  text-align: center;
 }
 
 .goal-badge {
@@ -434,19 +442,23 @@ h2 {
   background: rgba(255, 255, 255, 0.06);
   font-size: 1.2rem;
   border: 1px solid rgba(255,255,255,0.08);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .goal-card h3 {
-  margin: 0 0 0.45rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .goal-card p {
   margin: 0 0 0.8rem;
   color: #c7b9d1;
   line-height: 1.7;
+  text-align: center;
 }
 
 .goal-card ul {
@@ -595,6 +607,33 @@ h2 {
   padding: 1.5rem;
   text-align: center;
   border-top: 1px solid var(--border);
+}
+
+.footer p {
+  margin: 0.2rem 0;
+  color: #e6dceb;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.footer-links a {
+  color: #f8f4fb;
+  text-decoration: none;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+  color: #ffe7a8;
 }
 
 @media (max-width: 1100px) {
