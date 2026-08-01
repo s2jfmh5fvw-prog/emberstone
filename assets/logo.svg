@@ -1,0 +1,7 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emberstone Survival Logo">
+  <rect width="160" height="160" rx="32" fill="#1e1e1e"/>
+  <path d="M80 24C58 24 40 42 40 64c0 29 40 56 40 56s40-27 40-56c0-22-18-40-40-40Z" fill="#af3a3d"/>
+  <path d="M80 39c-12 0-22 10-22 22 0 14 15 27 22 33 7-6 22-19 22-33 0-12-10-22-22-22Z" fill="#e8e3e4"/>
+  <path d="M60 96h40" stroke="#b76579" stroke-width="8" stroke-linecap="round"/>
+  <path d="M68 110h24" stroke="#b76579" stroke-width="8" stroke-linecap="round"/>
+</svg>
