@@ -343,20 +343,20 @@ h2 {
 }
 
 .section {
-  padding: 3rem 1.5rem;
+  padding: 2.2rem 1.2rem;
 }
 
 .section--about {
-  padding-top: 0.8rem;
+  padding-top: 0.4rem;
 }
 
 .section--whitelist {
-  padding-top: 1.5rem;
+  padding-top: 2.4rem;
 }
 
 .section--counter {
-  padding-top: 0.5rem;
-  padding-bottom: 2rem;
+  padding-top: 0.35rem;
+  padding-bottom: 1.4rem;
 }
 
 .section--alt {
@@ -404,10 +404,12 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #f7f1fb;
   font-size: 0.8rem;
+  line-height: 1.35;
   font-family: 'Press Start 2P', monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
+  white-space: normal;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -435,19 +437,19 @@ h2 {
 .about-counter {
   width: 100%;
   padding: 1.4rem 1.2rem;
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(135deg, rgba(20, 13, 23, 0.97), rgba(10, 8, 13, 0.99));
-  box-shadow: inset 0 0 0 1px rgba(242, 201, 107, 0.08);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .counter-banner {
   max-width: 860px;
   margin: 0 auto;
   padding: 1rem;
-  border-radius: 1.2rem;
-  background: linear-gradient(135deg, rgba(20, 13, 23, 0.97), rgba(10, 8, 13, 0.99));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .about-counter__eyebrow {
@@ -530,23 +532,16 @@ h2 {
 }
 
 .goal-panel {
-  width: min(100%, 1140px);
-  padding: 1.6rem;
-  border-radius: 1.4rem;
-  background: linear-gradient(135deg, rgba(18, 12, 22, 0.94), rgba(9, 8, 15, 0.96));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+  width: min(100%, 1120px);
+  padding: 1.1rem;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.goal-panel::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255, 198, 92, 0.06), transparent 35%, rgba(145, 95, 255, 0.08) 70%, transparent);
-  pointer-events: none;
-}
 
 .goal-panel__header {
   position: relative;
@@ -580,51 +575,37 @@ h2 {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .goal-card {
   position: relative;
-  padding: 1.15rem;
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: 0.7rem 0.75rem 0.6rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 22px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   overflow: hidden;
+  min-height: 205px;
 }
 
 .goal-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.04) 40%, transparent 100%);
-  transform: translateX(-100%);
-  transition: transform 320ms ease;
   pointer-events: none;
+  background: transparent;
 }
 
-.goal-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.2);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
-}
 
-.goal-card:hover::before {
-  transform: translateX(100%);
-}
-
-.goal-card--gold {
-  box-shadow: inset 0 0 0 1px rgba(255, 194, 100, 0.18), 0 10px 24px rgba(0,0,0,0.18);
-}
-
-.goal-card--purple {
-  box-shadow: inset 0 0 0 1px rgba(162, 104, 255, 0.18), 0 10px 24px rgba(0,0,0,0.18);
-}
-
+.goal-card--gold,
+.goal-card--purple,
 .goal-card--blue {
-  box-shadow: inset 0 0 0 1px rgba(92, 146, 255, 0.18), 0 10px 24px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, rgba(18, 11, 24, 0.96), rgba(9, 8, 13, 0.98));
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .goal-card__icon {
@@ -643,28 +624,41 @@ h2 {
 }
 
 .goal-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.02rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
 }
 
+.goal-card__icon-image {
+  display: block;
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  margin: -0.25rem auto 0;
+  object-fit: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
 .goal-card p {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.55rem;
   color: #c7b9d1;
-  line-height: 1.7;
+  line-height: 1.6;
   text-align: center;
+  font-size: 0.95rem;
 }
 
 .goal-card ul {
   margin: 0;
-  padding-left: 1rem;
+  padding-left: 0.9rem;
   color: #e4dced;
 }
 
 .goal-card li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 960px) {
@@ -680,13 +674,14 @@ h2 {
 
 .whitelist-panel {
   display: grid;
-  grid-template-columns: minmax(260px, 420px) 1fr;
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  gap: 1.3rem;
+  padding: 1.35rem;
   background: linear-gradient(135deg, rgba(18, 11, 24, 0.96), rgba(9, 8, 13, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1.75rem;
-  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
+  border-radius: 1.3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  width: min(100%, 1120px);
   max-width: 1120px;
   overflow: hidden;
 }
@@ -712,15 +707,15 @@ h2 {
 }
 
 .whitelist-list {
-  margin: 1.2rem 0 1.4rem;
-  padding-left: 1.2rem;
+  margin: 0.8rem 0 1rem;
+  padding-left: 1rem;
   color: #d8cde3;
 }
 
 .whitelist-list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -731,14 +726,14 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.2rem;
+  padding: 0.85rem 1rem;
   border: 2px solid rgba(255, 255, 255, 0.24);
   border-radius: 0.25rem;
   text-decoration: none;
   background: linear-gradient(135deg, #7a41d8, #b85df4);
   color: #fff9ee;
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow:
