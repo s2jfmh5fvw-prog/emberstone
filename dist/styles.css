@@ -726,22 +726,31 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.24);
-  border-radius: 0.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   text-decoration: none;
-  background: linear-gradient(135deg, #7a41d8, #b85df4);
+  background: transparent;
   color: #fff9ee;
   font-family: 'Press Start 2P', monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow:
-    0 0 0 2px rgba(10, 8, 13, 0.82),
-    4px 4px 0 rgba(10, 8, 13, 0.92),
-    0 12px 30px rgba(124, 65, 216, 0.28);
-  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  box-shadow: none;
+  transition: transform 180ms ease;
   max-width: 100%;
+  width: fit-content;
+  margin: 0.2rem auto 0;
+  align-self: center;
+}
+
+.whitelist-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 290px;
+  object-fit: contain;
+  border-radius: 0.2rem;
 }
 
 .whitelist-button::before {
@@ -755,16 +764,11 @@ h2 {
 }
 
 .whitelist-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow:
-    0 0 0 2px rgba(10, 8, 13, 0.82),
-    6px 6px 0 rgba(10, 8, 13, 0.92),
-    0 16px 34px rgba(124, 65, 216, 0.36);
-  filter: saturate(1.08) brightness(1.03);
+  transform: translateY(-1px);
 }
 
 .whitelist-button:hover::before {
-  transform: translateX(120%) skewX(-20deg);
+  opacity: 0;
 }
 
 .panel,
