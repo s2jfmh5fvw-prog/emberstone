@@ -623,42 +623,62 @@ h2 {
   margin-right: auto;
 }
 
-.goal-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .goal-card__icon-image {
   display: block;
-  width: 220px;
-  height: 220px;
+  width: min(100%, 430px);
+  height: auto;
+  aspect-ratio: 1 / 1;
   max-width: 100%;
-  margin: -0.25rem auto 0;
+  margin: 0.05rem auto 0.08rem;
   object-fit: contain;
-  opacity: 0.95;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  opacity: 0.98;
+  filter: drop-shadow(0 7px 20px rgba(0, 0, 0, 0.34));
+}
+
+.goal-card__description {
+  margin: 0 0 0.08rem;
+  color: #f0e7f8;
+  line-height: 1.36;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.goal-card__support {
+  margin: 0 0 0.2rem;
+  color: #c7b2d3;
+  line-height: 1.32;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.goal-card__divider {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  margin: 0.15rem auto 0.35rem;
 }
 
 .goal-card p {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.35rem;
   color: #c7b9d1;
-  line-height: 1.6;
+  line-height: 1.5;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .goal-card ul {
-  margin: 0;
-  padding-left: 0.9rem;
+  margin: 0 0 0.2rem;
+  padding-left: 0.95rem;
   color: #e4dced;
 }
 
 .goal-card li {
   margin-bottom: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 0.84rem;
+  line-height: 1.42;
 }
 
 @media (max-width: 960px) {
