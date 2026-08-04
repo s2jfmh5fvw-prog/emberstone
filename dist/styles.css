@@ -22,7 +22,10 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Source Sans 3', sans-serif;
-  background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.28)), url('assets/site-background.png') center/cover fixed no-repeat;
+  background:
+    radial-gradient(circle at top left, rgba(210, 139, 44, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.28)),
+    url('assets/site-background.png') center/cover fixed no-repeat;
   background-color: #070507;
   color: var(--page-color);
   line-height: 1.7;
@@ -80,10 +83,11 @@ select {
 }
 
 .hero__brand img {
-  width: min(100%, 700px);
+  width: min(100%, 780px);
   max-width: 100%;
-  border-radius: 1.2rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border-radius: 1.35rem;
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.36);
+  border: 1px solid rgba(240, 198, 109, 0.18);
 }
 
 .hero__brand .nav-link--cta {
@@ -422,9 +426,10 @@ h2 {
 .about-card {
   position: relative;
   width: min(100%, 620px);
-  border-radius: 1.4rem;
+  border-radius: 1.6rem;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(240, 198, 109, 0.16);
 }
 
 .about-card--image {
@@ -500,7 +505,7 @@ h2 {
 
 .about-card img {
   width: 100%;
-  max-width: min(100%, 520px);
+  max-width: min(100%, 560px);
   height: auto;
   display: block;
   margin: 0 auto;
@@ -694,12 +699,12 @@ h2 {
 
 .whitelist-panel {
   display: grid;
-  grid-template-columns: minmax(240px, 380px) 1fr;
+  grid-template-columns: minmax(240px, 420px) 1fr;
   gap: 1.3rem;
   padding: 1.35rem;
   background: linear-gradient(135deg, rgba(18, 11, 24, 0.96), rgba(9, 8, 13, 0.98));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1.3rem;
+  border: 1px solid rgba(240, 198, 109, 0.16);
+  border-radius: 1.4rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
   width: min(100%, 1120px);
   max-width: 1120px;
@@ -709,8 +714,9 @@ h2 {
 .whitelist-media {
   border-radius: 1.25rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(240, 198, 109, 0.16);
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .whitelist-media img {
