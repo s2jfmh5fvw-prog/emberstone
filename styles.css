@@ -681,85 +681,6 @@ h2 {
   line-height: 1.42;
 }
 
-.section--skin {
-  padding-top: 0.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.skin-shell {
-  width: min(100%, 1040px);
-  margin: 0 auto;
-}
-
-.skin-panel {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  align-items: center;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, rgba(16, 15, 20, 0.94), rgba(28, 22, 36, 0.9));
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
-}
-
-.skin-copy p {
-  max-width: 52ch;
-}
-
-.skin-download {
-  display: inline-flex;
-  margin-top: 1rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #140d04;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.72rem;
-  background: linear-gradient(135deg, #f0c66d, #d28b2c);
-  box-shadow: 0 16px 30px rgba(210, 139, 44, 0.28);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-.skin-download:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 34px rgba(210, 139, 44, 0.34);
-}
-
-.skin-download:focus {
-  outline: 3px solid rgba(255, 248, 229, 0.95);
-  outline-offset: 4px;
-  transform: translateY(-2px);
-  box-shadow: 0 20px 34px rgba(210, 139, 44, 0.34);
-}
-
-.skin-download:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.skin-download:focus-visible {
-  outline: 3px solid rgba(255, 248, 229, 0.95);
-  outline-offset: 4px;
-  transform: translateY(-2px);
-  box-shadow: 0 20px 34px rgba(210, 139, 44, 0.34);
-}
-
-.skin-preview-card {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  border-radius: 1.25rem;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.skin-preview-card img {
-  width: min(100%, 320px);
-  image-rendering: pixelated;
-}
-
 @media (max-width: 960px) {
   .goal-grid {
     grid-template-columns: 1fr;
@@ -964,11 +885,6 @@ h2 {
   }
 
   .whitelist-panel {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .skin-panel {
     grid-template-columns: 1fr;
     text-align: center;
   }
