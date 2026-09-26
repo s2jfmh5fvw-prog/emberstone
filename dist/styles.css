@@ -729,8 +729,14 @@ h2 {
 }
 
 .skin-download:focus {
+  outline: 3px solid rgba(255, 248, 229, 0.95);
+  outline-offset: 4px;
   transform: translateY(-2px);
   box-shadow: 0 20px 34px rgba(210, 139, 44, 0.34);
+}
+
+.skin-download:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .skin-download:focus-visible {
