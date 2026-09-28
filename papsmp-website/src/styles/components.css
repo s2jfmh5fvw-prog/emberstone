@@ -67,7 +67,8 @@
   transform: translateY(-12px) rotate(-4deg);
 }
 
-.header-alpha-message:hover {
+.header-alpha-message:hover,
+.header-alpha-message:focus-visible {
   color: #fff1c8;
 }
 
@@ -141,7 +142,8 @@
   text-transform: uppercase;
 }
 
-.nav-list a:hover {
+.nav-list a:hover,
+.nav-list a:focus-visible {
   color: #ffe4a4;
 }
 
@@ -557,12 +559,6 @@
   transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
 
-.feature-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 214, 139, 0.26);
-  background: rgba(31, 23, 39, 0.95);
-}
-
 .feature-number {
   display: block;
   margin-bottom: 2rem;
@@ -805,7 +801,8 @@
   transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
 
-.download-card:hover {
+.download-card:hover,
+.download-card:focus-visible {
   transform: translateY(-3px);
   border-color: rgba(255, 214, 139, 0.3);
   background: rgba(33, 24, 39, 0.95);
@@ -915,7 +912,8 @@ summary span {
   font-size: 0.92rem;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus-visible {
   color: #ffe4a4;
 }
 

@@ -30,8 +30,13 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
   const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
   const mobileMenu = window.matchMedia('(max-width: 700px)');
   const syncNavState = () => {
+    if (!nav) return;
     const open = toggle?.getAttribute('aria-expanded') === 'true';
-    nav?.setAttribute('aria-hidden', String(mobileMenu.matches && !open));
+    if (!mobileMenu.matches) {
+      nav.removeAttribute('aria-hidden');
+      return;
+    }
+    nav.setAttribute('aria-hidden', String(!open));
   };
   const close = () => { toggle?.setAttribute('aria-expanded','false'); toggle?.setAttribute('aria-label','Menü öffnen'); nav?.classList.remove('is-open'); syncNavState(); };
   if (nav && nav.dataset.bound !== 'true') {
