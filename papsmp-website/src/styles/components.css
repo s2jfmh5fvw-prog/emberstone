@@ -1042,7 +1042,7 @@ summary span {
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;
+    top: 4rem;
     gap: 0;
     justify-content: initial;
     padding: 1rem 16px 1.25rem;
