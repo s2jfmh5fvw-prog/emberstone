@@ -1083,4 +1083,8 @@ summary span {
   .hero-video {
     display: none;
   }
+
+  .menu-icon i {
+    transition: none;
+  }
 }

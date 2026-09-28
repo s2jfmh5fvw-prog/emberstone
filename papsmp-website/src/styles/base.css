@@ -8,9 +8,9 @@ img{display:block;max-width:100%}
 .skip-link{position:absolute;left:1rem;top:-4rem;background:var(--focus);color:var(--ink);padding:.7rem 1rem;z-index:20}
 .skip-link:focus{top:1rem}
 .kicker,.phase-label,.availability-status{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-.kicker{color:#f2c671;display:flex;align-items:center;gap:.65rem;font-family:'Press Start 2P',ui-monospace,monospace}
+.kicker{color:#f2c671;display:flex;align-items:center;gap:.65rem;font-family:'Trebuchet MS','Segoe UI',ui-sans-serif,system-ui,sans-serif;font-size:.78rem;letter-spacing:.18em}
 .status-dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--peace);box-shadow:0 0 16px var(--peace);display:inline-block}
-.button{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:52px;padding:.85rem 1.35rem;border:1px solid rgba(255,240,196,.24);background:linear-gradient(180deg,#2f2135 0%,#1c1622 100%);color:#fff4d2;font-family:'Press Start 2P',ui-monospace,monospace;font-size:.72rem;line-height:1.4;text-transform:uppercase;box-shadow:0 0 0 1px rgba(0,0,0,.25),0 12px 30px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,border-color .2s,color .2s}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:52px;padding:.85rem 1.35rem;border:1px solid rgba(255,240,196,.24);background:linear-gradient(180deg,#2f2135 0%,#1c1622 100%);color:#fff4d2;font-family:'Trebuchet MS','Segoe UI',ui-sans-serif,system-ui,sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.08em;line-height:1.4;text-transform:uppercase;box-shadow:0 0 0 1px rgba(0,0,0,.25),0 12px 30px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,border-color .2s,color .2s}
 .button:hover{transform:translateY(-2px);border-color:rgba(255,221,145,.4);box-shadow:0 0 0 1px rgba(0,0,0,.25),0 16px 34px rgba(0,0,0,.32);color:#ffe9af}
 .button:focus-visible,.text-link:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 .text-link{font-weight:700;color:var(--text);display:inline-flex;gap:.7rem;align-items:center;text-transform:uppercase;letter-spacing:.08em}
