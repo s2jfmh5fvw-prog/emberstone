@@ -1,0 +1,4 @@
+---
+import { features } from '../data/features';
+---
+<section id="features" class="section section-features" aria-labelledby="features-title"><div class="container"><div class="section-heading row-heading"><div><p class="kicker">Was feststeht</p><h2 id="features-title">Gebaut für die<br /><em>nächste Nacht.</em></h2></div><p>Keine großen Versprechen, die der Server später nicht halten kann. Hier steht, was der Alpha-Aufbau wirklich tragen soll.</p></div><div class="feature-grid">{features.map((feature, index) => <article class="feature-card"><span class="feature-number">0{index + 1}</span><span class="phase-label">{feature.eyebrow}</span><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></div></section>
