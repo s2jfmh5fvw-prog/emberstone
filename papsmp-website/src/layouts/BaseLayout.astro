@@ -9,9 +9,10 @@ const { title = 'PAP SMP', description = 'Peace am Tag. Purge in der Nacht.', ca
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#12101d" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/icons/favicon-32.png" />
@@ -21,9 +22,38 @@ const { title = 'PAP SMP', description = 'Peace am Tag. Purge in der Nacht.', ca
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="/og/papsmp-og.jpg" />
+    <meta property="og:image" content="https://papsmp.de/og/papsmp-og.jpg" />
+    <meta property="og:image:alt" content="PAP SMP — Peace am Tag, Purge in der Nacht" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://papsmp.de/og/papsmp-og.jpg" />
     <title>{title}</title>
   </head>
-  <body><slot /></body>
+  <body>
+    <div class="site-background" aria-hidden="true">
+      <video class="site-background-video" muted loop playsinline preload="metadata" tabindex="-1">
+        <source src="/video/pap-companion-motion-background.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <slot />
+    <script>
+      const backgroundVideo = document.querySelector('.site-background-video') as HTMLVideoElement | null;
+      if (backgroundVideo) {
+        backgroundVideo.defaultPlaybackRate = 0.5;
+        backgroundVideo.playbackRate = 0.5;
+      }
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const syncBackgroundMotion = () => {
+        if (!backgroundVideo) return;
+        if (motionPreference.matches) {
+          backgroundVideo.pause();
+          return;
+        }
+        void backgroundVideo.play().catch(() => {});
+      };
+      syncBackgroundMotion();
+      motionPreference.addEventListener('change', syncBackgroundMotion);
+    </script>
+  </body>
 </html>

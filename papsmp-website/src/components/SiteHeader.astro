@@ -4,23 +4,36 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
 <header class="site-header">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <div class="header-inner">
-    <span class="header-spacer" aria-hidden="true"></span>
     <div class="brand-stack">
-      <a class="wordmark" href="/" aria-label="PAP SMP Startseite"><img class="header-brand-logo" src="/brand/pap_smp_logo_duality_loop.webp" alt="PAP SMP" width="512" height="512" /></a>
-      <a class="header-alpha-message" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noreferrer">Alpha-Anmeldung offen</a>
+      <a class="wordmark" href="/" aria-label="PAP SMP Startseite"><picture><source srcset="/brand/pap_smp_logo_duality_loop.webp" type="image/webp" media="(prefers-reduced-motion: no-preference)" /><img class="header-brand-logo" src="/brand/pap_smp_logo.webp" alt="PAP SMP" width="512" height="512" fetchpriority="high" decoding="async" /></picture></a>
+      <a class="header-alpha-message" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer">Alpha-Anmeldung offen</a>
     </div>
-    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-    <nav id="site-nav" aria-label="Hauptnavigation"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}>{label}</a>)}</div><a class="button button-small" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noreferrer">Alpha-Anmeldung ↗</a></nav>
   </div>
 </header>
+<div class="sticky-nav">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href="/" aria-label="PAP SMP Startseite"><img src="/brand/pap_monogram.png" alt="" width="160" height="160" /><span>PAP SMP</span></a>
+    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation"><div class="site-nav-links"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}>{label}</a>)}</div></div></nav>
+  </div>
+</div>
 <noscript>
   <style>
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
+      .menu-toggle {
+        display: none !important;
+      }
       #site-nav {
         display: block !important;
         position: static !important;
-        padding-top: 0.5rem !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
         box-shadow: none !important;
+      }
+      .site-nav-links {
+        display: flex !important;
+        flex-direction: column !important;
       }
     }
   </style>
@@ -30,7 +43,7 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
   const setupDocument = document as Document & { __papHeaderController?: AbortController };
   const header = document.querySelector('.site-header') as HTMLElement | null;
   const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
-  const isMobileMenu = () => window.innerWidth <= 700;
+  const isMobileMenu = () => window.innerWidth <= 800;
   const syncNavState = (currentToggle = toggle, currentNav = nav) => {
     if (!currentNav) return;
     const open = currentToggle?.getAttribute('aria-expanded') === 'true';
@@ -63,6 +76,11 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
     window.addEventListener('resize', () => {
       const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
       const activeNav = document.querySelector('#site-nav') as HTMLElement | null;
+      if (window.innerWidth > 800) {
+        activeToggle?.setAttribute('aria-expanded', 'false');
+        activeToggle?.setAttribute('aria-label', 'Menü öffnen');
+        activeNav?.classList.remove('is-open');
+      }
       syncNavState(activeToggle, activeNav);
     }, { signal });
   }
