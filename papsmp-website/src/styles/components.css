@@ -46,3 +46,11 @@
 .menu-toggle{top:118px}
 .hero{padding-top:16rem}
 @media(max-width:800px){.site-header .header-inner{height:240px}.wordmark .header-brand-logo{width:200px;height:200px}.header-alpha-message{top:208px;font-size:.82rem}.site-header nav{top:240px}.menu-toggle{top:90px}.hero{padding-top:13rem}}
+/* Duality logo: preserve the source alpha channel and add 15% more header presence. */
+.site-header .header-inner{height:324px}
+.wordmark .header-brand-logo{width:276px;height:276px;object-fit:contain;background:transparent}
+.header-alpha-message{top:285px}
+.site-header nav{top:324px}
+.menu-toggle{top:136px}
+.hero{padding-top:18.5rem}
+@media(max-width:800px){.site-header .header-inner{height:276px}.wordmark .header-brand-logo{width:230px;height:230px}.header-alpha-message{top:239px}.site-header nav{top:276px}.menu-toggle{top:104px}.hero{padding-top:15rem}}
