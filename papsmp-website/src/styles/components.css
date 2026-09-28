@@ -54,3 +54,6 @@
 .menu-toggle{top:136px}
 .hero{padding-top:18.5rem}
 @media(max-width:800px){.site-header .header-inner{height:276px}.wordmark .header-brand-logo{width:230px;height:230px}.header-alpha-message{top:239px}.site-header nav{top:276px}.menu-toggle{top:104px}.hero{padding-top:15rem}}
+/* Keep the long comic animation fixed in the viewport while the page scrolls. */
+.hero-video{position:fixed;inset:0;width:100vw;height:100vh;object-fit:cover;transform:none!important;will-change:auto;opacity:.3;z-index:-3}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}}

@@ -1,5 +1,5 @@
 <section class="hero" aria-labelledby="hero-title">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/video/pap-companion-reveal-poster.png" aria-hidden="true"><source src="/video/pap-companion-reveal.mp4" type="video/mp4" /></video>
+  <img class="hero-video" src="/video/pap-companion-origin-preview.gif" alt="" width="640" height="360" aria-hidden="true" />
   <div class="hero-glow"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
@@ -10,19 +10,3 @@
     <div class="hero-art"><div class="hero-art-frame"><img src="/pap/pap_character.webp" alt="Der PAP-Fuchs als Wächter der Welt" width="1024" height="1024" /></div></div>
   </div>
 </section>
-<script>
-  const hero = document.querySelector('.hero');
-  const heroVideo = document.querySelector('.hero-video') as HTMLVideoElement | null;
-  let raf = 0;
-  const moveHeroVideo = () => {
-    raf = 0;
-    if (!hero || !heroVideo) return;
-    const shift = Math.max(-44, Math.min(44, hero.getBoundingClientRect().top * -0.12));
-    heroVideo.style.transform = `translate3d(0, ${shift}px, 0) scale(1.06)`;
-  };
-  const requestHeroVideoMove = () => { if (!raf) raf = requestAnimationFrame(moveHeroVideo); };
-  window.addEventListener('scroll', requestHeroVideoMove, { passive: true });
-  window.addEventListener('resize', requestHeroVideoMove, { passive: true });
-  requestHeroVideoMove();
-  heroVideo?.play().catch(() => undefined);
-</script>
