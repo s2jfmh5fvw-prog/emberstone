@@ -29,11 +29,11 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
   document.documentElement.classList.add('has-js');
   const setupWindow = window as Window & typeof globalThis & { __papHeaderGlobalBound?: boolean };
   const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
-  const mobileMenu = window.matchMedia('(max-width: 700px)');
+  const isMobileMenu = () => window.innerWidth <= 700;
   const syncNavState = (currentToggle = toggle, currentNav = nav) => {
     if (!currentNav) return;
     const open = currentToggle?.getAttribute('aria-expanded') === 'true';
-    if (!mobileMenu.matches) {
+    if (!isMobileMenu()) {
       currentNav.removeAttribute('aria-hidden');
       return;
     }
@@ -57,7 +57,7 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
       syncNavState(activeToggle, activeNav);
       activeToggle.focus();
     });
-    mobileMenu.addEventListener('change', () => {
+    window.addEventListener('resize', () => {
       const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
       const activeNav = document.querySelector('#site-nav') as HTMLElement | null;
       syncNavState(activeToggle, activeNav);

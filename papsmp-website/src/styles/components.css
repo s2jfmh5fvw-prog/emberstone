@@ -259,7 +259,7 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.hero-panel span,
+.hero-panel dt,
 .strip-label,
 .server-address span,
 .block-label {
@@ -273,7 +273,7 @@
   text-transform: uppercase;
 }
 
-.hero-panel strong,
+.hero-panel dd,
 .server-strip strong,
 .server-address strong,
 .steps strong,
@@ -281,7 +281,8 @@
   font-family: 'Space Grotesk', ui-sans-serif, sans-serif;
 }
 
-.hero-panel strong {
+.hero-panel dd {
+  margin: 0;
   font-size: 1rem;
   color: #fff3d0;
 }
@@ -1036,22 +1037,28 @@ summary span {
   }
 
   .site-header nav {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 0.25rem);
+    display: block;
+    position: static;
     gap: 0;
     justify-content: initial;
-    padding: 1rem 16px 1.25rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
     background: rgba(15, 11, 19, 0.97);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .site-header nav.is-open {
     display: block;
+    max-height: 32rem;
+    margin-top: 0.5rem;
+    padding: 1rem 16px 1.25rem;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .hero {
