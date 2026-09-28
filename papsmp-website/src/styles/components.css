@@ -11,10 +11,12 @@
   width: min(var(--content), calc(100% - 48px));
   margin: auto;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: relative;
-  min-height: 180px;
+  min-height: 220px;
+  gap: 0.25rem;
 }
 
 .header-spacer {
@@ -114,12 +116,9 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
   justify-content: center;
-  padding: 0.9rem max(24px, calc((100% - var(--content)) / 2)) 0;
+  flex-wrap: wrap;
+  padding-top: 0.4rem;
 }
 
 .site-header nav.is-open {
@@ -999,13 +998,9 @@ summary span {
     padding-top: 0.75rem;
   }
 
-  .menu-toggle {
-    display: grid;
-  }
-
   .header-inner {
     width: calc(100% - 32px);
-    min-height: 150px;
+    min-height: 190px;
   }
 
   .wordmark .header-brand-logo {
@@ -1020,24 +1015,10 @@ summary span {
     top: 0.75rem;
   }
 
-  .site-header nav {
-    display: none;
-    gap: 0;
-    justify-content: initial;
-    padding: 1rem 16px 1.25rem;
-    background: rgba(15, 11, 19, 0.97);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
-  }
-
-  .site-header nav.is-open {
-    display: block;
-  }
-
   .nav-list {
     display: grid;
     gap: 0.15rem;
+    width: 100%;
   }
 
   .nav-list a {
@@ -1050,6 +1031,29 @@ summary span {
     margin-top: 1rem;
     width: 100%;
     font-size: 0.72rem;
+  }
+
+  .has-js .menu-toggle {
+    display: grid;
+  }
+
+  .has-js .site-header nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    gap: 0;
+    justify-content: initial;
+    padding: 1rem 16px 1.25rem;
+    background: rgba(15, 11, 19, 0.97);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
+  }
+
+  .has-js .site-header nav.is-open {
+    display: block;
   }
 
   .hero {

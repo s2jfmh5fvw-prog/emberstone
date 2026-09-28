@@ -14,6 +14,7 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
   </div>
 </header>
 <script>
+  document.documentElement.classList.add('has-js');
   const toggle = document.querySelector('.menu-toggle'); const nav = document.querySelector('#site-nav');
   const close = () => { toggle?.setAttribute('aria-expanded','false'); toggle?.setAttribute('aria-label','Menü öffnen'); nav?.classList.remove('is-open'); };
   toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav?.classList.toggle('is-open', open); });
