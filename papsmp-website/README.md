@@ -1,6 +1,6 @@
 # PAP SMP Website
 
-Lokale, statische Astro-Website für den PAP-SMP-Alpha-Arbeitsstand. Dieses Projekt veröffentlicht nichts und verändert keine bestehenden Emberstone-, GitHub- oder Cloudflare-Projekte.
+Statische Astro-Website für PAP SMP. Der GitHub-Actions-Workflow `Deploy PAP SMP to Cloudflare Pages` veröffentlicht erfolgreiche Builds von `main` in Cloudflare Pages; er verändert keine bestehenden Projekte, bis die unten genannten Einstellungen gesetzt sind.
 
 ## Lokal
 
@@ -11,7 +11,17 @@ npm run build
 npm run dev
 ```
 
-Build-Ausgabe: `dist/`. Cloudflare Pages kann später mit `npm run build` und Output `dist` verbunden werden, aber erst nach Inhalt-, Rechts- und Plattformabnahme.
+Build-Ausgabe: `dist/`.
+
+## Deployment einrichten
+
+Der Workflow liegt unter `.github/workflows/deploy-papsmp.yml` und deployt Änderungen aus `papsmp-website/` nach erfolgreichem `npm run check` und `npm run build`. Für die erstmalige Einrichtung im GitHub-Repository unter **Settings → Secrets and variables → Actions** setzen:
+
+- Repository-Secret `CLOUDFLARE_API_TOKEN` mit Cloudflare-Pages-Edit-Rechten
+- Repository-Secret `CLOUDFLARE_ACCOUNT_ID`
+- Repository-Variable `CLOUDFLARE_PAGES_PROJECT` mit dem existierenden Pages-Projektnamen
+
+Das Cloudflare-Pages-Projekt muss `main` als Production-Branch verwenden und `papsmp.de` als Custom Domain zugeordnet haben. Danach lässt sich der Ablauf unter **Actions → Deploy PAP SMP to Cloudflare Pages → Run workflow** testen; spätere Änderungen im Projektverzeichnis deployen automatisch nach Merge auf `main`.
 
 ## Öffentliche Konfiguration
 
