@@ -38,8 +38,8 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
     }
     nav.setAttribute('aria-hidden', String(!open));
   };
-  const close = () => { toggle?.setAttribute('aria-expanded','false'); toggle?.setAttribute('aria-label','Menü öffnen'); nav?.classList.remove('is-open'); syncNavState(); };
-  if (nav && nav.dataset.bound !== 'true') {
+  const close = () => { if (!toggle || !nav) return; toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Menü öffnen'); nav.classList.remove('is-open'); syncNavState(); };
+  if (nav && toggle && nav.dataset.bound !== 'true') {
     nav.dataset.bound = 'true';
     toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav?.classList.toggle('is-open', open); syncNavState(); });
     nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
