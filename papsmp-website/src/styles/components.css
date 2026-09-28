@@ -18,18 +18,23 @@
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 /* Final visual correction: the moving scene is the only hero background layer. */
 .site-header{position:absolute;top:0;left:0;right:0;background:transparent;border-bottom:0;backdrop-filter:none;z-index:10}
-.site-header .header-inner{height:92px}
-.wordmark .header-brand-logo{width:150px;height:72px}
+.site-header .header-inner{height:158px}
+.brand-stack{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.wordmark .header-brand-logo{width:220px;height:124px;object-fit:contain}
+.header-alpha-message{position:absolute;top:108px;left:50%;white-space:nowrap;color:#f5bf4b;font-family:'Space Grotesk';font-size:1rem;font-weight:700;font-style:italic;letter-spacing:.02em;text-shadow:2px 2px 0 rgba(18,16,29,.95);transform:translateX(-50%) rotate(-5deg)}
+.header-alpha-message:hover{color:#ffd36c}
 .menu-toggle{border:0;background:transparent}
-.site-header nav{top:92px;border:0}
-.hero{position:relative;isolation:isolate;background:#12101d;overflow:hidden}
-.hero-video{z-index:-3;opacity:.34;mix-blend-mode:normal;pointer-events:none}
+.site-header nav{top:158px;border:0}
+.menu-toggle{top:58px;width:52px;height:46px}
+.hero{position:relative;isolation:isolate;background:#12101d;overflow:hidden;min-height:100vh;padding-top:9rem}
+.hero-video{z-index:-3;opacity:.34;mix-blend-mode:normal;pointer-events:none;will-change:transform}
 .hero:before{z-index:-2;background:linear-gradient(180deg,rgba(18,16,29,.4),rgba(18,16,29,.55) 56%,#12101d 100%)}
 .hero-glow{z-index:-1;pointer-events:none}
 .hero-ring{display:none}
 .hero-art{min-height:260px}
 .hero-art-frame{background:transparent;border:0;box-shadow:none}
+.hero-note{display:none}
 .phase-grid{grid-template-columns:1fr 1fr;max-width:none;gap:1rem}
 .phase-card{min-height:300px;padding:1.5rem}
 .section{padding-top:5rem;padding-bottom:5rem}
-@media(max-width:800px){.site-header .header-inner{height:80px}.wordmark .header-brand-logo{width:120px;height:64px}.site-header nav{top:80px}.hero{padding-top:80px}.phase-grid{grid-template-columns:1fr}.phase-card{min-height:260px;padding:1.25rem}}
+@media(max-width:800px){.site-header .header-inner{height:132px}.wordmark .header-brand-logo{width:176px;height:98px}.header-alpha-message{top:86px;font-size:.9rem}.site-header nav{top:132px}.menu-toggle{top:44px;width:46px;height:42px}.hero{padding-top:8rem}.phase-grid{grid-template-columns:1fr}.phase-card{min-height:260px;padding:1.25rem}}

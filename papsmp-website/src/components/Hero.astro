@@ -1,13 +1,28 @@
 <section class="hero" aria-labelledby="hero-title">
-  <video class="hero-video" autoplay muted loop playsinline poster="/video/pap-companion-reveal-poster.png" aria-hidden="true"><source src="/video/pap-companion-reveal.mp4" type="video/mp4" /></video>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/video/pap-companion-reveal-poster.png" aria-hidden="true"><source src="/video/pap-companion-reveal.mp4" type="video/mp4" /></video>
   <div class="hero-glow"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="kicker hero-alpha-kicker"><span class="status-dot"></span> Alpha-Anmeldung offen · maximal 20 aktive Plätze</p>
       <h1 id="hero-title">Peace am Tag.<br /><em>Purge in der Nacht.</em></h1>
       <p class="hero-lede">Eine Survival-Welt zwischen warmem Morgenlicht und violetter Nacht. Komm näher, wenn du wissen willst, was hinter dem Riss passiert.</p>
       <div class="hero-actions"><a class="button" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noreferrer">Alpha-Anmeldung <span>↗</span></a><a class="text-link" href="#konzept">Das Konzept <span>↓</span></a></div>
     </div>
-    <div class="hero-art"><div class="hero-art-frame"><img src="/pap/pap_character.webp" alt="Der PAP-Fuchs als Wächter der Welt" width="1024" height="1024" /></div><span class="hero-note note-top">trust me</span><span class="hero-note note-bottom">the night is evil.</span></div>
+    <div class="hero-art"><div class="hero-art-frame"><img src="/pap/pap_character.webp" alt="Der PAP-Fuchs als Wächter der Welt" width="1024" height="1024" /></div></div>
   </div>
 </section>
+<script>
+  const hero = document.querySelector('.hero');
+  const heroVideo = document.querySelector('.hero-video') as HTMLVideoElement | null;
+  let raf = 0;
+  const moveHeroVideo = () => {
+    raf = 0;
+    if (!hero || !heroVideo) return;
+    const shift = Math.max(-44, Math.min(44, hero.getBoundingClientRect().top * -0.12));
+    heroVideo.style.transform = `translate3d(0, ${shift}px, 0) scale(1.06)`;
+  };
+  const requestHeroVideoMove = () => { if (!raf) raf = requestAnimationFrame(moveHeroVideo); };
+  window.addEventListener('scroll', requestHeroVideoMove, { passive: true });
+  window.addEventListener('resize', requestHeroVideoMove, { passive: true });
+  requestHeroVideoMove();
+  heroVideo?.play().catch(() => undefined);
+</script>
