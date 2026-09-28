@@ -16,7 +16,7 @@ img{display:block;max-width:100%}
 .text-link{font-weight:700;color:var(--text);display:inline-flex;gap:.7rem;align-items:center;text-transform:uppercase;letter-spacing:.08em}
 .section{padding:6.5rem 0;scroll-margin-top:5rem}
 .section-heading{max-width:42rem;margin-bottom:2.75rem}
-.section-heading h2,.hero h1,.error-page h1,.legal-page h1{font-family:'Press Start 2P',ui-monospace,monospace;line-height:1.35;letter-spacing:.04em;font-size:clamp(2rem,4vw,3.35rem);margin:.8rem 0 1.35rem}
+.section-heading h2,.hero h1,.error-page h1,.legal-page h1{font-family:'Trebuchet MS','Segoe UI',ui-sans-serif,system-ui,sans-serif;line-height:1.08;letter-spacing:-.03em;font-size:clamp(2rem,4vw,3.35rem);margin:.8rem 0 1.35rem;font-weight:700}
 .section-heading h2 em,.hero h1 em,.error-page h1 em{font-style:normal;color:#f5c567}
 .section-heading>p:last-child{color:var(--muted);max-width:35rem}
 @media(max-width:600px){body{font-size:16px}.container{width:min(100% - 32px,var(--content))}.section{padding:4.75rem 0}.section-heading h2,.hero h1{font-size:clamp(1.6rem,8vw,2.35rem)}}

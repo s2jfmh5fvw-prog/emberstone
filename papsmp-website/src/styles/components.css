@@ -865,6 +865,7 @@ summary {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
   font-family: 'Space Grotesk', ui-sans-serif, sans-serif;
   font-size: 1.12rem;
