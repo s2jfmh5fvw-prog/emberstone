@@ -27,24 +27,42 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
 </noscript>
 <script>
   document.documentElement.classList.add('has-js');
+  const setupWindow = window as Window & typeof globalThis & { __papHeaderGlobalBound?: boolean };
   const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
   const mobileMenu = window.matchMedia('(max-width: 700px)');
-  const syncNavState = () => {
-    if (!nav) return;
-    const open = toggle?.getAttribute('aria-expanded') === 'true';
+  const syncNavState = (currentToggle = toggle, currentNav = nav) => {
+    if (!currentNav) return;
+    const open = currentToggle?.getAttribute('aria-expanded') === 'true';
     if (!mobileMenu.matches) {
-      nav.removeAttribute('aria-hidden');
+      currentNav.removeAttribute('aria-hidden');
       return;
     }
-    nav.setAttribute('aria-hidden', String(!open));
+    currentNav.setAttribute('aria-hidden', String(!open));
   };
   const close = () => { if (!toggle || !nav) return; toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Menü öffnen'); nav.classList.remove('is-open'); syncNavState(); };
   if (nav && toggle && nav.dataset.bound !== 'true') {
     nav.dataset.bound = 'true';
     toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav?.classList.toggle('is-open', open); syncNavState(); });
     nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { close(); (toggle as HTMLButtonElement | null)?.focus(); } });
-    mobileMenu.addEventListener('change', syncNavState);
+  }
+  if (!setupWindow.__papHeaderGlobalBound) {
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape') return;
+      const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
+      const activeNav = document.querySelector('#site-nav') as HTMLElement | null;
+      if (!activeToggle || !activeNav) return;
+      activeToggle.setAttribute('aria-expanded', 'false');
+      activeToggle.setAttribute('aria-label', 'Menü öffnen');
+      activeNav.classList.remove('is-open');
+      syncNavState(activeToggle, activeNav);
+      activeToggle.focus();
+    });
+    mobileMenu.addEventListener('change', () => {
+      const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
+      const activeNav = document.querySelector('#site-nav') as HTMLElement | null;
+      syncNavState(activeToggle, activeNav);
+    });
+    setupWindow.__papHeaderGlobalBound = true;
   }
   syncNavState();
 </script>
