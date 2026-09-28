@@ -38,3 +38,11 @@
 .phase-card{min-height:300px;padding:1.5rem}
 .section{padding-top:5rem;padding-bottom:5rem}
 @media(max-width:800px){.site-header .header-inner{height:132px}.wordmark .header-brand-logo{width:176px;height:98px}.header-alpha-message{top:86px;font-size:.9rem}.site-header nav{top:132px}.menu-toggle{top:44px;width:46px;height:42px}.hero{padding-top:8rem}.phase-grid{grid-template-columns:1fr}.phase-card{min-height:260px;padding:1.25rem}}
+/* Original animated PAP logo: keep the square source ratio and give the splash room below the lettering. */
+.site-header .header-inner{height:282px}
+.wordmark .header-brand-logo{width:240px;height:240px;object-fit:contain}
+.header-alpha-message{top:248px;font-family:'Minecraft','Press Start 2P','Courier New',monospace;font-size:.92rem;letter-spacing:.05em;text-shadow:2px 2px 0 #171321,0 0 3px #171321;transform:translateX(-50%) rotate(-5deg)}
+.site-header nav{top:282px}
+.menu-toggle{top:118px}
+.hero{padding-top:16rem}
+@media(max-width:800px){.site-header .header-inner{height:240px}.wordmark .header-brand-logo{width:200px;height:200px}.header-alpha-message{top:208px;font-size:.82rem}.site-header nav{top:240px}.menu-toggle{top:90px}.hero{padding-top:13rem}}
