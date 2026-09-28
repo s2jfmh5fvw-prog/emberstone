@@ -1037,7 +1037,7 @@ summary span {
     display: grid;
   }
 
-  .has-js .site-header nav {
+  .site-header nav {
     display: none;
     position: absolute;
     left: 0;
@@ -1052,7 +1052,7 @@ summary span {
     box-shadow: 0 20px 36px rgba(0, 0, 0, 0.36);
   }
 
-  .has-js .site-header nav.is-open {
+  .site-header nav.is-open {
     display: block;
   }
 

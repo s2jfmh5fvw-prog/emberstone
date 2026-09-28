@@ -13,18 +13,33 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
     <nav id="site-nav" aria-label="Hauptnavigation"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}>{label}</a>)}</div><a class="button button-small" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noreferrer">Alpha-Anmeldung ↗</a></nav>
   </div>
 </header>
+<noscript>
+  <style>
+    @media (max-width: 700px) {
+      #site-nav {
+        display: block !important;
+        position: static !important;
+        padding-top: 0.5rem !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</noscript>
 <script>
   document.documentElement.classList.add('has-js');
-  const toggle = document.querySelector('.menu-toggle'); const nav = document.querySelector('#site-nav');
+  const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
   const mobileMenu = window.matchMedia('(max-width: 700px)');
   const syncNavState = () => {
     const open = toggle?.getAttribute('aria-expanded') === 'true';
     nav?.setAttribute('aria-hidden', String(mobileMenu.matches && !open));
   };
   const close = () => { toggle?.setAttribute('aria-expanded','false'); toggle?.setAttribute('aria-label','Menü öffnen'); nav?.classList.remove('is-open'); syncNavState(); };
-  toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav?.classList.toggle('is-open', open); syncNavState(); });
-  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { close(); (toggle as HTMLButtonElement | null)?.focus(); } });
-  mobileMenu.addEventListener('change', syncNavState);
+  if (nav && nav.dataset.bound !== 'true') {
+    nav.dataset.bound = 'true';
+    toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav?.classList.toggle('is-open', open); syncNavState(); });
+    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { close(); (toggle as HTMLButtonElement | null)?.focus(); } });
+    mobileMenu.addEventListener('change', syncNavState);
+  }
   syncNavState();
 </script>
