@@ -10,7 +10,7 @@
 | Mobile menu | BESTANDEN — button opens navigation at 390px; Escape closes and returns focus |
 | 404 route | BESTANDEN — `/404/` resolves to the friendly 404 page |
 | External destinations | NICHT KONFIGURIERT — no dead Discord/Whitelist/VIP/Download buttons |
-| Public release | BLOCKIERT — Impressum, Datenschutz and real access links are still required |
+| Public release | MIT PLATZHALTERN — Impressum und Datenschutz sind sichtbar markiert, aber nicht vervollständigt oder rechtlich freigegeben |
 
 ## Preview files
 
