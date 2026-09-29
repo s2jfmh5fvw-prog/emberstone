@@ -23,4 +23,4 @@ Der bestehende Cloudflare-Pages-GitHub-Connect übernimmt Build, Vorschau und Pr
 
 ## Offene Freigaben
 
-Siehe `CONTENT_REQUIRED.md`. Rechtstexte, echte Links, Serverdaten und Resource-Pack-Hosting fehlen im Alpha-Arbeitsstand bewusst.
+Siehe `CONTENT_REQUIRED.md`. Die Produktionsseite kann ausdrücklich markierte Platzhalter enthalten; das ist keine rechtliche Freigabe. Vor dem regulären Betrieb müssen Impressum, Datenschutz, offene Links, Serverdaten und Resource-Pack-Hosting vervollständigt und geprüft werden.
