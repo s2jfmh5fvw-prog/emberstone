@@ -1,118 +1,45 @@
-# Emberstone
+# PAP SMP website repository
 
-## Projektübersicht
+Production: https://papsmp.de
 
-Diese Repository enthält eine statische Landingpage für Emberstone Survival mit einem Early-Whitelist-Call-to-Action. Das Projekt ist so vorbereitet, dass es über Cloudflare Pages gehostet werden kann und zusätzlich einen Cloudflare Worker für zukünftige API- oder Formularfunktionen bereitstellt.
+The maintained website is **papsmp-website/**, a static Astro application. The root-level Emberstone HTML, styles, assets, package scripts and worker.js are historical files, retained unchanged. They are not the PAP SMP production build or an active PAP API.
 
-## Inhalt
+## Source of truth and deployment
 
-- `index.html` – Haupt-Landingpage
-- `styles.css` – Styling für die Seite
-- `assets/` – Bilddateien und visuelle Assets
-- `package.json` – NPM-Skripte für lokale Entwicklung und Deployment
-- `wrangler.toml` – Cloudflare Workers Konfiguration
-- `worker.js` – Beispiel-Worker mit `/api` und `/api/whitelist`
+GitHub s2jfmh5fvw-prog/emberstone → main → Cloudflare Pages project emberstone → papsmp.de.
 
-## Vorbereitung
+Confirmed Cloudflare configuration on 2026-09-30:
 
-1. Installiere die Abhängigkeiten:
+- Production branch: main; automatic Git deployments enabled.
+- Root directory: papsmp-website.
+- Build command: npm ci && npm run build.
+- Output directory: dist (relative to papsmp-website).
+- Build system: version 3; build cache disabled.
+- Node: 22 (Cloudflare resolved 22.22.0); Astro requires >=22.12.0.
+- No Pages Functions, runtime bindings or configured production variables were listed.
+- Pull requests/other branches receive preview deployments.
 
-```bash
-npm install
-```
+The branch pap-smp-production is a historical branch, not the configured production source. Do not switch production to it or copy its older assets over main.
 
-2. Melde dich bei Cloudflare an:
+## Local verification
 
-```bash
-npx wrangler login
-```
+Run from papsmp-website, not from the repository root:
 
-3. Trage deine Cloudflare `account_id` in `wrangler.toml` ein.
-   Diese findest du im Cloudflare Dashboard unter "Overview" deines Accounts.
-
-## Lokale Entwicklung
-
-- Erstelle die statischen Dateien für Pages:
-
-```bash
+```sh
+npm ci
+npm run check
 npm run build
+npm run dev
 ```
 
-- Starte lokale Pages-Entwicklung:
+After publishing, confirm the exact commit in Cloudflare's successful production deployment and test https://papsmp.de in a browser on desktop and mobile. A successful push alone does not prove deployment. Compare built HTML/assets with the domain; use existing deployment retries only for a confirmed failed deployment. Do not use direct upload or a Worker deployment to bypass Git.
 
-```bash
-npm run dev:pages
-```
+## Protected files and remaining releases
 
-- Starte lokale Worker-Entwicklung:
+The resourcepacks in papsmp-website/public/downloads are READ ONLY for website maintenance. Preserve their bytes, filenames, URLs, displayed checksums and metadata. The existing 3.2.2 filenames intentionally remain stable while the displayed release is 3.2.7 Alpha. Do not rebuild or repackage them.
 
-```bash
-npm run dev:worker
-```
+Existing PAP artwork and motion assets are retained. Do not overwrite other working copies without comparing their changes first.
 
-## Cloudflare Pages Deployment
+Impressum and Datenschutz are explicitly marked placeholders; real operator details and a reviewed description of actual processing are still required. Search crawling remains disabled by robots.txt until this release gate is resolved. YouTube/Twitch are not yet confirmed destinations. Bedrock/server acceptance and VIP checkout are separate release gates; no availability or player statistics are invented.
 
-Die statische Landingpage kann mit Cloudflare Pages deployed werden.
-
-1. Erstelle im Cloudflare Dashboard ein neues Pages-Projekt.
-2. Verbinde dein Repository und wähle den Projektordner aus.
-3. Setze den Build-Befehl auf:
-
-```bash
-npm install && npm run build
-```
-
-4. Setze das Output-Verzeichnis auf:
-
-```
-dist
-```
-
-> Wichtig: Verwende für Pages nicht `npx wrangler deploy`, denn das ist für Worker-Deployments gedacht. Dadurch entsteht der Fehler "Could not detect a directory containing static files".
-
-> Optional: Du kannst auch direkt `npx wrangler pages publish . --project-name emberstone` ausführen.
-
-## Cloudflare Worker Deployment
-
-Der Worker kann separat deployed werden und liefert einen API-Endpunkt für zukünftige Funktionen.
-
-1. Öffne `wrangler.toml` und ergänze dort deine `account_id`.
-2. Optional: aktiviere die Route für deine eigene Domain:
-
-```toml
-route = "emberstonesurvival.com/api/*"
-```
-
-3. Deploye den Worker mit:
-
-```bash
-npm run publish:worker
-```
-
-## Worker-Endpunkte
-
-Der Worker stellt aktuell folgende Endpunkte bereit:
-
-- `GET /api` – Grundlegende Status-Antwort
-- `POST /api/whitelist` – verarbeitet JSON-Anfragen für eine Whitelist-Anmeldung
-- `OPTIONS /api/whitelist` – CORS-Preflight für Browseranfragen
-
-Beispiel:
-
-```bash
-curl -X POST https://<dein-worker-url>/api/whitelist \
-  -H 'Content-Type: application/json' \
-  -d '{"name":"Max Mustermann","email":"max@example.com"}'
-```
-
-## Integration von Pages & Worker
-
-- Pages übernimmt das Hosting deiner statischen Seite.
-- Der Worker kann parallel verwendet werden für API-Aufrufe, Whitelist-Formulare oder Backend-Logik.
-- Mit einer Route wie `emberstonesurvival.com/api/*` kannst du den Worker unter deiner Domain verfügbar machen.
-
-## Nächste Schritte
-
-- Ersetze Platzhalterbilder durch finale Assets im `assets/`-Ordner.
-- Ergänze in `index.html` ein echtes Whitelist-Formular, das Daten an `/api/whitelist` sendet.
-- Falls gewünscht, erweitere den Worker um E-Mail-Versand, Discord-Webhook oder Speicherung in einer Datenbank.
+See papsmp-website/CONTENT_REQUIRED.md for the content handoff.

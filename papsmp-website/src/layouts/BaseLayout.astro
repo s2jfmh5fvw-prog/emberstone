@@ -2,7 +2,7 @@
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
-const { title = 'PAP SMP', description = 'Peace am Tag. Purge in der Nacht.', canonical = 'https://papsmp.de/' } = Astro.props;
+const { title = 'PAP SMP', description = 'Peace am Tag. Purge in der Nacht.', canonical = new URL(Astro.url.pathname, Astro.site).href, noindex = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="de">
@@ -14,11 +14,13 @@ const { title = 'PAP SMP', description = 'Peace am Tag. Purge in der Nacht.', ca
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/icons/favicon-32.png" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="PAP SMP" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
