@@ -1,7 +1,8 @@
 export const faqs = [
-  ['Ist PAP SMP schon öffentlich?', 'Noch nicht. Diese Website beschreibt den Alpha-Aufbau. Die Alpha-Anmeldung ist geöffnet und auf maximal 20 aktive Plätze auf dem Server begrenzt.'],
-  ['Kann ich mit Java und Bedrock spielen?', 'Die Java-Verbindung ist vorbereitet. Bedrock/Geyser wird noch getestet; Zugang und finale Serverdetails veröffentlichen wir erst nach erfolgreichem Verbindungstest.'],
-  ['Wo bekomme ich das Resource Pack?', 'Die aktuellen Java- und Geyser-Resourcepacks stehen im Download-Bereich bereit. Version und Prüfsummen werden dort transparent ausgewiesen.'],
-  ['Gibt es schon VIP oder einen Shop?', 'Die VIP-Schnittstelle ist bewusst noch nicht aktiv. Es gibt keinen Fake-Checkout und keine Rangvergabe über einen Browser-Redirect.'],
-  ['Wie melde ich mich für die Alpha an?', 'Nutze den Discord-Link für die Alpha-Anmeldung. Die verfügbaren aktiven Plätze sind während der Alpha auf maximal 20 begrenzt.'],
+  ['Was ist PAP SMP?', 'Ein deutscher Minecraft-Survival-Server in der Alpha. Das Konzept verbindet Aufbau und Erkundung mit einer Purge-Nacht; die Abläufe werden im Test weiterentwickelt.'],
+  ['Wie bekomme ich Zugang zur Alpha?', 'Öffne den PAP-SMP-Discord über den Einladungslink und beachte dort die aktuellen Hinweise zur Anmeldung. Gleichzeitig können höchstens 20 Spieler auf dem Server sein.'],
+  ['Kann ich mit Java spielen?', 'Eine Java-Serveradresse ist auf dieser Seite angegeben. Die aktuellen Zugangshinweise und den Stand der Alpha findest du auf Discord.'],
+  ['Funktioniert der Server schon mit Bedrock oder Geyser?', 'Der Bedrock-/Geyser-Serverzugang wird noch geprüft. Die verfügbaren Bedrock-Dateien sind Resource Packs und bestätigen nicht, dass die Verbindung zum Server bereits möglich ist.'],
+  ['Wo finde ich die Resource Packs?', 'Die aktuellen Java- und Bedrock-Packs stehen weiter oben als getrennte Downloads bereit. Version und SHA-256-Prüfsumme sind jeweils dabei.'],
+  ['Gibt es VIP-Ränge oder einen Shop?', 'Nein. VIP-Angebote und Shop sind derzeit nicht verfügbar.'],
 ];

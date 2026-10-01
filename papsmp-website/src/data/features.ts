@@ -1,5 +1,5 @@
 export const features = [
-  { eyebrow: 'Peace & Purge', title: 'Zwei Phasen, ein SMP', text: 'Der Tag gehört Aufbau und Erkundung. In der Purge-Nacht zählen Vorbereitung und Zusammenhalt.', emote: { src: '/emotes/pap-win.png', alt: 'PAP Win' } },
-  { eyebrow: 'Crossplay', title: 'Java bereit, Bedrock im Test', text: 'Die Java-Verbindung ist vorbereitet. Bedrock/Geyser wird separat geprüft und erst nach erfolgreicher Abnahme freigegeben.', emote: { src: '/emotes/pap-curious.png', alt: 'PAP Curious' } },
-  { eyebrow: 'Alpha', title: '20 Plätze, direktes Feedback', text: 'Die Anmeldung läuft über Discord. Während der Alpha können maximal 20 Spieler gleichzeitig auf den Server.', emote: { src: '/emotes/yuuh92-win.png', alt: 'Yuuh92 Win' } },
+  { eyebrow: 'Spielprinzip', title: 'Survival mit zwei Phasen', text: 'Aufbau und Erkundung treffen auf die Purge-Nacht. Die genauen Abläufe werden während der Alpha erprobt.', emote: { src: '/emotes/pap-win.png', alt: 'PAP Win' } },
+  { eyebrow: 'Plattformen', title: 'Java-Adresse veröffentlicht', text: 'Eine Java-Serveradresse ist angegeben. Der Zugang über Bedrock und Geyser wird noch geprüft.', emote: { src: '/emotes/pap-curious.png', alt: 'PAP Curious' } },
+  { eyebrow: 'Alpha', title: 'Kleine Runde, klares Feedback', text: 'Die Anmeldung und aktuelle Hinweise findest du auf Discord. Gleichzeitig können höchstens 20 Spieler teilnehmen.', emote: { src: '/emotes/yuuh92-win.png', alt: 'Yuuh92 Win' } },
 ];
