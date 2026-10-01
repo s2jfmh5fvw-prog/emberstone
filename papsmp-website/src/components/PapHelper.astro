@@ -1,0 +1,40 @@
+---
+import { getImage } from 'astro:assets';
+import poses from '../assets/chatbot/pap-poses-v1.png';
+import smooth from '../assets/chatbot/pap-smooth-v1.png';
+import '../styles/pap-helper.css';
+const poseImage = await getImage({ src: poses, width: 1120, format: 'webp', quality: 88 });
+const smoothImage = await getImage({ src: smooth, width: 1120, format: 'webp', quality: 88 });
+---
+<aside class="pap-widget" data-pap-helper data-pap-smooth={smoothImage.src} data-state="idle" data-animation="idle" aria-label="PAP Website-Helfer" style={`--pap-poses:url("${poseImage.src}");--pap-smooth:url("${smoothImage.src}")`}>
+  <div class="pap-tip" hidden><span>Hey! Brauchst du Hilfe beim Einstieg? 🦊</span><button class="pap-tip-dismiss" type="button" aria-label="Hinweis schließen">×</button></div>
+  <section id="pap-helper-chat" class="pap-panel" role="dialog" aria-modal="false" aria-labelledby="pap-helper-title" hidden>
+    <header class="pap-panel-header">
+      <span class="pap-avatar" aria-hidden="true"><span class="pap-static-pose"></span></span>
+      <div><h2 id="pap-helper-title" class="pap-panel-heading" tabindex="-1">PAP</h2><p class="pap-panel-subtitle">Dein kleiner Website-Helfer</p></div>
+      <div class="pap-panel-actions"><button class="pap-icon-btn pap-clear" type="button" aria-label="Gespräch zurücksetzen" title="Gespräch zurücksetzen">↻</button><button class="pap-icon-btn pap-close" type="button" aria-label="Chat minimieren" title="Chat minimieren">−</button></div>
+    </header>
+    <div class="pap-log" role="log" aria-label="Gespräch" aria-live="polite" aria-relevant="additions"></div>
+    <div class="pap-chips" aria-label="Schnelle Fragen">
+      <button class="pap-chip" type="button" data-topic="join">Auf den Server</button><button class="pap-chip" type="button" data-topic="editions">Java / Bedrock</button><button class="pap-chip" type="button" data-topic="pack">Resourcepack</button><button class="pap-chip" type="button" data-topic="shop">VIP</button><button class="pap-chip" type="button" data-topic="discord">Discord</button><button class="pap-chip" type="button" data-topic="joke">PAP-Witz 🦊</button>
+    </div>
+    <form class="pap-form">
+      <label class="pap-sr-only" for="pap-helper-question">Deine Frage an PAP</label>
+      <input id="pap-helper-question" class="pap-input" placeholder="Frag mich etwas zu PAP SMP …" maxlength="500" autocomplete="off" required />
+      <button class="pap-send" aria-label="Frage senden" type="submit">↑</button>
+    </form>
+    <p class="pap-disclosure">FAQ-Helfer · keine KI · Nachrichten bleiben nur in diesem Fenster</p>
+  </section>
+  <div class="pap-character-area">
+    <button class="pap-launcher" type="button" aria-label="PAP-Chat öffnen" aria-expanded="false" aria-controls="pap-helper-chat">
+      <span class="pap-mascot" aria-hidden="true"><span class="pap-pose is-visible" data-sheet="poses" data-frame="0"></span><span class="pap-pose" data-sheet="poses" data-frame="0"></span></span>
+      <span class="pap-launcher-label"><i class="pap-ready-dot" aria-hidden="true"></i>PAP fragen</span>
+    </button>
+    <button class="pap-snooze" type="button" aria-label="PAP ausblenden" title="PAP ausblenden">×</button>
+  </div>
+  <button class="pap-restore" type="button" hidden>PAP wieder anzeigen 🦊</button>
+  <noscript><a class="pap-noscript" href="https://discord.gg/hxgnJNTp4J">Hilfe auf Discord ↗</a></noscript>
+</aside>
+<script>
+  import '../scripts/pap-helper';
+</script>

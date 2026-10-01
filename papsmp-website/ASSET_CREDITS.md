@@ -9,3 +9,8 @@ Verwendet werden das animierte PAP-Duality-Logo, beide Szenenbilder (eine davon 
 - `pap/pap_idle_loop.gif` und `pap/pap_curious_loop.gif`: Hero-Illustration mit dezenter Idle-Schleife und Curious-Crossfade bei Hover. Lädt nur bei `prefers-reduced-motion: no-preference`; ansonsten bleibt die bestehende statische `pap_character.webp`.
 - `sigils/peace_loop.webp` und `sigils/purge_loop.webp`: animierte Sigil-Schleifen im Konzept-Bereich, ebenfalls nur ohne reduzierte Bewegung geladen.
 - `emotes/pap-win.png` und `emotes/yuuh92-win.png`: neue Feature-Badges im Drei-Punkte-Grid.
+
+## Website-Helfer PAP (Oktober 2026)
+
+- `src/assets/chatbot/pap-poses-v1.png`: die acht mit OpenAI ImageGen erzeugten PAP-Posen aus der vom Nutzer freigegebenen Vorschau A. Die bestehende PAP-Fuchsidentität diente als Referenz.
+- `src/assets/chatbot/pap-smooth-v1.png`: ergänzender 4×4-Atlas mit echten Zwischenposen für Blinzeln, Winken und neugierige Kopfbewegungen, ebenfalls mit OpenAI ImageGen aus der freigegebenen Referenz erstellt. Eine Pose mit Wechsel der erhobenen Pfote wird in der Winksequenz ausgelassen. Beide Atlanten erhalten beim Astro-Build optimierte WebP-Versionen; die Originale und bestehenden Markenassets werden nicht überschrieben.
