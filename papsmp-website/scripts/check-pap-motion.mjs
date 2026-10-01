@@ -2,68 +2,25 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
-
-// Execute the production controller with a clock, without hover or pointer events.
-function setup(reduced = false, random = 0) {
-  let now = 0, timerId = 0;
-  const timers = new Map(), nodes = new Map(), frames = [];
-  class Element {
-    constructor() { this.listeners = {}; this.dataset = {}; this.style = {}; this.children = []; this.hidden = false; this.value = ''; this.attrs = {}; this.classes = new Set(); this.classList = { add: x => this.classes.add(x), remove: x => this.classes.delete(x), toggle: (x,on) => on ? this.classes.add(x) : this.classes.delete(x) }; }
-    addEventListener(name, callback) { this.listeners[name] = callback; }
-    emit(name, event = {}) { this.listeners[name]?.(event); }
-    append(...items) { this.children.push(...items); }
-    replaceChildren(...items) { this.children = items; }
-    setAttribute(name,value) { this.attrs[name] = value; }
-    getBoundingClientRect() { return { height: this === root ? 168 : 490 }; }
-    focus() {}
-  }
-  const root = new Element();
-  root.dataset.animation = 'idle';
-  root.dataset.papSmooth = '/animation.webp';
-  for (const key of ['.pap-panel','.pap-log','.pap-input','.pap-send','.pap-launcher','.pap-tip','.pap-character-area','.pap-restore','.pap-form','.pap-close','.pap-clear','.pap-snooze','.pap-tip-dismiss','.pap-panel-heading']) nodes.set(key,new Element());
-  nodes.get('.pap-panel').hidden = true;
-  const poses = [new Element(),new Element()];
-  for (const pose of poses) pose.classList.add = value => { pose.classes.add(value); if (value === 'is-visible') frames.push({at:now,frame:pose.dataset.frame,sheet:pose.dataset.sheet}); };
-  root.querySelector = key => nodes.get(key);
-  root.querySelectorAll = key => key.includes('.pap-pose') ? poses : [];
-  const document = new Element();
-  document.hidden = false;
-  document.querySelector = () => root;
-  document.createElement = () => new Element();
-  const preference = new Element(); preference.matches = reduced;
-  const window = new Element();
-  const context = {
-    document, window, innerWidth:1200, innerHeight:800,
-    matchMedia: () => preference,
-    getComputedStyle: () => ({bottom:'22px'}),
-    setTimeout: (callback,delay) => {const id=++timerId;timers.set(id,{at:now+delay,callback});return id;},
-    clearTimeout: id => timers.delete(id),
-    Math:Object.assign(Object.create(Math),{random:()=>random}),
-    Image:class extends Element { set src(value) {this.url=value;this.emit('load');} get src() {return this.url ?? '';} },
-    require:()=>({papGreeting:'Hello',papTopics:{},getPapAnswer:()=>({text:'FAQ'})}),
-    exports:{}, URL,
-  };
-  const source = fs.readFileSync(new URL('../src/scripts/pap-helper.ts',import.meta.url),'utf8');
-  vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,context);
-  function advance(ms) {
-    const until = now+ms;
-    while(true) {
-      const first = [...timers].sort((a,b)=>a[1].at-b[1].at)[0];
-      if(!first || first[1].at>until) break;
-      timers.delete(first[0]);now=first[1].at;first[1].callback();
-    }
-    now=until;
-  }
-  return {root,nodes,document,preference,frames,advance,timers};
+const exports={};
+vm.runInNewContext(ts.transpileModule(fs.readFileSync(new URL('../src/scripts/pap-motion.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports});
+const {PapMotion}=exports;
+let checks=0;
+function fixture(random=()=>0){
+  let now=0,id=0;const timers=new Map(),frames=[];
+  const clock={set:(fn,delay)=>{timers.set(++id,{at:now+delay,fn});return id;},clear:id=>timers.delete(id),now:()=>now};
+  const motion=new PapMotion((frame,gesture,state)=>frames.push({at:now,frame,gesture,state}),clock,random);
+  function advance(ms){const end=now+ms;let count=0;while(true){const next=[...timers].sort((a,b)=>a[1].at-b[1].at)[0];if(!next||next[1].at>end)break;if(++count>1000)throw Error('Timer loop');now=next[1].at;timers.delete(next[0]);next[1].fn();}now=end;}
+  return {motion,advance,timers,frames};
 }
-let checks = 0;
-function check(test) {test();checks++;}
-check(()=>{const s=setup();s.advance(7100);assert.equal(s.root.dataset.animation,'blink');s.advance(200);assert.ok(s.frames.some(f=>f.sheet==='smooth'&&f.frame==='2'));});
-check(()=>{const s=setup(false,.99);s.advance(17900);assert.equal(s.root.dataset.animation,'curious');});
-check(()=>{const s=setup(false,.79);s.advance(16000);assert.equal(s.root.dataset.animation,'wave');s.advance(2000);assert.ok(s.frames.some(f=>f.sheet==='smooth'&&f.frame==='7'));assert.ok(!s.frames.some(f=>f.sheet==='smooth'&&f.frame==='6'));});
-check(()=>{const s=setup(true);s.advance(60000);assert.equal(s.frames.length,0);assert.equal(s.root.dataset.animation,'idle');});
-check(()=>{const s=setup();s.advance(7100);s.document.hidden=true;s.document.emit('visibilitychange');const count=s.frames.length;s.advance(60000);assert.equal(s.frames.length,count);assert.equal(s.root.dataset.animation,'idle');});
-check(()=>{const s=setup();s.document.hidden=true;s.document.emit('visibilitychange');s.advance(10000);s.document.hidden=false;s.document.emit('visibilitychange');s.advance(7100);assert.equal(s.root.dataset.animation,'blink');});
-check(()=>{const s=setup();s.advance(7100);s.preference.matches=true;s.preference.emit('change');const count=s.frames.length;s.advance(60000);assert.equal(s.frames.length,count);});
-check(()=>{const s=setup();s.nodes.get('.pap-snooze').emit('click');const count=s.frames.length;s.advance(60000);assert.equal(s.frames.length,count);s.nodes.get('.pap-restore').emit('click');s.advance(7100);assert.equal(s.root.dataset.animation,'blink');});
-console.log(`PAP motion checks: ${checks} passed (autonomous intervals, actual frames, hidden tab, reduced motion, hide/restore)`);
+function check(fn){fn();checks++;}
+check(()=>{const f=fixture();f.motion.setState('idle');f.advance(11999);assert.equal(f.frames.length,1);f.advance(1);assert.equal(f.frames.at(-1).gesture,'blink');f.advance(220);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture();f.motion.setState('idle');f.advance(12300);f.advance(12000);assert.equal(f.frames.at(-1).gesture,'curious');});
+for(const state of ['typing','dragging','answering'])check(()=>{const f=fixture();f.motion.play('wave');f.motion.setState(state);const count=f.frames.length;f.motion.play('curious');f.advance(120000);assert.equal(f.frames.length,count);assert.equal(f.timers.size,0);assert.equal(f.frames.at(-1).state,state);});
+check(()=>{const f=fixture();f.motion.play('wave');f.advance(300);f.motion.setPaused(true);const count=f.frames.length;f.advance(120000);assert.equal(f.frames.length,count);assert.equal(f.timers.size,0);f.motion.setPaused(false);assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture();f.motion.setQuiet(true);f.motion.play('wave');f.advance(60000);assert.equal(f.frames.at(-1).frame,2);assert.equal(f.timers.size,0);f.motion.setQuiet(false);assert.equal(f.frames.at(-1).frame,0);assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture();f.motion.play('wave');f.advance(1500);assert(!f.frames.some(x=>x.frame===6));assert.equal(f.frames.at(-1).gesture,'idle');});
+check(()=>{const f=fixture();f.motion.play('wave');f.advance(150);f.motion.play('blink');f.advance(300);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture(()=>.999);f.motion.setState('idle');f.advance(120000);const rare=f.frames.filter(x=>x.gesture==='hop');assert(rare.length>=1);assert(rare.length<=2);if(rare.length===2)assert(rare[1].at-rare[0].at>=90000);});
+check(()=>{const f=fixture();f.motion.setState('idle');f.motion.dispose();f.advance(60000);assert.equal(f.timers.size,0);assert.equal(f.frames.length,1);});
+console.log(`PAP behavior checks: ${checks} passed`);
