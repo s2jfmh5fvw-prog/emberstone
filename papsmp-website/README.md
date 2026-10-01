@@ -21,6 +21,10 @@ Der bestehende Cloudflare-Pages-GitHub-Connect übernimmt Build, Vorschau und Pr
 
 `src/data/site.ts` enthält nur bestätigte öffentliche Ziele. Fehlende Ziele bleiben `undefined`; deshalb werden keine toten Discord-, Whitelist-, Server-, Download- oder VIP-Buttons erzeugt.
 
+## Virtueller PAP-Chat
+
+Der PAP-Chatbot durchsucht ausschließlich die bestätigten Website-FAQs und läuft vollständig im Browser. Es gibt keine externe KI-Anbindung, keinen API-Key und keine Übertragung oder Speicherung der Chatnachrichten durch den Chatbot. Bei unbekannten Fragen verweist PAP auf den Discord.
+
 ## Offene Freigaben
 
 Siehe `CONTENT_REQUIRED.md`. Die Produktionsseite kann ausdrücklich markierte Platzhalter enthalten; das ist keine rechtliche Freigabe. Vor dem regulären Betrieb müssen Impressum, Datenschutz, offene Links, Serverdaten und Resource-Pack-Hosting vervollständigt und geprüft werden.

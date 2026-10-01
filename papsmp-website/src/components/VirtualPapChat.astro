@@ -1,0 +1,153 @@
+<div class="pap-chat" data-pap-chat>
+  <section
+    class="pap-chat-panel"
+    id="pap-chat-panel"
+    data-chat-panel
+    role="dialog"
+    aria-labelledby="pap-chat-title"
+    aria-modal="false"
+    hidden
+  >
+    <header class="pap-chat-header">
+      <img src="/emotes/pap-curious.png" alt="" width="40" height="40" />
+      <div>
+        <h2 id="pap-chat-title">PAP</h2>
+        <p>Website-FAQ-Chatbot</p>
+      </div>
+      <button class="pap-chat-close" data-chat-close type="button" aria-label="Chat schließen">×</button>
+    </header>
+
+    <div class="pap-chat-messages" data-chat-messages role="log" aria-live="polite" aria-relevant="additions text">
+      <p class="pap-chat-message pap-chat-message-assistant">
+        Hey! Ich bin PAP. Ich helfe dir mit den Infos auf dieser Website. Frag mich zur Alpha, zu Downloads oder VIP.
+      </p>
+    </div>
+
+    <p class="pap-chat-disclosure">
+      FAQ-Chatbot ohne KI. Deine Nachrichten werden nicht an einen externen Chatdienst gesendet und nicht gespeichert.
+    </p>
+
+    <form class="pap-chat-form" data-chat-form>
+      <label class="pap-chat-sr-only" for="pap-chat-input">Nachricht an PAP</label>
+      <textarea
+        id="pap-chat-input"
+        name="message"
+        data-chat-input
+        rows="1"
+        maxlength="1000"
+        placeholder="Frag PAP …"
+        required
+      ></textarea>
+      <button class="pap-chat-send" data-chat-send type="submit" aria-label="Nachricht senden">
+        <span aria-hidden="true">↑</span>
+      </button>
+    </form>
+    <p class="pap-chat-status" data-chat-status role="status" aria-live="polite"></p>
+  </section>
+
+  <button
+    class="pap-chat-launch"
+    data-chat-toggle
+    type="button"
+    aria-expanded="false"
+    aria-controls="pap-chat-panel"
+  >
+    <img src="/emotes/pap-curious.png" alt="" width="32" height="32" />
+    <span>Frag PAP</span>
+  </button>
+</div>
+
+<script>
+  import { faqs } from '../data/faq';
+  import { site } from '../data/site';
+
+  const faqKeywords = [
+    ['server', 'smp', 'survival', 'peace', 'purge', 'konzept', 'minecraft'],
+    ['zugang', 'alpha', 'discord', 'anmelden', 'beitreten', 'whitelist', 'spieler'],
+    ['java', 'adresse', 'ip', 'serveradresse', 'edition'],
+    ['bedrock', 'geyser', 'crossplay', 'plattform', 'plattformen'],
+    ['resource', 'pack', 'download', 'sha', 'datei'],
+    ['vip', 'shop', 'kit', 'shards', 'kaufen', 'preis', 'kosten'],
+  ];
+  const stopWords = new Set(['aber', 'eine', 'einer', 'eines', 'einem', 'einen', 'gibt', 'habe', 'hast', 'kann', 'kannst', 'mit', 'oder', 'sind', 'was', 'wie', 'zum', 'zur']);
+
+  function normalize(value: string) {
+    return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
+  }
+
+  function findFaqAnswer(query: string) {
+    const normalizedQuery = normalize(query);
+    const terms = normalizedQuery.split(/[^a-z0-9]+/).filter((term) => term.length > 2 && !stopWords.has(term));
+    let bestIndex = -1;
+    let bestScore = 0;
+
+    faqs.forEach(([question, answer], index) => {
+      const normalizedQuestion = normalize(question);
+      const normalizedAnswer = normalize(answer);
+      let score = faqKeywords[index]?.some((keyword) => normalizedQuery.includes(keyword)) ? 2 : 0;
+      for (const term of terms) {
+        if (normalizedQuestion.includes(term)) score += 3;
+        else if (normalizedAnswer.includes(term)) score += 1;
+      }
+      if (score > bestScore) {
+        bestIndex = index;
+        bestScore = score;
+      }
+    });
+
+    if (bestIndex >= 0 && bestScore >= 2) return faqs[bestIndex][1];
+    return `Dazu habe ich keine bestätigte Info auf der Website. Frag am besten auf Discord nach: ${site.links.discord}`;
+  }
+
+  const root = document.querySelector<HTMLElement>('[data-pap-chat]');
+  const toggle = root?.querySelector<HTMLButtonElement>('[data-chat-toggle]');
+  const close = root?.querySelector<HTMLButtonElement>('[data-chat-close]');
+  const panel = root?.querySelector<HTMLElement>('[data-chat-panel]');
+  const form = root?.querySelector<HTMLFormElement>('[data-chat-form]');
+  const input = root?.querySelector<HTMLTextAreaElement>('[data-chat-input]');
+  const send = root?.querySelector<HTMLButtonElement>('[data-chat-send]');
+  const list = root?.querySelector<HTMLElement>('[data-chat-messages]');
+  const status = root?.querySelector<HTMLElement>('[data-chat-status]');
+  function setOpen(open: boolean) {
+    if (!toggle || !panel) return;
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) input?.focus();
+    else toggle.focus();
+  }
+
+  function addMessage(role: 'user' | 'assistant', content: string) {
+    if (!list) return;
+    const message = document.createElement('p');
+    message.className = `pap-chat-message pap-chat-message-${role}`;
+    message.textContent = content;
+    list.append(message);
+    list.scrollTop = list.scrollHeight;
+  }
+
+  toggle?.addEventListener('click', () => setOpen(panel?.hidden ?? true));
+  close?.addEventListener('click', () => setOpen(false));
+
+  input?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+      form?.requestSubmit();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && panel && !panel.hidden) setOpen(false);
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const content = input?.value.trim();
+    if (!content || !input || !send || !status) return;
+
+    input.value = '';
+    addMessage('user', content);
+    addMessage('assistant', findFaqAnswer(content));
+    status.textContent = '';
+    input.focus();
+  });
+</script>
