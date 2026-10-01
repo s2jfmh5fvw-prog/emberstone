@@ -15,7 +15,22 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
 <div class="sticky-nav">
   <div class="site-nav-inner">
     <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-    <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation"><div class="site-nav-links"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}>{label}</a>)}</div></div></nav>
+    <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation">
+      <div class="site-nav-links">
+        <div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}><span class="site-nav-link-text">{label}</span></a>)}</div>
+        <div class="site-nav-footer">
+          <p class="site-nav-footer-tagline">Peace &amp; Purge · Minecraft-Survival in der Alpha</p>
+          <div class="site-nav-footer-links">
+            <a href="/kontakt/"><span class="site-nav-link-text">Kontakt</span></a>
+            <a href="/impressum/"><span class="site-nav-link-text">Impressum</span></a>
+            <a href="/datenschutz/"><span class="site-nav-link-text">Datenschutz</span></a>
+            <a href="#main"><span class="site-nav-link-text">Zurück nach oben ↑</span></a>
+          </div>
+          <SocialLinks footer />
+          <p class="site-nav-footer-credit">Created by <a href="https://www.twitch.tv/yuuh92" target="_blank" rel="noopener noreferrer">yuuh92</a></p>
+        </div>
+      </div>
+    </nav>
   </div>
 </div>
 <SocialLinks />
@@ -28,14 +43,26 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
       #site-nav {
         display: block !important;
         position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
         padding: 0 !important;
         border: 0 !important;
         background: transparent !important;
         box-shadow: none !important;
+        transform: none !important;
+        visibility: visible !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
       }
       .site-nav-links {
         display: flex !important;
         flex-direction: column !important;
+      }
+      .site-nav-footer {
+        display: grid !important;
       }
     }
   </style>
@@ -45,17 +72,25 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
   const setupDocument = document as Document & { __papHeaderController?: AbortController };
   const header = document.querySelector('.site-header') as HTMLElement | null;
   const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null; const nav = document.querySelector('#site-nav') as HTMLElement | null;
+  const stickyNav = document.querySelector('.sticky-nav') as HTMLElement | null;
+  const scrollCollapsePoint = 96;
   const isMobileMenu = () => window.innerWidth <= 800;
   const syncNavState = (currentToggle = toggle, currentNav = nav) => {
     if (!currentNav) return;
     const open = currentToggle?.getAttribute('aria-expanded') === 'true';
-    if (!isMobileMenu()) {
-      currentNav.removeAttribute('aria-hidden');
-      return;
-    }
-    currentNav.setAttribute('aria-hidden', String(!open));
+    const collapsed = isMobileMenu() || window.scrollY > scrollCollapsePoint;
+    const hidden = collapsed && !open;
+    currentNav.setAttribute('aria-hidden', String(hidden));
+    currentNav.inert = hidden;
   };
   const close = () => { if (!toggle || !nav) return; toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Menü öffnen'); nav.classList.remove('is-open'); syncNavState(); };
+  const syncScrollState = () => {
+    const scrolled = window.scrollY > scrollCollapsePoint;
+    if (scrolled && toggle?.getAttribute('aria-expanded') === 'true') close();
+    stickyNav?.classList.toggle('is-scrolled', scrolled);
+    if (!isMobileMenu() && !scrolled && toggle?.getAttribute('aria-expanded') === 'true') close();
+    syncNavState();
+  };
   if (header && nav && toggle && header.dataset.bound !== 'true') {
     setupDocument.__papHeaderController?.abort();
     const controller = new AbortController();
@@ -64,6 +99,7 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
     header.dataset.bound = 'true';
     toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav.classList.toggle('is-open', open); syncNavState(); }, { signal });
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close, { signal }));
+    window.addEventListener('scroll', syncScrollState, { passive: true, signal });
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape' || !isMobileMenu()) return;
       const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
@@ -84,8 +120,8 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
         activeToggle?.setAttribute('aria-label', 'Menü öffnen');
         activeNav?.classList.remove('is-open');
       }
-      syncNavState(activeToggle, activeNav);
+      syncScrollState();
     }, { signal });
   }
-  syncNavState();
+  syncScrollState();
 </script>
