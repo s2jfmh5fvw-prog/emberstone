@@ -12,19 +12,19 @@
       <img src="/emotes/pap-curious.png" alt="" width="40" height="40" />
       <div>
         <h2 id="pap-chat-title">PAP</h2>
-        <p>Virtueller Website-Assistent</p>
+        <p>Website-FAQ-Chatbot</p>
       </div>
       <button class="pap-chat-close" data-chat-close type="button" aria-label="Chat schließen">×</button>
     </header>
 
     <div class="pap-chat-messages" data-chat-messages role="log" aria-live="polite" aria-relevant="additions text">
       <p class="pap-chat-message pap-chat-message-assistant">
-        Hey! Ich bin PAP, der virtuelle Website-Assistent. Frag mich zum Server, zur Alpha oder zu den Angeboten.
+        Hey! Ich bin PAP. Ich helfe dir mit den Infos auf dieser Website. Frag mich zur Alpha, zu Downloads oder VIP.
       </p>
     </div>
 
     <p class="pap-chat-disclosure">
-      KI-Chat: Deine Nachricht wird zur Antwortgenerierung an OpenAI übertragen. Bitte keine persönlichen Daten senden.
+      FAQ-Chatbot ohne KI. Deine Nachrichten werden nicht an einen externen Chatdienst gesendet und nicht gespeichert.
     </p>
 
     <form class="pap-chat-form" data-chat-form>
@@ -58,7 +58,46 @@
 </div>
 
 <script>
-  type ChatMessage = { role: 'user' | 'assistant'; content: string };
+  import { faqs } from '../data/faq';
+  import { site } from '../data/site';
+
+  const faqKeywords = [
+    ['server', 'smp', 'survival', 'peace', 'purge', 'konzept', 'minecraft'],
+    ['zugang', 'alpha', 'discord', 'anmelden', 'beitreten', 'whitelist', 'spieler'],
+    ['java', 'adresse', 'ip', 'serveradresse', 'edition'],
+    ['bedrock', 'geyser', 'crossplay', 'plattform', 'plattformen'],
+    ['resource', 'pack', 'download', 'sha', 'datei'],
+    ['vip', 'shop', 'kit', 'shards', 'kaufen', 'preis', 'kosten'],
+  ];
+  const stopWords = new Set(['aber', 'eine', 'einer', 'eines', 'einem', 'einen', 'gibt', 'habe', 'hast', 'kann', 'kannst', 'mit', 'oder', 'sind', 'was', 'wie', 'zum', 'zur']);
+
+  function normalize(value: string) {
+    return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
+  }
+
+  function findFaqAnswer(query: string) {
+    const normalizedQuery = normalize(query);
+    const terms = normalizedQuery.split(/[^a-z0-9]+/).filter((term) => term.length > 2 && !stopWords.has(term));
+    let bestIndex = -1;
+    let bestScore = 0;
+
+    faqs.forEach(([question, answer], index) => {
+      const normalizedQuestion = normalize(question);
+      const normalizedAnswer = normalize(answer);
+      let score = faqKeywords[index]?.some((keyword) => normalizedQuery.includes(keyword)) ? 2 : 0;
+      for (const term of terms) {
+        if (normalizedQuestion.includes(term)) score += 3;
+        else if (normalizedAnswer.includes(term)) score += 1;
+      }
+      if (score > bestScore) {
+        bestIndex = index;
+        bestScore = score;
+      }
+    });
+
+    if (bestIndex >= 0 && bestScore >= 2) return faqs[bestIndex][1];
+    return `Dazu habe ich keine bestätigte Info auf der Website. Frag am besten auf Discord nach: ${site.links.discord}`;
+  }
 
   const root = document.querySelector<HTMLElement>('[data-pap-chat]');
   const toggle = root?.querySelector<HTMLButtonElement>('[data-chat-toggle]');
@@ -69,8 +108,6 @@
   const send = root?.querySelector<HTMLButtonElement>('[data-chat-send]');
   const list = root?.querySelector<HTMLElement>('[data-chat-messages]');
   const status = root?.querySelector<HTMLElement>('[data-chat-status]');
-  const history: ChatMessage[] = [];
-
   function setOpen(open: boolean) {
     if (!toggle || !panel) return;
     panel.hidden = !open;
@@ -79,7 +116,7 @@
     else toggle.focus();
   }
 
-  function addMessage(role: ChatMessage['role'], content: string) {
+  function addMessage(role: 'user' | 'assistant', content: string) {
     if (!list) return;
     const message = document.createElement('p');
     message.className = `pap-chat-message pap-chat-message-${role}`;
@@ -91,45 +128,26 @@
   toggle?.addEventListener('click', () => setOpen(panel?.hidden ?? true));
   close?.addEventListener('click', () => setOpen(false));
 
+  input?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+      form?.requestSubmit();
+    }
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && panel && !panel.hidden) setOpen(false);
   });
 
-  form?.addEventListener('submit', async (event) => {
+  form?.addEventListener('submit', (event) => {
     event.preventDefault();
     const content = input?.value.trim();
     if (!content || !input || !send || !status) return;
 
     input.value = '';
-    input.disabled = true;
-    send.disabled = true;
-    status.textContent = 'PAP denkt nach …';
     addMessage('user', content);
-    history.push({ role: 'user', content });
-
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history.slice(-10) }),
-      });
-      const result = await response.json().catch(() => ({})) as { answer?: string; error?: string };
-      if (!response.ok || !result.answer) {
-        throw new Error(result.error || 'PAP ist gerade nicht erreichbar. Versuch es bitte später erneut.');
-      }
-
-      history.push({ role: 'assistant', content: result.answer });
-      addMessage('assistant', result.answer);
-      status.textContent = '';
-    } catch (error) {
-      history.pop();
-      status.textContent = error instanceof Error
-        ? error.message
-        : 'PAP ist gerade nicht erreichbar. Versuch es bitte später erneut.';
-    } finally {
-      input.disabled = false;
-      send.disabled = false;
-      input.focus();
-    }
+    addMessage('assistant', findFaqAnswer(content));
+    status.textContent = '';
+    input.focus();
   });
 </script>
