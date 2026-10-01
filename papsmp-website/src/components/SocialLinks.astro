@@ -1,0 +1,12 @@
+---
+interface Props {
+  footer?: boolean;
+}
+
+const { footer = false } = Astro.props;
+---
+<nav class={footer ? 'social-icons social-icons--footer' : 'social-icons'} aria-label="Social Media">
+  <a class="social-icon social-icon--discord" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M6 4h2v1h2V4h4v1h2V4h2l3 4v8l-4 2-1-2H8l-1 2-4-2V8l3-4Zm2 6h2v2H8v-2Zm6 0h2v2h-2v-2Z" /></svg></a>
+  <a class="social-icon social-icon--youtube" href="https://www.youtube.com/@yuuh1992" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 5h16v2h2v10h-2v2H4v-2H2V7h2V5Zm6 4v6l6-3-6-3Z" /></svg></a>
+  <a class="social-icon social-icon--twitch" href="https://www.twitch.tv/yuuh92" target="_blank" rel="noopener noreferrer" aria-label="Twitch: yuuh92" title="Twitch: yuuh92"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 3h17v12l-5 5h-3v-3H9l-5 4V3Zm5 4h2v5H9V7Zm6 0h2v5h-2V7Z" /></svg></a>
+</nav>
