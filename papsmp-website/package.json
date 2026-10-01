@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "scripts": {"dev": "astro dev", "build": "astro build", "check": "astro check"},
-  "dependencies": {"@astrojs/check": "^0.9.4", "astro": "^5.14.1", "typescript": "^5.9.2"}
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "7.3.5",
+    "typescript": "^5.9.2"
+  }
 }

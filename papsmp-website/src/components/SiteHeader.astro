@@ -65,10 +65,11 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
     toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); nav.classList.toggle('is-open', open); syncNavState(); }, { signal });
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close, { signal }));
     document.addEventListener('keydown', e => {
-      if (e.key !== 'Escape') return;
+      if (e.key !== 'Escape' || !isMobileMenu()) return;
       const activeToggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
       const activeNav = document.querySelector('#site-nav') as HTMLElement | null;
       if (!activeToggle || !activeNav) return;
+      if (activeToggle.getAttribute('aria-expanded') !== 'true') return;
       activeToggle.setAttribute('aria-expanded', 'false');
       activeToggle.setAttribute('aria-label', 'Menü öffnen');
       activeNav.classList.remove('is-open');

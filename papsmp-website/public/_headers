@@ -3,3 +3,10 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/downloads/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/downloads/PAP-SMP-Bedrock-Alpha.mcpack
+  Content-Type: application/zip
+  Content-Disposition: attachment; filename="PAP-SMP-Bedrock-Alpha.mcpack"
