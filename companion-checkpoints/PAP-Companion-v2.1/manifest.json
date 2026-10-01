@@ -1,0 +1,103 @@
+{
+  "version": "2.1",
+  "websiteBaseCommit": "e2454c4b236f7862d55b339a020bff86ecee645a",
+  "previousPreviewCommit": "87f1460b3f0965a8f9c2e93cba971796937d7c41",
+  "branch": "codex/pap-companion-v2",
+  "deployment": "local preview only",
+  "previewCommit": "cd2702b3e2a162197aa6fad282e418c940c2e431",
+  "files": {
+    "papsmp-website/src/components/PapHelper.astro": {
+      "bytes": 4473,
+      "sha256": "63840635dcff578351d55b03615a24515ebd1275771f9f034ae92bf949fb9c84"
+    },
+    "papsmp-website/src/data/pap-helper.ts": {
+      "bytes": 5977,
+      "sha256": "abf9c11e92a20e4b3752124bae9af1a24326f962a001919ac073e13fd1e0cab6"
+    },
+    "papsmp-website/src/scripts/pap-helper.ts": {
+      "bytes": 10868,
+      "sha256": "3267e424f15dde48907adfed5b013049adfa91599311dc2b62b176336bc7b630"
+    },
+    "papsmp-website/src/scripts/pap-motion.ts": {
+      "bytes": 2493,
+      "sha256": "6f653cf8c2dae831c9cfb31daf8e13d86c6295526231d9858bcde6371add763c"
+    },
+    "papsmp-website/src/scripts/pap-position.ts": {
+      "bytes": 2100,
+      "sha256": "72e3b5ae022e3cdd5ef4910c083488a283217038093b13dd47e262e904c5ebb4"
+    },
+    "papsmp-website/src/scripts/pap-renderer.ts": {
+      "bytes": 2663,
+      "sha256": "84e38d7df64f3590cdd929e060e71472cfa49a89ca66b5f407f4ffaea3b47238"
+    },
+    "papsmp-website/src/styles/pap-helper.css": {
+      "bytes": 6707,
+      "sha256": "02ef9a59a897efdb4457c626c766d4a5fadc671c31b12bbb2f774ca52f0d3715"
+    },
+    "papsmp-website/src/assets/chatbot/pap-companion-v2.webp": {
+      "bytes": 311052,
+      "sha256": "c5ce43f63d89b0439eed554d57b37960a563c35eda76e9d4f2e00242fd4c5922"
+    },
+    "papsmp-website/scripts/check-pap-helper.mjs": {
+      "bytes": 2493,
+      "sha256": "eb29dbd68e930524735522ad7b439f352d902de11d5a83ae5318cb59cf5c497c"
+    },
+    "papsmp-website/scripts/check-pap-motion.mjs": {
+      "bytes": 3421,
+      "sha256": "684fada066abc2cf2ebe34dbbce7f850e9a06f9ea5d09105b27d21c815fcd047"
+    },
+    "papsmp-website/scripts/check-pap-position.mjs": {
+      "bytes": 2409,
+      "sha256": "3b0783e19c40a8c0a286c609dcc9cf814c75ca75991c9e1d2727b07a8653c255"
+    },
+    "papsmp-website/scripts/check-pap-renderer.mjs": {
+      "bytes": 2950,
+      "sha256": "42f743c6305c5b8feaa84b1ab490c193149cdfe4a8cdc91d291f10b426600e2c"
+    },
+    "papsmp-website/PAP-COMPANION-V2.md": {
+      "bytes": 5887,
+      "sha256": "1960c1866312fa6d9fea0501ba66452bab2041b47956c20ed471e6a80b03cad2"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-arm.webp": {
+      "bytes": 2842,
+      "sha256": "d85f42ba57eaa45c032bd921db83060f2ab4cd2a94d6dc61698ce697d317194e"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-body.webp": {
+      "bytes": 17238,
+      "sha256": "ebee9ae0e22845300b0582ae47553816d82e1b7feaa648a3a87bfc6d609de9c0"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-ear-left.webp": {
+      "bytes": 3250,
+      "sha256": "6553bbb20b40a4ba6b07f4431806148fad88c0f028c66622b12fadb124070b88"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-ear-right.webp": {
+      "bytes": 4006,
+      "sha256": "ba8eb0ad4da85dd2727baa6241d1eade178d4f027f91847f318db74aa1786538"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-ruff.webp": {
+      "bytes": 1628,
+      "sha256": "d3f0980a45e551122d1469582733b03eeb47add5c36ccec1158e34e8e139634e"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-tail.webp": {
+      "bytes": 7802,
+      "sha256": "592e9241a323da3a04d427d11561633d68b5e90b29696ab53a2d6cc34dc4d82c"
+    },
+    "papsmp-website/src/assets/chatbot/rig/pap-wave-arm.webp": {
+      "bytes": 3022,
+      "sha256": "423ac9fb01412b9f3ae5b321f65bc4a30c3a3a69d432292b6d354239316090af"
+    },
+    "papsmp-website/src/assets/chatbot/rig/rig.json": {
+      "bytes": 590,
+      "sha256": "825a04cdb8ec993e29a531f07f436cd8cbc47fc4ccd8daa48d3ffd74c95df8ca"
+    }
+  },
+  "checks": {
+    "targetedAssertions": 50,
+    "astro": "passed",
+    "build": "passed",
+    "browserErrors": []
+  },
+  "builtScriptBytes": 17049,
+  "artBytes": 350840,
+  "protectedAssetsVerifiedUnchanged": 47
+}
