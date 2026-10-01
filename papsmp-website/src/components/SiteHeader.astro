@@ -15,7 +15,22 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
 <div class="sticky-nav">
   <div class="site-nav-inner">
     <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-    <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation"><div class="site-nav-links"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}><span class="site-nav-link-text">{label}</span></a>)}</div></div></nav>
+    <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation">
+      <div class="site-nav-links">
+        <div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}><span class="site-nav-link-text">{label}</span></a>)}</div>
+        <div class="site-nav-footer">
+          <p class="site-nav-footer-tagline">Peace &amp; Purge · Minecraft-Survival in der Alpha</p>
+          <div class="site-nav-footer-links">
+            <a href="/kontakt/"><span class="site-nav-link-text">Kontakt</span></a>
+            <a href="/impressum/"><span class="site-nav-link-text">Impressum</span></a>
+            <a href="/datenschutz/"><span class="site-nav-link-text">Datenschutz</span></a>
+            <a href="#main"><span class="site-nav-link-text">Zurück nach oben ↑</span></a>
+          </div>
+          <SocialLinks footer />
+          <p class="site-nav-footer-credit">Created by <a href="https://www.twitch.tv/yuuh92" target="_blank" rel="noopener noreferrer">yuuh92</a></p>
+        </div>
+      </div>
+    </nav>
   </div>
 </div>
 <SocialLinks />
@@ -45,6 +60,9 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
       .site-nav-links {
         display: flex !important;
         flex-direction: column !important;
+      }
+      .site-nav-footer {
+        display: grid !important;
       }
     }
   </style>
