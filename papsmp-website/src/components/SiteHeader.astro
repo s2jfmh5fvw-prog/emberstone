@@ -1,4 +1,5 @@
 ---
+import SocialLinks from './SocialLinks.astro';
 const items = [['konzept','Konzept'],['features','Features'],['crossplay','Crossplay'],['alpha','Alpha'],['community','Community'],['faq','FAQ']];
 ---
 <header class="site-header">
@@ -17,7 +18,7 @@ const items = [['konzept','Konzept'],['features','Features'],['crossplay','Cross
     <nav id="site-nav" class="site-navigation" aria-label="Hauptnavigation"><div class="site-nav-links"><div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}>{label}</a>)}</div></div></nav>
   </div>
 </div>
-<div class="social-icons" role="group" aria-label="Social-Media-Links, Verknüpfungen folgen"><span class="social-icon social-icon--discord" role="img" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M6 4h2v1h2V4h4v1h2V4h2l3 4v8l-4 2-1-2H8l-1 2-4-2V8l3-4Zm2 6h2v2H8v-2Zm6 0h2v2h-2v-2Z" /></svg></span><span class="social-icon social-icon--youtube" role="img" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 5h16v2h2v10h-2v2H4v-2H2V7h2V5Zm6 4v6l6-3-6-3Z" /></svg></span><span class="social-icon social-icon--twitch" role="img" aria-label="Twitch"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 3h17v12l-5 5h-3v-3H9l-5 4V3Zm5 4h2v5H9V7Zm6 0h2v5h-2V7Z" /></svg></span></div>
+<SocialLinks />
 <noscript>
   <style>
     @media (max-width: 800px) {
