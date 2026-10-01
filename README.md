@@ -36,7 +36,7 @@ After publishing, confirm the exact commit in Cloudflare's successful production
 
 ## Protected files and remaining releases
 
-The resourcepacks in papsmp-website/public/downloads are READ ONLY for website maintenance. Preserve their bytes, filenames, URLs, displayed checksums and metadata. The existing 3.2.2 filenames intentionally remain stable while the displayed release is 3.2.7 Alpha. Do not rebuild or repackage them.
+The resourcepacks in papsmp-website/public/downloads are READ ONLY for website maintenance. Preserve their bytes, filenames, URLs, displayed checksums and metadata. The existing 3.2.2 filenames intentionally remain stable while the displayed release is 3.2.8 Alpha. Do not rebuild or repackage them during website-only maintenance. The explicitly requested 2026-10-01 resourcepack release added only the three travel-menu assets and mappings, with backups, protected-payload comparisons and updated checksums. Versioned 3.2.8 copies are also available for reproducible server configuration.
 
 Existing PAP artwork and motion assets are retained. Do not overwrite other working copies without comparing their changes first.
 
