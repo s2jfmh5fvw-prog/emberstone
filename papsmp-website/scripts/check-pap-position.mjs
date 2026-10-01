@@ -9,7 +9,7 @@ const root=element(),conversation=element(340),settings=element(210),tip=element
 const position=exports.createPapPosition(root,conversation,settings,tip);
 let checks=0;const check=fn=>{fn();checks++;};
 const number=(e,name)=>parseFloat(e.style[name]);
-const bounds=()=>{assert(number(root,'left')>=viewport.offsetLeft+10);assert(number(root,'top')>=viewport.offsetTop+10);assert(number(root,'left')+108<=viewport.offsetLeft+viewport.width-18);assert(number(root,'top')+108<=viewport.offsetTop+viewport.height-34);assert(number(root,'left')+number(conversation,'left')>=viewport.offsetLeft+10);assert(number(root,'left')+number(conversation,'left')+number(conversation,'width')<=viewport.offsetLeft+viewport.width-10);};
+const bounds=()=>{assert(number(root,'left')>=viewport.offsetLeft+10);assert(number(root,'top')>=viewport.offsetTop+16);assert(number(root,'left')+108<=viewport.offsetLeft+viewport.width-12);assert(number(root,'top')+108<=viewport.offsetTop+viewport.height-34);assert(number(root,'left')+number(conversation,'left')>=viewport.offsetLeft+10);assert(number(root,'left')+number(conversation,'left')+number(conversation,'width')<=viewport.offsetLeft+viewport.width-10);};
 check(()=>{position.fit();bounds();assert.equal(root.dataset.side,'left');});
 check(()=>{viewport.width=320;position.fit();bounds();assert.equal(number(conversation,'width'),300);});
 check(()=>{viewport.height=260;viewport.offsetTop=20;position.fit();bounds();assert.equal(conversation.style['--pap-room'],'106px');assert.equal(number(root,'top')+number(conversation,'top'),30);assert.equal(root.dataset.compact,'true');});
@@ -17,5 +17,5 @@ check(()=>{viewport.height=844;viewport.offsetTop=0;position.fit();assert.equal(
 check(()=>{position.move(-10000,-10000);bounds();assert.equal(root.dataset.side,'right');assert.equal(number(root,'left'),10);});
 check(()=>{position.move(10000,10000);bounds();assert.equal(root.dataset.side,'left');});
 check(()=>{position.move(-80,-80);viewport.width=390;position.fit();bounds();});
-check(()=>{position.reset();assert.equal(number(root,'left'),264);assert.equal(number(root,'top'),702);});
+check(()=>{position.reset();assert.equal(number(root,'left'),270);assert.equal(number(root,'top'),702);});
 console.log(`PAP position checks: ${checks} passed`);

@@ -1,7 +1,7 @@
 import { faqs } from './faq';
 import { site } from './site';
 
-export type PapAnswer = { text: string; topic?: string; copyAddress?: boolean; mood?: 'greeting' | 'speaking' | 'happy' | 'curious'; links?: { label: string; url: string }[] };
+export type PapAnswer = { text: string; topic?: string; copyAddress?: boolean; gesture?:'wave'|'ears'|'tail'; mood?: 'greeting' | 'speaking' | 'happy' | 'curious'; links?: { label: string; url: string }[] };
 export type PapTopic = PapAnswer & { title: string; words: string[] };
 const discord = { label: 'PAP SMP auf Discord', url: site.links.discord };
 const downloads = { label: 'Zu den Resource Packs', url: `${site.canonical}#availability-title` };
@@ -31,6 +31,9 @@ export function getPapAnswer(query: string, topic?: string, jokeNumber = 0, prev
   const normalized = normalizePapQuery(query);
   const fallback: PapAnswer = { text: 'Dazu habe ich keine bestätigte Website-Info. Ich bin ein FAQ-Helfer und kann nur die hinterlegten PAP-Antworten geben. Frag bitte auf dem offiziellen Discord nach.', mood: 'curious', links: [discord] };
   if (/\b(?:api[ -]?(?:schlussel|key)|passwort|geheimnis|token)\b/.test(normalized)) return fallback;
+  if (/\b(winke|winken|winkst)\b/.test(normalized)) return {text:'Eine kleine Pfote für dich. Hallo! 🦊',gesture:'wave'};
+  if (/\b(ohren|ohrchen|lauschen)\b/.test(normalized)) return {text:'Spitze Ohren — ich bin ganz Ohr. 🦊',gesture:'ears'};
+  if (/\b(wedel|wedeln|schwanz|schwanzwedeln)\b/.test(normalized)) return {text:'Ein kleiner Schwanzwedler. So gefällt mir das! 🦊',gesture:'tail'};
   if (/^(wer bist du|was kannst du|bist du (eine? )?(ki|chatgpt)|wie funktionierst du)[?!. ]*$/.test(normalized)) return {text:'Ich bin PAP, dein FAQ-Helfer. Ich kenne die bestätigten Website-Infos, zeige dir passende Links und helfe beim Einstieg. Hier läuft keine externe KI; dein Gespräch bleibt in diesem Fenster.',mood:'greeting'};
   if (topic === 'joke' || /\b(witz|witze|lustig|spass|joke)\b/.test(normalized)) return { text: jokes[jokeNumber % jokes.length], mood: 'happy' };
   if (topic && papTopics[topic]) return {...papTopics[topic],topic};

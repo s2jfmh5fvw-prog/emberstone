@@ -31,4 +31,7 @@ check(()=>assert.equal(answer('wo finde ich das?',undefined,0,'pack').topic,'pac
 check(()=>assert.equal(answer('und wo genau?',undefined,0,'java').copyAddress,true));
 check(()=>assert.match(answer('<script>alert(1)</script>').text,/keine bestätigte/));
 check(()=>assert.equal(answer('Java').copyAddress,true));
+check(()=>assert.equal(answer('Kannst du winken?').gesture,'wave'));
+check(()=>assert.equal(answer('Bewege deine Ohren').gesture,'ears'));
+check(()=>assert.equal(answer('Wedel mit dem Schwanz').gesture,'tail'));
 console.log(`PAP FAQ checks: ${checks} passed`);

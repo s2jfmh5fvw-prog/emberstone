@@ -1,11 +1,13 @@
 export type PapState = 'idle'|'attentive'|'dragging'|'typing'|'answering'|'happy'|'rest';
-export type Gesture = 'blink'|'curious'|'wave'|'hop';
+export type Gesture = 'blink'|'curious'|'wave'|'hop'|'ears'|'tail';
 type Clock = { set:(fn:()=>void,delay:number)=>number; clear:(id:number)=>void; now:()=>number };
 const sequences:Record<Gesture,[number,number][]> = {
   blink:[[1,60],[2,90],[1,60],[0,10]],
   curious:[[12,170],[13,520],[14,180],[15,170],[0,10]],
-  wave:[[4,140],[5,140],[9,140],[8,180],[7,200],[8,140],[9,140],[10,140],[11,140],[0,10]],
+  wave:[[0,1540]],
   hop:[[0,700]],
+  ears:[[0,680]],
+  tail:[[0,1800]],
 };
 export class PapMotion {
   state:PapState='idle';
@@ -35,7 +37,7 @@ export class PapMotion {
     if(this.paused||this.quiet||this.protected())return;
     const slower=this.clock.now()-this.touchedAt>180000?2:1;
     this.after(()=>{
-      const pool:Gesture[]=['blink','blink','blink','curious'];
+      const pool:Gesture[]=['blink','blink','blink','curious','ears','tail'];
       if(this.clock.now()-this.rareAt>90000)pool.push('wave','hop');
       const choices=pool.filter(x=>x!==this.last);
       this.play(choices[Math.floor(this.random()*choices.length)]);

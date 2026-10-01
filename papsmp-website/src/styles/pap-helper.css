@@ -1,16 +1,29 @@
-.pap-companion{--pap-size:144px;--pap-safe-bottom:env(safe-area-inset-bottom,0px);position:fixed;left:0;top:0;width:var(--pap-size);height:var(--pap-size);z-index:950;isolation:isolate;pointer-events:none;color:var(--text);font:400 14px/1.55 'Inter',ui-sans-serif,system-ui,sans-serif}
+.pap-companion{--pap-size:122px;--pap-safe-bottom:env(safe-area-inset-bottom,0px);position:fixed;left:0;top:0;width:var(--pap-size);height:var(--pap-size);z-index:950;isolation:isolate;pointer-events:none;color:var(--text);font:400 14px/1.55 'Inter',ui-sans-serif,system-ui,sans-serif}
 .pap-companion [hidden]{display:none!important}
+.pap-companion[data-menu-open=true] .pap-conversation,.pap-companion[data-menu-open=true] .pap-settings,.pap-companion[data-menu-open=true] .pap-tip{visibility:hidden;pointer-events:none}
 .pap-companion button,.pap-companion input{font:inherit;color:inherit}
-.pap-figure{display:block;width:100%;height:100%;padding:0;border:0;background:none;box-shadow:none;cursor:grab;pointer-events:auto;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent;border-radius:40%}
+.pap-figure{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:none;box-shadow:none;cursor:grab;pointer-events:auto;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent;border-radius:40%}
 .pap-figure:focus-visible{outline:2px dashed var(--focus);outline-offset:2px}
 .pap-companion[data-state=dragging] .pap-figure{cursor:grabbing;touch-action:none}
-.pap-sprite{display:block;width:100%;height:100%;background-image:var(--pap-art);background-size:400% 400%;background-repeat:no-repeat;transform-origin:60% 94%;pointer-events:none}
+.pap-scene,.pap-rig,.pap-layer,.pap-sprite{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
+.pap-scene{transform-origin:60% 94%}
+.pap-layer{object-fit:contain;max-width:none}
+.pap-sprite{background-image:var(--pap-art);background-size:400% 400%;background-repeat:no-repeat;visibility:hidden}
+.pap-companion[data-renderer=sprite] .pap-rig{visibility:hidden}
+.pap-companion[data-renderer=sprite] .pap-sprite{visibility:visible}
+.pap-tail{transform-origin:41.8% 70.7%}
+.pap-ear-left{transform-origin:39.45% 27.34%}
+.pap-ear-right{transform-origin:74.6% 26.17%}
+.pap-arm{transform-origin:71.48% 64.84%}
+.pap-arm-wave{visibility:hidden}
+.pap-shadow{position:absolute;left:25%;top:91%;width:71%;height:10%;border-radius:50%;background:radial-gradient(ellipse,#07030bc9 0%,#0d071655 45%,transparent 74%);filter:blur(2px);pointer-events:none}
+.pap-caption{position:absolute;right:7%;top:-9px;color:#e7c99d;font:400 6.5px/1.8 'Press Start 2P',ui-monospace,monospace;letter-spacing:.3px;white-space:nowrap;text-shadow:0 1px 3px #100a16,0 0 5px #100a16;pointer-events:none}
 .pap-conversation{position:absolute;width:340px;display:flex;flex-direction:column;gap:8px;pointer-events:auto;max-height:var(--pap-room,500px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:2px 8px 12px 2px}
-.pap-bubble{background:color-mix(in srgb,var(--surface) 97%,transparent);border:1px solid var(--line);border-radius:19px 19px 6px 19px;box-shadow:0 7px 22px #09070e45}
+.pap-bubble{background:linear-gradient(180deg,rgba(25,18,29,.88),rgba(15,11,18,.88));border:1px solid rgba(243,184,97,.3);border-radius:14px 14px 5px 14px;box-shadow:0 7px 22px #09070e45;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
 .pap-answer{position:relative;padding:16px 18px;order:2}
 .pap-question{order:0}
 .pap-form{order:1}
-.pap-answer:after{content:'';position:absolute;right:20px;bottom:-7px;width:12px;height:12px;background:var(--surface);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
+.pap-answer:after{content:'';position:absolute;right:20px;bottom:-7px;width:12px;height:12px;background:#130e18;border-right:1px solid rgba(243,184,97,.3);border-bottom:1px solid rgba(243,184,97,.3);transform:rotate(45deg)}
 .pap-companion[data-side=right] .pap-answer:after{left:20px;right:auto}
 .pap-current p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .pap-current a,.pap-text-action{display:block;width:fit-content;color:var(--peace);text-decoration:underline;text-underline-offset:3px;margin-top:9px}
@@ -33,8 +46,15 @@
 .pap-intro{display:block;margin-top:12px;color:var(--muted);font-size:11px}
 .pap-settings{position:absolute;width:210px;padding:15px 18px;pointer-events:auto}
 .pap-settings button{display:block;margin:8px 0;font-size:13px}
+.pap-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 5px;margin-top:14px;padding-top:7px;border-top:1px solid #ffffff14}
+.pap-shortcuts button{padding:7px 3px;min-height:30px;border:0;border-bottom:1px solid #ffffff0a;border-radius:0;background:transparent;box-shadow:none;text-align:left;cursor:pointer;color:#e9d3b0;font:400 7px/1.7 'Press Start 2P',ui-monospace,monospace;text-transform:uppercase}
+.pap-shortcuts button span{display:inline-block;transform-origin:left center;transition:transform 180ms ease}
+.pap-shortcuts button:hover,.pap-shortcuts button:focus-visible{background:rgba(243,184,97,.08);color:#ffe0a0}
+.pap-shortcuts button:hover span,.pap-shortcuts button:focus-visible span{transform:translateX(3px) scale(1.06)}
+.pap-shortcuts button:focus-visible{outline:1px solid var(--focus);outline-offset:1px}
+.pap-shortcuts button:disabled{opacity:.45;cursor:wait}
 .pap-tip{position:absolute;width:230px;padding:13px 17px;pointer-events:none;font-size:13px}
 .pap-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(max-width:600px){.pap-companion{--pap-size:108px}.pap-conversation{width:min(340px,calc(100vw - 20px));gap:6px}.pap-answer{padding:13px 15px}.pap-companion{font-size:13px}}
-.pap-companion[data-compact=true]{--pap-size:76px}
-@media(prefers-reduced-motion:reduce){.pap-sprite{animation:none!important;transition:none!important}}
+@media(max-width:600px){.pap-companion{--pap-size:96px}.pap-conversation{width:min(340px,calc(100vw - 20px));gap:6px}.pap-answer{padding:13px 15px}.pap-companion{font-size:13px}.pap-caption{font-size:6px}}
+.pap-companion[data-compact=true]{--pap-size:68px}
+@media(prefers-reduced-motion:reduce){.pap-layer,.pap-scene,.pap-sprite,.pap-shadow{animation:none!important;transition:none!important}.pap-shortcuts button span{transition:none}.pap-shortcuts button:hover span,.pap-shortcuts button:focus-visible span{transform:none}}

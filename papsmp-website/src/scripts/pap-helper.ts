@@ -1,7 +1,8 @@
-import {getPapAnswer,papGreeting,type PapAnswer} from '../data/pap-helper';
+import {getPapAnswer,papGreeting,papTopics,type PapAnswer} from '../data/pap-helper';
 import {site} from '../data/site';
 import {PapMotion} from './pap-motion';
 import {createPapPosition} from './pap-position';
+import {createPapRenderer} from './pap-renderer';
 
 const root=document.querySelector<HTMLElement>('[data-pap-helper]');
 if(root) initPap(root);
@@ -13,20 +14,13 @@ function initPap(root:HTMLElement){
   const settings=select('.pap-settings'),tip=select('.pap-tip'),history=select<HTMLDetailsElement>('.pap-history'),historyLog=select('.pap-history-log');
   const preference=matchMedia('(prefers-reduced-motion: reduce)');
   const position=createPapPosition(root,conversation,settings,tip);
-  let hop:Animation|undefined;
-  const motion=new PapMotion((frame,gesture,state)=>{
-    sprite.dataset.frame=String(frame);sprite.style.backgroundPosition=`${frame%4*100/3}% ${Math.floor(frame/4)*100/3}%`;
-    root.dataset.state=state;
-    if(gesture!==root.dataset.animation){
-      hop?.cancel();root.dataset.animation=gesture;
-      if(gesture==='hop'&&!preference.matches&&!document.hidden) hop=sprite.animate([
-        {transform:'translateY(0) scale(1)'},{transform:'translateY(1px) scale(1.03,.96)',offset:.2},
-        {transform:'translateY(-9px) scale(.99,1.01)',offset:.48},{transform:'translateY(0) scale(1.02,.98)',offset:.78},{transform:'translateY(0) scale(1)'}
-      ],{duration:700,easing:'ease-in-out'});
-    }
-  },{set:(fn,ms)=>window.setTimeout(fn,ms),clear:id=>clearTimeout(id),now:()=>Date.now()});
+  const renderer=createPapRenderer(root,sprite);
+  const motion=new PapMotion(renderer.draw,{set:(fn,ms)=>window.setTimeout(fn,ms),clear:id=>clearTimeout(id),now:()=>Date.now()});
+  const shortcuts=Array.from(root.querySelectorAll<HTMLButtonElement>('.pap-shortcuts button'));
+  const navToggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
   let busy=false,jokeNumber=0,previousTopic:string|undefined,seenIntro=false,replyTimer=0,tipTimer=0,holdTimer=0;
   let tipUsed=false,lastNear=0,suppressClickUntil=0;
+  let lastPause:boolean|undefined;
   const messages:{text:string;user:boolean}[]=[];
   const cleanup=new AbortController(),on={signal:cleanup.signal};
   function dismissTip(){tip.hidden=true;clearTimeout(tipTimer);}
@@ -60,32 +54,34 @@ function initPap(root:HTMLElement){
   }
   function refreshState(){motion.setState(pointer?.dragging?'dragging':motion.resting?'rest':busy?'answering':input.value.trim()?'typing':conversation.hidden?'idle':'attentive');}
   function open(){
+    if(navToggle?.getAttribute('aria-expanded')==='true'){navToggle.click();syncMenu();}
     dismissTip();settings.hidden=true;motion.touch();if(motion.resting)motion.setQuiet(false);
     conversation.hidden=false;figure.setAttribute('aria-expanded','true');figure.setAttribute('aria-label','PAP-Gespräch einklappen');
     if(!seenIntro){const note=document.createElement('small');note.className='pap-intro';note.textContent='FAQ-Helfer; keine externe KI';current.append(note);seenIntro=true;}
     refreshState();position.fit();motion.play('wave');input.focus({preventScroll:true});
   }
   function close(focus=false){conversation.hidden=true;settings.hidden=true;figure.setAttribute('aria-expanded','false');figure.setAttribute('aria-label','PAP ansprechen');refreshState();if(focus)figure.focus({preventScroll:true});}
-  function menu(){dismissTip();settings.hidden=false;position.fit();motion.setState('attentive');select<HTMLButtonElement>('[data-action=clear]').focus({preventScroll:true});}
-  function ask(){
-    const text=input.value.trim().slice(0,500);if(!text||busy)return;
-    busy=true;submit.disabled=true;remember(text,true);question.textContent=text;question.hidden=false;input.value='';dismissTip();motion.touch();refreshState();
+  function menu(){if(navToggle?.getAttribute('aria-expanded')==='true'){navToggle.click();syncMenu();}dismissTip();settings.hidden=false;position.fit();motion.setState('attentive');select<HTMLButtonElement>('[data-action=clear]').focus({preventScroll:true});}
+  function ask(shortcutText?:string,topic?:string){
+    const text=(shortcutText??input.value).trim().slice(0,500);if(!text||busy)return;
+    busy=true;submit.disabled=true;shortcuts.forEach(button=>button.disabled=true);remember(text,true);question.textContent=text;question.hidden=false;if(!shortcutText)input.value='';dismissTip();motion.touch();refreshState();
     renderAnswer({text:'Ich schaue in den PAP-Infos nach …'});
     replyTimer=window.setTimeout(()=>{
-      const answer=getPapAnswer(text,undefined,jokeNumber,previousTopic);
+      const answer=getPapAnswer(text,topic,jokeNumber,previousTopic);
       if(answer.mood==='happy'&&/witz|joke|lustig/i.test(text))jokeNumber++;
-      previousTopic=answer.topic??previousTopic;remember(answer.text);busy=false;submit.disabled=false;renderAnswer(answer);refreshState();
-      if(answer.mood==='happy'){if(!input.value.trim()&&!pointer?.dragging)motion.setState('happy');motion.play('hop');}else if(answer.mood==='curious')motion.play('curious');else motion.play('blink');
+      previousTopic=answer.topic??previousTopic;remember(answer.text);busy=false;submit.disabled=false;shortcuts.forEach(button=>button.disabled=false);renderAnswer(answer);refreshState();
+      if(answer.gesture)motion.play(answer.gesture);else if(answer.mood==='happy'){if(!input.value.trim()&&!pointer?.dragging)motion.setState('happy');motion.play('hop');}else if(answer.mood==='curious')motion.play('curious');else motion.play('blink');
     },preference.matches?0:180);
   }
   select<HTMLFormElement>('.pap-form').addEventListener('submit',event=>{event.preventDefault();ask();},on);
+  shortcuts.forEach(button=>button.addEventListener('click',()=>{const topic=button.dataset.topic!;ask(papTopics[topic].title,topic);},on));
   input.addEventListener('input',()=>{dismissTip();motion.touch();refreshState();},on);
-  figure.addEventListener('click',()=>{if(Date.now()<suppressClickUntil)return;conversation.hidden?open():close();},on);
+  figure.addEventListener('click',()=>{if(Date.now()<suppressClickUntil)return;conversation.hidden||root.dataset.menuOpen==='true'?open():close();},on);
   figure.addEventListener('contextmenu',event=>{event.preventDefault();menu();},on);
   figure.addEventListener('keydown',event=>{if(event.key==='ContextMenu'||event.key==='F10'&&event.shiftKey){event.preventDefault();menu();}},on);
   settings.addEventListener('click',event=>{
     const action=(event.target as HTMLElement).closest<HTMLElement>('[data-action]')?.dataset.action;
-    if(action==='clear'){clearTimeout(replyTimer);busy=false;submit.disabled=false;input.value='';messages.length=0;previousTopic=undefined;question.hidden=true;remember(papGreeting);renderAnswer({text:papGreeting});refreshState();}
+    if(action==='clear'){clearTimeout(replyTimer);busy=false;submit.disabled=false;shortcuts.forEach(button=>button.disabled=false);input.value='';messages.length=0;previousTopic=undefined;question.hidden=true;remember(papGreeting);renderAnswer({text:papGreeting});refreshState();}
     if(action==='position')position.reset();
     if(action==='quiet'){close();dismissTip();motion.setQuiet(true);}
     settings.hidden=true;figure.focus({preventScroll:true});
@@ -110,14 +106,17 @@ function initPap(root:HTMLElement){
   function release(event:PointerEvent){if(!pointer||pointer.id!==event.pointerId)return;clearTimeout(holdTimer);const dragged=pointer.dragging;pointer=undefined;if(dragged){suppressClickUntil=Date.now()+350;refreshState();}if(figure.hasPointerCapture(event.pointerId))figure.releasePointerCapture(event.pointerId);}
   figure.addEventListener('pointerup',release,on);figure.addEventListener('pointercancel',release,on);figure.addEventListener('lostpointercapture',release,on);
   figure.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'&&Date.now()-lastNear>15000&&!pointer){lastNear=Date.now();motion.play('blink');}},on);
-  const pause=()=>motion.setPaused(preference.matches||document.hidden);
+  const pause=()=>{const paused=preference.matches||document.hidden||navToggle?.getAttribute('aria-expanded')==='true';if(paused===lastPause)return;lastPause=paused;motion.setPaused(paused);};
+  const syncMenu=()=>{root.dataset.menuOpen=String(navToggle?.getAttribute('aria-expanded')==='true');pause();};
+  const navObserver=new MutationObserver(syncMenu);
+  if(navToggle)navObserver.observe(navToggle,{attributes:true,attributeFilter:['aria-expanded']});
   preference.addEventListener('change',pause,on);document.addEventListener('visibilitychange',()=>{pause();if(document.hidden)dismissTip();},on);
   window.addEventListener('resize',position.fit,on);visualViewport?.addEventListener('resize',position.fit,on);visualViewport?.addEventListener('scroll',position.fit,on);
   history.addEventListener('toggle',position.fit,on);select('.pap-info').addEventListener('toggle',position.fit,on);
-  remember(papGreeting);renderAnswer({text:papGreeting});position.fit();pause();
+  remember(papGreeting);renderAnswer({text:papGreeting});position.fit();syncMenu();
   tipTimer=window.setTimeout(()=>{
     if(tipUsed||document.hidden||motion.resting||!conversation.hidden||preference.matches||input.value)return;
     tipUsed=true;tip.hidden=false;position.fit();tipTimer=window.setTimeout(dismissTip,7000);
   },20000);
-  document.addEventListener('astro:before-swap',()=>{cleanup.abort();motion.dispose();hop?.cancel();[replyTimer,tipTimer,holdTimer].forEach(clearTimeout);},{once:true});
+  document.addEventListener('astro:before-swap',()=>{cleanup.abort();navObserver.disconnect();motion.dispose();renderer.stop();[replyTimer,tipTimer,holdTimer].forEach(clearTimeout);},{once:true});
 }

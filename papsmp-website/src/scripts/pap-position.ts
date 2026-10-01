@@ -3,8 +3,8 @@ export function createPapPosition(root:HTMLElement,conversation:HTMLElement,sett
   const viewport=()=>({left:visualViewport?.offsetLeft??0,top:visualViewport?.offsetTop??0,width:visualViewport?.width??innerWidth,height:visualViewport?.height??innerHeight});
   function fit(){
     const v=viewport();root.dataset.compact=String(v.height<450);const size=root.offsetWidth;
-    const bottom=Math.max(18,parseFloat(getComputedStyle(root).getPropertyValue('--pap-safe-bottom'))||0);
-    x=v.left+10+ratioX*Math.max(0,v.width-size-28);y=v.top+10+ratioY*Math.max(0,v.height-size-bottom-10);
+    const bottom=Math.max(6,parseFloat(getComputedStyle(root).getPropertyValue('--pap-safe-bottom'))||0);
+    x=v.left+10+ratioX*Math.max(0,v.width-size-22);y=v.top+16+ratioY*Math.max(0,v.height-size-bottom-16);
     root.style.left=`${x}px`;root.style.top=`${y}px`;
     const width=Math.min(340,v.width-20),leftSide=x+size/2>v.left+v.width/2;
     root.dataset.side=leftSide?'left':'right';
@@ -23,8 +23,8 @@ export function createPapPosition(root:HTMLElement,conversation:HTMLElement,sett
     }
   }
   return {fit,move:(dx:number,dy:number)=>{
-    const v=viewport(),size=root.offsetWidth,bottom=Math.max(18,parseFloat(getComputedStyle(root).getPropertyValue('--pap-safe-bottom'))||0);
-    ratioX=Math.max(0,Math.min(1,(x+dx-v.left-10)/Math.max(1,v.width-size-28)));
-    ratioY=Math.max(0,Math.min(1,(y+dy-v.top-10)/Math.max(1,v.height-size-bottom-10)));fit();
+    const v=viewport(),size=root.offsetWidth,bottom=Math.max(6,parseFloat(getComputedStyle(root).getPropertyValue('--pap-safe-bottom'))||0);
+    ratioX=Math.max(0,Math.min(1,(x+dx-v.left-10)/Math.max(1,v.width-size-22)));
+    ratioY=Math.max(0,Math.min(1,(y+dy-v.top-16)/Math.max(1,v.height-size-bottom-16)));fit();
   },reset:()=>{ratioX=ratioY=1;fit();}};
 }
