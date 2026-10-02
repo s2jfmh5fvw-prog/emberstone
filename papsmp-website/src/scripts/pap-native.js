@@ -97,7 +97,7 @@ export class PapCompanion {
   renderStill(){
     if(!this.ready)return;
     const p=poseFor('idle',0);if(this.quiet){p.blink=1;p.ha=1.7;}
-    if(!this.paused||this.reduced||this.quiet||this.dragging){this.lastPose=p;this.render(p);}
+    if(this.renderCount===0||!this.paused||this.reduced||this.quiet||this.dragging){this.lastPose=p;this.render(p);}
     this.canvas.dataset.motion=this.reduced?'reduced':this.quiet?'quiet':this.dragging?'dragging':this.paused?'paused':'animated';
     this.canvas.dataset.lookX=this.look.x.toFixed(3);this.canvas.dataset.lookY=this.look.y.toFixed(3);
     this.setState(this.quiet?'quiet':'idle');
