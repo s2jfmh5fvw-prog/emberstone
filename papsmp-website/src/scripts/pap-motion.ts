@@ -1,14 +1,7 @@
 export type PapState = 'idle'|'attentive'|'dragging'|'typing'|'answering'|'happy'|'rest';
 export type Gesture = 'blink'|'curious'|'wave'|'hop'|'ears'|'tail';
 type Clock = { set:(fn:()=>void,delay:number)=>number; clear:(id:number)=>void; now:()=>number };
-const sequences:Record<Gesture,[number,number][]> = {
-  blink:[[1,60],[2,90],[1,60],[0,10]],
-  curious:[[12,170],[13,520],[14,180],[15,170],[0,10]],
-  wave:[[0,1540]],
-  hop:[[0,700]],
-  ears:[[0,680]],
-  tail:[[0,1800]],
-};
+const durations:Record<Gesture,number>={blink:320,curious:3500,wave:3000,hop:1650,ears:1000,tail:2200};
 export class PapMotion {
   state:PapState='idle';
   private timers:number[]=[];
@@ -29,9 +22,8 @@ export class PapMotion {
   play(action:Gesture){
     if(this.paused||this.quiet||this.protected())return;
     this.cancel();this.last=action;if(action==='wave'||action==='hop')this.rareAt=this.clock.now();
-    const steps=sequences[action];let index=0;
-    const advance=()=>{const step=steps[index++];if(!step){this.draw(0,'idle',this.state);this.schedule();return;}this.draw(step[0],action,this.state);this.after(advance,step[1]);};
-    advance();
+    this.draw(0,action,this.state);
+    this.after(()=>{this.draw(0,'idle',this.state);this.schedule();},durations[action]);
   }
   private schedule(){
     if(this.paused||this.quiet||this.protected())return;

@@ -1,15 +1,8 @@
 ---
-import art from '../assets/chatbot/pap-companion-v2.webp';
-import tail from '../assets/chatbot/rig/pap-tail.webp';
-import earLeft from '../assets/chatbot/rig/pap-ear-left.webp';
-import earRight from '../assets/chatbot/rig/pap-ear-right.webp';
-import body from '../assets/chatbot/rig/pap-body.webp';
-import arm from '../assets/chatbot/rig/pap-arm.webp';
-import waveArm from '../assets/chatbot/rig/pap-wave-arm.webp';
-import ruff from '../assets/chatbot/rig/pap-ruff.webp';
+import poster from '../assets/chatbot/native-v4/pap-poster.png';
 import '../styles/pap-helper.css';
 ---
-<aside class="pap-companion" data-pap-helper data-art={art.src} data-state="idle" data-animation="idle" data-renderer="rig" aria-label="PAP Website-Helfer">
+<aside class="pap-companion" data-pap-helper data-state="idle" data-animation="idle" data-renderer="canvas" aria-label="PAP Website-Helfer">
   <div class="pap-tip pap-bubble" hidden>Brauchst du eine Pfote beim Einstieg?</div>
   <section id="pap-conversation" class="pap-conversation" role="dialog" aria-modal="false" aria-label="Gespräch mit PAP" hidden>
     <p class="pap-question" hidden></p>
@@ -38,21 +31,8 @@ import '../styles/pap-helper.css';
     <button type="button" data-action="quiet">Ruhig werden</button>
   </div>
   <button class="pap-figure" type="button" aria-label="PAP ansprechen" aria-expanded="false" aria-controls="pap-conversation">
-    <span class="pap-shadow" aria-hidden="true"></span>
-    <span class="pap-scene" aria-hidden="true">
-      <span class="pap-sprite" data-frame="0" style={`--pap-art:url("${art.src}")`}></span>
-      <span class="pap-rig">
-        <img class="pap-layer pap-tail" src={tail.src} alt="" width="256" height="256" decoding="async" />
-        <img class="pap-layer pap-ear-left" src={earLeft.src} alt="" width="256" height="256" decoding="async" />
-        <img class="pap-layer pap-ear-right" src={earRight.src} alt="" width="256" height="256" decoding="async" />
-        <img class="pap-layer pap-body" src={body.src} alt="" width="256" height="256" decoding="async" />
-        <span class="pap-layer pap-arm">
-          <img class="pap-layer pap-arm-rest" src={arm.src} alt="" width="256" height="256" decoding="async" />
-          <img class="pap-layer pap-arm-wave" src={waveArm.src} alt="" width="256" height="256" decoding="async" />
-        </span>
-        <img class="pap-layer pap-ruff" src={ruff.src} alt="" width="256" height="256" decoding="async" />
-      </span>
-    </span>
+    <img class="pap-poster" src={poster.src} alt="" width="256" height="256" decoding="async" aria-hidden="true" />
+    <canvas class="pap-canvas" width="320" height="320" aria-hidden="true"></canvas>
     <span class="pap-caption" aria-hidden="true">PAP-BOT</span>
   </button>
   <noscript><a href="https://discord.gg/hxgnJNTp4J">PAP-Hilfe auf Discord</a></noscript>

@@ -14,14 +14,14 @@ function fixture(random=()=>0){
   return {motion,advance,timers,frames};
 }
 function check(fn){fn();checks++;}
-check(()=>{const f=fixture();f.motion.setState('idle');f.advance(11999);assert.equal(f.frames.length,1);f.advance(1);assert.equal(f.frames.at(-1).gesture,'blink');f.advance(220);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
-check(()=>{const f=fixture();f.motion.setState('idle');f.advance(12300);f.advance(12000);assert.equal(f.frames.at(-1).gesture,'curious');});
+check(()=>{const f=fixture();f.motion.setState('idle');f.advance(11999);assert.equal(f.frames.length,1);f.advance(1);assert.equal(f.frames.at(-1).gesture,'blink');f.advance(320);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture();f.motion.setState('idle');f.advance(12400);f.advance(12000);assert.equal(f.frames.at(-1).gesture,'curious');});
 for(const state of ['typing','dragging','answering'])check(()=>{const f=fixture();f.motion.play('wave');f.motion.setState(state);const count=f.frames.length;f.motion.play('curious');f.advance(120000);assert.equal(f.frames.length,count);assert.equal(f.timers.size,0);assert.equal(f.frames.at(-1).state,state);});
 check(()=>{const f=fixture();f.motion.play('wave');f.advance(300);f.motion.setPaused(true);const count=f.frames.length;f.advance(120000);assert.equal(f.frames.length,count);assert.equal(f.timers.size,0);f.motion.setPaused(false);assert.equal(f.timers.size,1);});
 check(()=>{const f=fixture();f.motion.setQuiet(true);f.motion.play('wave');f.advance(60000);assert.equal(f.frames.at(-1).frame,2);assert.equal(f.timers.size,0);f.motion.setQuiet(false);assert.equal(f.frames.at(-1).frame,0);assert.equal(f.timers.size,1);});
-check(()=>{const f=fixture();f.motion.play('wave');f.advance(1550);assert(f.frames.every(x=>x.frame===0));assert.equal(f.frames.at(-1).gesture,'idle');});
-check(()=>{const f=fixture();f.motion.play('wave');f.advance(150);f.motion.play('blink');f.advance(300);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
+check(()=>{const f=fixture();f.motion.play('wave');f.advance(3010);assert(f.frames.every(x=>x.frame===0));assert.equal(f.frames.at(-1).gesture,'idle');});
+check(()=>{const f=fixture();f.motion.play('wave');f.advance(150);f.motion.play('blink');f.advance(330);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);});
 check(()=>{const f=fixture(()=>.999);f.motion.setState('idle');f.advance(120000);const rare=f.frames.filter(x=>x.gesture==='hop');assert(rare.length>=1);assert(rare.length<=2);if(rare.length===2)assert(rare[1].at-rare[0].at>=90000);});
 check(()=>{const f=fixture();f.motion.setState('idle');f.motion.dispose();f.advance(60000);assert.equal(f.timers.size,0);assert.equal(f.frames.length,1);});
-for(const action of ['ears','tail'])check(()=>{const f=fixture();f.motion.play(action);assert.equal(f.frames.at(-1).gesture,action);f.advance(2000);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);f.motion.play(action);f.motion.setState('typing');const count=f.frames.length;f.advance(60000);assert.equal(f.frames.length,count);});
+for(const action of ['ears','tail'])check(()=>{const f=fixture();f.motion.play(action);assert.equal(f.frames.at(-1).gesture,action);f.advance(2300);assert.equal(f.frames.at(-1).gesture,'idle');assert.equal(f.timers.size,1);f.motion.play(action);f.motion.setState('typing');const count=f.frames.length;f.advance(60000);assert.equal(f.frames.length,count);});
 console.log(`PAP behavior checks: ${checks} passed`);

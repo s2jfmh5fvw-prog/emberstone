@@ -1,0 +1,287 @@
+{
+  "wave": [
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "565",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.152",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "570",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.563",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "574",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.966",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "579",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "583",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "588",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "592",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "597",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "601",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "606",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "610",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.911",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "615",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.569",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "619",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.107",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "624",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "628",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "633",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "637",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "642",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "646",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "651",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "655",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "659",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "664",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "668",
+      "rootY": "0.00",
+      "state": "idle"
+    }
+  ],
+  "menuPause": {
+    "first": {
+      "chatHidden": "hidden",
+      "draft": "Meine Frage bleibt stehen",
+      "menu": "true",
+      "motion": "paused",
+      "renderId": "1424"
+    },
+    "second": {
+      "motion": "paused",
+      "renderId": "1424"
+    }
+  },
+  "drag": {
+    "before": {
+      "bottom": 838,
+      "height": 120,
+      "left": 243.1999969482422,
+      "right": 363.1999969482422,
+      "top": 718,
+      "width": 120,
+      "x": 243.1999969482422,
+      "y": 718
+    },
+    "after": {
+      "canvas": {
+        "lift": "0.000",
+        "lookX": "-0.021",
+        "lookY": "-0.003",
+        "motion": "animated",
+        "renderId": "2818",
+        "rootY": "0.00",
+        "state": "idle"
+      },
+      "rect": {
+        "bottom": 798,
+        "height": 120,
+        "left": 123.20000457763672,
+        "right": 243.20000457763672,
+        "top": 678,
+        "width": 120,
+        "x": 123.20000457763672,
+        "y": 678
+      },
+      "state": "idle"
+    }
+  },
+  "quiet": {
+    "first": {
+      "lift": "0.000",
+      "lookX": "0.000",
+      "lookY": "0.000",
+      "motion": "quiet",
+      "renderId": "612",
+      "rootY": "0.00",
+      "state": "quiet"
+    },
+    "second": {
+      "lift": "0.000",
+      "lookX": "0.000",
+      "lookY": "0.000",
+      "motion": "quiet",
+      "renderId": "612",
+      "rootY": "0.00",
+      "state": "quiet"
+    }
+  }
+}

@@ -2,21 +2,21 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
+const source=fs.readFileSync(new URL('../src/scripts/pap-renderer.ts',import.meta.url),'utf8');
 const exports={};
-vm.runInNewContext(ts.transpileModule(fs.readFileSync(new URL('../src/scripts/pap-renderer.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports});
-function fixture(){
-  const animations=[];const nodes=new Map();
-  for(const key of ['.pap-scene','.pap-arm','.pap-tail','.pap-ear-left','.pap-ear-right','.pap-arm-rest','.pap-arm-wave','.pap-shadow'])nodes.set(key,{animate:(frames,options)=>{const animation={key,frames,options,cancelled:false,cancel(){this.cancelled=true;}};animations.push(animation);return animation;}});
-  const root={dataset:{animation:'idle'},querySelector:selector=>nodes.get(selector)},sprite={dataset:{},style:{}};
-  return {renderer:exports.createPapRenderer(root,sprite),root,sprite,animations};
+const code=source.slice(source.indexOf('type NativeRig='));
+vm.runInNewContext(ts.transpileModule(code,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports,console:{error(){}},PapCompanion:class{},manifest:{}});
+function fixture(load=()=>Promise.resolve()){
+  const calls=[];const pet={load,cancelAction:()=>calls.push(['cancel']),setEngaged:x=>calls.push(['engaged',x]),setDragging:x=>calls.push(['dragging',x]),setQuiet:x=>calls.push(['quiet',x]),stop:()=>calls.push(['pause']),resume:()=>calls.push(['resume']),track:(x,y)=>calls.push(['track',x,y]),play:name=>{calls.push(['play',name]);return true;},destroy:()=>calls.push(['destroy'])};
+  const root={dataset:{animation:'idle'}},canvas={};return {renderer:exports.createPapRenderer(root,canvas,()=>pet),root,calls};
 }
-let checks=0;const check=fn=>{fn();checks++;};
-check(()=>{const f=fixture();f.renderer.draw(0,'wave','attentive');assert.equal(f.root.dataset.renderer,'rig');assert.equal(f.animations.length,3);assert.equal(f.animations[0].key,'.pap-arm');assert(f.animations[0].frames.some(x=>x.transform==='rotate(-122deg)'));assert(f.animations.every(x=>x.options.duration===1540));});
-check(()=>{const f=fixture();f.renderer.draw(0,'wave','attentive');const rest=f.animations.find(x=>x.key==='.pap-arm-rest'),wave=f.animations.find(x=>x.key==='.pap-arm-wave');assert.equal(rest.frames[2].visibility,'hidden');assert.equal(wave.frames[2].visibility,'visible');assert.equal(rest.frames[2].offset,wave.frames[2].offset);assert(![...rest.frames,...wave.frames].some(x=>'opacity' in x));});
-check(()=>{const f=fixture();f.renderer.draw(0,'tail','idle');assert.equal(f.animations.length,1);assert.equal(f.animations[0].key,'.pap-tail');assert.equal(f.animations[0].options.duration,1800);});
-check(()=>{const f=fixture();f.renderer.draw(0,'ears','idle');assert.deepEqual(f.animations.map(x=>x.key),['.pap-ear-left','.pap-ear-right']);assert(f.animations.every(x=>x.options.duration===680));});
-check(()=>{const f=fixture();f.renderer.draw(0,'wave','attentive');f.renderer.draw(0,'idle','typing');assert(f.animations.every(x=>x.cancelled));assert.equal(f.root.dataset.animation,'idle');});
-check(()=>{const f=fixture();f.renderer.draw(2,'idle','rest');assert.equal(f.root.dataset.renderer,'sprite');assert.equal(f.sprite.dataset.frame,'2');assert.equal(f.animations.length,0);});
-check(()=>{const f=fixture();f.renderer.draw(13,'curious','attentive');assert.equal(f.root.dataset.renderer,'sprite');f.renderer.draw(0,'idle','idle');assert.equal(f.root.dataset.renderer,'rig');});
-check(()=>{const f=fixture();f.renderer.draw(0,'tail','idle');f.renderer.draw(0,'tail','idle');assert.equal(f.animations.length,1);f.renderer.stop();assert(f.animations.every(x=>x.cancelled));});
-console.log(`PAP renderer checks: ${checks} passed`);
+let checks=0;const check=async fn=>{await fn();checks++;};
+await check(async()=>{const f=fixture();await f.renderer.ready;assert.equal(f.root.dataset.ready,'true');f.renderer.draw(0,'wave','attentive');f.renderer.draw(0,'wave','attentive');assert.equal(f.calls.filter(x=>x[0]==='play').length,1);assert.equal(f.calls.find(x=>x[0]==='play')[1],'greeting');});
+await check(()=>{const f=fixture();f.renderer.draw(0,'hop','happy');f.renderer.draw(0,'idle','typing');assert.deepEqual(f.calls.at(-1),['cancel']);assert(f.calls.some(x=>x[0]==='engaged'&&x[1]));assert.equal(f.root.dataset.state,'typing');});
+await check(()=>{const f=fixture();f.renderer.draw(0,'wave','dragging');assert(f.calls.some(x=>x[0]==='dragging'&&x[1]));assert(!f.calls.some(x=>x[0]==='play'));f.renderer.draw(0,'idle','idle');assert(f.calls.some(x=>x[0]==='dragging'&&!x[1]));});
+await check(()=>{const f=fixture();f.renderer.setPaused(true);f.renderer.setPaused(true);f.renderer.draw(0,'tail','idle');assert.equal(f.calls.filter(x=>x[0]==='pause').length,1);assert(!f.calls.some(x=>x[0]==='play'));f.renderer.setPaused(false);assert.deepEqual(f.calls.at(-1),['resume']);});
+await check(()=>{const f=fixture();f.renderer.draw(2,'ears','rest');assert(f.calls.some(x=>x[0]==='quiet'&&x[1]));assert(!f.calls.some(x=>x[0]==='play'));f.renderer.draw(0,'idle','attentive');assert(f.calls.some(x=>x[0]==='quiet'&&!x[1]));});
+await check(()=>{const f=fixture();f.renderer.track(123,321);assert.deepEqual(f.calls.at(-1),['track',123,321]);for(const action of ['ears','tail','blink','curious','hop']){f.renderer.draw(0,action,'idle');assert.deepEqual(f.calls.at(-1),['play',action]);}});
+await check(async()=>{let finish;const f=fixture(()=>new Promise(resolve=>{finish=resolve;}));f.renderer.stop();finish();await f.renderer.ready;assert.equal(f.root.dataset.ready,undefined);assert(f.calls.some(x=>x[0]==='destroy'));});
+await check(async()=>{const f=fixture(()=>Promise.reject(Error('missing layer')));await f.renderer.ready;assert.equal(f.root.dataset.ready,'false');assert.equal(f.root.dataset.renderError,'true');assert(f.calls.some(x=>x[0]==='destroy'));});
+console.log(`PAP renderer lifecycle checks: ${checks} passed`);

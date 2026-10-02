@@ -8,13 +8,13 @@ const root=document.querySelector<HTMLElement>('[data-pap-helper]');
 if(root) initPap(root);
 function initPap(root:HTMLElement){
   const select=<T extends HTMLElement=HTMLElement>(selector:string)=>root.querySelector<T>(selector)!;
-  const figure=select<HTMLButtonElement>('.pap-figure'),sprite=select('.pap-sprite');
+  const figure=select<HTMLButtonElement>('.pap-figure'),canvas=select<HTMLCanvasElement>('.pap-canvas');
   const conversation=select('.pap-conversation'),current=select('.pap-current'),question=select('.pap-question');
   const input=select<HTMLInputElement>('.pap-input'),submit=select<HTMLButtonElement>('.pap-submit');
   const settings=select('.pap-settings'),tip=select('.pap-tip'),history=select<HTMLDetailsElement>('.pap-history'),historyLog=select('.pap-history-log');
   const preference=matchMedia('(prefers-reduced-motion: reduce)');
   const position=createPapPosition(root,conversation,settings,tip);
-  const renderer=createPapRenderer(root,sprite);
+  const renderer=createPapRenderer(root,canvas);
   const motion=new PapMotion(renderer.draw,{set:(fn,ms)=>window.setTimeout(fn,ms),clear:id=>clearTimeout(id),now:()=>Date.now()});
   const shortcuts=Array.from(root.querySelectorAll<HTMLButtonElement>('.pap-shortcuts button'));
   const navToggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
@@ -106,7 +106,8 @@ function initPap(root:HTMLElement){
   function release(event:PointerEvent){if(!pointer||pointer.id!==event.pointerId)return;clearTimeout(holdTimer);const dragged=pointer.dragging;pointer=undefined;if(dragged){suppressClickUntil=Date.now()+350;refreshState();}if(figure.hasPointerCapture(event.pointerId))figure.releasePointerCapture(event.pointerId);}
   figure.addEventListener('pointerup',release,on);figure.addEventListener('pointercancel',release,on);figure.addEventListener('lostpointercapture',release,on);
   figure.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'&&Date.now()-lastNear>15000&&!pointer){lastNear=Date.now();motion.play('blink');}},on);
-  const pause=()=>{const paused=preference.matches||document.hidden||navToggle?.getAttribute('aria-expanded')==='true';if(paused===lastPause)return;lastPause=paused;motion.setPaused(paused);};
+  document.addEventListener('pointermove',event=>{if(event.pointerType==='mouse')renderer.track(event.clientX,event.clientY);},on);
+  const pause=()=>{const paused=preference.matches||document.hidden||navToggle?.getAttribute('aria-expanded')==='true';if(paused===lastPause)return;lastPause=paused;renderer.setPaused(paused);motion.setPaused(paused);};
   const syncMenu=()=>{root.dataset.menuOpen=String(navToggle?.getAttribute('aria-expanded')==='true');pause();};
   const navObserver=new MutationObserver(syncMenu);
   if(navToggle)navObserver.observe(navToggle,{attributes:true,attributeFilter:['aria-expanded']});
