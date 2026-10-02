@@ -151,4 +151,3 @@ export class PapCompanion {
   }
   destroy(){this.destroyed=true;this.suspend();document.removeEventListener('visibilitychange',this.onHidden);this.motion.removeEventListener('change',this.onReduced);this.images={};}
 }
-

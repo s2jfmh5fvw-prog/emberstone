@@ -24,4 +24,3 @@ assert.ok(land.rootY===0&&land.dip>=7,'Landing must compress on the ground');
 assert.notEqual(flight.earL,flight.earR,'Ears should have different follow-through');
 assert.ok(poseFor('greeting',1.2).lift>.99,'Greeting must actually lift the arm');
 console.log(JSON.stringify({poseSamples:samples,states:Object.keys(durations).length,checks:['groundedWrist','plantedFootPlane','tailRoot','finitePoses','neutralSeams','anticipation','flight','landing','earFollowThrough','raisedGreeting'],passed:true}));
-
