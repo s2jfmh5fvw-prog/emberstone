@@ -1,0 +1,33 @@
+{
+  "encodedStates": [
+    {
+      "state": "idle",
+      "frames": 144,
+      "alphaVerified": true
+    },
+    {
+      "state": "greeting",
+      "frames": 72,
+      "alphaVerified": true
+    },
+    {
+      "state": "curious",
+      "frames": 84,
+      "alphaVerified": true
+    },
+    {
+      "state": "thinking",
+      "frames": 72,
+      "alphaVerified": true
+    },
+    {
+      "state": "answer",
+      "frames": 72,
+      "alphaVerified": true
+    }
+  ],
+  "apngFrames": 72,
+  "publicAssetsUnchanged": 47,
+  "websiteSourceChanged": false,
+  "sourceHashesUnchanged": true
+}

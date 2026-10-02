@@ -1,0 +1,64 @@
+{
+  "version": "3.0-preview",
+  "kind": "local-2d-skeletal-animation",
+  "fps": 24,
+  "frameSize": [
+    288,
+    288
+  ],
+  "columns": 8,
+  "transparent": true,
+  "shadow": "separate in viewer only",
+  "states": {
+    "idle": {
+      "atlas": "pap-idle-atlas.webp",
+      "animated": "pap-idle.webp",
+      "frames": 144,
+      "durationMs": 6000,
+      "loop": true,
+      "bytes": 2500400
+    },
+    "greeting": {
+      "atlas": "pap-greeting-atlas.webp",
+      "animated": "pap-greeting.webp",
+      "frames": 72,
+      "durationMs": 3000,
+      "loop": false,
+      "bytes": 1378942
+    },
+    "curious": {
+      "atlas": "pap-curious-atlas.webp",
+      "animated": "pap-curious.webp",
+      "frames": 84,
+      "durationMs": 3500,
+      "loop": false,
+      "bytes": 1528266
+    },
+    "thinking": {
+      "atlas": "pap-thinking-atlas.webp",
+      "animated": "pap-thinking.webp",
+      "frames": 72,
+      "durationMs": 3000,
+      "loop": false,
+      "bytes": 1275864
+    },
+    "answer": {
+      "atlas": "pap-answer-atlas.webp",
+      "animated": "pap-answer.webp",
+      "frames": 72,
+      "durationMs": 3000,
+      "loop": false,
+      "bytes": 1277142
+    }
+  },
+  "sourceHashes": {
+    "pap-companion-v2.webp": "c5ce43f63d89b0439eed554d57b37960a563c35eda76e9d4f2e00242fd4c5922",
+    "pap-arm.webp": "d85f42ba57eaa45c032bd921db83060f2ab4cd2a94d6dc61698ce697d317194e",
+    "pap-body.webp": "ebee9ae0e22845300b0582ae47553816d82e1b7feaa648a3a87bfc6d609de9c0",
+    "pap-ear-left.webp": "6553bbb20b40a4ba6b07f4431806148fad88c0f028c66622b12fadb124070b88",
+    "pap-ear-right.webp": "ba8eb0ad4da85dd2727baa6241d1eade178d4f027f91847f318db74aa1786538",
+    "pap-ruff.webp": "d3f0980a45e551122d1469582733b03eeb47add5c36ccec1158e34e8e139634e",
+    "pap-tail.webp": "592e9241a323da3a04d427d11561633d68b5e90b29696ab53a2d6cc34dc4d82c",
+    "pap-wave-arm.webp": "423ac9fb01412b9f3ae5b321f65bc4a30c3a3a69d432292b6d354239316090af"
+  }
+}

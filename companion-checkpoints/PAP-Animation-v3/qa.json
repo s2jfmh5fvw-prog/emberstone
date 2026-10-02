@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "state": "idle",
+      "frames": 144,
+      "distinctFrames": 143,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeamMaxDifference": 0
+    },
+    {
+      "state": "greeting",
+      "frames": 72,
+      "distinctFrames": 71,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeamMaxDifference": 0
+    },
+    {
+      "state": "curious",
+      "frames": 84,
+      "distinctFrames": 83,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeamMaxDifference": 0
+    },
+    {
+      "state": "thinking",
+      "frames": 72,
+      "distinctFrames": 71,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeamMaxDifference": 0
+    },
+    {
+      "state": "answer",
+      "frames": 72,
+      "distinctFrames": 71,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeamMaxDifference": 0
+    }
+  ],
+  "demoFrames": 276,
+  "runtimeFees": 0,
+  "renderSize": [
+    512,
+    512
+  ],
+  "exportSize": [
+    288,
+    288
+  ],
+  "note": "Offline rendered 2D joint/mesh poses from existing art. No new 3D or generative video."
+}

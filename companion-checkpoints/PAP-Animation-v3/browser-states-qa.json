@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "label": "Zuhören",
+      "samples": [
+        {
+          "frame": "7",
+          "state": "curious"
+        },
+        {
+          "frame": "11",
+          "state": "curious"
+        },
+        {
+          "frame": "15",
+          "state": "curious"
+        }
+      ]
+    },
+    {
+      "label": "Nachdenken",
+      "samples": [
+        {
+          "frame": "7",
+          "state": "thinking"
+        },
+        {
+          "frame": "11",
+          "state": "thinking"
+        },
+        {
+          "frame": "16",
+          "state": "thinking"
+        }
+      ]
+    },
+    {
+      "label": "Antwort",
+      "samples": [
+        {
+          "frame": "7",
+          "state": "answer"
+        },
+        {
+          "frame": "11",
+          "state": "answer"
+        },
+        {
+          "frame": "15",
+          "state": "answer"
+        }
+      ]
+    }
+  ],
+  "pauseFrames": [
+    "19",
+    "19"
+  ],
+  "errors": []
+}

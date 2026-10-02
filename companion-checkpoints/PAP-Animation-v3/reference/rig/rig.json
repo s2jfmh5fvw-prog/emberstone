@@ -1,0 +1,35 @@
+{
+  "reference": "pap-companion-v2 frame 0 / registered neutral 11",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivots": {
+    "tail": [
+      107,
+      181
+    ],
+    "ear-left": [
+      101,
+      70
+    ],
+    "ear-right": [
+      191,
+      67
+    ],
+    "arm": [
+      183,
+      166
+    ]
+  },
+  "underpainting": "only occluded shoulder/ear joins; floor under raised front paw stays transparent",
+  "bytes": {
+    "tail": 7802,
+    "ear-left": 3250,
+    "ear-right": 4006,
+    "body": 17238,
+    "arm": 2842,
+    "ruff": 1628,
+    "wave-arm": 3022
+  }
+}

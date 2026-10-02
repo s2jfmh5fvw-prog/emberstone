@@ -1,0 +1,146 @@
+[
+  {
+    "at": 1790923454025,
+    "frame": 6,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923454211,
+    "frame": 10,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923454382,
+    "frame": 14,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923454554,
+    "frame": 18,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923454730,
+    "frame": 22,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923454897,
+    "frame": 27,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455075,
+    "frame": 31,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455247,
+    "frame": 35,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455409,
+    "frame": 39,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455572,
+    "frame": 43,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455758,
+    "frame": 47,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923455920,
+    "frame": 51,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456091,
+    "frame": 55,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456257,
+    "frame": 59,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456421,
+    "frame": 63,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456588,
+    "frame": 67,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456752,
+    "frame": 71,
+    "motion": "animated",
+    "state": "greeting"
+  },
+  {
+    "at": 1790923456914,
+    "frame": 3,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457076,
+    "frame": 6,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457247,
+    "frame": 11,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457409,
+    "frame": 15,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457581,
+    "frame": 19,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457745,
+    "frame": 23,
+    "motion": "animated",
+    "state": "idle"
+  },
+  {
+    "at": 1790923457933,
+    "frame": 27,
+    "motion": "animated",
+    "state": "idle"
+  }
+]
