@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>PAP · Lebendige Companion-Vorschau</title>
+<style>
+  :root{color-scheme:dark;background:#17111e;color:#f0e4dd;font-family:system-ui,sans-serif}*{box-sizing:border-box}
+  body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 48% 46%,#302139 0,#19131f 48%,#100d15 100%)}
+  main{max-width:790px;margin:auto;padding:42px 24px 28px}header{text-align:center}.eyebrow{text-transform:uppercase;color:#c0a185;font-size:10px;letter-spacing:.22em}
+  h1{font-size:clamp(28px,5vw,40px);font-weight:650;letter-spacing:-.04em;margin:12px 0}header p{font-size:13px;line-height:1.65;color:#bcaabb;margin:0}
+  .stage{height:350px;position:relative;margin-top:8px;isolation:isolate}
+  .pap{width:172px;height:172px;position:absolute;left:calc(50% - 86px);bottom:-14px;background:transparent;border:0;padding:0;touch-action:none;user-select:none;cursor:grab;outline-offset:-18px}
+  .pap:active{cursor:grabbing}.pap:focus-visible{outline:2px solid #eac488;border-radius:30px}.pap canvas{width:100%;height:100%;pointer-events:none;display:block}
+  .large .pap{width:288px;height:288px;left:calc(50% - 144px);bottom:-30px}
+  .ground{position:absolute;bottom:16px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,#dfad7130,transparent);z-index:-1}
+  .review{margin:30px auto 0;padding-top:20px;border-top:1px solid #f0b97c1c;max-width:580px;text-align:center}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  .actions button{background:transparent;color:#bcabbc;border:0;border-bottom:1px solid transparent;padding:7px 0;font:inherit;font-size:11px;cursor:pointer}
+  .actions button:hover,.actions button[aria-pressed=true]{color:#f0c98f;border-bottom-color:#dca961}.actions button:focus-visible{outline:2px solid #e6ae65;outline-offset:4px}
+  .options{margin-top:14px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;color:#9e8eaa;font-size:11px}.options label{display:flex;align-items:center;gap:5px;cursor:pointer}input{accent-color:#e1b079}
+  .status{font-size:11px;color:#b9a6ba;min-height:18px;margin:13px 0 0}footer{text-align:center;font-size:10px;color:#8e7d94;line-height:1.6;margin-top:24px}
+  @media(max-width:460px){main{padding:28px 16px}.stage{height:320px}.actions{gap:10px}.large .pap{width:250px;height:250px;left:calc(50% - 125px)}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">PAP · Companion v4</div><h1>PAP schaut mit.</h1><p>Bewege den Zeiger, tippe PAP an oder zieh ihn ein Stück.<br>Auch ohne Berührung nimmt er sich kleine lebendige Momente.</p></header>
+<section class="stage" aria-label="Freistehender PAP Companion"><div class="ground" aria-hidden="true"></div><button class="pap" aria-label="PAP begrüßen oder verschieben"><canvas aria-hidden="true"></canvas></button></section>
+<section class="review" aria-label="Bewegungen ausprobieren"><div class="actions"><button data-action="greeting" aria-pressed="false">Winken</button><button data-action="hop" aria-pressed="false">Kleiner Hopser</button><button data-action="curious" aria-pressed="false">Zuhören</button><button data-action="thinking" aria-pressed="false">Nachdenken</button><button data-action="answer" aria-pressed="false">Nicken</button></div>
+<div class="options"><label><input type="checkbox" id="large">Groß ansehen</label><label><input type="checkbox" id="quiet">PAP ruhen lassen</label><label><input type="checkbox" id="pause">Pose pausieren</label></div><p class="status" role="status" aria-live="polite">PAP macht es sich gleich gemütlich …</p></section>
+<footer>Eine eigenständige 2D-Companion-Vorschau.<br>Die Website-Chat-Integration bleibt der nächste Schritt.</footer>
+</main>
+<script type="module">
+import {PapCompanion} from './pap-companion.js';
+const canvas=document.querySelector('canvas'),figure=document.querySelector('.pap'),stage=document.querySelector('.stage'),status=document.querySelector('.status');
+const labels={idle:'PAP ist aufmerksam. Du kannst ihm kurz winken.',greeting:'PAP winkt dir zu.',hop:'Kurz in die Knie, hoch und weich landen.',curious:'PAP hört zu.',thinking:'PAP denkt nach.',answer:'Ein kleines Nicken.',quiet:'PAP ruht.'};
+const buttons=[...document.querySelectorAll('[data-action]')],quiet=document.querySelector('#quiet'),pause=document.querySelector('#pause');
+let pap,drag=null;
+const onState=state=>{status.textContent=labels[state]??labels.idle;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.action===state)));};
+const showError=error=>{console.error(error);status.textContent='PAP konnte nicht geladen werden.';};
+try{
+  const response=await fetch('./rig.json');if(!response.ok)throw new Error('PAP rig missing');
+  pap=await new PapCompanion(canvas,await response.json(),{onState,onError:showError}).load();
+  onState('idle');if(pap.reduced)status.textContent='PAP bleibt gemäß deiner Bewegungseinstellung ruhig.';
+}catch(error){showError(error);}
+document.addEventListener('pointermove',e=>pap?.track(e.clientX,e.clientY),{passive:true});
+buttons.forEach(b=>b.addEventListener('click',()=>{if(!pap?.play(b.dataset.action))status.textContent=pap?.reduced?'PAP bleibt gemäß deiner Bewegungseinstellung ruhig.':'PAP ruht. Zum Ausprobieren Ruhe und Pause ausschalten.';}));
+quiet.addEventListener('change',()=>pap?.setQuiet(quiet.checked));
+pause.addEventListener('change',()=>{pause.checked?pap?.stop():pap?.resume();if(pause.checked)status.textContent='PAP hält diese Pose.';});
+document.querySelector('#large').addEventListener('change',e=>{stage.classList.toggle('large',e.target.checked);figure.style.left='';figure.style.top='';figure.style.bottom='';});
+figure.addEventListener('pointerdown',e=>{
+  if(e.button!==0)return;
+  const r=figure.getBoundingClientRect(),s=stage.getBoundingClientRect();
+  drag={id:e.pointerId,x:e.clientX,y:e.clientY,left:r.left-s.left,top:r.top-s.top,moved:false};
+  figure.setPointerCapture(e.pointerId);
+});
+figure.addEventListener('pointermove',e=>{
+  if(!drag||drag.id!==e.pointerId)return;
+  const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+  if(!drag.moved&&Math.hypot(dx,dy)<6)return;
+  if(!drag.moved){drag.moved=true;pap?.setDragging(true);}
+  const width=figure.offsetWidth,height=figure.offsetHeight;
+  figure.style.left=Math.max(0,Math.min(stage.clientWidth-width,drag.left+dx))+'px';
+  figure.style.top=Math.max(0,Math.min(stage.clientHeight-height+20,drag.top+dy))+'px';figure.style.bottom='auto';
+});
+function finish(e){
+  if(!drag||e.pointerId!==drag.id)return;
+  const moved=drag.moved;drag=null;
+  if(figure.hasPointerCapture(e.pointerId))figure.releasePointerCapture(e.pointerId);
+  if(moved)pap?.setDragging(false);else if(e.type==='pointerup')pap?.play('greeting');
+}
+figure.addEventListener('pointerup',finish);figure.addEventListener('pointercancel',finish);figure.addEventListener('lostpointercapture',finish);
+figure.addEventListener('click',e=>{if(e.detail===0)pap?.play('greeting');});
+window.addEventListener('resize',()=>{if(!figure.style.left||!figure.style.top)return;figure.style.left=Math.max(0,Math.min(stage.clientWidth-figure.offsetWidth,parseFloat(figure.style.left)))+'px';figure.style.top=Math.max(0,Math.min(stage.clientHeight-figure.offsetHeight+20,parseFloat(figure.style.top)))+'px';});
+window.addEventListener('pagehide',()=>pap?.destroy(),{once:true});
+</script>
+</body></html>

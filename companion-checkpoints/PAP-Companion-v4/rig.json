@@ -1,0 +1,394 @@
+{
+  "version": "4.0-preview",
+  "kind": "continuous-2d-rig",
+  "sourceCanvas": [
+    256,
+    256
+  ],
+  "textureCanvas": [
+    512,
+    512
+  ],
+  "outputCanvas": [
+    320,
+    320
+  ],
+  "offset": [
+    32,
+    32
+  ],
+  "targetFps": 30,
+  "layers": {
+    "body": {
+      "file": "assets/pap-body.webp",
+      "bytes": 20954,
+      "sha256": "48ca38cdee3b5cc582f5e6a667f6a1e7042993103fe110b73e76abffc90a55cc",
+      "meshCells": [
+        [
+          64,
+          96,
+          32,
+          32
+        ],
+        [
+          96,
+          96,
+          32,
+          32
+        ],
+        [
+          128,
+          96,
+          32,
+          32
+        ],
+        [
+          160,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          128,
+          32,
+          32
+        ],
+        [
+          96,
+          128,
+          32,
+          32
+        ],
+        [
+          128,
+          128,
+          32,
+          32
+        ],
+        [
+          160,
+          128,
+          32,
+          32
+        ],
+        [
+          192,
+          128,
+          32,
+          32
+        ],
+        [
+          64,
+          160,
+          32,
+          32
+        ],
+        [
+          96,
+          160,
+          32,
+          32
+        ],
+        [
+          128,
+          160,
+          32,
+          32
+        ],
+        [
+          160,
+          160,
+          32,
+          32
+        ],
+        [
+          192,
+          160,
+          32,
+          32
+        ],
+        [
+          224,
+          160,
+          32,
+          32
+        ],
+        [
+          64,
+          192,
+          32,
+          32
+        ],
+        [
+          96,
+          192,
+          32,
+          32
+        ],
+        [
+          128,
+          192,
+          32,
+          32
+        ],
+        [
+          160,
+          192,
+          32,
+          32
+        ],
+        [
+          192,
+          192,
+          32,
+          32
+        ],
+        [
+          224,
+          192,
+          32,
+          32
+        ],
+        [
+          64,
+          224,
+          32,
+          32
+        ],
+        [
+          96,
+          224,
+          32,
+          32
+        ],
+        [
+          128,
+          224,
+          32,
+          32
+        ],
+        [
+          160,
+          224,
+          32,
+          32
+        ],
+        [
+          192,
+          224,
+          32,
+          32
+        ],
+        [
+          224,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    "head": {
+      "file": "assets/pap-head.webp",
+      "bytes": 21236,
+      "sha256": "c02eb33919eb3cb5723f1f301301fa24c2e366f137dc00a5bd81254791a5b619"
+    },
+    "eye-left": {
+      "file": "assets/pap-eye-left.webp",
+      "bytes": 2410,
+      "sha256": "b05c332736c0d27fe23ee55500e51e43f92969f5d3f79b8c6d8dcd3ccffc486b"
+    },
+    "eye-right": {
+      "file": "assets/pap-eye-right.webp",
+      "bytes": 2430,
+      "sha256": "ea91d5e241d27e0528e3cb7b96d5e7342a2fe06c4af2667308b4a5cc93f218e5"
+    },
+    "tail": {
+      "file": "assets/pap-tail.webp",
+      "bytes": 17748,
+      "sha256": "759bbbd42b77ee49627e641bb8f2c4f25e6733f11b42c4292f987b2e5043ce4d",
+      "meshCells": [
+        [
+          64,
+          64,
+          32,
+          32
+        ],
+        [
+          0,
+          96,
+          32,
+          32
+        ],
+        [
+          32,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          96,
+          32,
+          32
+        ],
+        [
+          0,
+          128,
+          32,
+          32
+        ],
+        [
+          32,
+          128,
+          32,
+          32
+        ],
+        [
+          64,
+          128,
+          32,
+          32
+        ],
+        [
+          96,
+          128,
+          32,
+          32
+        ],
+        [
+          0,
+          160,
+          32,
+          32
+        ],
+        [
+          32,
+          160,
+          32,
+          32
+        ],
+        [
+          64,
+          160,
+          32,
+          32
+        ],
+        [
+          96,
+          160,
+          32,
+          32
+        ],
+        [
+          0,
+          192,
+          32,
+          32
+        ],
+        [
+          32,
+          192,
+          32,
+          32
+        ],
+        [
+          64,
+          192,
+          32,
+          32
+        ],
+        [
+          32,
+          224,
+          32,
+          32
+        ],
+        [
+          64,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    "ear-left": {
+      "file": "assets/pap-ear-left.webp",
+      "bytes": 7526,
+      "sha256": "3b9b2c364d5290c50100cf31383079823cf47afe8e17d2e5ff15d885355ecdae"
+    },
+    "ear-right": {
+      "file": "assets/pap-ear-right.webp",
+      "bytes": 9332,
+      "sha256": "393b0dc4a79cebf28b123349caa922e604f779d08632bfe9a27c2cf27d0c77c2"
+    },
+    "upper-arm": {
+      "file": "assets/pap-upper-arm.webp",
+      "bytes": 4396,
+      "sha256": "8697e3645eeec804695044b716faf3981ae1a40a70d51f11b3e7581d90a43008"
+    },
+    "forearm": {
+      "file": "assets/pap-forearm.webp",
+      "bytes": 2624,
+      "sha256": "345eb004bd58c1099c580b30f76935305273aa2427128927232de0e5692bec91"
+    },
+    "hand": {
+      "file": "assets/pap-hand.webp",
+      "bytes": 2434,
+      "sha256": "4065e3d6dd4f4d14f50fbbf2cffb52e2ac6ab5a54ee1e340b58491647924c249"
+    },
+    "palm": {
+      "file": "assets/pap-palm.webp",
+      "bytes": 3646,
+      "sha256": "502beae54fca35c41e719241c8dc6a9999002ce0af2ae87ad94a6be76355f818"
+    },
+    "ruff": {
+      "file": "assets/pap-ruff.webp",
+      "bytes": 4216,
+      "sha256": "360097d9a109f603edfb5111d159b3ef821fcc90e2212455e2474252d28bc9fc",
+      "meshCells": [
+        [
+          128,
+          128,
+          32,
+          32
+        ],
+        [
+          160,
+          128,
+          32,
+          32
+        ],
+        [
+          192,
+          128,
+          32,
+          32
+        ],
+        [
+          160,
+          160,
+          32,
+          32
+        ],
+        [
+          192,
+          160,
+          32,
+          32
+        ]
+      ]
+    }
+  },
+  "sourceHashes": {
+    "pap-companion-v2.webp": "c5ce43f63d89b0439eed554d57b37960a563c35eda76e9d4f2e00242fd4c5922",
+    "pap-arm.webp": "d85f42ba57eaa45c032bd921db83060f2ab4cd2a94d6dc61698ce697d317194e",
+    "pap-body.webp": "ebee9ae0e22845300b0582ae47553816d82e1b7feaa648a3a87bfc6d609de9c0",
+    "pap-ear-left.webp": "6553bbb20b40a4ba6b07f4431806148fad88c0f028c66622b12fadb124070b88",
+    "pap-ear-right.webp": "ba8eb0ad4da85dd2727baa6241d1eade178d4f027f91847f318db74aa1786538",
+    "pap-ruff.webp": "d3f0980a45e551122d1469582733b03eeb47add5c36ccec1158e34e8e139634e",
+    "pap-tail.webp": "592e9241a323da3a04d427d11561633d68b5e90b29696ab53a2d6cc34dc4d82c",
+    "pap-wave-arm.webp": "423ac9fb01412b9f3ae5b321f65bc4a30c3a3a69d432292b6d354239316090af"
+  },
+  "shadowSeparate": true
+}

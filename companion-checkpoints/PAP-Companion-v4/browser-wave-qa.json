@@ -1,0 +1,142 @@
+[
+  {
+    "at": 1790928628356,
+    "lift": "0.011",
+    "lookX": "-0.689",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928628507,
+    "lift": "0.239",
+    "lookX": "-0.710",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928628649,
+    "lift": "0.674",
+    "lookX": "-0.717",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928628799,
+    "lift": "0.967",
+    "lookX": "-0.720",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928628947,
+    "lift": "1.000",
+    "lookX": "-0.720",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629106,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629253,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629405,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629544,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629685,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629836,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928629982,
+    "lift": "1.000",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630130,
+    "lift": "0.910",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630277,
+    "lift": "0.568",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630422,
+    "lift": "0.175",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630563,
+    "lift": "0.005",
+    "lookX": "-0.721",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630705,
+    "lift": "0.000",
+    "lookX": "-0.563",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630841,
+    "lift": "0.000",
+    "lookX": "-0.250",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928630984,
+    "lift": "0.000",
+    "lookX": "-0.094",
+    "rootY": "0.00",
+    "state": "greeting"
+  },
+  {
+    "at": 1790928631125,
+    "lift": "0.000",
+    "lookX": "-0.033",
+    "rootY": "0.00",
+    "state": "idle"
+  }
+]

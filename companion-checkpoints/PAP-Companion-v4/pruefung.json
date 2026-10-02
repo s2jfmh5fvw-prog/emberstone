@@ -1,0 +1,75 @@
+{
+  "layers": 12,
+  "textureBytes": 98952,
+  "alphaExtrema": {
+    "body": [
+      0,
+      255
+    ],
+    "head": [
+      0,
+      255
+    ],
+    "eye-left": [
+      0,
+      254
+    ],
+    "eye-right": [
+      0,
+      254
+    ],
+    "tail": [
+      0,
+      255
+    ],
+    "ear-left": [
+      0,
+      255
+    ],
+    "ear-right": [
+      0,
+      255
+    ],
+    "upper-arm": [
+      0,
+      255
+    ],
+    "forearm": [
+      0,
+      255
+    ],
+    "hand": [
+      0,
+      255
+    ],
+    "palm": [
+      0,
+      255
+    ],
+    "ruff": [
+      0,
+      255
+    ]
+  },
+  "motionChecks": {
+    "poseSamples": 726,
+    "states": 6,
+    "checks": [
+      "groundedWrist",
+      "plantedFootPlane",
+      "tailRoot",
+      "finitePoses",
+      "neutralSeams",
+      "anticipation",
+      "flight",
+      "landing",
+      "earFollowThrough",
+      "raisedGreeting"
+    ],
+    "passed": true
+  },
+  "publicAssetsUnchanged": 47,
+  "websiteSourceUnchanged": true,
+  "sourcesUnchanged": true,
+  "gifDurationMs": 4670
+}

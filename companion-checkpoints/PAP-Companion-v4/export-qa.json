@@ -1,0 +1,20 @@
+{
+  "states": [
+    {
+      "state": "greeting",
+      "frames": 90,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeam": true
+    },
+    {
+      "state": "hop",
+      "frames": 50,
+      "transparent": true,
+      "unclipped": true,
+      "neutralSeam": true
+    }
+  ],
+  "fps": 30,
+  "textureBytes": 98952
+}
