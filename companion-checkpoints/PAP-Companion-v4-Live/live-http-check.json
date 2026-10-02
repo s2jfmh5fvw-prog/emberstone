@@ -1,0 +1,128 @@
+{
+  "domain": "https://papsmp.de",
+  "commit": "aa0504cc2041f28cc558f8d1f67eb63027422dab",
+  "allMatch": true,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 32324,
+      "sha256": "751d0a7f67ff9c88c38bc21082940e908fe5d91fa557a320d3a494880ec73fff",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/BaseLayout.DCfFqGTI.css",
+      "status": 200,
+      "bytes": 56773,
+      "sha256": "1336a574b300df0d1cfbc20a1c2d46ef90471678678040a867928830920cf61b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/PapHelper.astro_astro_type_script_index_0_lang.Cq7zfOgv.js",
+      "status": 200,
+      "bytes": 50312,
+      "sha256": "c46728e8dd0714873ddc842d75f734ea0f90e7b916dd0b27762c65427aa582b4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-body.Cf3pHxoD.webp",
+      "status": 200,
+      "bytes": 20954,
+      "sha256": "48ca38cdee3b5cc582f5e6a667f6a1e7042993103fe110b73e76abffc90a55cc",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-ear-left.DG_rZzJ7.webp",
+      "status": 200,
+      "bytes": 7526,
+      "sha256": "3b9b2c364d5290c50100cf31383079823cf47afe8e17d2e5ff15d885355ecdae",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-ear-right.DDbyN4fX.webp",
+      "status": 200,
+      "bytes": 9332,
+      "sha256": "393b0dc4a79cebf28b123349caa922e604f779d08632bfe9a27c2cf27d0c77c2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-head.LX4oG68F.webp",
+      "status": 200,
+      "bytes": 21236,
+      "sha256": "c02eb33919eb3cb5723f1f301301fa24c2e366f137dc00a5bd81254791a5b619",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-poster.C6Ii5HDi.png",
+      "status": 200,
+      "bytes": 106034,
+      "sha256": "c4a20c3b7164dab163de63f2594b57c4e3c9059d154e4fe6e1db06ba1303f553",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-ruff.DzZK0KS1.webp",
+      "status": 200,
+      "bytes": 4216,
+      "sha256": "360097d9a109f603edfb5111d159b3ef821fcc90e2212455e2474252d28bc9fc",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-tail.D-d9ylsm.webp",
+      "status": 200,
+      "bytes": 17748,
+      "sha256": "759bbbd42b77ee49627e641bb8f2c4f25e6733f11b42c4292f987b2e5043ce4d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/_astro/pap-upper-arm.Dkp-RGkX.webp",
+      "status": 200,
+      "bytes": 4396,
+      "sha256": "8697e3645eeec804695044b716faf3981ae1a40a70d51f11b3e7581d90a43008",
+      "matchesBuild": true
+    },
+    {
+      "path": "/kontakt/",
+      "status": 200,
+      "bytes": 7426,
+      "sha256": "80fbc0d9590a1a62e081ec31d7fb4d36e412be1f272624ae915ea15d8d86be27",
+      "matchesBuild": false,
+      "emailProtectionNormalizedMatch": true
+    },
+    {
+      "path": "/impressum/",
+      "status": 200,
+      "bytes": 6309,
+      "sha256": "e159b995b9c986567d93e038df568d5eddb0459f91016bcdea54ccb709b2a20a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/datenschutz/",
+      "status": 200,
+      "bytes": 7224,
+      "sha256": "867d752f51a6b2406f90f86496524dcdc8d4d57ddb0c692e640bbab7673873c6",
+      "matchesBuild": true
+    },
+    {
+      "path": "/downloads/PAP-SMP-Full-Java-3.2.8-MC-1.21.11.zip",
+      "status": 200,
+      "bytes": 11223968,
+      "sha256": "f0633e05b2e36aa504196cf464d90079998d9040b96104b70565bbd522049e94",
+      "matchesBuild": true
+    },
+    {
+      "path": "/downloads/PAP-SMP-Bedrock-3.2.8-Alpha.mcpack",
+      "status": 200,
+      "bytes": 8851591,
+      "sha256": "d6bffc6c59a8f8aed34c3a049287aab7b7cf4627810de63e59395137e9bf115a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/downloads/PAP-SMP-Geyser-Overlay-3.2.8.zip",
+      "status": 200,
+      "bytes": 8857886,
+      "sha256": "942347992f6aa601a3730be52e01acceaa4427140e7aa7c9966a57c854c321f6",
+      "matchesBuild": true
+    }
+  ],
+  "server": "cloudflare"
+}

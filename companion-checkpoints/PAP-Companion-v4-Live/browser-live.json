@@ -1,0 +1,252 @@
+{
+  "wave": [
+    {
+      "lift": "0.000",
+      "lookX": "-0.001",
+      "lookY": "-0.001",
+      "motion": "animated",
+      "renderId": "2290",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.091",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2295",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.463",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2299",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.928",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2304",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2308",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2312",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2317",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2321",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2325",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2330",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "1.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2334",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.997",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2338",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.755",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2343",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.346",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2347",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.050",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2351",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2355",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2360",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2364",
+      "rootY": "0.00",
+      "state": "greeting"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2369",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2373",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2377",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2381",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2385",
+      "rootY": "0.00",
+      "state": "idle"
+    },
+    {
+      "lift": "0.000",
+      "lookX": "-0.000",
+      "lookY": "-0.000",
+      "motion": "animated",
+      "renderId": "2390",
+      "rootY": "0.00",
+      "state": "idle"
+    }
+  ],
+  "menu": {
+    "first": {
+      "draft": "Mein Entwurf bleibt erhalten",
+      "motion": "paused",
+      "renderId": "817",
+      "z": "82"
+    },
+    "second": {
+      "motion": "paused",
+      "renderId": "817"
+    },
+    "restored": {
+      "draft": "Mein Entwurf bleibt erhalten",
+      "menu": "false",
+      "motion": "animated"
+    }
+  },
+  "mobile": {
+    "answer": "Der Bedrock-/Geyser-Serverzugang wird noch geprüft. Die verfügbaren Bedrock-Dateien sind Resource Packs und bestätigen nicht, dass die Verbindung zum Server bereits möglich ist.\n\nPAP SMP auf Discord\nZu den Resource Packs",
+    "chat": {
+      "bottom": 710.0500183105469,
+      "height": 393.0500183105469,
+      "left": 23.200000762939453,
+      "right": 363.20000076293945,
+      "top": 317,
+      "width": 340,
+      "x": 23.200000762939453,
+      "y": 317
+    },
+    "ready": "true",
+    "shortcuts": 6
+  }
+}
