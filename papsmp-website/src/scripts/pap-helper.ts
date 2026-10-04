@@ -14,7 +14,7 @@ function initPap(root:HTMLElement){
   const settings=select('.pap-settings'),tip=select('.pap-tip'),history=select<HTMLDetailsElement>('.pap-history'),historyLog=select('.pap-history-log');
   const preference=matchMedia('(prefers-reduced-motion: reduce)');
   const position=createPapPosition(root,conversation,settings,tip);
-  const renderer=createPapRenderer(root,canvas);
+  const renderer=createPapRenderer(root,canvas,{move:position.wander,commit:position.commitWander,bounds:position.walkBounds});
   const motion=new PapMotion(renderer.draw,{set:(fn,ms)=>window.setTimeout(fn,ms),clear:id=>clearTimeout(id),now:()=>Date.now()});
   const shortcuts=Array.from(root.querySelectorAll<HTMLButtonElement>('.pap-shortcuts button'));
   const navToggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
@@ -55,10 +55,10 @@ function initPap(root:HTMLElement){
   function refreshState(){motion.setState(pointer?.dragging?'dragging':motion.resting?'rest':busy?'answering':input.value.trim()?'typing':conversation.hidden?'idle':'attentive');}
   function open(){
     if(navToggle?.getAttribute('aria-expanded')==='true'){navToggle.click();syncMenu();}
-    dismissTip();settings.hidden=true;motion.touch();if(motion.resting)motion.setQuiet(false);
+    dismissTip();settings.hidden=true;motion.touch();const wasSleeping=motion.resting;if(wasSleeping)motion.setQuiet(false);
     conversation.hidden=false;figure.setAttribute('aria-expanded','true');figure.setAttribute('aria-label','PAP-Gespräch einklappen');
     if(!seenIntro){const note=document.createElement('small');note.className='pap-intro';note.textContent='FAQ-Helfer; keine externe KI';current.append(note);seenIntro=true;}
-    refreshState();position.fit();motion.play('wave');input.focus({preventScroll:true});
+    refreshState();position.fit();if(!wasSleeping)motion.play('wave');input.focus({preventScroll:true});
   }
   function close(focus=false){conversation.hidden=true;settings.hidden=true;figure.setAttribute('aria-expanded','false');figure.setAttribute('aria-label','PAP ansprechen');refreshState();if(focus)figure.focus({preventScroll:true});}
   function menu(){if(navToggle?.getAttribute('aria-expanded')==='true'){navToggle.click();syncMenu();}dismissTip();settings.hidden=false;position.fit();motion.setState('attentive');select<HTMLButtonElement>('[data-action=clear]').focus({preventScroll:true});}
@@ -82,7 +82,7 @@ function initPap(root:HTMLElement){
   settings.addEventListener('click',event=>{
     const action=(event.target as HTMLElement).closest<HTMLElement>('[data-action]')?.dataset.action;
     if(action==='clear'){clearTimeout(replyTimer);busy=false;submit.disabled=false;shortcuts.forEach(button=>button.disabled=false);input.value='';messages.length=0;previousTopic=undefined;question.hidden=true;remember(papGreeting);renderAnswer({text:papGreeting});refreshState();}
-    if(action==='position')position.reset();
+    if(action==='position'){renderer.resetPosition();position.reset();}
     if(action==='quiet'){close();dismissTip();motion.setQuiet(true);}
     settings.hidden=true;figure.focus({preventScroll:true});
   },on);
@@ -107,7 +107,7 @@ function initPap(root:HTMLElement){
   figure.addEventListener('pointerup',release,on);figure.addEventListener('pointercancel',release,on);figure.addEventListener('lostpointercapture',release,on);
   figure.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'&&Date.now()-lastNear>15000&&!pointer){lastNear=Date.now();motion.play('blink');}},on);
   document.addEventListener('pointermove',event=>{if(event.pointerType==='mouse')renderer.track(event.clientX,event.clientY);},on);
-  const pause=()=>{const paused=preference.matches||document.hidden||navToggle?.getAttribute('aria-expanded')==='true';if(paused===lastPause)return;lastPause=paused;renderer.setPaused(paused);motion.setPaused(paused);};
+  const pause=()=>{renderer.setReduced(preference.matches);const paused=preference.matches||document.hidden||navToggle?.getAttribute('aria-expanded')==='true';if(paused===lastPause)return;lastPause=paused;renderer.setPaused(paused);motion.setPaused(paused);};
   const syncMenu=()=>{root.dataset.menuOpen=String(navToggle?.getAttribute('aria-expanded')==='true');pause();};
   const navObserver=new MutationObserver(syncMenu);
   if(navToggle)navObserver.observe(navToggle,{attributes:true,attributeFilter:['aria-expanded']});

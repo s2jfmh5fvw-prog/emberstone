@@ -50,3 +50,10 @@
 @media(max-width:600px){.pap-companion{--pap-size:120px}.pap-conversation{width:min(340px,calc(100vw - 20px));gap:6px}.pap-answer{padding:13px 15px}.pap-companion{font-size:13px}.pap-caption{font-size:6px}}
 .pap-companion[data-compact=true]{--pap-size:88px}
 @media(prefers-reduced-motion:reduce){.pap-canvas{animation:none!important;transition:none!important}.pap-shortcuts button span{transition:none}.pap-shortcuts button:hover span,.pap-shortcuts button:focus-visible span{transform:none}}
+/* PAP 0.9 uses the original 224:150 body canvas; chat dimensions stay independent. */
+.pap-companion[data-renderer=pet-v09]{--pap-size:202px;height:calc(var(--pap-size)*.669642857 + 22px)}
+[data-renderer=pet-v09] .pap-canvas,[data-renderer=pet-v09] .pap-poster{inset:auto 0 22px;top:auto;width:100%;height:auto;aspect-ratio:224/150;transform:none;image-rendering:pixelated}
+[data-renderer=pet-v09] .pap-ground{position:absolute;bottom:18px;left:19%;width:62%;height:8px;border-radius:50%;background:#07040c66;filter:blur(3px);pointer-events:none}
+[data-renderer=pet-v09] .pap-caption{top:auto;bottom:1px;right:18%;font-size:6px;color:#e7c99d99}
+@media(max-width:600px){.pap-companion[data-renderer=pet-v09]{--pap-size:162px}}
+.pap-companion[data-renderer=pet-v09][data-compact=true]{--pap-size:108px}

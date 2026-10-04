@@ -1,8 +1,8 @@
 ---
-import poster from '../assets/chatbot/native-v4/pap-poster.png';
+import poster from '../assets/chatbot/pet-v09/poster.png';
 import '../styles/pap-helper.css';
 ---
-<aside class="pap-companion" data-pap-helper data-state="idle" data-animation="idle" data-renderer="canvas" aria-label="PAP Website-Helfer">
+<aside class="pap-companion" data-pap-helper data-state="idle" data-animation="idle" data-renderer="pet-v09" aria-label="PAP Website-Helfer">
   <div class="pap-tip pap-bubble" hidden>Brauchst du eine Pfote beim Einstieg?</div>
   <section id="pap-conversation" class="pap-conversation" role="dialog" aria-modal="false" aria-label="Gespräch mit PAP" hidden>
     <p class="pap-question" hidden></p>
@@ -17,7 +17,7 @@ import '../styles/pap-helper.css';
         <button type="button" data-topic="discord" aria-label="Frage zu Discord und Hilfe"><span>Discord</span></button>
       </div>
       <details class="pap-history" hidden><summary>Bisheriges Gespräch</summary><div class="pap-history-log" role="log" aria-label="Gesprächsverlauf"></div></details>
-      <details class="pap-info"><summary>Über PAP</summary><p>FAQ-Helfer; keine externe KI. Nachrichten bleiben nur hier und verschwinden beim Neuladen. Rechtsklick oder langes Halten auf PAP öffnet seine Einstellungen. Für kleine Gesten: „Winke“, „Bewege deine Ohren“ oder „Wedel mit dem Schwanz“.</p></details>
+      <details class="pap-info"><summary>Über PAP</summary><p>FAQ-Helfer; keine externe KI. Nachrichten bleiben nur hier und verschwinden beim Neuladen. PAP läuft gelegentlich ein Stück und schläft nach längerer Ruhe. Anklicken weckt ihn. Rechtsklick oder langes Halten öffnet seine Einstellungen. Für eine kleine Reaktion: „Hallo“, „Danke“ oder „Erzähl einen Witz“.</p></details>
     </div>
     <form class="pap-form pap-bubble">
       <label class="pap-sr-only" for="pap-question-input">Deine Frage an PAP</label>
@@ -28,11 +28,12 @@ import '../styles/pap-helper.css';
   <div class="pap-settings pap-bubble" aria-label="PAP-Einstellungen" hidden>
     <button type="button" data-action="clear">Gespräch leeren</button>
     <button type="button" data-action="position">Position zurücksetzen</button>
-    <button type="button" data-action="quiet">Ruhig werden</button>
+    <button type="button" data-action="quiet">Schlafpause</button>
   </div>
   <button class="pap-figure" type="button" aria-label="PAP ansprechen" aria-expanded="false" aria-controls="pap-conversation">
-    <img class="pap-poster" src={poster.src} alt="" width="256" height="256" decoding="async" aria-hidden="true" />
-    <canvas class="pap-canvas" width="320" height="320" aria-hidden="true"></canvas>
+    <span class="pap-ground" aria-hidden="true"></span>
+    <img class="pap-poster" src={poster.src} alt="" width="224" height="150" decoding="async" aria-hidden="true" />
+    <canvas class="pap-canvas" width="224" height="150" aria-hidden="true"></canvas>
     <span class="pap-caption" aria-hidden="true">PAP-BOT</span>
   </button>
   <noscript><a href="https://discord.gg/hxgnJNTp4J">PAP-Hilfe auf Discord</a></noscript>

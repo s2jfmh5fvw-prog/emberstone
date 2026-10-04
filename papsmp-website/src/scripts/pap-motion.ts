@@ -1,7 +1,7 @@
 export type PapState = 'idle'|'attentive'|'dragging'|'typing'|'answering'|'happy'|'rest';
-export type Gesture = 'blink'|'curious'|'wave'|'hop'|'ears'|'tail';
+export type Gesture = 'blink'|'curious'|'wave'|'hop'|'ears'|'tail'|'walk'|'yawn'|'stretch'|'leaf'|'firefly';
 type Clock = { set:(fn:()=>void,delay:number)=>number; clear:(id:number)=>void; now:()=>number };
-const durations:Record<Gesture,number>={blink:320,curious:3500,wave:3000,hop:1650,ears:1000,tail:2200};
+const durations:Record<Gesture,number>={blink:320,curious:6000,wave:2000,hop:3000,ears:1000,tail:2200,walk:22000,yawn:6000,stretch:4000,leaf:6000,firefly:6000};
 export class PapMotion {
   state:PapState='idle';
   private timers:number[]=[];
@@ -21,19 +21,19 @@ export class PapMotion {
   get resting(){return this.quiet;}
   play(action:Gesture){
     if(this.paused||this.quiet||this.protected())return;
-    this.cancel();this.last=action;if(action==='wave'||action==='hop')this.rareAt=this.clock.now();
+    this.cancel();this.last=action;if(['wave','hop','curious','firefly'].includes(action))this.rareAt=this.clock.now();
     this.draw(0,action,this.state);
     this.after(()=>{this.draw(0,'idle',this.state);this.schedule();},durations[action]);
   }
   private schedule(){
     if(this.paused||this.quiet||this.protected())return;
-    const slower=this.clock.now()-this.touchedAt>180000?2:1;
     this.after(()=>{
-      const pool:Gesture[]=['blink','blink','blink','curious','ears','tail'];
-      if(this.clock.now()-this.rareAt>90000)pool.push('wave','hop');
-      const choices=pool.filter(x=>x!==this.last);
+      if(this.state==='idle'&&this.clock.now()-this.touchedAt>180000){this.setQuiet(true);return;}
+      const pool:Gesture[]=this.state==='idle'?['walk','walk','walk','blink','stretch','yawn','leaf']:['blink','blink','blink'];
+      if(this.state==='idle'&&this.clock.now()-this.rareAt>90000)pool.push('curious','firefly');
+      const filtered=pool.filter(x=>x!==this.last),choices=filtered.length?filtered:pool;
       this.play(choices[Math.floor(this.random()*choices.length)]);
-    },(12000+this.random()*16000)*slower);
+    },18000+this.random()*26000);
   }
   dispose(){this.cancel();}
 }

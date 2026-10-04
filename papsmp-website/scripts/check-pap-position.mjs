@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import ts from 'typescript';
 const exports={},viewport={offsetLeft:0,offsetTop:0,width:390,height:844};
 vm.runInNewContext(ts.transpileModule(fs.readFileSync(new URL('../src/scripts/pap-position.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports,visualViewport:viewport,innerWidth:390,innerHeight:844,getComputedStyle:()=>({getPropertyValue:()=> '34px'})});
-const element=(width=108,height=60)=>({offsetWidth:width,offsetHeight:height,scrollHeight:350,dataset:{},style:{setProperty(name,value){this[name]=value;}}});
+const element=(width=108,height=108)=>({offsetWidth:width,offsetHeight:height,scrollHeight:350,dataset:{},style:{setProperty(name,value){this[name]=value;}}});
 const root=element(),conversation=element(340),settings=element(210),tip=element(230);
 const position=exports.createPapPosition(root,conversation,settings,tip);
 let checks=0;const check=fn=>{fn();checks++;};
@@ -18,4 +18,6 @@ check(()=>{position.move(-10000,-10000);bounds();assert.equal(root.dataset.side,
 check(()=>{position.move(10000,10000);bounds();assert.equal(root.dataset.side,'left');});
 check(()=>{position.move(-80,-80);viewport.width=390;position.fit();bounds();});
 check(()=>{position.reset();assert.equal(number(root,'left'),270);assert.equal(number(root,'top'),702);});
+check(()=>{position.wander(-140);bounds();assert.equal(number(root,'left'),130);position.commitWander();position.move(-20,0);assert.equal(number(root,'left'),110);position.reset();assert.equal(number(root,'left'),270);});
+check(()=>{root.offsetHeight=80;position.fit();assert.equal(number(root,'top'),730);assert(number(root,'top')+80<=810);});
 console.log(`PAP position checks: ${checks} passed`);
