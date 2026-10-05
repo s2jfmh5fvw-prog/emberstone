@@ -2,7 +2,10 @@ export const packRelease = {
   label: 'Alpha v1.0 RC2',
   revision: '3.2.10',
   java: {
-    url: '/downloads/PAP-SMP-Full-Java-3.2.10-Alpha-v1.0-RC2-MC-1.21.11.zip',
+    url: '/downloads/PAP-SMP-Full-Java-3.2.8-MC-1.21.11.zip',
+    versionedUrl: '/downloads/PAP-SMP-Full-Java-3.2.10-Alpha-v1.0-RC2-MC-1.21.11.zip',
+    originalUrl: '/downloads/PAP-SMP-Full-Java-3.2.8-ORIGINAL-MC-1.21.11.zip',
+    sha1: 'f7075040436793bc3968f1649070e99d35c5fd63',
     bytes: 11215505,
     sha256: '3224F3C4ABBB16D491DDA7E27B33989CC8F6CC1C625BA6F4F306440C2DC50F42',
   },
