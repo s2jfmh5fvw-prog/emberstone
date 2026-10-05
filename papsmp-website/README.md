@@ -47,7 +47,7 @@ Eine echte KI-Anbindung benötigt einen getrennten serverseitigen Endpunkt und e
 
 ## Resource-Pack-Downloads
 
-Die aktuellen Links und Metadaten stehen zentral in `src/data/pack-release.ts` und werden von Downloadbereich, FAQ und PAP-Chat verwendet. Veröffentlicht sind Alpha v1.0 RC1 (Ressourcenstand 3.2.9), Visual-Zusatz 0.3.0-alpha im Geyser-Overlay und Travel Menu 1.4.0-alpha.2. Die einzeln geprüften Original-Release-Dateien wurden unverändert nach `public/downloads/` kopiert. Frühere Download-Adressen bleiben bytegleich erhalten; sie sind keine Aliasse auf die neue Fassung. Installation, Rückweg, Prüfbericht und Prüfsummen sind im Downloadbereich verlinkt. Die native Sichtprüfung im Spiel und das Einspielen auf dem Produktivserver sind weiterhin offen.
+Die aktuellen Links und Metadaten stehen zentral in `src/data/pack-release.ts` und werden von Downloadbereich, FAQ und PAP-Chat verwendet. Veröffentlicht sind Alpha v1.0 RC2 (Ressourcenstand 3.2.10), Visual-Zusatz 0.3.1-alpha im Geyser-Overlay und Travel Menu 1.4.0-alpha.2. Die einzeln geprüften Original-Release-Dateien wurden unverändert nach `public/downloads/` kopiert. Frühere Download-Adressen bleiben bytegleich erhalten; sie sind keine Aliasse auf die neue Fassung. Installation, Rückweg, Prüfbericht und Prüfsummen sind im Downloadbereich verlinkt. Die native Sichtprüfung im Spiel und das Einspielen auf dem Produktivserver sind weiterhin offen.
 
 ## Offene Freigaben
 

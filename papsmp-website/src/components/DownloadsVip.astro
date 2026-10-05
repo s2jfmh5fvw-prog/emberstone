@@ -7,7 +7,7 @@ import { packRelease, packSize } from '../data/pack-release';
     <div class="section-heading">
       <p class="kicker">Downloads · PAP SMP {packRelease.label}</p>
       <h2 id="availability-title">Die aktuellen<br /><em>Alpha-Dateien.</em></h2>
-      <p>Ressourcenstand {packRelease.revision} · Release-Kandidat für Alpha v1.0. Die Packs sind technisch geprüft; die Sichtprüfung im Spiel steht noch aus. Ein Download bestätigt keinen freigegebenen Serverzugang der jeweiligen Edition.</p>
+      <p>Ressourcenstand {packRelease.revision} · Acht neue Icons für Event-Einladungen, mit passenden Java- und Bedrock-Grafiken. Die Packs und die Formularübertragung sind technisch geprüft; die Sichtprüfung im Spiel steht noch aus. Ein Download bestätigt keinen freigegebenen Serverzugang.</p>
     </div>
 
     <div class="availability-grid">
@@ -15,7 +15,7 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">↓</span>
         <span class="phase-label">JAVA · MC 1.21.11</span>
         <h3>Java Resource Pack · {packRelease.revision}</h3>
-        <p>Verbesserte Totem-Darstellung im Inventar und PAP-/Bo-Modelle. Die Symbole für Oberwelt, Nether und End sowie das Travel Menu sind enthalten.</p>
+        <p>Acht Event-Icons für native Java-Einladungen mit dem separat gelieferten Event-UI-Datapack. Die bisherigen Totem-, PAP-/Bo-, HUD- und Travel-Menu-Grafiken bleiben erhalten.</p>
         <span class="availability-status">Herunterladen · {packSize(packRelease.java.bytes)}</span>
       </a>
 
@@ -23,7 +23,7 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">◌</span>
         <span class="phase-label">BEDROCK · GEYSER</span>
         <h3>Bedrock Resource Pack · {packRelease.revision}</h3>
-        <p>Überarbeitete Totem-Handbindung und abgestimmte PAP-/Bo-Modelle. Für Bedrock-Spieler auf dem Java-Server über Geyser; das passende Server-Overlay ist erforderlich.</p>
+        <p>Acht passende Bilder für die Bedrock-Eventformulare über Geyser/Floodgate. Das aktivierte Gesamtpaket schaltet sie für den Alpha-Test ein; die bisherigen Totem-, PAP-/Bo- und HUD-Grafiken bleiben erhalten.</p>
         <span class="availability-status">Herunterladen · {packSize(packRelease.bedrock.bytes)}</span>
       </a>
 
@@ -35,14 +35,29 @@ import { packRelease, packSize } from '../data/pack-release';
       </a>
     </div>
 
+    <figure class="event-icons-preview">
+      <a href={packRelease.preview} download aria-label="Vorschau der acht Event-Icons herunterladen">
+        <img src={packRelease.preview} alt="PAP-Icons für Fracht, Händler, Fuchs, Angelstelle, Lieferung, Karawane, Sternenfall und Weltenriss" width="720" height="360" loading="lazy" />
+      </a>
+      <figcaption>Acht ruhige Event-Icons · Vorschau der Grafiken, keine Aufnahme aus Minecraft.</figcaption>
+    </figure>
+
     <div class="download-hashes">
+      <p><a href={packRelease.bundle.url} download>Aktiviertes Gesamtpaket · Java, Bedrock und Geyser herunterladen · {packSize(packRelease.bundle.bytes)}</a> · Enthält alle Pack-Nutzdateien, Grafiktests und eine Einspielhilfe mit Backup. Bedrock-Formularbilder sind für den Alpha-Test aktiviert. Worldevents 1.0.1-hud.1 und der separate Java-Dialog-Datapack gehören zur bestehenden Event-Integration.</p>
+      <p><a href={packRelease.handoff}>Event-Icon-Zuordnung und Hinweise für den Datapack</a></p>
       <p>Java Resource Pack · SHA-256 · <code>{packRelease.java.sha256}</code></p>
       <p>Bedrock Resource Pack · SHA-256 · <code>{packRelease.bedrock.sha256}</code></p>
-      <p><a href={packRelease.overlay} download>Geyser-Server-Overlay · {packRelease.label} · {packRelease.revision} herunterladen</a> · Enthält Bedrock-Pack, Custom-Mappings und Visual-Zusatz 0.3.0-alpha mit korrigierter PAP-/Bo-Packprüfung. Für Serverbetreiber: Diese drei Dateien gemeinsam aktualisieren. Geprüft mit Companion 1.1.2.</p>
+      <p><a href={packRelease.overlay} download>Geyser-Server-Overlay · {packRelease.label} · {packRelease.revision} herunterladen</a> · Enthält Bedrock-Pack, Custom-Mappings und Visual-Zusatz 0.3.1-alpha mit aktualisierter PAP-/Bo-Packprüfung. Für Serverbetreiber: Diese drei Dateien gemeinsam aktualisieren. Geprüft mit Companion 1.1.2.</p>
       <p><a href={packRelease.mappings} download>Custom-Mappings · Version {packRelease.revision} herunterladen</a></p>
       <p><a href={packRelease.travel} download>Travel Menu · Version 1.4.0-alpha.2 herunterladen</a> · Bereits im Java-Full-Pack enthalten; separat für Installationen, die nur diese Menüassets benötigen.</p>
-      <p><a href={packRelease.installation}>Installation und Rückweg</a> · <a href={packRelease.report}>Änderungs- und Prüfbericht</a> · <a href={packRelease.checksums}>Prüfsummen aller fünf Downloads</a></p>
+      <p><a href={packRelease.installation}>Installation und Rückweg</a> · <a href={packRelease.report}>Änderungs- und Prüfbericht</a> · <a href={packRelease.checksums}>Prüfsummen der Packs und des Gesamtpakets</a></p>
       <p>PAP SMP · Peace &amp; Purge · Creator: yuuh92 · <a href="https://papsmp.de">papsmp.de</a></p>
     </div>
   </div>
 </section>
+
+<style>
+  .event-icons-preview { margin: 1.6rem 0; max-width: 720px; }
+  .event-icons-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; }
+  .event-icons-preview figcaption { margin-top: .65rem; color: var(--muted); font-size: .82rem; }
+</style>

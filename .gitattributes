@@ -1,2 +1,3 @@
 # Publish the validated mapping bytes without platform newline conversion.
 papsmp-website/public/downloads/PAP-SMP-Custom-Mappings-3.2.9.json -text
+papsmp-website/public/downloads/PAP-SMP-Custom-Mappings-3.2.10.json -text
