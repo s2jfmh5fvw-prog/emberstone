@@ -8,7 +8,7 @@ Stand: öffentliche Veröffentlichung mit ausdrücklich markierten Platzhaltern.
 | Datenschutz | PLATZHALTER VERÖFFENTLICHT | Tatsächliche Datenflüsse und freigegebenen Text ergänzen und prüfen |
 | Discord / Whitelist | OFFEN | Bestätigte Einladung oder echtes Formular mit Spam-Schutz |
 | Java / Bedrock | OFFEN | Verifizierte Adresse, Port und Crossplay-Test |
-| Resource Pack | OFFEN | Geprüfte Java-/Bedrock-Varianten, Lizenz, SHA-256 und Hosting |
+| Resource Pack | ALPHA V1.0 RC1 VERÖFFENTLICHT | Ressourcenstand 3.2.9, Lizenz, SHA-256 und Installationshinweise vorhanden; native Java-/Bedrock-Sichtprüfung und Einspielen auf dem Produktivserver weiterhin offen |
 | VIP | CHECKOUT VERLINKT | Serverworkflow, Zahlungsabwicklung und Datenschutz vor regulärem Betrieb verifizieren |
 | Website-FAQ-Chatbot | AKTIV | FAQ-Antworten bei Änderungen der Website aktuell halten; keine externe KI-Anbindung |
 | Community-Zahlen | NICHT VERWENDET | Keine ungeprüften Zahlen oder Reviews |

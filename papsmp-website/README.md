@@ -45,6 +45,10 @@ node scripts/check-pap-lifecycle.mjs
 
 Eine echte KI-Anbindung benötigt einen getrennten serverseitigen Endpunkt und eine eigene Kostenfreigabe; der Browser darf keinen API-Key enthalten.
 
+## Resource-Pack-Downloads
+
+Die aktuellen Links und Metadaten stehen zentral in `src/data/pack-release.ts` und werden von Downloadbereich, FAQ und PAP-Chat verwendet. Veröffentlicht sind Alpha v1.0 RC1 (Ressourcenstand 3.2.9), Visual-Zusatz 0.3.0-alpha im Geyser-Overlay und Travel Menu 1.4.0-alpha.2. Die einzeln geprüften Original-Release-Dateien wurden unverändert nach `public/downloads/` kopiert. Frühere Download-Adressen bleiben bytegleich erhalten; sie sind keine Aliasse auf die neue Fassung. Installation, Rückweg, Prüfbericht und Prüfsummen sind im Downloadbereich verlinkt. Die native Sichtprüfung im Spiel und das Einspielen auf dem Produktivserver sind weiterhin offen.
+
 ## Offene Freigaben
 
 Siehe `CONTENT_REQUIRED.md`. Die Produktionsseite kann ausdrücklich markierte Platzhalter enthalten; das ist keine rechtliche Freigabe. Vor dem regulären Betrieb müssen Impressum, Datenschutz, offene Links, Serverdaten und Resource-Pack-Hosting vervollständigt und geprüft werden.

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 const modules = {};
-for (const name of ['faq','site','pap-helper']) {
+for (const name of ['pack-release','faq','site','pap-helper']) {
   const source = fs.readFileSync(new URL(`../src/data/${name}.ts`,import.meta.url),'utf8');
   const code = ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
   const exports = {};
