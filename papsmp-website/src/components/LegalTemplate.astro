@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AlphaHeader from './AlphaHeader.astro';
+import AlphaFooter from './AlphaFooter.astro';
+import {legalPages,legal} from '../data/legal';
+const {page}=Astro.props;const content=legalPages[page];
+---
+<BaseLayout noindex={!legal.approved} title={`${content.title} — PAP SMP`}><AlphaHeader/><main id="main" class="alpha-wrap alpha-legal-page"><p class="alpha-eyebrow" style="margin-top:40px">PAP SMP / Rechtliche Informationen</p><h1>{content.title}</h1>{!legal.approved&&<aside class="alpha-notice"><strong>Mustervorlage — noch nicht freigegeben</strong><p>Die gekennzeichneten Felder und Textabschnitte werden durch zutreffende Angaben ersetzt. Diese Seite ist keine vollständige oder rechtlich geprüfte Fassung.</p></aside>}{content.blocks.map(block=><section class="alpha-legal-block"><h2>{block.heading}</h2><p>{block.text}</p></section>)}<a href="/" class="alpha-link">← Zur Startseite</a></main><AlphaFooter/></BaseLayout>

@@ -1,7 +1,7 @@
 export const site = {
   name: 'PAP SMP',
   title: 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht',
-  description: 'Entdecke PAP SMP: ein deutscher Minecraft-Survival-Server in der Alpha. Tagsüber wächst deine Welt, in der Purge-Nacht wechselt der Rhythmus. Infos zu Zugang, Editionen und Downloads.',
+  description: 'PAP SMP von yuuh92: bauen und handeln in der Peace, offene Claims und PvP in der Purge. Alpha geplant ab 01.11.2026. Infobuch, Regeln, Packs und Shopangebote.',
   canonical: 'https://papsmp.de/',
   supportEmail: 'papsupport@icloud.com',
   links: {

@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AlphaHeader from '../components/AlphaHeader.astro';
+import AlphaFooter from '../components/AlphaFooter.astro';
+import AssetImage from '../components/AssetImage.astro';
+import type {Chapter} from '../data/books';
+interface Props {title:string;description:string;chapters:Chapter[];kind:'info'|'rules';}
+const {title,description,chapters,kind}=Astro.props;
+---
+<BaseLayout title={`${title} — PAP SMP`} description={description}>
+  <AlphaHeader />
+  <main id="main" class="alpha-wrap alpha-book-page">
+    <div class="alpha-page-head"><div><p class="alpha-eyebrow">PAP SMP / {kind==='info'?'Nachschlagen':'Zusammenspielen'}</p><h1>{title}</h1><p>{description}</p><p class="alpha-pill">Alpha {kind==='rules'?'· Regelentwurf':'· Informationsstand'} / 06.10.2026</p></div><div class="alpha-book-cover"><AssetImage name={kind==='info'?'pack-workbench':'purge-night'} alt="" eager={true}/></div></div>
+    <aside class="alpha-notice"><strong>{kind==='rules'?'Entwurf — vor der Alpha-Öffnung verbindlich ergänzen.':'So ist der Alpha-Stand vorgesehen.'}</strong><p>{kind==='rules'?'Die folgenden Regeln bilden die geplante Grundlage. Noch offene Ausnahmen, Raid-Methoden und Moderationsabläufe werden vor dem Start im Discord bestätigt.':'Dieses Buch beschreibt den geplanten Alpha-Stand. Funktionen und Balance werden noch getestet; die Menüs im Spiel zeigen den aktuellen Stand.'}</p></aside>
+    <div class="alpha-book-layout">
+      <aside class="alpha-toc"><label for="book-search">Kapitel suchen</label><input id="book-search" type="search" placeholder="z. B. Claims oder Homes" autocomplete="off" /><nav aria-label="Buchkapitel">{chapters.map((chapter,i)=><a href={`#${chapter.id}`} data-chapter-link={chapter.id}><span>{String(i+1).padStart(2,'0')}</span>{chapter.title}</a>)}</nav><a class="alpha-link" href={kind==='info'?'/regelbuch/':'/infobuch/'}>{kind==='info'?'Zum Regelbuch':'Zum Infobuch'} →</a></aside>
+      <div class="alpha-chapters">
+        <p class="alpha-search-status" role="status" aria-live="polite" hidden></p>
+        {chapters.map(chapter=><article class="alpha-chapter" id={chapter.id} data-book-chapter><p class="alpha-eyebrow">PAP SMP / {kind==='info'?'Infobuch':'Regelbuch'}</p><h2>{chapter.title}</h2><p class="alpha-chapter-intro">{chapter.intro}</p>{chapter.paragraphs.map(p=><p>{p}</p>)}{chapter.commands&&<div class="alpha-commands" aria-label="Befehle">{chapter.commands.map(command=><code>{command}</code>)}</div>}</article>)}
+      </div>
+    </div>
+    <p class="alpha-book-source">Stand: Alpha-Planung. Verbindliche Änderungen werden im offiziellen Discord bekanntgegeben. <a href="/#zugang">Zum Alpha-Einstieg →</a></p>
+  </main><AlphaFooter />
+</BaseLayout>
+<script>
+  const search=document.querySelector<HTMLInputElement>('#book-search');
+  const chapters=[...document.querySelectorAll<HTMLElement>('[data-book-chapter]')];
+  const status=document.querySelector<HTMLElement>('.alpha-search-status');
+  search?.addEventListener('input',()=>{const query=search.value.trim().toLocaleLowerCase('de');let count=0;chapters.forEach(chapter=>{const match=(chapter.textContent??'').toLocaleLowerCase('de').includes(query);chapter.hidden=!match;if(match)count++;const link=document.querySelector<HTMLElement>(`[data-chapter-link="${chapter.id}"]`);if(link)link.hidden=!match;});if(status){status.hidden=!query;status.textContent=count?`${count} passende Kapitel`:'Keine passenden Kapitel. Versuche einen anderen Begriff.';}});
+</script>

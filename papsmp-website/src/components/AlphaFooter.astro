@@ -1,0 +1,12 @@
+---
+import {site} from '../data/site';
+import {legal} from '../data/legal';
+---
+<footer class="alpha-footer">
+  <div class="alpha-wrap">
+    <div class="alpha-footer-top"><div><a class="alpha-wordmark" href="/">PAP SMP<span> · von yuuh92</span></a><p>Peace, Purge und eine Welt im Aufbau.</p></div><a class="alpha-btn alpha-btn-secondary" href={site.links.discord} target="_blank" rel="noopener noreferrer">Zur Community ↗</a></div>
+    <nav aria-label="Weitere Seiten"><a href="/kontakt/">Kontakt</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/shopbedingungen/">Shopbedingungen</a><a href="/widerruf/">Widerruf</a><a href="/widerrufsformular/">Widerrufsformular</a></nav>
+    {!legal.approved && <p class="alpha-legal-note">Alpha-Vorschau · Rechtstexte sind Vorlagen und werden vor Veröffentlichung vervollständigt.</p>}
+    <p class="alpha-disclaimer">Kein offizieller Minecraft-Service. Nicht von Mojang oder Microsoft genehmigt oder mit ihnen verbunden. Illustrationen: neu erstellte PAP-SMP-Motive, keine Serveraufnahmen.</p>
+  </div>
+</footer>

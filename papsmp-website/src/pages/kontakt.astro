@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
+import AlphaHeader from '../components/AlphaHeader.astro';
+import AlphaFooter from '../components/AlphaFooter.astro';
 ---
 <BaseLayout noindex={true} title="Kontakt — PAP SMP">
+  <AlphaHeader/>
   <main id="main" class="legal-page contact-page">
     <a class="text-link" href="/">← Zur Startseite</a>
     <p class="kicker"><span class="status-dot"></span> PAP SMP · SUPPORT</p>
@@ -43,6 +46,7 @@ import { site } from '../data/site';
       </aside>
     </div>
   </main>
+  <AlphaFooter/>
 </BaseLayout>
 
 <script>

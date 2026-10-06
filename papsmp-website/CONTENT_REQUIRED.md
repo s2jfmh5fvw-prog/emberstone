@@ -1,16 +1,20 @@
-# CONTENT_REQUIRED
+# Alpha-v2: noch benötigte Freigaben
 
-Stand: öffentliche Veröffentlichung mit ausdrücklich markierten Platzhaltern. Keine rechtliche Freigabe.
+Stand: 06.10.2026. Technische/designbezogene Vorschau, keine Produktionsfreigabe.
 
-| Bereich | Status | Benötigt |
-| --- | --- | --- |
-| Betreiber/Impressum | PLATZHALTER VERÖFFENTLICHT | Echte Betreiberangaben eintragen und rechtlich prüfen |
-| Datenschutz | PLATZHALTER VERÖFFENTLICHT | Tatsächliche Datenflüsse und freigegebenen Text ergänzen und prüfen |
-| Discord / Whitelist | OFFEN | Bestätigte Einladung oder echtes Formular mit Spam-Schutz |
-| Java / Bedrock | OFFEN | Verifizierte Adresse, Port und Crossplay-Test |
-| Resource Pack | ALPHA V1.0 RC2 VERÖFFENTLICHT | Acht Event-Icons, aktiviertes Java/Bedrock/Geyser-Testpaket, Ressourcenstand 3.2.10, Lizenz, SHA-256 und Installationshinweise vorhanden; native Java-/Bedrock-Sichtprüfung und Einspielen auf dem Produktivserver weiterhin offen |
-| VIP | CHECKOUT VERLINKT | Serverworkflow, Zahlungsabwicklung und Datenschutz vor regulärem Betrieb verifizieren |
-| Website-FAQ-Chatbot | AKTIV | FAQ-Antworten bei Änderungen der Website aktuell halten; keine externe KI-Anbindung |
-| Community-Zahlen | NICHT VERWENDET | Keine ungeprüften Zahlen oder Reviews |
+- Alpha-Start geplant am 01.11.2026. Kein bestätigter Öffnungstermin.
+- Original-Skeleton von Yuuh bleibt verbindlich. Sichtprüfung neuer Illustrationen und Layouts offen.
+- Infobuch: 12 Kapitel aus aktuellem lokalen Guide/Pluginunterlagen. Keine Live-Serverabnahme behauptet.
+- Regelbuch: 6 Kapitel als Entwurf. Ausnahmen, Raid-Methoden, erlaubte Mods und Moderationsabläufe vervollständigen.
+- Purge-Zeitzone: Guide Europe/Berlin, Konfiguration America/Los_Angeles; widersprüchlich. Keine feste Uhrzeit auf der Website.
+- Impressum, Datenschutz, Shopbedingungen, Widerruf und Formular: zentral in src/data/legal.ts vervollständigen und prüfen. Elektronische Widerrufsfunktion im aktiven Checkout berücksichtigen.
+- VIP geplant 4,99 EUR; Monats-/Einmal-Abrechnung und 500-Shards-Zyklus nicht bestätigt. Bestehende lokale Worker-Konfiguration noch 3,99 EUR/Monat.
+- 150 Shards 1,99 EUR; 1 shop-key 0,99 EUR: Angebote dargestellt, neue Zahlungs- und Lieferroutinen nicht verifiziert.
+- VIP-Crate/shop-key: Beute, Chancen und Minecraft-Monetarisierungsregeln vor Freischaltung prüfen.
+- Windows-Pet-Demo: echter Downloadzugang, technische Voraussetzungen und Lizenzbedingungen ergänzen.
+- Discord-Einladung vorhanden. Whitelist-Freischaltung erfolgt separat, bis zu 20 gleichzeitige Spieler vorgesehen.
+- Java-Adresse vorhanden. Aktuelle Erreichbarkeit/Freischaltung und Bedrock/Geyser-Verbindung separat prüfen.
+- Pack-Dateien/Metadaten unverändert. Native Java-/Bedrock-Sichtprüfung weiterhin offen.
 
-Die Website ist auf Wunsch mit sichtbaren Platzhaltern veröffentlicht. Das ist keine rechtliche Freigabe. Vor dem regulären Betrieb müssen Impressum und Datenschutz vervollständigt und geprüft sowie offene Zugangswege bestätigt werden.
+Prüfung: npm run check; npm run build; node scripts/check-alpha-release.mjs.
+Produktionsprüfung: node scripts/check-alpha-release.mjs --release. Der Befehl scheitert solange Rechte-/Kauf-Freigaben oder gerenderte Platzhalter fehlen.

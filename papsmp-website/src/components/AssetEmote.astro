@@ -1,0 +1,7 @@
+---
+const {name,animated=false}=Astro.props;
+---
+<picture class="alpha-emote" aria-hidden="true">
+  {animated && <source media="(prefers-reduced-motion: reduce)" srcset={`/alpha-v2/${name}-still.webp`} />}
+  <img src={animated?`/alpha-v2/${name}.webp`:`/alpha-v2/${name}-256.webp`} width="256" height="256" alt="" loading="lazy" decoding="async" />
+</picture>

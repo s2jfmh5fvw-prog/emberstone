@@ -2,8 +2,10 @@
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
+import '../styles/alpha-v2.css';
 import PapHelper from '../components/PapHelper.astro';
-const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', description = 'Deutscher Minecraft-Survival-Server in der Alpha: Infos zu Spielprinzip, Zugang, Plattformen und Downloads.', canonical = new URL(Astro.url.pathname, Astro.site).href, noindex = false } = Astro.props;
+import {legal} from '../data/legal';
+const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', description = 'Deutscher Minecraft-Survival-Server in der Alpha: Infos zu Spielprinzip, Zugang, Plattformen und Downloads.', canonical = new URL(Astro.url.pathname, Astro.site).href, noindex = !legal.approved } = Astro.props;
 ---
 <!doctype html>
 <html lang="de">
@@ -11,9 +13,6 @@ const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#12101d" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
@@ -25,15 +24,15 @@ const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://papsmp.de/og/papsmp-og.jpg" />
+    <meta property="og:image" content="https://papsmp.de/alpha-v2/social.jpg" />
     <meta property="og:image:alt" content="PAP SMP — Peace am Tag, Purge in der Nacht" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://papsmp.de/og/papsmp-og.jpg" />
+    <meta name="twitter:image" content="https://papsmp.de/alpha-v2/social.jpg" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="alpha-site">
     <div class="site-background" aria-hidden="true">
       <video class="site-background-video" autoplay muted loop playsinline preload="metadata" tabindex="-1">
         <source src="/video/pap-alpha-teaser-v023-720p.mp4" type="video/mp4" media="(max-width: 767px)" />
