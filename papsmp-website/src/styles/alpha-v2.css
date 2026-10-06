@@ -16,5 +16,6 @@
 .alpha-hero-copy,.alpha-community-copy,.alpha-book-promo>div:first-child{background:rgba(17,17,25,.88);border:1px solid #524536;padding:26px}
 .alpha-hero-copy h1{font-size:clamp(2.3rem,4.45vw,3.8rem)}
 .alpha-section-head{background:rgba(17,17,25,.88);padding:20px 24px;border-left:3px solid #8a704a}
+.alpha-legal-block p{overflow-wrap:anywhere}
 .alpha-page-head>div,.alpha-legal-page>h1,.alpha-legal-page>.alpha-eyebrow{background:rgba(17,17,25,.9);padding:20px}
 @media(max-width:600px){.alpha-hero-copy,.alpha-community-copy,.alpha-book-promo>div:first-child{padding:20px}.alpha-hero-copy h1{font-size:clamp(1.9rem,8.6vw,2.8rem)}.alpha-section-head{padding:18px}.alpha-legal-page>h1{font-size:1.8rem;overflow-wrap:anywhere}.alpha-page-head>div{padding:20px}}
