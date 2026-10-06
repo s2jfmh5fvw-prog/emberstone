@@ -1,25 +1,4 @@
 ---
-import {site} from '../data/site';
-const path=Astro.url.pathname;
-const nav=[['/#konzept','Das SMP'],['/infobuch/','Infobuch'],['/regelbuch/','Regelbuch'],['/shop/','Shop'],['/#availability-title','Downloads']];
+import SiteHeader from './SiteHeader.astro';
 ---
-<a href="#main" class="skip-link">Zum Inhalt</a>
-<header class="alpha-header">
-  <div class="alpha-wrap alpha-header-inner">
-    <a class="alpha-brand" href="/" aria-label="PAP SMP – Startseite"><img src="/alpha-v2/brand-logo.webp" width="64" height="64" alt="" /><span>PAP <b>SMP</b><small>Peace and Purge</small></span></a>
-    <button class="alpha-menu-toggle menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü <span aria-hidden="true">☰</span></button>
-    <nav id="site-nav" class="alpha-nav" aria-label="Hauptnavigation">
-      {nav.map(([href,label])=><a href={href} aria-current={path===href?'page':undefined}>{label}</a>)}
-      <a class="alpha-nav-discord" href={site.links.discord} target="_blank" rel="noopener noreferrer">Discord ↗</a>
-    </nav>
-  </div>
-</header>
-<script>
-  const toggle=document.querySelector<HTMLButtonElement>('.alpha-menu-toggle');
-  const nav=document.querySelector<HTMLElement>('.alpha-nav');
-  const close=()=>{toggle?.setAttribute('aria-expanded','false');nav?.classList.remove('is-open');};
-  toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav?.classList.toggle('is-open',open);});
-  nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){close();toggle.focus();}});
-  window.matchMedia('(min-width: 901px)').addEventListener('change',close);
-</script>
+<SiteHeader />

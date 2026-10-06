@@ -3,6 +3,7 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
 import '../styles/alpha-v2.css';
+import '../styles/classic-alpha.css';
 import PapHelper from '../components/PapHelper.astro';
 import {legal} from '../data/legal';
 const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', description = 'Deutscher Minecraft-Survival-Server in der Alpha: Infos zu Spielprinzip, Zugang, Plattformen und Downloads.', canonical = new URL(Astro.url.pathname, Astro.site).href, noindex = !legal.approved } = Astro.props;
@@ -32,7 +33,7 @@ const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', 
     <meta name="twitter:image" content="https://papsmp.de/alpha-v2/social.jpg" />
     <title>{title}</title>
   </head>
-  <body class="alpha-site">
+  <body class="alpha-site classic-site">
     <div class="site-background" aria-hidden="true">
       <video class="site-background-video" autoplay muted loop playsinline preload="metadata" tabindex="-1">
         <source src="/video/pap-alpha-teaser-v023-720p.mp4" type="video/mp4" media="(max-width: 767px)" />

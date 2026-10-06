@@ -1,5 +1,9 @@
 # Asset credits
 
+## Alpha-Classic-Variante (06.10.2026)
+
+Die neue Bild- und Emote-Sammlung bleibt bytegleich erhalten. Der Aufbau wurde auf Nutzerwunsch wieder an der bisherigen Website ausgerichtet. Press Start 2P und Space Grotesk werden dafür lokal aus `public/classic/` eingebunden. Quellen: Google Fonts; beide unter SIL Open Font License. Die vollständigen Lizenztexte liegen daneben als `pressstart2p-OFL.txt` und `spacegrotesk-OFL.txt`. Im Browser erfolgt kein externer Schriftaufruf.
+
 ## Aktueller Alpha-v2-Kandidat (06.10.2026)
 
 Neue Blockillustrationen: peace-build, purge-night, alpha-camp, pack-workbench, community-lodge. Neue transparente Emotes: yuuh-ready, pap-curious. Neue 8-Posen-Animationen: pap-wave und yuuh-cheer. Tatsächlich separat mit dem eingebauten OpenAI ImageGen erzeugt; keine Filter-Neufassungen alter Motive. Identitätsreferenzen sind der ursprüngliche Skeleton-Master von Yuuh92 und der kanonische PAPI-Master. Die zwischenzeitlich hochgeladene neue Skin-Datei wurde auf Nutzerwunsch verworfen.

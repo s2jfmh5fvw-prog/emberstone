@@ -1,0 +1,70 @@
+---
+import {site} from '../data/site';
+import {alpha} from '../data/alpha';
+import {faqs} from '../data/faq';
+import {packRelease,packSize} from '../data/pack-release';
+import ServerStrip from './ServerStrip.astro';
+import AssetImage from './AssetImage.astro';
+import AssetEmote from './AssetEmote.astro';
+import AlphaShop from './AlphaShop.astro';
+---
+<main id="main" class="classic-home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid"><div class="hero-copy">
+      <h1 id="hero-title"><span class="hero-title-peace">PEACE AM TAG</span><br/><em class="hero-title-purge">PURGE IN DER NACHT</em></h1>
+      <p class="hero-lede">Dein Bauplatz. Eure Runde. Und eine Nacht, auf die ihr euch vorbereiten müsst. PAP SMP ist ein deutscher Minecraft-Survival-Server von yuuh92.</p>
+      <p class="classic-launch"><span class="status-dot" aria-hidden="true"></span>Alpha · Voraussichtlicher Start: <time datetime={alpha.dateISO}>{alpha.date}</time></p>
+      <div class="hero-actions"><a class="button" href={site.links.discord} target="_blank" rel="noopener noreferrer">Alpha auf Discord verfolgen ↗</a><a class="text-link" href="#konzept">Das Spielprinzip ↓</a></div>
+    </div></div>
+  </section>
+  <ServerStrip />
+  <section id="konzept" class="section section-concept" aria-labelledby="concept-title"><div class="container section-block phase-block">
+    <div class="section-heading"><p class="kicker">Das Spielprinzip</p><h2 id="concept-title">Tagsüber aufbauen.<br/><em>Nachts bestehen.</em></h2><p>In der Peace wächst deine Base. In der Purge ändern sich die Bedingungen. Vorbereitung gehört zum Spiel.</p></div>
+    <div class="alpha-phase-grid">
+      <article class="alpha-phase"><div class="alpha-image-shell"><AssetImage name="peace-build" alt="Yuuh als Skeleton baut mit PAP an einem Minecraft-Holzhaus."/><span class="alpha-image-tag">☀ Peace</span></div><div class="alpha-card-copy"><h3>Zeit für den Aufbau</h3><p>Baue, erkunde und handle. Claims schützen deine Base und Kisten vor fremden Zugriffen. Normales Survival-PvP ist ausgeschaltet.</p><a class="alpha-link" href="/infobuch/#claims">Claims im Infobuch →</a></div></article>
+      <article class="alpha-phase alpha-purge"><div class="alpha-image-shell"><AssetImage name="purge-night" alt="Yuuh und PAP halten nachts auf einer Minecraft-Brücke Ausschau."/><span class="alpha-image-tag">☾ Purge</span></div><div class="alpha-card-copy"><h3>Jetzt wird es riskant</h3><p>PvP wird aktiv, Claims sind offen. Bases können angegriffen und Kisten geplündert werden. Plane deine Vorräte und Rückwege.</p><a class="alpha-link" href="/infobuch/#phasen">Die Purge nachlesen →</a></div></article>
+    </div><p class="classic-hint">Alpha-Konzept: Zeiten und Ausnahmen werden vor der Öffnung bestätigt. Im Spiel zeigt <code>/pap status</code> die aktuelle Phase.</p>
+  </div></section>
+  <section id="features" class="section section-features" aria-labelledby="features-title"><div class="container section-block feature-block">
+    <div class="section-heading"><p class="kicker">Dein Spielabend</p><h2 id="features-title">Ein Bauplatz.<br/><em>Viele Möglichkeiten.</em></h2><p>Starte klein. Handle mit anderen, findet gemeinsame Ziele und entscheidet, wie ihr durch die nächste Purge kommt.</p></div>
+    <div class="classic-feature-grid">
+      <a class="classic-feature" href="/infobuch/#reisen"><span class="feature-number">01</span><AssetEmote name="yuuh-ready"/><h3>Zusammen losziehen</h3><p>Teams, Homes und Teleport-Anfragen bringen euch an denselben Ort.</p><span class="alpha-link">Reisen & Teams →</span></a>
+      <a class="classic-feature" href="/infobuch/#handel"><span class="feature-number">02</span><AssetEmote name="pap-curious"/><h3>Beute zu Vorräten machen</h3><p>Verkaufe Fundstücke, handle mit Spielern und nutze Shards für Verträge.</p><span class="alpha-link">Geld & Shards →</span></a>
+      <a class="classic-feature" href="/infobuch/#aufgaben"><span class="feature-number">03</span><AssetEmote name="yuuh-cheer" animated={true}/><h3>Ein nächstes Ziel finden</h3><p>Aufträge, gemeinsame Projekte und Ereignisse ergänzen den Baualltag.</p><span class="alpha-link">Aufgaben & Ereignisse →</span></a>
+    </div>
+  </div></section>
+  <section id="geschichte" class="section section-story" aria-labelledby="story-title"><div class="container section-block story-block">
+    <div class="section-heading"><p class="kicker">Einblicke in die Welt</p><h2 id="story-title">Dein Anfang.<br/><em>Eure Geschichte.</em></h2><p>Ein erster Abend, ein eigener Bauplatz, eine gemeinsame Runde. So soll die kleine Alpha beginnen.</p></div>
+    <div class="story-card-grid"><article class="story-card peace"><AssetImage name="alpha-camp" alt="Yuuh und PAP planen ihren ersten Minecraft-Bauplatz an einer Werkbank."/><span class="phase-label">01 · Ankommen</span><h3>Finde deinen Platz.</h3><p>Such dir einen Bauplatz und organisiere den Rückweg zur Base.</p></article><article class="story-card purge"><AssetImage name="purge-night" alt="Die Minecraft-Siedlung von Yuuh und PAP bei Nacht."/><span class="phase-label">02 · Purge</span><h3>Die Nacht verändert den Plan.</h3><p>Entscheide, ob ihr verteidigt, loszieht oder Vorräte sichert.</p></article><article class="story-card dawn"><AssetImage name="community-lodge" alt="Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte."/><span class="phase-label">03 · Eure Runde</span><h3>Gemeinsam weitermachen.</h3><p>Teilt Ideen, plant das nächste Projekt und meldet, was in der Alpha noch hakt.</p></article></div>
+  </div></section>
+  <section id="buecher" class="section" aria-labelledby="books-title"><div class="container section-block classic-books">
+    <div><p class="kicker">Gut vorbereitet</p><h2 id="books-title">Zwei Bücher.<br/><em>Alles zum Nachschlagen.</em></h2><p>Im Infobuch stehen Einstieg, Systeme und Befehle. Das Regelbuch beschreibt den aktuellen Entwurf für die Alpha.</p><div class="alpha-book-links"><a href="/infobuch/"><span aria-hidden="true">▤</span><div><strong>Das Infobuch</strong><small>12 Kapitel · Einstieg, Systeme & Befehle</small></div><b aria-hidden="true">↗</b></a><a href="/regelbuch/"><span aria-hidden="true">▥</span><div><strong>Das Regelbuch</strong><small>6 Kapitel · Alpha-Entwurf</small></div><b aria-hidden="true">↗</b></a></div></div>
+    <div class="classic-book-art"><AssetImage name="pack-workbench" alt="PAP neben einem offenen Buch auf einer Minecraft-Werkbank."/><AssetEmote name="pap-curious"/></div>
+  </div></section>
+  <section id="crossplay" class="section section-crossplay" aria-labelledby="crossplay-title"><div class="container section-block classic-editions">
+    <div><p class="kicker">Editionen und Zugang</p><h2 id="crossplay-title">Java zuerst.<br/><em>Bedrock in Prüfung.</em></h2><p>Für Java ist die Adresse angegeben. Anmeldung und Freischaltung laufen über Discord. Bedrock und Geyser werden noch auf ihre Verbindung geprüft.</p><div class="platforms"><span class="platform-ready">JAVA · MINECRAFT 1.21.11</span><span class="platform-testing">BEDROCK · IN PRÜFUNG</span></div><div class="classic-address"><span>JAVA-ADRESSE</span><code id="java-address">{site.server.java}</code><button class="button" type="button" data-alpha-copy={site.server.java}>Adresse kopieren ⧉</button><p class="alpha-copy-status" role="status" aria-live="polite"></p></div></div>
+    <div class="classic-edition-art"><AssetImage name="alpha-camp" alt="Yuuh als Skeleton und PAP an ihrem Minecraft-Bauplatz."/><p>Ein Bedrock-Pack bestätigt noch keinen freigegebenen Serverzugang.</p></div>
+  </div></section>
+  <section id="zugang" class="section section-alpha" aria-labelledby="join-title"><div class="container section-block classic-access"><span id="alpha" class="classic-anchor"></span>
+    <div class="classic-access-copy"><p class="kicker">Alpha-Zugang · PAP SMP</p><h2 id="join-title">Kleine Runde.<br/><em>Mitten im Aufbau.</em></h2><p>Voraussichtlich geht es am <strong>{alpha.date}</strong> los. Gleichzeitig sind höchstens 20 Spieler vorgesehen. Bring deine Freunde mit und hilf uns herauszufinden, was schon gut funktioniert.</p><a class="button" href={site.links.discord} target="_blank" rel="noopener noreferrer">Alpha-Infos auf Discord ↗</a><AssetEmote name="yuuh-ready"/></div>
+    <ol class="steps"><li><span>01</span><div><strong>Discord öffnen</strong><p>Dort findest du Anmeldung, Änderungen und Hilfe vom Team.</p></div></li><li><span>02</span><div><strong>Regeln lesen & Zugang klären</strong><p>Die Alpha nutzt eine Whitelist. Ein Beitritt allein schaltet dich nicht frei.</p></div></li><li><span>03</span><div><strong>Zum Start verbinden</strong><p>Nach Freischaltung kannst du die Java-Adresse verwenden. Lies vorher die aktuellen Hinweise.</p></div></li></ol>
+    <aside class="classic-hint"><strong>Eine Alpha ist ein Teststand.</strong> Der Termin ist geplant und kann sich verschieben. Funktionen und Balance können sich ändern, Testdaten zurückgesetzt werden. Der dauerhafte Erhalt deiner Fortschritte ist noch nicht zugesichert.</aside>
+  </div></section>
+  <section id="community" class="section section-community" aria-labelledby="community-title"><div class="container section-block classic-community">
+    <div class="classic-community-art"><AssetImage name="community-lodge" alt="Yuuh und PAP sitzen am Lagerfeuer vor einer Minecraft-Hütte."/></div><div><p class="kicker">Yuuh & PAP</p><h2 id="community-title">Ein Treffpunkt.<br/><em>Für eure Runde.</em></h2><p>Ich baue PAP SMP als kleine Alpha auf. Bring Ideen mit, probier die Systeme aus und sag mir, wo etwas hakt.</p><p>Auf Discord sammeln wir Rückmeldungen und halten euch über den Start auf dem Laufenden. PAP hilft dir hier bei den häufigsten Fragen.</p><a class="button" href={site.links.discord} target="_blank" rel="noopener noreferrer">Im Discord vorbeischauen ↗</a><div class="classic-duo"><AssetEmote name="yuuh-cheer" animated={true}/><AssetEmote name="pap-wave" animated={true}/><span>yuuh92 & PAP</span></div></div>
+  </div></section>
+  <section id="downloads" class="section" aria-labelledby="availability-title"><div class="container section-block classic-downloads">
+    <div class="section-heading"><p class="kicker">Die PAP-Darstellung</p><h2 id="availability-title">Dein Client.<br/><em>Mit den PAP-Packs.</em></h2><p>{packRelease.label} · Ressourcenstand {packRelease.revision}. Wähle die Datei für deine Edition.</p></div>
+    <div class="alpha-download-grid"><article><span class="alpha-label">Java Edition</span><h3>Minecraft 1.21.11</h3><p>Das Java-Pack mit eigenen Texturen und Menüs für PAP SMP.</p><a class="button" href={packRelease.java.url} download>Java-Pack herunterladen ↓</a><small>ZIP · {packSize(packRelease.java.bytes)}</small></article><article><span class="alpha-label">Bedrock Edition</span><h3>Bedrock Resource Pack</h3><p>Die Datei zum Testen. Sie bestätigt keinen freigegebenen Serverzugang.</p><a class="button classic-button-secondary" href={packRelease.bedrock.url} download>Bedrock-Pack herunterladen ↓</a><small>MCPACK · {packSize(packRelease.bedrock.bytes)}</small></article></div>
+    <details class="alpha-download-details"><summary>Installation, Prüfsummen & weitere Dateien</summary><div class="alpha-download-links"><a href={packRelease.installation}>Installationshinweise</a><a href={packRelease.checksums}>SHA-256-Prüfsummen</a><a href={packRelease.bundle.url}>Gesamtpaket · {packSize(packRelease.bundle.bytes)}</a><a href={packRelease.java.versionedUrl}>Java-Datei mit Versionsnamen</a><a href={packRelease.overlay}>Geyser-Overlay</a><a href={packRelease.mappings}>Custom Mappings</a><a href={packRelease.travel}>Travel-Menü</a><a href={packRelease.preview}>Icon-Vorschau</a><a href={packRelease.handoff}>Event-UI-Handoff</a><a href={packRelease.report}>Prüfbericht</a><a href={packRelease.java.originalUrl}>Java-Archivstand 3.2.8</a></div><p>Die native Sichtprüfung im Spiel steht noch aus. Java-Event-Icons benötigen das Event-UI-Datapack; Bedrock-Formularbilder werden über Geyser/Floodgate eingebunden.</p></details>
+  </div></section>
+  <section id="shop" class="section" aria-labelledby="shop-title"><div class="container section-block classic-shop"><span id="vip-shop" class="classic-anchor"></span>
+    <div class="section-heading"><p class="kicker">Für die Alpha geplant</p><h2 id="shop-title">VIP, Shards<br/><em>& Keys.</em></h2><p>VIP ist ein Monatsabo für 4,99 € pro Monat. Shards und shop-key sind einzelne Pakete. Die neue Kaufanbindung wird vor der Shopöffnung ergänzt.</p></div><AlphaShop/>
+  </div></section>
+  <section id="faq" class="section" aria-labelledby="faq-title"><div class="container section-block classic-faq">
+    <div class="section-heading"><p class="kicker">Noch eine Frage?</p><h2 id="faq-title">Kurz fragen.<br/><em>Schnell nachschlagen.</em></h2><p>Mehr Details stehen in den Büchern. Bei persönlichen Anliegen hilft der Support.</p></div><div class="alpha-faq-list">{faqs.map(([question,answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div><p class="classic-hint">Du brauchst Hilfe? <a class="alpha-link" href="/kontakt/">Schreib uns →</a> oder öffne den PAP-Helfer am Bildschirmrand.</p>
+  </div></section>
+</main>
+<script>
+  document.querySelector<HTMLButtonElement>('[data-alpha-copy]')?.addEventListener('click',async(event)=>{const button=event.currentTarget as HTMLButtonElement;const status=document.querySelector<HTMLElement>('.alpha-copy-status');try{await navigator.clipboard.writeText(button.dataset.alphaCopy??'');if(status)status.textContent='Adresse kopiert.';}catch{if(status)status.textContent='Bitte markiere die Adresse und kopiere sie manuell.';}});
+</script>

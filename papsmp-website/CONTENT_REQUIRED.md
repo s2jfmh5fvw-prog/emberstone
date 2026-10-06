@@ -8,7 +8,7 @@ Stand: 06.10.2026. Technische/designbezogene Vorschau, keine Produktionsfreigabe
 - Regelbuch: 6 Kapitel als Entwurf. Ausnahmen, Raid-Methoden, erlaubte Mods und Moderationsabläufe vervollständigen.
 - Purge-Zeitzone: Guide Europe/Berlin, Konfiguration America/Los_Angeles; widersprüchlich. Keine feste Uhrzeit auf der Website.
 - Impressum, Datenschutz, Shopbedingungen, Widerruf und Formular: zentral in src/data/legal.ts vervollständigen und prüfen. Elektronische Widerrufsfunktion im aktiven Checkout berücksichtigen.
-- VIP geplant 4,99 EUR; Monats-/Einmal-Abrechnung und 500-Shards-Zyklus nicht bestätigt. Bestehende lokale Worker-Konfiguration noch 3,99 EUR/Monat.
+- VIP bestätigt als Monatsabo: 4,99 EUR pro Monat. Vergabezyklus der 500 Shards und Kündigungsbedingungen noch offen. Bestehende lokale Worker-Konfiguration noch 3,99 EUR/Monat; echte Kaufanbindung weiterhin gesondert umstellen und prüfen.
 - 150 Shards 1,99 EUR; 1 shop-key 0,99 EUR: Angebote dargestellt, neue Zahlungs- und Lieferroutinen nicht verifiziert.
 - VIP-Crate/shop-key: Beute, Chancen und Minecraft-Monetarisierungsregeln vor Freischaltung prüfen.
 - Windows-Pet-Demo: echter Downloadzugang, technische Voraussetzungen und Lizenzbedingungen ergänzen.

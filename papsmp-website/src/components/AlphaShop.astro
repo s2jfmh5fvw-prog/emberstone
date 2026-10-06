@@ -8,7 +8,7 @@ import {site} from '../data/site';
     <div class="alpha-product-top"><svg class="alpha-product-icon" viewBox="0 0 80 80" aria-hidden="true">
       {product.icon==='shard'?<><path fill="#9f6ae7" d="M40 5 63 25 57 58 40 75 23 58 17 25Z"/><path fill="#d9c0ff" d="m40 5 0 70-17-17-6-33Z"/><path fill="#68409d" d="m40 35 23-10-6 33-17 17Z"/><path fill="#eee2ff" d="m40 5-23 20 23 10Z"/></>:product.icon==='key'?<><path fill="#f4bc63" d="M14 12h30v30H33v26H22V42h-8Zm10 10v10h10V22Z"/><path fill="#a46c32" d="M33 45h17v10H33Zm0 14h11v9H33Z"/></>:<><path fill="#f2bd6a" d="M14 10h52v35L40 73 14 45Z"/><path fill="#ac743c" d="M40 10h26v35L40 73Z"/><path fill="#ffe4ac" d="M28 25h24v8H28Zm7 8h10v20H35Z"/></>}
     </svg><h3>{product.name}</h3></div>
-    <p class="alpha-price">{product.price}<span>geplanter Produktpreis</span></p>
+    <p class="alpha-price">{product.price}<span>{product.interval} · {product.paymentLabel}</span></p>
     <p>{product.description}</p><ul>{product.includes.map(item=><li>{item}</li>)}</ul>
     <details><summary>Details & Verfügbarkeit</summary><p>{product.note}</p><p>Käufe werden erst angeboten, wenn Kontozuordnung, Kaufbedingungen und Ingame-Lieferung geprüft sind.</p></details>
     <span class="alpha-product-status">Für die Alpha geplant</span>
