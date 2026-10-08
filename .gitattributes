@@ -1,3 +1,5 @@
 # Publish the validated mapping bytes without platform newline conversion.
 papsmp-website/public/downloads/PAP-SMP-Custom-Mappings-3.2.9.json -text
 papsmp-website/public/downloads/PAP-SMP-Custom-Mappings-3.2.10.json -text
+# Versioned release artifacts must match their published SHA-256 exactly.
+papsmp-website/public/downloads/PAP-SMP-*3.2.13* -text
