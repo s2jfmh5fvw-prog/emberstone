@@ -7,7 +7,7 @@ import { packRelease, packSize } from '../data/pack-release';
     <div class="section-heading">
       <p class="kicker">Downloads · PAP SMP {packRelease.label}</p>
       <h2 id="availability-title">Die aktuellen<br /><em>Alpha-Dateien.</em></h2>
-      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die PAP-Grafiken, Menüs und acht Event-Icons. Die Darstellung im Spiel wird noch geprüft; den Serverzugang klärst du auf Discord.</p>
+      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die PAP-Grafiken, Menüs und acht Event-Icons. Java-Darstellung und technische Prüfungen sind bestätigt; die Bedrock-Grafikabnahme bleibt offen. Die Alpha bleibt geschlossen.</p>
     </div>
 
     <div class="availability-grid">
@@ -54,26 +54,24 @@ import { packRelease, packSize } from '../data/pack-release';
       <details class="download-disclosure">
         <summary><span>Für Serverbetreiber</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Das Geyser-Overlay enthält Bedrock-Pack, Custom-Mappings und Visual-Zusatz 0.3.1-alpha. Diese drei Dateien gemeinsam aktualisieren; geprüft mit Companion 1.1.2.</p>
+          <p>Das Geyser-Overlay enthält Bedrock-Pack und Visual-Zusatz 0.4.2-ui.1. Die vorhandenen 42 Custom-Mappings bleiben unverändert; genau eine Mapping-Datei verwenden. Companion 1.1.2 bleibt erhalten.</p>
           <div class="download-extra-links">
             <a href={packRelease.overlay} download>Geyser-Overlay · {packRelease.revision} ↓</a>
             <a href={packRelease.mappings} download>Custom-Mappings · {packRelease.revision} ↓</a>
-            <a href={packRelease.travel} download>Travel Menu · 1.4.0-alpha.2 ↓</a>
             <a href={packRelease.handoff}>Event-UI &amp; Datapack-Hinweise ↗</a>
             <a href={packRelease.preview} download>Event-Icons als PNG herunterladen ↓</a>
           </div>
-          <p class="download-extra-note">Das Travel Menu ist bereits im Java-Full-Pack enthalten. Für die Event-Integration werden Worldevents 1.0.1-hud.1 und der separate Java-Dialog-Datapack verwendet.</p>
+          <p class="download-extra-note">Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthalten. Für die Event-Integration werden Worldevents 1.0.1-hud.1 und der separate Java-Dialog-Datapack verwendet.</p>
         </div>
       </details>
 
       <details class="download-disclosure">
         <summary><span>Versionen &amp; Prüfsummen</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Die bestehende Java-Downloadadresse liefert Ressourcenstand {packRelease.revision}. Die Serveradresse bleibt erhalten; die zugehörige Pack-Prüfsumme wurde aktualisiert.</p>
+          <p>Die aktuelle Version hat eine eigene Downloadadresse. Frühere Downloadadressen bleiben erhalten. Auf dem Server müssen neue URL und zugehörige Prüfsumme gemeinsam eingestellt werden.</p>
           <div class="download-extra-links">
-            <a href={packRelease.java.versionedUrl} download>Java-Pack · eindeutige RC2-Version ↓</a>
+            <a href={packRelease.java.versionedUrl} download>Java-Pack · eindeutige Version ↓</a>
             <a href={packRelease.java.originalUrl} download>Java-Pack · Archiv 3.2.8 ↓</a>
-            <a href="/downloads/PAP-SMP-RC2-Serveradresse-beibehalten.md">Hinweise zur Serveradresse ↗</a>
             <a href={packRelease.checksums}>Alle SHA-256-Prüfsummen ↗</a>
           </div>
           <dl class="download-checksums">
