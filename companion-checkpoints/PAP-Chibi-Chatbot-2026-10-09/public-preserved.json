@@ -1,0 +1,15 @@
+{
+  "count": 164,
+  "allMatch": true,
+  "changed": [],
+  "concurrentAddedPublicFiles": [
+    "downloads/PAP-SMP-3.2.14-INSTALLATION.md",
+    "downloads/PAP-SMP-3.2.14-Karten-Gesamtpaket.zip",
+    "downloads/PAP-SMP-3.2.14-PRUEFBERICHT.md",
+    "downloads/PAP-SMP-3.2.14-SHA256.txt",
+    "downloads/PAP-SMP-Bedrock-3.2.14-Karten.mcpack",
+    "downloads/PAP-SMP-Custom-Mappings-3.2.14.json",
+    "downloads/PAP-SMP-Full-Java-3.2.14-Karten-MC-1.21.11.zip",
+    "downloads/PAP-SMP-Geyser-Overlay-3.2.14-Karten.zip"
+  ]
+}

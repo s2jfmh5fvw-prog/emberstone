@@ -1,0 +1,12 @@
+{
+  "chatbot-before.zip": {
+    "sha256": "279e0ef6548c66b5ae0a25da76f79a547e13fc3458d04e2bd9c0f60bcd7b1dfa",
+    "zipCrcPass": true,
+    "bytes": 31025578
+  },
+  "PAP-Chibi-Website-Source.zip": {
+    "sha256": "84dba8d0a0131e89d812117a9254c52d0b7c4305f5c12dd8291666b7aac0892b",
+    "zipCrcPass": true,
+    "bytes": 28830739
+  }
+}

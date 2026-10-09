@@ -1,0 +1,15 @@
+{
+  "currentChecks": 64,
+  "faq": 22,
+  "behavior": 13,
+  "position": 10,
+  "renderer": 8,
+  "petLifecycle": 11,
+  "astroErrors": 0,
+  "astroWarnings": 0,
+  "astroHints": 0,
+  "astroFiles": 46,
+  "builtPages": 5,
+  "sourceCommit": "b311975603384130fd0ffaa54ca53812e812eca1",
+  "combinedMain": "d611b9d8cc7f327d310ca4a073e949332db8ca99"
+}
