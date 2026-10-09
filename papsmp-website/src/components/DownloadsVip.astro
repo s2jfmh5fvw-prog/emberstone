@@ -1,43 +1,122 @@
+---
+import { packRelease, packSize } from '../data/pack-release';
+---
+
 <section class="section section-availability" aria-labelledby="availability-title">
   <div class="container section-block availability-block">
     <div class="section-heading">
-      <p class="kicker">Downloads · PAP SMP Alpha</p>
+      <p class="kicker">Downloads · PAP SMP {packRelease.label}</p>
       <h2 id="availability-title">Die aktuellen<br /><em>Alpha-Dateien.</em></h2>
-      <p>Java- und Bedrock-Resource-Pack stehen als getrennte Downloads bereit. Ein verfügbares Pack ist keine Bestätigung für den Serverzugang der jeweiligen Edition.</p>
+      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die PAP-Grafiken, Menüs und acht Event-Icons. Java-Darstellung und technische Prüfungen sind bestätigt; die Bedrock-Grafikabnahme bleibt offen. Die Alpha bleibt geschlossen.</p>
     </div>
 
     <div class="availability-grid">
-      <a class="download-card download-card-active" href="/downloads/PAP-SMP-Full-Java-3.2.8-MC-1.21.11.zip" download>
+      <a class="download-card download-card-active" href={packRelease.java.url} download>
         <span class="availability-icon">↓</span>
         <span class="phase-label">JAVA · MC 1.21.11</span>
-        <h3>Java Resource Pack · 3.2.8 Alpha</h3>
-        <p>PAP- und BO-Modelle mit neuen Symbolen für Oberwelt, Nether und End im Weltmenü.</p>
-        <span class="availability-status">Herunterladen · 11,2 MB</span>
+        <h3>Java Resource Pack · {packRelease.revision}</h3>
+        <p>Für Minecraft Java 1.21.11: PAP-Texturen, Totem, HUD, Reisemenü und die neuen Event-Icons.</p>
+        <span class="availability-status">Herunterladen · {packSize(packRelease.java.bytes)}</span>
       </a>
 
-      <a class="download-card download-card-active download-card-purple" href="/downloads/PAP-SMP-Bedrock-3.2.8-Alpha.mcpack" download>
+      <a class="download-card download-card-active download-card-purple" href={packRelease.bedrock.url} download>
         <span class="availability-icon">◌</span>
         <span class="phase-label">BEDROCK · GEYSER</span>
-        <h3>Bedrock Resource Pack · 3.2.8 Alpha</h3>
-        <p>Mit den drei neuen Weltmenü-Symbolen. Für den Server ist das passende Geyser-Overlay erforderlich; die Ingame-Abnahme bleibt separat.</p>
-        <span class="availability-status">Herunterladen · 8,8 MB</span>
+        <h3>Bedrock Resource Pack · {packRelease.revision}</h3>
+        <p>PAP-Texturen und Event-Bilder für Bedrock. Das Pack steht zum Testen bereit; der Zugang über Geyser wird noch geprüft.</p>
+        <span class="availability-status">Herunterladen · {packSize(packRelease.bedrock.bytes)}</span>
       </a>
 
       <a class="download-card" href="#vip-shop">
         <span class="availability-icon">✦</span>
         <h3>VIP &amp; Shop · Vorschau</h3>
-        <p>Der offizielle VIP-Checkout sowie die lokalen Kit- und Shards-Vorschauen.</p>
+        <p>VIP für 4,99 € pro Monat, 150 Shards für 1,99 € und ein shop-key für 0,99 € – die geplanten Alpha-Angebote.</p>
         <span class="availability-status">Angebote ansehen ↓</span>
       </a>
     </div>
 
-    <div class="download-hashes">
-      <p>Java Resource Pack · SHA-256 · <code>F0633E05B2E36AA504196CF464D90079998D9040B96104B70565BBD522049E94</code></p>
-      <p>Bedrock Resource Pack · SHA-256 · <code>D6BFFC6C59A8F8AED34C3A049287AAB7B7CF4627810DE63E59395137E9BF115A</code></p>
-      <p><a href="/downloads/PAP-SMP-Geyser-Overlay-3.2.8.zip" download>Geyser-Server-Overlay · Alpha 3.2.8 herunterladen</a> · Enthält das aktualisierte Bedrock-Pack, Weltmenü-Mappings und den unveränderten Visual-Zusatz 0.2.3 Alpha.</p>
-      <p><a href="/downloads/PAP-SMP-Custom-Mappings-3.2.8.json" download>Weltmenü-Mappings · Version 3.2.8 herunterladen</a></p>
-      <p><a href="/downloads/PAP-SMP-Travel-Menu-1.4.0-alpha.1.zip" download>Travel Menu · Alpha 1.4.0 herunterladen</a></p>
-      <p>PAP SMP · Peace &amp; Purge · Creator: yuuh92 · <a href="https://papsmp.de">papsmp.de</a></p>
+    <div class="download-extras" aria-labelledby="download-extras-title">
+      <h3 id="download-extras-title">Weitere Downloads &amp; Hinweise</h3>
+      <p class="download-extras-intro">Alles Weitere zum Pack – öffne den Bereich, den du brauchst.</p>
+
+      <details class="download-disclosure">
+        <summary><span>Gesamtpaket &amp; Installation</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <div class="download-disclosure-content">
+          <p>Java, Bedrock und Geyser in einem Paket, inklusive Einspielhilfe und Grafiktests. Die Bedrock-Event-Bilder sind für den Alpha-Test aktiviert.</p>
+          <a class="download-extra-link download-extra-primary" href={packRelease.bundle.url} download>Gesamtpaket herunterladen <span>{packSize(packRelease.bundle.bytes)} ↓</span></a>
+          <div class="download-extra-links">
+            <a href={packRelease.installation}>Installation &amp; Rückweg ↗</a>
+            <a href={packRelease.report}>Änderungs- &amp; Prüfbericht ↗</a>
+          </div>
+        </div>
+      </details>
+
+      <details class="download-disclosure">
+        <summary><span>Für Serverbetreiber</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <div class="download-disclosure-content">
+          <p>Das Geyser-Overlay enthält Bedrock-Pack und Visual-Zusatz 0.4.2-ui.1. Die vorhandenen 42 Custom-Mappings bleiben unverändert; genau eine Mapping-Datei verwenden. Companion 1.1.2 bleibt erhalten.</p>
+          <div class="download-extra-links">
+            <a href={packRelease.overlay} download>Geyser-Overlay · {packRelease.revision} ↓</a>
+            <a href={packRelease.mappings} download>Custom-Mappings · {packRelease.revision} ↓</a>
+            <a href={packRelease.handoff}>Event-UI &amp; Datapack-Hinweise ↗</a>
+            <a href={packRelease.preview} download>Event-Icons als PNG herunterladen ↓</a>
+          </div>
+          <p class="download-extra-note">Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthalten. Für die Event-Integration werden Worldevents 1.0.1-hud.1 und der separate Java-Dialog-Datapack verwendet.</p>
+        </div>
+      </details>
+
+      <details class="download-disclosure">
+        <summary><span>Versionen &amp; Prüfsummen</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <div class="download-disclosure-content">
+          <p>Die aktuelle Version hat eine eigene Downloadadresse. Frühere Downloadadressen bleiben erhalten. Auf dem Server müssen neue URL und zugehörige Prüfsumme gemeinsam eingestellt werden.</p>
+          <div class="download-extra-links">
+            <a href={packRelease.java.versionedUrl} download>Java-Pack · eindeutige Version ↓</a>
+            <a href={packRelease.java.originalUrl} download>Java-Pack · Archiv 3.2.8 ↓</a>
+            <a href={packRelease.checksums}>Alle SHA-256-Prüfsummen ↗</a>
+          </div>
+          <dl class="download-checksums">
+            <div><dt>Java · SHA-256</dt><dd><code>{packRelease.java.sha256}</code></dd></div>
+            <div><dt>Bedrock · SHA-256</dt><dd><code>{packRelease.bedrock.sha256}</code></dd></div>
+          </dl>
+        </div>
+      </details>
     </div>
   </div>
 </section>
+
+<style>
+  .download-extras { margin-top: 1.75rem; }
+  .download-extras h3 { margin: 0 0 .55rem; font-family: 'Press Start 2P', ui-monospace, monospace; font-size: .8rem; font-weight: 400; line-height: 1.8; color: #e6dbf0; }
+  .download-extras-intro { margin: 0 0 1rem; color: var(--muted); font-size: .85rem; }
+  .download-disclosure { border: 1px solid var(--line); border-radius: 8px; background: rgba(24, 18, 36, .92); overflow: hidden; }
+  .download-disclosure + .download-disclosure { margin-top: .6rem; }
+  .download-disclosure summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; cursor: pointer; list-style: none; color: #f0e7f8; font-family: Inter, sans-serif; font-size: .9rem; font-weight: 600; line-height: 1.6; }
+  .download-disclosure summary > span:first-child { color: inherit; font-size: inherit; }
+  .download-disclosure summary::-webkit-details-marker { display: none; }
+  .download-disclosure summary::marker { content: ''; }
+  .download-disclosure summary:hover { background: rgba(171, 123, 239, .07); }
+  .download-disclosure summary:focus-visible { outline-offset: -4px; }
+  .download-chevron { flex: 0 0 8px; width: 8px; height: 8px; border-right: 2px solid var(--peace); border-bottom: 2px solid var(--peace); transform: rotate(45deg); margin: -4px 2px 0 0; }
+  .download-disclosure[open] .download-chevron { transform: rotate(225deg); margin-top: 4px; }
+  .download-disclosure[open] summary { border-bottom: 1px solid var(--line); }
+  .download-disclosure-content { padding: 1.1rem 1.2rem 1.3rem; font-size: .85rem; line-height: 1.75; }
+  .download-disclosure-content p { margin: 0 0 1rem; max-width: 55rem; color: var(--muted); }
+  .download-extra-link { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem 1rem; border: 1px solid rgba(243, 184, 97, .3); border-radius: 5px; color: var(--peace); background: rgba(243, 184, 97, .06); font-weight: 600; }
+  .download-extra-link span { white-space: nowrap; font-size: .78rem; }
+  .download-extra-links { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin-top: .9rem; }
+  .download-extra-links a { color: #ddc4f5; text-decoration: underline; text-underline-offset: 4px; }
+  .download-extra-links a:hover { color: var(--peace); }
+  .download-disclosure-content .download-extra-note { margin: 1rem 0 0; font-size: .78rem; }
+  .download-checksums { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.2rem 0 0; }
+  .download-checksums > div { min-width: 0; padding: .85rem; border: 1px solid var(--line); border-radius: 5px; background: rgba(43, 34, 58, .65); }
+  .download-checksums dt { color: var(--muted); font-size: .75rem; margin-bottom: .5rem; }
+  .download-checksums dd { margin: 0; }
+  .download-checksums code { display: block; overflow-wrap: anywhere; color: #e7d9f2; font-size: .72rem; line-height: 1.8; }
+  @media (max-width: 600px) {
+    .download-disclosure summary { padding: .9rem 1rem; font-size: .85rem; }
+    .download-disclosure-content { padding: 1rem; }
+    .download-extra-link { align-items: flex-start; flex-direction: column; gap: .3rem; }
+    .download-extra-links { flex-direction: column; gap: .7rem; }
+    .download-checksums { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

@@ -36,7 +36,8 @@ const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', 
   <body>
     <div class="site-background" aria-hidden="true">
       <video class="site-background-video" autoplay muted loop playsinline preload="metadata" tabindex="-1">
-        <source src="/video/PAP_SMP_Motion_Comic_V26_VISUAL_FINAL_1080p24.mp4" type="video/mp4" />
+        <source src="/video/pap-alpha-teaser-v023-720p.mp4" type="video/mp4" media="(max-width: 767px)" />
+        <source src="/video/pap-alpha-teaser-v023-1080p.mp4" type="video/mp4" />
       </video>
     </div>
     <slot />
@@ -44,8 +45,8 @@ const { title = 'PAP SMP — Survival mit Peace am Tag und Purge in der Nacht', 
     <script>
       const backgroundVideo = document.querySelector('.site-background-video') as HTMLVideoElement | null;
       if (backgroundVideo) {
-        backgroundVideo.defaultPlaybackRate = 0.35;
-        backgroundVideo.playbackRate = 0.35;
+        backgroundVideo.defaultPlaybackRate = 0.75;
+        backgroundVideo.playbackRate = 0.75;
       }
       const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
       const syncBackgroundMotion = () => {
