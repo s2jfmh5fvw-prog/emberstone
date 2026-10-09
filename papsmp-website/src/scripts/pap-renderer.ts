@@ -1,8 +1,8 @@
 import {PapPet,type PetOptions} from './pap-pet.js';
-import rig from '../assets/chatbot/pet-v09/manifest.json';
+import rig from '../assets/chatbot/pet-chibi-v12/manifest.json';
 import type {PapState} from './pap-motion';
-const files=import.meta.glob<string>('../assets/chatbot/pet-v09/*.webp',{eager:true,query:'?url',import:'default'});
-const manifest={...rig,clips:Object.fromEntries(Object.entries(rig.clips).map(([name,clip])=>[name,{...clip,pages:clip.pages.map(file=>files[`../assets/chatbot/pet-v09/${file.split('/').at(-1)}`])}]))};
+const files=import.meta.glob<string>('../assets/chatbot/pet-chibi-v12/*.webp',{eager:true,query:'?url',import:'default'});
+const manifest={...rig,clips:Object.fromEntries(Object.entries(rig.clips).map(([name,clip])=>[name,{...clip,pages:clip.pages.map(file=>files[`../assets/chatbot/pet-chibi-v12/${file.split('/').at(-1)}`])}]))};
 type PetRig=Pick<PapPet,'load'|'setState'|'cancelAction'|'resetPosition'|'play'|'setPaused'|'setReduced'|'destroy'>;
 export function createPapRenderer(root:HTMLElement,canvas:HTMLCanvasElement,options:PetOptions={},create=(canvas:HTMLCanvasElement):PetRig=>new PapPet(canvas,manifest,{...options,observe:data=>{root.dataset.clip=data.clip;root.dataset.frame=String(data.frame);root.dataset.walking=String(data.walking);root.dataset.walkX=data.x.toFixed(2);root.dataset.cachedPages=String(data.cachedPages);},error:()=>{root.dataset.ready='false';root.dataset.renderError='true';}})){
   const pet=create(canvas);let lastGesture='idle',lastState:PapState='idle',paused=false,reduced=false,disposed=false;

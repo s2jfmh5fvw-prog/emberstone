@@ -1,6 +1,6 @@
 import {PapWalk} from './pap-pet-walk.js';
 
-/** Original PAP 0.9 frames. The website planner owns actions; this renderer owns poses and distance gait. */
+/** Approved Chibi PAP frames. The website planner owns actions; this renderer owns poses and distance gait. */
 export class PapPet {
   constructor(canvas,manifest,options={}){
     this.canvas=canvas;this.ctx=canvas.getContext('2d');this.manifest=manifest;this.options=options;
@@ -29,16 +29,21 @@ export class PapPet {
   async change(pose,returnTo=null){
     if(this.dead)return;const token=++this.token;this.pending=true;
     const origin=this.clip.replace(/_(left|right)$/,'');
-    const transition=origin==='walk'&&pose==='idle'?`walk${this.walk.transitionBin}_to_idle_${this.face}`:`${origin}_to_${pose}_${this.face}`;
+    const phaseBin=Math.min(31,Math.floor(Math.max(0,this.frame)/this.manifest.clips[this.clip].count*32));
+    const transition=origin==='walk'&&['idle','listen'].includes(pose)?`walk${this.walk.transitionBin}_to_${pose}_${this.face}`:origin==='listen'?`listen${phaseBin}_to_${pose}_${this.face}`:`${origin}_to_${pose}_${this.face}`;
     this.pose=pose;this.queue=[];
     if(!this.reduced&&this.manifest.clips[transition])this.queue.push(transition);
+    else if(!this.reduced&&origin==='listen'&&this.manifest.clips[`listen${phaseBin}_to_idle_${this.face}`]){
+      this.queue.push(`listen${phaseBin}_to_idle_${this.face}`);
+      const next=`idle_to_${pose}_${this.face}`;if(this.manifest.clips[next])this.queue.push(next);
+    }
     this.queue.push(`${pose}_${this.face}`);
     if(returnTo&&!this.reduced)this.queue.push(`${returnTo}_${this.face}`);
     if(this.reduced&&returnTo) this.queue=[`${returnTo}_${this.face}`];
     try{await this.enter(this.queue.shift(),token);}finally{if(token===this.token)this.pending=false;}
   }
   resting(){return this.state==='rest';}
-  basePose(){return this.resting()?'sleep':this.state==='idle'?'idle':'sit';}
+  basePose(){return this.resting()?'sleep':this.state==='idle'?'idle':['attentive','typing','answering'].includes(this.state)?'listen':'sit';}
   base(){return this.change(this.basePose());}
   setState(state){
     if(state===this.state)return;
@@ -48,6 +53,7 @@ export class PapPet {
     }
     if(state==='dragging'){this.options.commit?.();this.walk.x=0;this.options.move?.(0);}
     if(!this.ready)return;
+    if(!asleep&&!this.resting()&&this.pose==='listen'&&this.basePose()==='listen')return;
     const next=asleep&&!this.resting()&&!this.reduced?this.change('wake',this.basePose()):this.base();
     next.catch(error=>this.fail(error));
   }
@@ -58,9 +64,10 @@ export class PapPet {
     if(!this.ready||this.dead||this.paused||this.reduced||['rest','typing','answering','dragging'].includes(this.state))return false;
     if(action==='walk')return this.beginWalk();
     this.stopWalk();
-    const pose={wave:'petted',hop:'happy',curious:'butterfly',ears:'idle',tail:'idle',blink:'idle'}[action]??action;
+    const pose={wave:'petted',hop:'happy',curious:'butterfly',ears:this.basePose(),tail:this.basePose(),blink:this.basePose()}[action]??action;
     if(!this.manifest.clips[`${pose}_${this.face}`])return false;
-    this.change(pose,['idle','sit'].includes(pose)?null:this.basePose()).catch(error=>this.fail(error));return true;
+    if(pose===this.basePose()&&this.pose===pose&&!this.queue.length)return true;
+    this.change(pose,['idle','sit','listen'].includes(pose)?null:this.basePose()).catch(error=>this.fail(error));return true;
   }
   beginWalk(){
     if(this.state!=='idle')return false;

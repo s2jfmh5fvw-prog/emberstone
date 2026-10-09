@@ -16,7 +16,7 @@ function check(test) { test(); checks++; }
 check(()=>assert.match(answer('Wie lautet die IP?').text,/104\.204\.219\.211:25565/));
 check(()=>assert.match(answer('Wie kann ich mitspielen?').text,/20 Spieler/));
 check(()=>assert.match(answer('Kann ich mit Bedrock spielen?').text,/noch geprüft/));
-check(()=>assert.match(answer('Bedrock Resourcepack herunterladen').text,/SHA-256/));
+check(()=>assert.match(answer('Bedrock Resourcepack herunterladen').text,/Prüfsummen/));
 check(()=>assert.equal(answer('VIP kaufen').links[0].url,modules.site.site.canonical+'#vip-shop'));
 check(()=>assert.match(answer('VIP kaufen').text,/Monatsabo für 4,99 € pro Monat/));
 check(()=>assert.doesNotMatch(answer('VIP kaufen').text,/kein aktiver|kostenlos|freigeschaltet/i));
