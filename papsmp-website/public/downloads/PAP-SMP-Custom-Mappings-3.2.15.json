@@ -1,0 +1,704 @@
+{
+  "format_version": 2,
+  "items": {
+    "minecraft:echo_shard": [
+      {
+        "type": "group",
+        "model": "minecraft:echo_shard",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:corrupted_heart",
+            "display_name": "Korrumpiertes Herz",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:corrupted_heart",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.corrupted_heart"
+            },
+            "components": {
+              "minecraft:max_stack_size": 1
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:netherite_helmet": [
+      {
+        "type": "group",
+        "model": "minecraft:netherite_helmet",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:peace_helmet",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:peace_helmet",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.peace_helmet",
+              "protection_value": 3
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "head",
+                "asset_id": "pap_smp:peace_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          {
+            "bedrock_identifier": "pap_smp:purge_helmet",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:purge_helmet",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.purge_helmet",
+              "protection_value": 3
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "head",
+                "asset_id": "pap_smp:purge_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:netherite_chestplate": [
+      {
+        "type": "group",
+        "model": "minecraft:netherite_chestplate",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:peace_chestplate",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:peace_chestplate",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.peace_chestplate",
+              "protection_value": 8
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "chest",
+                "asset_id": "pap_smp:peace_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          {
+            "bedrock_identifier": "pap_smp:purge_chestplate",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:purge_chestplate",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.purge_chestplate",
+              "protection_value": 8
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "chest",
+                "asset_id": "pap_smp:purge_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:netherite_leggings": [
+      {
+        "type": "group",
+        "model": "minecraft:netherite_leggings",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:peace_leggings",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:peace_leggings",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.peace_leggings",
+              "protection_value": 6
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "legs",
+                "asset_id": "pap_smp:peace_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          {
+            "bedrock_identifier": "pap_smp:purge_leggings",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:purge_leggings",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.purge_leggings",
+              "protection_value": 6
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "legs",
+                "asset_id": "pap_smp:purge_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:netherite_boots": [
+      {
+        "type": "group",
+        "model": "minecraft:netherite_boots",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:peace_boots",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:peace_boots",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.peace_boots",
+              "protection_value": 3
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "feet",
+                "asset_id": "pap_smp:peace_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          },
+          {
+            "bedrock_identifier": "pap_smp:purge_boots",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:purge_boots",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.purge_boots",
+              "protection_value": 3
+            },
+            "components": {
+              "minecraft:equippable": {
+                "slot": "feet",
+                "asset_id": "pap_smp:purge_netherite"
+              },
+              "minecraft:enchantment_glint_override": true
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:written_book": [
+      {
+        "type": "group",
+        "model": "minecraft:written_book",
+        "definitions": [
+          {
+            "bedrock_identifier": "pap_smp:life_and_death_guide",
+            "display_name": "Leben & Tod – PAP Guide",
+            "predicate": {
+              "type": "match",
+              "property": "custom_model_data",
+              "value": "pap_smp:life_and_death_guide",
+              "index": 0
+            },
+            "bedrock_options": {
+              "icon": "pap_smp.life_and_death_guide"
+            }
+          }
+        ]
+      }
+    ],
+    "minecraft:breeze_rod": [
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_head",
+        "bedrock_identifier": "pap_smp:bo_head",
+        "display_name": "Bo",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_head"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_wind_upper",
+        "bedrock_identifier": "pap_smp:bo_wind_upper",
+        "display_name": "Bo",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_wind_upper"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_wind_lower",
+        "bedrock_identifier": "pap_smp:bo_wind_lower",
+        "display_name": "Bo",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_wind_lower"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_chibi_head",
+        "bedrock_identifier": "pap_smp:bo_chibi_head",
+        "display_name": "Bo Chibi · head",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_chibi_head"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_chibi_ring_upper",
+        "bedrock_identifier": "pap_smp:bo_chibi_ring_upper",
+        "display_name": "Bo Chibi · ring_upper",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_chibi_ring_upper"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_chibi_ring_middle",
+        "bedrock_identifier": "pap_smp:bo_chibi_ring_middle",
+        "display_name": "Bo Chibi · ring_middle",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_chibi_ring_middle"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_chibi_ring_lower",
+        "bedrock_identifier": "pap_smp:bo_chibi_ring_lower",
+        "display_name": "Bo Chibi · ring_lower",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_chibi_ring_lower"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:bo_chibi_head_sleep",
+        "bedrock_identifier": "pap_smp:bo_chibi_head_sleep",
+        "display_name": "Bo Chibi · head_sleep",
+        "bedrock_options": {
+          "icon": "pap_smp.bo_chibi_head_sleep"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      }
+    ],
+    "minecraft:paper": [
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_fox",
+        "bedrock_identifier": "pap_smp:pap_fox",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_fox"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_fox_idle",
+        "bedrock_identifier": "pap_smp:pap_fox_idle",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_fox_idle"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_body",
+        "bedrock_identifier": "pap_smp:pap_body",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_body"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_head",
+        "bedrock_identifier": "pap_smp:pap_head",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_head"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_front_left",
+        "bedrock_identifier": "pap_smp:pap_front_left",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_front_left"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_front_right",
+        "bedrock_identifier": "pap_smp:pap_front_right",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_front_right"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_rear_left",
+        "bedrock_identifier": "pap_smp:pap_rear_left",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_rear_left"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_rear_right",
+        "bedrock_identifier": "pap_smp:pap_rear_right",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_rear_right"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_tail_root",
+        "bedrock_identifier": "pap_smp:pap_tail_root",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_tail_root"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_tail_tip",
+        "bedrock_identifier": "pap_smp:pap_tail_tip",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_tail_tip"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_head_sleep",
+        "bedrock_identifier": "pap_smp:pap_head_sleep",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_head_sleep"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_body",
+        "bedrock_identifier": "pap_smp:pap_chibi_body",
+        "display_name": "PAP Chibi · body",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_body"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_head",
+        "bedrock_identifier": "pap_smp:pap_chibi_head",
+        "display_name": "PAP Chibi · head",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_head"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_front_left",
+        "bedrock_identifier": "pap_smp:pap_chibi_front_left",
+        "display_name": "PAP Chibi · front_left",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_front_left"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_front_right",
+        "bedrock_identifier": "pap_smp:pap_chibi_front_right",
+        "display_name": "PAP Chibi · front_right",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_front_right"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_rear_left",
+        "bedrock_identifier": "pap_smp:pap_chibi_rear_left",
+        "display_name": "PAP Chibi · rear_left",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_rear_left"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_rear_right",
+        "bedrock_identifier": "pap_smp:pap_chibi_rear_right",
+        "display_name": "PAP Chibi · rear_right",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_rear_right"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_tail_root",
+        "bedrock_identifier": "pap_smp:pap_chibi_tail_root",
+        "display_name": "PAP Chibi · tail_root",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_tail_root"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_tail_tip",
+        "bedrock_identifier": "pap_smp:pap_chibi_tail_tip",
+        "display_name": "PAP Chibi · tail_tip",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_tail_tip"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:pap_chibi_head_sleep",
+        "bedrock_identifier": "pap_smp:pap_chibi_head_sleep",
+        "display_name": "PAP Chibi · head_sleep",
+        "bedrock_options": {
+          "icon": "pap_smp.pap_chibi_head_sleep"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      }
+    ],
+    "minecraft:totem_of_undying": [
+      {
+        "type": "definition",
+        "model": "minecraft:totem_of_undying",
+        "bedrock_identifier": "pap_smp:totem",
+        "bedrock_options": {
+          "icon": "totem",
+          "allow_offhand": true
+        },
+        "predicate": {
+          "type": "condition",
+          "property": "has_component",
+          "component": "minecraft:death_protection"
+        }
+      }
+    ],
+    "minecraft:grass_block": [
+      {
+        "type": "definition",
+        "model": "pap_travel:world_overworld",
+        "bedrock_identifier": "pap_travel:world_overworld",
+        "display_name": "PAP SMP • Oberwelt",
+        "bedrock_options": {
+          "icon": "pap_travel_world_overworld"
+        }
+      }
+    ],
+    "minecraft:netherrack": [
+      {
+        "type": "definition",
+        "model": "pap_travel:world_nether",
+        "bedrock_identifier": "pap_travel:world_nether",
+        "display_name": "PAP SMP • Nether",
+        "bedrock_options": {
+          "icon": "pap_travel_world_nether"
+        }
+      }
+    ],
+    "minecraft:end_stone": [
+      {
+        "type": "definition",
+        "model": "pap_travel:world_end",
+        "bedrock_identifier": "pap_travel:world_end",
+        "display_name": "PAP SMP • End",
+        "bedrock_options": {
+          "icon": "pap_travel_world_end"
+        }
+      }
+    ]
+  }
+}
