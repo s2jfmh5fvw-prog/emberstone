@@ -1,3 +1,13 @@
+## Bedrock-Hotfix vom 19.10.2026 – interner Packstand 3.2.17
+
+Die bisherigen Dateinamen und Downloadadressen bleiben unverändert. Die Bedrock-Pack-UUID bleibt erhalten; Header und Modulversion steigen auf 3.2.17, damit Clients den neuen Stand erkennen.
+
+Der PAP-Eingriff in das native Pausemenü wurde entfernt. Speichern und Beenden verwendet wieder die Vanilla-Oberfläche. Bei den Bo-Chibi-Ringen wurde die zusätzliche clientseitige Drehung entfernt: Die zugehörige Serverdarstellung steuert diese Ringe bereits über separate Armor-Stands. Modelle, UVs, Texturen und die PAP-Identität wurden dabei erhalten. Die funktionalen Mapping-IDs bleiben gleich; die Downloadfassung korrigiert nur fehlerhafte Sonderzeichen in Anzeigenamen.
+
+Die Pack-Struktur, Archive und Ressourcenverweise sind technisch geprüft. Eine grafische Java-/Bedrock-Abnahme sowie die Bedienprüfung im echten Bedrock-Client sind offen. Insbesondere ist damit keine vollständige Behebung aller gemeldeten PAP-/Bo-Darstellungsfehler nachgewiesen.
+
+Nachfolgend die historische Beschreibung des Kartenstands 3.2.16; die obigen Hotfix-Hinweise gehen vor.
+
 # PAP SMP 3.2.16 – Karten & Werte
 
 Kompaktes überlappendes Original-Website-Logo, halbtransparentes Panel, Phasenstreifen mit Countdown, zwei Cash-/Shards-Karten und lesbare Statistikzeilen. Die Anzeige ist 126 native Pixel breit und 197 Pixel hoch (vorher 148 × 246): etwa 15 % schmaler und 20 % niedriger. Bei GUI 3 beträgt die Breite einschließlich Rand 378 Bildschirm-Pixel statt 444. Die Schriftgröße bleibt erhalten, das Logo misst 90 × 82 native Pixel.

@@ -1,6 +1,6 @@
 export const packRelease = {
-  label: 'Alpha · Karten & Werte',
-  revision: '3.2.16',
+  label: 'Alpha · Bedrock-Hotfix',
+  revision: '3.2.17',
   java: {
     url: '/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip',
     versionedUrl: '/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip',
@@ -11,13 +11,13 @@ export const packRelease = {
   },
   bedrock: {
     url: '/downloads/PAP-SMP-Bedrock-3.2.16-Karten.mcpack',
-    bytes: 9318930,
-    sha256: 'c7af02462a5341a93a8a66b21ee082568b01fba38444577250151a29b61578a5',
+    bytes: 9318151,
+    sha256: '50f76f5919324b7aee7ad07d3229481442d1d4ca59dc42dc9fd6831a1f7ae4e4',
   },
   overlay: '/downloads/PAP-SMP-Geyser-Overlay-3.2.16-Karten.zip',
   mappings: '/downloads/PAP-SMP-Custom-Mappings-3.2.16.json',
   travel: '/downloads/PAP-SMP-Travel-Menu-1.4.0-alpha.2.zip',
-  bundle: { url: '/downloads/PAP-SMP-3.2.16-Karten-Gesamtpaket.zip', bytes: 21259082 },
+  bundle: { url: '/downloads/PAP-SMP-3.2.16-Karten-Gesamtpaket.zip', bytes: 21258694 },
   preview: '/downloads/PAP-SMP-Events-UI-RC2-Iconvorschau.png',
   handoff: '/downloads/PAP-SMP-Events-UI-RC2-Datapack-Handoff.md',
   installation: '/downloads/PAP-SMP-3.2.16-INSTALLATION.md',
@@ -29,4 +29,4 @@ export function packSize(bytes: number) {
   return `${new Intl.NumberFormat('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(bytes / 1_000_000)} MB`;
 }
 
-export const resourcePackAnswer = `Die aktuellen Java- und Bedrock-Packs stehen im Downloadbereich: ${packRelease.label}, Ressourcenstand ${packRelease.revision}. Enthalten sind PAP-/Bo-Chibis, PAP-Menüs und acht Event-Icons. 3.2.16 verkleinert die gewählte Kartenansicht um etwa 15 % in der Breite und 20 % in der Höhe und ergänzt einen halbtransparenten Hintergrund bei gleichbleibender Schriftgröße. Die bisherigen Chibi-Korrekturen und Bo-Ringanimationen bleiben erhalten. Java-Darstellung und technische Pack-Prüfungen sind bestätigt; die Bedrock-Grafikabnahme bleibt offen. Installation, Geyser-Overlay und Prüfsummen sind verlinkt. Das Pack gewährt keinen Zugang zur weiterhin geschlossenen Alpha.`;
+export const resourcePackAnswer = `Die aktuellen Java- und Bedrock-Packs stehen im Downloadbereich: ${packRelease.label}, Ressourcenstand ${packRelease.revision}. Enthalten sind PAP-/Bo-Chibis, PAP-Menüs und acht Event-Icons. 3.2.17 entfernt den Eingriff in das native Bedrock-Pausemenü und die doppelte Bo-Ringanimation. Die bestehenden Downloadadressen bleiben erhalten. Die Pack-Struktur ist geprüft; die grafische Bedrock-Abnahme und der Test von Speichern & beenden im echten Client bleiben offen. Installation, Geyser-Overlay und Prüfsummen sind verlinkt. Das Pack gewährt keinen Zugang zur weiterhin geschlossenen Alpha.`;

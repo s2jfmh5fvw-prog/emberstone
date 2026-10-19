@@ -1,0 +1,27 @@
+<section id="corrupted-heart" class="section" aria-labelledby="heart-title">
+  <div class="container section-block heart-block">
+    <div class="heart-item" role="img" aria-label="Das korrumpierte Herz aus dem PAP-SMP-Resourcepack">
+      <img src="/items/corrupted_heart.png" alt="" loading="lazy" />
+    </div>
+    <div>
+      <p class="kicker">Die PAP-Core-Mechanik · Corrupted Heart</p>
+      <h2 id="heart-title">Ein Herz.<br /><em>Eine Entscheidung.</em></h2>
+      <p>Peace und Purge bestimmen den Rhythmus. Das <strong>korrumpierte Herz</strong> verbindet die Phasen: ein persönliches, handelbares Item, um das ihr kämpfen, das ihr zurückholen oder freiwillig zurückgeben könnt.</p>
+      <div class="heart-rules">
+        <article><h3>In der Purge verlieren</h3><p>Bei einem gewerteten PvP-Tod kann ein Grundherz als Item in Umlauf kommen. Pro Spieler kann gleichzeitig ein eigenes korrumpiertes Herz aktiv sein. Weitere gewertete Kills können Grundherzen direkt übertragen – innerhalb der geltenden Grenzen.</p></article>
+        <article><h3>Absorbieren oder zurückholen</h3><p>Wer ein fremdes Herz konsumiert, erhält ein dauerhaftes Zusatzherz; das gestohlene Grundherz geht an seinen ursprünglichen Besitzer zurück. Das eigene Herz wieder zu konsumieren stellt genau dieses Grundherz wieder her und gibt kein Zusatzherz. Am Zusatzherz-Limit bleibt ein fremdes Herz erhalten.</p></article>
+        <article><h3>In Peace zurückgeben</h3><p>Mit <code>/pap ritual return</code> kannst du ein fremdes Herz aus deiner Haupthand freiwillig zurückgeben. <code>/pap ritual recover</code> baut ein verlorenes Grundherz bis zum Startwert wieder auf: höchstens einmal in 24 Stunden und nur, wenn dein eigenes Herz nicht mehr im Umlauf ist. Für Rituale gelten Peace, Überlebensmodus und die bestehenden Kampfsperren.</p></article>
+      </div>
+      <p class="heart-caption">Gezeigt wird die originale Itemtextur aus dem Resourcepack. Alpha-Regeln und Limits können angepasst werden; die aktuellen Spielregeln stehen auf Discord.</p>
+    </div>
+  </div>
+</section>
+<style>
+  .heart-block{display:grid;grid-template-columns:minmax(140px,240px) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
+  .heart-item{position:relative;aspect-ratio:1;overflow:hidden;width:100%;border:1px solid #ac6fd94d;border-radius:1.25rem;background:radial-gradient(circle,#a459c429,transparent 70%);margin-top:2.5rem}
+  .heart-item img{display:block;width:100%;height:auto;image-rendering:pixelated;filter:drop-shadow(0 0 18px #b46ad240)}
+  h2{font-family:'Space Grotesk','Courier New',monospace;line-height:1.04;font-size:clamp(2.25rem,4.5vw,4.3rem);margin:.8rem 0 1.5rem}
+  h2 em{font-style:normal;color:#d7a1f1}h3{font-size:1.05rem;color:#e0c0ed;margin:0 0 .55rem}
+  p{color:var(--muted);line-height:1.7}.heart-rules{display:grid;gap:1rem;margin-top:1.5rem}.heart-rules article{padding:1.1rem 1.2rem;border-left:2px solid #b46ad2;background:#b46ad208}.heart-rules p{margin:0}code{color:#f5d3a0;overflow-wrap:anywhere}.heart-caption{font-size:.85rem;margin-top:1.5rem}
+  @media(max-width:650px){.heart-block{grid-template-columns:1fr}.heart-item{width:140px;margin:0 auto}.heart-rules article{padding:1rem}}
+</style>
