@@ -1,27 +1,129 @@
-<section id="corrupted-heart" class="section" aria-labelledby="heart-title">
+<section id="corrupted-heart" class="section heart-section" aria-labelledby="heart-title" data-heart-section data-motion="off">
   <div class="container section-block heart-block">
-    <div class="heart-item" role="img" aria-label="Das korrumpierte Herz aus dem PAP-SMP-Resourcepack">
-      <img src="/items/corrupted_heart.png" alt="" loading="lazy" />
+    <div class="heart-intro">
+      <p class="kicker"><span aria-hidden="true"></span> Die PAP-Core-Mechanik</p>
+      <p class="heart-name">Corrupted Heart</p>
+      <h2 id="heart-title">Ein Herz.<br /><em>Deine Wahl.</em></h2>
+      <p class="heart-lead">Peace und Purge geben den Takt vor. Das <strong>korrumpierte Herz</strong> macht ihn persönlich.</p>
+      <p>Ein Teil von dir wird zum handelbaren Item. Kämpfe darum, hole es zurück oder entscheide dich, ein fremdes Herz freiwillig zurückzugeben.</p>
+      <a class="heart-jump" href="#heart-decisions">Was machst du mit einem Herz? <span aria-hidden="true">↓</span></a>
     </div>
-    <div>
-      <p class="kicker">Die PAP-Core-Mechanik · Corrupted Heart</p>
-      <h2 id="heart-title">Ein Herz.<br /><em>Eine Entscheidung.</em></h2>
-      <p>Peace und Purge bestimmen den Rhythmus. Das <strong>korrumpierte Herz</strong> verbindet die Phasen: ein persönliches, handelbares Item, um das ihr kämpfen, das ihr zurückholen oder freiwillig zurückgeben könnt.</p>
-      <div class="heart-rules">
-        <article><h3>In der Purge verlieren</h3><p>Bei einem gewerteten PvP-Tod kann ein Grundherz als Item in Umlauf kommen. Pro Spieler kann gleichzeitig ein eigenes korrumpiertes Herz aktiv sein. Weitere gewertete Kills können Grundherzen direkt übertragen – innerhalb der geltenden Grenzen.</p></article>
-        <article><h3>Absorbieren oder zurückholen</h3><p>Wer ein fremdes Herz konsumiert, erhält ein dauerhaftes Zusatzherz; das gestohlene Grundherz geht an seinen ursprünglichen Besitzer zurück. Das eigene Herz wieder zu konsumieren stellt genau dieses Grundherz wieder her und gibt kein Zusatzherz. Am Zusatzherz-Limit bleibt ein fremdes Herz erhalten.</p></article>
-        <article><h3>In Peace zurückgeben</h3><p>Mit <code>/pap ritual return</code> kannst du ein fremdes Herz aus deiner Haupthand freiwillig zurückgeben. <code>/pap ritual recover</code> baut ein verlorenes Grundherz bis zum Startwert wieder auf: höchstens einmal in 24 Stunden und nur, wenn dein eigenes Herz nicht mehr im Umlauf ist. Für Rituale gelten Peace, Überlebensmodus und die bestehenden Kampfsperren.</p></article>
+    <figure class="heart-figure">
+      <div class="heart-stage">
+        <span class="heart-stage-label">Zwischen Peace und Purge</span>
+        <div class="heart-aura" aria-hidden="true"></div>
+        <div class="heart-orbit" aria-hidden="true"></div>
+        <div class="heart-artwork">
+          <img src="/artwork/corrupted-heart-v1-960.webp" srcset="/artwork/corrupted-heart-v1-480.webp 480w, /artwork/corrupted-heart-v1-960.webp 960w" sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1000px) 52vw, 470px" alt="Das Corrupted Heart: ein kantiges dunkles Kristallherz mit violetten Bruchkanten und einem goldenen Funken im Kern." width="960" height="960" loading="lazy" decoding="async" />
+        </div>
+        <div class="heart-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <button class="heart-motion" type="button" aria-pressed="false" hidden><span class="heart-motion-icon" aria-hidden="true"></span><span data-motion-label>Animation pausieren</span></button>
       </div>
-      <p class="heart-caption">Gezeigt wird die originale Itemtextur aus dem Resourcepack. Alpha-Regeln und Limits können angepasst werden; die aktuellen Spielregeln stehen auf Discord.</p>
+      <figcaption class="heart-item-reference">
+        <span class="heart-item-sprite" aria-hidden="true"><img src="/items/corrupted_heart.png" alt="" width="64" height="512" loading="lazy" /></span>
+        <span><strong>Im Spiel ein Item. Für dich mehr.</strong><br />Illustriert nach dem originalen PAP-Herz.</span>
+      </figcaption>
+    </figure>
+    <div id="heart-decisions" class="heart-decisions" aria-label="Deine Entscheidungen mit einem korrumpierten Herz">
+      <article class="heart-choice"><p class="heart-choice-label"><span>01</span> In der Purge</p><h3>Verlieren.</h3><p>Bei einem gewerteten PvP-Tod kann ein Grundherz als Item in Umlauf kommen. Dein Herz wird zu etwas, um das andere kämpfen können.</p></article>
+      <article class="heart-choice"><p class="heart-choice-label"><span>02</span> Deine Macht</p><h3>Absorbieren.</h3><p>Ein fremdes Herz gibt dir beim Konsum ein dauerhaftes Zusatzherz. Sein ursprünglicher Besitzer erhält das gestohlene Grundherz zurück.</p></article>
+      <article class="heart-choice heart-choice-peace"><p class="heart-choice-label"><span>03</span> Deine Entscheidung</p><h3>Zurückgeben.</h3><p>Hole dein eigenes Herz zurück – ohne Zusatzbonus. Oder gib ein fremdes Herz in Peace freiwillig zurück. Nicht jede Geschichte endet mit einem Kill.</p></article>
     </div>
+    <details class="heart-details">
+      <summary><span>Herzregeln &amp; Rituale</span><span class="heart-details-hint">Die Spielmechanik im Detail</span><span class="heart-details-plus" aria-hidden="true">+</span></summary>
+      <div class="heart-details-body">
+        <div><h3>Ein eigenes Herz im Umlauf</h3><p>Pro Spieler kann gleichzeitig ein eigenes korrumpiertes Herz aktiv sein. Weitere gewertete Kills können Grundherzen direkt übertragen – innerhalb der geltenden Grenzen. Am Zusatzherz-Limit bleibt ein fremdes Herz beim Konsumversuch erhalten.</p><p>Wenn du dein eigenes Herz konsumierst, erhältst du genau das verlorene Grundherz zurück. Du bekommst dafür kein zusätzliches Herz.</p></div>
+        <div><h3>Ein anderer Weg in Peace</h3><p><code>/pap ritual return</code> gibt ein aktives fremdes Herz aus deiner Haupthand freiwillig zurück.</p><p><code>/pap ritual recover</code> baut ein verlorenes Grundherz bis zum Startwert wieder auf: höchstens einmal in 24 Stunden und nur, wenn dein eigenes Herz nicht mehr im Umlauf ist.</p><p>Für Rituale gelten Peace, Überlebensmodus und die bestehenden Kampfsperren.</p></div>
+      </div>
+    </details>
+    <p class="heart-caption">Alpha-Regeln und Limits können sich noch ändern. Die aktuellen Spielregeln findest du auf Discord.</p>
   </div>
 </section>
+<script>
+  const heartSection = document.querySelector<HTMLElement>('[data-heart-section]');
+  const heartMotionButton = heartSection?.querySelector<HTMLButtonElement>('.heart-motion');
+  const heartMotionLabel = heartSection?.querySelector<HTMLElement>('[data-motion-label]');
+  if (heartSection && heartMotionButton && heartMotionLabel) {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let pausedByUser = false;
+    let visible = false;
+    const syncHeartMotion = () => {
+      const reduced = preference.matches;
+      heartSection.dataset.motion = !reduced && !pausedByUser && visible && !document.hidden ? 'on' : 'off';
+      heartMotionButton.disabled = reduced;
+      heartMotionButton.setAttribute('aria-pressed', String(pausedByUser));
+      heartMotionLabel.textContent = reduced ? 'Bewegung reduziert' : pausedByUser ? 'Animation abspielen' : 'Animation pausieren';
+    };
+    heartMotionButton.hidden = false;
+    heartMotionButton.addEventListener('click', () => { pausedByUser = !pausedByUser; syncHeartMotion(); });
+    preference.addEventListener('change', syncHeartMotion);
+    document.addEventListener('visibilitychange', syncHeartMotion);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; syncHeartMotion(); }, { threshold: 0.1 }).observe(heartSection);
+    } else { visible = true; }
+    syncHeartMotion();
+  }
+</script>
 <style>
-  .heart-block{display:grid;grid-template-columns:minmax(140px,240px) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
-  .heart-item{position:relative;aspect-ratio:1;overflow:hidden;width:100%;border:1px solid #ac6fd94d;border-radius:1.25rem;background:radial-gradient(circle,#a459c429,transparent 70%);margin-top:2.5rem}
-  .heart-item img{display:block;width:100%;height:auto;image-rendering:pixelated;filter:drop-shadow(0 0 18px #b46ad240)}
-  h2{font-family:'Space Grotesk','Courier New',monospace;line-height:1.04;font-size:clamp(2.25rem,4.5vw,4.3rem);margin:.8rem 0 1.5rem}
-  h2 em{font-style:normal;color:#d7a1f1}h3{font-size:1.05rem;color:#e0c0ed;margin:0 0 .55rem}
-  p{color:var(--muted);line-height:1.7}.heart-rules{display:grid;gap:1rem;margin-top:1.5rem}.heart-rules article{padding:1.1rem 1.2rem;border-left:2px solid #b46ad2;background:#b46ad208}.heart-rules p{margin:0}code{color:#f5d3a0;overflow-wrap:anywhere}.heart-caption{font-size:.85rem;margin-top:1.5rem}
-  @media(max-width:650px){.heart-block{grid-template-columns:1fr}.heart-item{width:140px;margin:0 auto}.heart-rules article{padding:1rem}}
+  .heart-block{isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(1.5rem,4vw,4rem);row-gap:2.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(22,16,30,.97),rgba(15,12,21,.96));border-color:#b785d33d}
+  .heart-block::after{content:'';position:absolute;width:40rem;height:40rem;right:-13rem;top:-18rem;background:radial-gradient(circle,#a358cf18,transparent 66%);pointer-events:none;z-index:-1}
+  .heart-intro{align-self:center;min-width:0;padding:.75rem 0}
+  .heart-intro .kicker{color:#d8b4eb;font-size:.67rem;letter-spacing:.13em;margin:0 0 1.6rem}
+  .kicker>span{width:.4rem;height:.4rem;background:#c681ed;box-shadow:0 0 14px #bd6ded;border-radius:50%;flex-shrink:0}
+  .heart-intro .heart-name{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#e5c9f3;margin:0 0 .75rem;font-weight:600}
+  .heart-intro h2{font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:clamp(2.25rem,4.8vw,4.15rem);line-height:1.08;letter-spacing:-.045em;margin:0 0 1.5rem;color:#fff6ed}
+  h2 em{font-style:normal;color:#d7a1f1}
+  .heart-intro p{color:var(--muted);line-height:1.75;max-width:34rem}
+  .heart-intro .heart-lead{font-size:1.12rem;color:#e9deee;line-height:1.65;margin-top:0}
+  .heart-lead strong{color:#f1d5ff}
+  .heart-jump{display:inline-flex;align-items:center;gap:1.2rem;font-size:.85rem;font-weight:600;color:#f1cf9b;border-bottom:1px solid #f3b86140;padding:.6rem 0;margin-top:.75rem;transition:color .2s,border-color .2s}
+  .heart-jump:hover{color:#ffe5bf;border-color:#f3b861}.heart-jump span{font-size:1.3rem}
+  .heart-figure{margin:0;min-width:0;align-self:center}
+  .heart-stage{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:31rem;margin:auto}
+  .heart-stage-label{position:absolute;top:.5rem;left:0;right:0;text-align:center;color:#b9a3c8;font-size:.59rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;z-index:2}
+  .heart-aura{position:absolute;inset:10%;background:radial-gradient(ellipse,#a348d52c,transparent 66%);filter:blur(12px);animation:heart-glow 5s ease-in-out infinite}
+  .heart-orbit{position:absolute;inset:13%;border:1px solid #b47bcc17;border-radius:50%;transform:rotate(-20deg) scaleY(.9)}
+  .heart-orbit::before{content:'';position:absolute;inset:-12%;border:1px solid #b47bcc0b;border-radius:50%}
+  .heart-artwork{position:relative;width:95%;animation:heart-float 6s ease-in-out infinite;z-index:1;filter:drop-shadow(0 16px 30px #08050e99)}
+  .heart-artwork img{display:block;width:100%;height:auto}
+  .heart-sparks{position:absolute;inset:0;pointer-events:none}
+  .heart-sparks i{position:absolute;width:4px;height:7px;background:#d4a1f4;box-shadow:0 0 9px #c978f4;transform:rotate(30deg);opacity:0;animation:heart-spark 6s ease-in-out infinite}
+  .heart-sparks i:nth-child(1){left:17%;top:57%;animation-delay:-1s}.heart-sparks i:nth-child(2){right:11%;top:44%;animation-delay:-3.5s;width:3px;height:5px}.heart-sparks i:nth-child(3){left:32%;top:24%;animation-delay:-4.5s;width:2px;height:4px}.heart-sparks i:nth-child(4){right:34%;top:77%;animation-delay:-2s;background:#edb77a;box-shadow:0 0 9px #e9a95b}
+  .heart-motion{position:absolute;bottom:-.15rem;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:44px;padding:.55rem .85rem;white-space:nowrap;max-width:100%;border:1px solid #b78cca33;border-radius:2rem;background:#17111fdf;color:#cbb8d6;font:500 .7rem/1.4 'Inter',sans-serif;cursor:pointer;z-index:3}
+  .heart-motion[hidden]{display:none}.heart-motion:hover{border-color:#c992e580;color:#f3e0ff}.heart-motion:disabled{cursor:default;color:#ad9bb7}
+  .heart-motion-icon{width:9px;height:10px;border-left:2px solid currentColor;border-right:2px solid currentColor}.heart-motion[aria-pressed='true'] .heart-motion-icon{width:0;height:0;border:5px solid transparent;border-right:0;border-left:8px solid currentColor}
+  .heart-item-reference{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:1.15rem auto 0;font-size:.69rem;line-height:1.7;color:#b8a8c3}.heart-item-reference strong{font-weight:500;color:#ddc9e8}
+  .heart-item-sprite{width:36px;height:36px;overflow:hidden;flex-shrink:0}.heart-item-sprite img{display:block;width:36px;max-width:none;height:auto;image-rendering:pixelated}
+  .heart-decisions{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.2rem,3vw,2.5rem);scroll-margin-top:6rem}
+  .heart-choice{position:relative;border-top:1px solid #a56dc666;padding-top:1.2rem}.heart-choice::before{content:'';position:absolute;width:2.2rem;height:2px;top:-1px;left:0;background:#c18ee3}
+  .heart-choice .heart-choice-label{display:flex;align-items:center;gap:.7rem;font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:#bba5c9;line-height:1.6;margin:0 0 .85rem}.heart-choice-label span{font-family:'Space Grotesk',sans-serif;color:#ddb6f5;font-size:.75rem}
+  .heart-choice h3{font-family:'Space Grotesk',ui-sans-serif,sans-serif;color:#f5e9fb;font-size:1.45rem;line-height:1.3;margin:0 0 .65rem;letter-spacing:-.025em}.heart-choice p:last-child{margin:0;font-size:.87rem;line-height:1.8;color:#c8bbd1}
+  .heart-choice-peace{border-color:#b18a5c66}.heart-choice-peace::before{background:#e7b97f}.heart-choice-peace .heart-choice-label span{color:#e7b97f}
+  .heart-details{grid-column:1/-1;border-top:1px solid #8e749a40;border-bottom:1px solid #8e749a40}.heart-details summary{list-style:none;display:flex;align-items:center;gap:1rem;min-height:64px;cursor:pointer;font-size:.85rem;font-weight:600;padding:1rem 0;color:#e4d1ec}.heart-details summary::-webkit-details-marker{display:none}
+  .heart-details-hint{margin-left:auto;font-size:.69rem;color:#af9bbd;font-weight:400}.heart-details-plus{font-size:1.5rem;line-height:1;color:#cfb2e1;transition:transform .2s}.heart-details[open] .heart-details-plus{transform:rotate(45deg)}
+  .heart-details-body{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:0 0 1.5rem;font-size:.85rem;line-height:1.8}.heart-details-body h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#e0c4ed;margin:0 0 .75rem;line-height:1.5}.heart-details-body p{margin:.65rem 0;color:#c8bbd1}
+  code{color:#f1cf9b;font-size:.82rem;overflow-wrap:anywhere}.heart-block .heart-caption{grid-column:1/-1;font-size:.7rem;line-height:1.7;color:#ad9cb9;margin:-1.25rem 0 0;max-width:none}
+  .heart-section .heart-artwork,.heart-section .heart-aura,.heart-section .heart-sparks i{animation-play-state:paused}.heart-section[data-motion='on'] .heart-artwork,.heart-section[data-motion='on'] .heart-aura,.heart-section[data-motion='on'] .heart-sparks i{animation-play-state:running}
+  @keyframes heart-float{0%,100%{transform:translateY(2px) rotate(-.5deg)}50%{transform:translateY(-8px) rotate(.5deg)}}
+  @keyframes heart-glow{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:1;transform:scale(1.06)}}
+  @keyframes heart-spark{0%,100%{opacity:0;transform:translateY(6px) rotate(30deg)}35%{opacity:.6}70%{opacity:0;transform:translateY(-24px) rotate(65deg)}}
+  @media(max-width:1000px) and (min-width:701px){.heart-block{column-gap:1rem}.heart-intro h2{font-size:clamp(2rem,4.5vw,3rem)}.heart-intro .kicker{font-size:.59rem;letter-spacing:.08em}.heart-stage-label{font-size:.51rem}.heart-choice h3{font-size:1.25rem}}
+  @media(max-width:700px){.heart-block{grid-template-columns:minmax(0,1fr);row-gap:1.8rem;padding:1.5rem}.heart-intro{padding:0}.heart-intro .kicker{margin-bottom:1.1rem}.heart-intro h2{font-size:clamp(2.15rem,8.3vw,3.2rem)}.heart-intro .heart-lead{font-size:1.05rem}.heart-intro p{font-size:.92rem}.heart-jump{font-size:.79rem;margin-top:.25rem}.heart-figure{max-width:27rem;width:100%;justify-self:center}.heart-stage{margin-top:.15rem}.heart-stage-label{font-size:.55rem}.heart-decisions{grid-template-columns:1fr;gap:1.5rem}.heart-choice{padding-top:.9rem}.heart-choice h3{font-size:1.35rem}.heart-choice p:last-child{font-size:.87rem}.heart-details-body{grid-template-columns:1fr;gap:1rem}.heart-details-hint{display:none}.heart-details-plus{margin-left:auto}.heart-item-reference{font-size:.64rem;margin-top:1.3rem}.heart-block .heart-caption{margin-top:-.6rem}}
+  /* Keep the feature legible over the moving site backdrop and its global section rules. */
+  .heart-section .heart-block{padding:clamp(1.5rem,3vw,2.8rem);background:linear-gradient(135deg,rgba(22,16,30,.94),rgba(15,12,21,.91));border:1px solid #b785d33d;box-shadow:0 22px 60px #08050e40}
+  .heart-section .heart-intro h2{font-size:clamp(2.15rem,4.2vw,3.5rem)}
+  .heart-section .heart-intro p{font-size:.94rem;line-height:1.75}
+  .heart-section .heart-intro .kicker{font-size:.67rem;line-height:1.6}
+  .heart-section .heart-intro .heart-name{font-size:.8rem;line-height:1.5}
+  .heart-section .heart-intro .heart-lead{font-size:1.1rem;line-height:1.65}
+  .heart-section .heart-choice .heart-choice-label{font-size:.63rem;line-height:1.6}
+  .heart-section .heart-choice h3{font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:1.45rem;line-height:1.3}
+  .heart-section .heart-choice p:last-child{font-size:.87rem;line-height:1.8}
+  .heart-section .heart-details summary{font-family:'Inter',ui-sans-serif,sans-serif;font-size:.85rem;line-height:1.5}
+  .heart-section .heart-details-body h3{font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:1rem;line-height:1.5}
+  .heart-section .heart-details-body p{font-size:.85rem;line-height:1.8}
+  .heart-section .heart-block .heart-caption{font-size:.7rem;line-height:1.7}
+  @media(max-width:1000px) and (min-width:701px){.heart-section .heart-intro h2{font-size:clamp(1.8rem,3.8vw,2.8rem)}.heart-section .heart-intro .kicker{font-size:.57rem}.heart-section .heart-choice h3{font-size:1.25rem}}
+  @media(max-width:700px){.heart-section .heart-block{padding:1.4rem}.heart-section .heart-intro h2{font-size:clamp(1.9rem,7.2vw,3.2rem)}.heart-section .heart-intro p{font-size:.92rem}.heart-section .heart-intro .heart-lead{font-size:1.05rem}.heart-section .heart-choice h3{font-size:1.35rem}}
+  @media(prefers-reduced-motion:reduce){.heart-section .heart-artwork,.heart-section .heart-aura,.heart-section .heart-sparks i{animation:none!important}.heart-details-plus,.heart-jump{transition:none}}
 </style>
