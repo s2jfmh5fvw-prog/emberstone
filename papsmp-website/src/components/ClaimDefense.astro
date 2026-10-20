@@ -1,0 +1,94 @@
+---
+const devices = [
+  { name: 'Alarmrune', role: 'Frühwarnung', base: 'Glocke', cost: '250 Cash', text: 'Meldet erkannte Bedrohungen mit Standort an den Besitzer, solange er online ist. Ein kurzer Klang und Partikel machen den Alarm bemerkbar.', accent: 'gold' },
+  { name: 'Frostsiegel', role: 'Zeit gewinnen', base: 'Blaueis', cost: '600 Cash + 5 Shards', text: 'Verlangsamt bodennahe Ziele kurz. Du gewinnst Zeit zum Reagieren; niemand wird festgehalten oder teleportiert.', accent: 'ice' },
+  { name: 'Dornenfalle', role: 'Angriff schwächen', base: 'Polierte Schwarzsteindruckplatte', cost: '900 Cash + 8 Shards', text: 'Schwächt in der Purge kurz den Nahkampfangriff zulässiger fremder Spieler. Feindliche Monster können stattdessen Schaden erhalten.', accent: 'violet' },
+  { name: 'Bolzenwächter', role: 'Monster abwehren', base: 'Gemeißelte Steinziegel', cost: '1.600 Cash + 15 Shards', text: 'Trifft ausschließlich zulässige Monster bei freier Sichtlinie. Die stationäre Anlage ergänzt deine Wachen und Patrouillen.', accent: 'gold' },
+  { name: 'Bannfeld', role: 'Blöcke schützen', base: 'Amethystblock', cost: '1.200 Cash + 12 Shards', text: 'Schützt gedeckte Claimblöcke vor Explosionen und wehrt bestimmte Mobprojektile und Mob-Blockänderungen ab. Seine Basis bleibt angreifbar.', accent: 'violet' },
+];
+---
+
+<section id="verteidigung" class="section section-defense" aria-labelledby="defense-title">
+  <div class="container section-block defense-block">
+    <div class="defense-heading">
+      <div class="section-heading">
+        <p class="kicker">Dein Claim. Dein Plan.</p>
+        <h2 id="defense-title">Vorbereiten.<br /><em>Standhalten.</em></h2>
+        <p>Fallen und Schutzanlagen geben deiner Base zusätzliche Möglichkeiten: früh warnen, Eindringlinge bremsen und Monster abwehren.</p>
+      </div>
+      <img class="defense-emote" src="/pap-chibi-v1/pap-alert-128.webp" alt="Chibi-PAP hält Ausschau" width="128" height="128" loading="lazy" />
+    </div>
+    <div class="defense-status"><span class="phase-label">Für die Alpha vorbereitet</span><p>Die Erweiterung ist vorbereitet. Wann sie auf dem Server freigegeben wird, erfährst du auf <a href="#community">Discord</a>.</p></div>
+
+    <div class="defense-grid">
+      {devices.map((device, index) => <article class={`defense-card defense-${device.accent}`}>
+        <div class="defense-card-top"><span class="defense-number" aria-hidden="true">0{index + 1}</span><span class="phase-label">{device.role}</span></div>
+        <h3>{device.name}</h3>
+        <p>{device.text}</p>
+        <dl><div><dt>Basisblock</dt><dd>{device.base}</dd></div><div><dt>Kauf · Startwert</dt><dd>{device.cost}</dd></div></dl>
+      </article>)}
+    </div>
+
+    <div class="defense-notes">
+      <details>
+        <summary>So entsteht deine erste Anlage<span aria-hidden="true">＋</span></summary>
+        <ol>
+          <li>Baue den passenden Basisblock in deinem eigenen aktiven Claim. Halte mindestens drei Blöcke Abstand zu anderen Anlagen.</li>
+          <li>Sieh den Block aus höchstens fünf Blöcken Entfernung an. Nach der Freigabe öffnest du mit <code>/defense</code> das Menü und kaufst dort das Upgrade.</li>
+          <li>Neue Anlagen starten im Modus <code>mobs</code>. Per Rechtsklick auf den Block verwaltest du als Besitzer Betrieb, Zielmodus und Ladungen.</li>
+        </ol>
+        <p>Das Upgrade setzt keinen Block automatisch. Beim Abbau geht es verloren; beim Umzug kaufst du am neuen Standort eine neue Anlage. Es sind keine Client-Mods oder zusätzlichen Resourcepacks für diese Anlagen nötig.</p>
+      </details>
+      <details>
+        <summary>Peace, Purge und faire Ziele<span aria-hidden="true">＋</span></summary>
+        <p><strong>Monsterbetrieb:</strong> Im Standardmodus werden nur zulässige feindliche Monster erfasst. Gezähmte Tiere, deine Begleiter und Wachen bleiben verschont.</p>
+        <p><strong>Spielerbetrieb:</strong> Alarmrune, Frostsiegel und Dornenfalle richten sich mit <code>raiders</code> auf zulässige fremde Spieler; <code>both</code> kombiniert Spieler- und Monsterziele. Spieler werden nur während der Purge und bei erlaubten Kampfbedingungen erfasst. Besitzer, Teammitglieder, vertraute Spieler und geschützte Neulinge werden geschont.</p>
+        <p>Spieler erhalten <strong>keinen direkten HP-Schaden</strong> durch diese Anlagen. Frost und Schwäche wirken kurz; eine gemeinsame Sperre verhindert dauerndes Aneinanderreihen der Effekte. Bolzenwächter bleibt reine Monsterabwehr.</p>
+        <p>Das Bannfeld macht niemanden unverwundbar. Explosionsschaden an Spielern, Nahkampfangriffe, Lava und leere Ladungen bleiben Gefahren. Reichweite, Sichtlinie und Claimregeln begrenzen die Wirkung.</p>
+      </details>
+      <details>
+        <summary>Kosten, Ladungen und Grenzen<span aria-hidden="true">＋</span></summary>
+        <p>Die Kaufpreise oben sind die vorbereiteten Startwerte. Jeder Kauf enthält <strong>40 Ladungen</strong>, die Standardkapazität beträgt 200. Ein Paket mit <strong>25 Ladungen kostet 100 Cash und 1 Shard</strong>; es muss vollständig in die Anlage passen.</p>
+        <p>Alarmrune und Bolzenwächter verbrauchen eine Ladung pro Aktion, Frostsiegel und Dornenfalle zwei. Beim Bannfeld kosten gedeckte Explosionen drei Ladungen; einzelne abgewehrte Mobprojektile oder Mob-Blockänderungen jeweils eine. Abklingzeiten und leere Vorräte lassen Angreifern Gegenchancen.</p>
+        <p>Nur der Besitzer verwaltet und bezahlt seine Anlagen. Ausschalten, Entfernen und Abbau erstatten weder Kaufpreis noch Restladungen. Preise und Balance können sich im Alpha-Test ändern; die aktuellen Werte zeigt das Spielmenü.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<style>
+  .defense-block { display: grid; gap: 1.25rem; }
+  .defense-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .defense-heading .section-heading { margin-bottom: 0; }
+  .defense-emote { flex: 0 0 auto; width: 112px; height: 112px; object-fit: contain; image-rendering: auto; }
+  .defense-status { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1rem; padding: .9rem 1rem; border: 1px solid rgba(243,184,97,.32); border-radius: .5rem; background: rgba(243,184,97,.07); }
+  .defense-status > .phase-label { color: var(--peace); }
+  .defense-status p { margin: 0; }
+  .defense-status a { color: var(--peace); text-decoration: underline; text-underline-offset: .2em; }
+  .defense-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 1rem; }
+  .defense-card { grid-column: span 2; min-width: 0; padding: 1.15rem; border: 1px solid rgba(243,184,97,.25); border-top: 3px solid var(--peace); border-radius: .5rem; background: linear-gradient(150deg,rgba(243,184,97,.07),rgba(20,16,31,.95) 65%); display: flex; flex-direction: column; }
+  .defense-card:nth-child(n+4) { grid-column: span 3; }
+  .defense-ice { border-top-color: var(--purge); background: linear-gradient(150deg,rgba(171,196,213,.1),rgba(20,16,31,.95) 65%); }
+  .defense-violet { border-top-color: #b595df; background: linear-gradient(150deg,rgba(181,149,223,.1),rgba(20,16,31,.95) 65%); }
+  .defense-card-top { display: flex; align-items: center; gap: .6rem; }
+  .defense-number { color: var(--peace); font-family: 'Space Grotesk',monospace; font-size: 1.15rem; font-weight: 700; }
+  .defense-card-top .phase-label { color: var(--muted); font-size: .62rem; letter-spacing: .09em; }
+  .defense-card h3 { margin: .65rem 0 .5rem; overflow-wrap: anywhere; }
+  .defense-card p { margin: 0 0 1rem; }
+  .defense-card dl { margin: auto 0 0; padding-top: .8rem; border-top: 1px solid rgba(255,255,255,.12); display: grid; gap: .65rem; }
+  .defense-card dt { color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+  .defense-card dd { margin: .15rem 0 0; font-size: .85rem; color: var(--text); }
+  .defense-notes { border: 1px solid rgba(255,255,255,.14); border-radius: .5rem; background: rgba(20,16,31,.65); }
+  .defense-notes details + details { border-top: 1px solid rgba(255,255,255,.12); }
+  .defense-notes summary { padding: 1rem; display: flex; align-items: center; justify-content: space-between; gap: .75rem; cursor: pointer; list-style: none; }
+  .section-defense .defense-block .defense-notes summary { font-size: .9rem; }
+  .defense-notes summary::-webkit-details-marker { display: none; }
+  .defense-notes summary span { color: var(--peace); flex: 0 0 auto; font-family: sans-serif; font-size: 1.2rem; }
+  .defense-notes details[open] summary span { transform: rotate(45deg); }
+  .defense-notes details > p, .defense-notes ol { margin: 0 1rem 1rem; }
+  .defense-notes ol { padding-left: 1.3rem; }
+  .defense-notes li + li { margin-top: .55rem; }
+  .defense-notes code { padding: .1rem .3rem; border: 1px solid rgba(243,184,97,.2); border-radius: .2rem; color: #ffe0aa; white-space: nowrap; font-size: .9em; }
+  @media (max-width: 800px) { .defense-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .defense-card, .defense-card:nth-child(n+4) { grid-column: auto; } .defense-card:last-child { grid-column: 1 / -1; } }
+  @media (max-width: 560px) { .defense-emote { width: 72px; height: 72px; } .defense-grid { grid-template-columns: minmax(0,1fr); } .defense-card:last-child { grid-column: auto; } .defense-heading { align-items: flex-start; } .defense-notes summary { font-size: .9rem; } }
+</style>

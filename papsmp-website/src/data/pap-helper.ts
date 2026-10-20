@@ -7,6 +7,7 @@ const discord = { label: 'PAP SMP auf Discord', url: site.links.discord };
 const downloads = { label: 'Zu den Resource Packs', url: `${site.canonical}#availability-title` };
 export const papGreeting = 'Hey, ich bin PAP. Eine Frage zum Einstieg, zu den Packs oder zu VIP? Ich helfe dir gern. 🦊';
 export const papTopics: Record<string, PapTopic> = {
+  defense: { title: 'Wie verteidige ich meinen Claim?', words: ['defense', 'defence', 'verteidig', 'falle', 'alarmrune', 'frostsiegel', 'dornenfalle', 'bolzenwachter', 'bannfeld', 'ladungen', 'aufladen', 'basisblock', 'claimschutz'], text: (faqs.find(([question]) => question === 'Wie kann ich meinen Claim mit Fallen schützen?')?.[1] ?? 'Die fünf Verteidigungsanlagen sind für die Alpha vorbereitet. Die Freigabe erfährst du auf Discord.') + ' Nach den vorbereiteten Startwerten enthält ein Kauf 40 Ladungen; 25 weitere kosten 100 Cash und 1 Shard. Für diese Anlagen sind keine Client-Mods oder zusätzlichen Resourcepacks nötig.', links: [{ label: 'Fallen und Claimverteidigung', url: `${site.canonical}#verteidigung` }, discord] },
   join: { title: 'Wie komme ich auf den Server?', words: ['beitreten', 'zugang', 'whitelist', 'freischalt', 'anmeld', 'alpha', 'einstieg', 'mitspielen', 'spieler', 'join', 'auf den server', 'zum server'], text: faqs[1][1], links: [discord] },
   editions: { title: 'Java oder Bedrock?', words: ['bedrock', 'geyser', 'crossplay', 'handy', 'konsole', 'playstation', 'xbox', 'switch', 'edition', 'plattform'], text: faqs[3][1], links: [discord, downloads] },
   java: { title: 'Wie lautet die Java-Adresse?', words: ['java', 'adresse', 'ip', 'serveradresse', 'port'], copyAddress:true, text: `Java: ${site.server.java}. Die aktuellen Zugangshinweise zur Alpha findest du auf Discord.`, links: [discord] },
@@ -41,7 +42,8 @@ export function getPapAnswer(query: string, topic?: string, jokeNumber = 0, prev
   if (/^(hallo|hi|hey|moin|guten tag)[! .]*$/.test(normalized)) return { text: papGreeting, mood: 'greeting' };
   if (/^(danke|dankeschon|vielen dank|super|cool)[! .]*$/.test(normalized)) return { text: 'Gern! Wenn du noch eine Frage hast, bin ich hier. 🦊', mood: 'happy' };
   // Specific intent comes before broad Minecraft/about keywords.
-  for (const key of ['pack', 'editions', 'shop', 'java', 'join', 'discord', 'purge', 'about']) {
+  if (previousTopic === 'defense' && /^(und )?(was kostet|was kosten|wie teuer|kosten|preis|preise|wie (lade|aufladen)|wie viele ladungen)/.test(normalized)) return {...papTopics.defense,topic:'defense'};
+  for (const key of ['defense', 'pack', 'editions', 'shop', 'java', 'join', 'discord', 'purge', 'about']) {
     const entry = papTopics[key];
     if (entry.words.some(word => matchesWord(normalized, word))) return {...entry,topic:key};
   }
