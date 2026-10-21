@@ -2,8 +2,9 @@ export const packRelease = {
   label: 'Alpha · PAP-Naturwerk',
   revision: '3.2.24',
   java: {
-    url: '/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip',
-    versionedUrl: '/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip',
+    serverUrl: '/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip',
+    url: '/downloads/PAP-SMP-Full-Java-3.2.24-Karten-MC-1.21.11.zip',
+    versionedUrl: '/downloads/PAP-SMP-Full-Java-3.2.24-Karten-MC-1.21.11.zip',
     originalUrl: '/downloads/PAP-SMP-Full-Java-3.2.8-ORIGINAL-MC-1.21.11.zip',
     sha1: '70568d5f857fdd6cf4527fd3502b34e451f407f9',
     bytes: 12092554,
