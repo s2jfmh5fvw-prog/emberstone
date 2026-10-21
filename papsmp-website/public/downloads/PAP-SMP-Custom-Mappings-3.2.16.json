@@ -649,6 +649,111 @@
             "slot": "head"
           }
         }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/barricade_wood",
+        "bedrock_identifier": "pap_smp:defense_barricade_wood",
+        "display_name": "Wurzelgeflecht",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_barricade_wood"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/barricade_iron",
+        "bedrock_identifier": "pap_smp:defense_barricade_iron",
+        "display_name": "Wurzelwacht",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_barricade_iron"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/spikes",
+        "bedrock_identifier": "pap_smp:defense_spikes",
+        "display_name": "Dornengestrüpp",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_spikes"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/alarm",
+        "bedrock_identifier": "pap_smp:defense_alarm",
+        "display_name": "Windglocke",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_alarm"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/snare",
+        "bedrock_identifier": "pap_smp:defense_snare",
+        "display_name": "Reifblüte",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_snare"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/sentry",
+        "bedrock_identifier": "pap_smp:defense_sentry",
+        "display_name": "Wurzelbogen",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_sentry"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
+      },
+      {
+        "type": "definition",
+        "model": "pap_smp:defense/ward",
+        "bedrock_identifier": "pap_smp:defense_ward",
+        "display_name": "Hainanker",
+        "bedrock_options": {
+          "icon": "pap_smp.defense_ward"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1,
+          "minecraft:equippable": {
+            "slot": "head"
+          }
+        }
       }
     ],
     "minecraft:totem_of_undying": [

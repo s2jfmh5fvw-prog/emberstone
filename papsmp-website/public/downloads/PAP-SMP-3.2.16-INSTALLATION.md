@@ -1,32 +1,35 @@
-## Bedrock-Hotfix vom 19.10.2026 – interner Packstand 3.2.17
+# PAP SMP – Packstand 3.2.18 · Naturwerk
 
-Die bisherigen Dateinamen und Downloadadressen bleiben unverändert. Die Bedrock-Pack-UUID bleibt erhalten; Header und Modulversion steigen auf 3.2.17, damit Clients den neuen Stand erkennen.
+Stand: 20.10.2026. Die bekannten Dateinamen mit `3.2.16` bleiben für bestehende Verknüpfungen erhalten. Ihr Inhalt hat jetzt Ressourcenstand **3.2.18**. Pack-UUIDs und vorhandene Modellzuordnungen bleiben bestehen.
 
-Der PAP-Eingriff in das native Pausemenü wurde entfernt. Speichern und Beenden verwendet wieder die Vanilla-Oberfläche. Bei den Bo-Chibi-Ringen wurde die zusätzliche clientseitige Drehung entfernt: Die zugehörige Serverdarstellung steuert diese Ringe bereits über separate Armor-Stands. Modelle, UVs, Texturen und die PAP-Identität wurden dabei erhalten. Die funktionalen Mapping-IDs bleiben gleich; die Downloadfassung korrigiert nur fehlerhafte Sonderzeichen in Anzeigenamen.
+Diese Ausgabe ergänzt sieben freigegebene Darstellungen: zwei Wurzelbarrikaden, Dornengestrüpp, Windglocke, Reifblüte, Wurzelbogen und Hainanker. Die Packs liefern die Optik ohne Client-Mods. Die dazugehörige Serverfunktion benötigt separat `PAP-SMP-DefenseTrap 1.1.0-alpha.1`; ein importiertes Pack allein erzeugt keine Anlage und keine neue Kollision.
 
-Die Pack-Struktur, Archive und Ressourcenverweise sind technisch geprüft. Eine grafische Java-/Bedrock-Abnahme sowie die Bedienprüfung im echten Bedrock-Client sind offen. Insbesondere ist damit keine vollständige Behebung aller gemeldeten PAP-/Bo-Darstellungsfehler nachgewiesen.
+## Als Spieler
 
-Nachfolgend die historische Beschreibung des Kartenstands 3.2.16; die obigen Hotfix-Hinweise gehen vor.
+Java-Spieler laden beim Verbinden das aktualisierte Serverpack. Bedrock-Spieler erhalten das Pack über Geyser oder importieren die aktuelle MCPACK-Datei. Bei einem veralteten Cache vollständig neu verbinden und den aktualisierten Packstand laden. Die Bedrock-Version ist 3.2.18 bei unveränderter Pack-UUID.
 
-# PAP SMP 3.2.16 – Karten & Werte
+## Bestehenden Server gezielt aktualisieren
 
-Kompaktes überlappendes Original-Website-Logo, halbtransparentes Panel, Phasenstreifen mit Countdown, zwei Cash-/Shards-Karten und lesbare Statistikzeilen. Die Anzeige ist 126 native Pixel breit und 197 Pixel hoch (vorher 148 × 246): etwa 15 % schmaler und 20 % niedriger. Bei GUI 3 beträgt die Breite einschließlich Rand 378 Bildschirm-Pixel statt 444. Die Schriftgröße bleibt erhalten, das Logo misst 90 × 82 native Pixel.
+1. Server regulär stoppen. Betroffene Plugin-, Pack-, Mapping- und Konfigurationsdateien mit Prüfsummen außerhalb der aktiven Verzeichnisse sichern. Welten, Inventare, Economy, Teams, Claims und Herzregister werden nicht ersetzt.
+2. Genau eine DefenseTrap-JAR aktiv halten. Die Packs enthalten diese JAR nicht. Andere funktionierende PAP-JARs werden für dieses Packupdate nicht pauschal ausgetauscht.
+3. Java-Pack unter der bestehenden Adresse ersetzen und URL sowie SHA-1 gemeinsam abgleichen. Die bestehende `resource-pack-id` bleibt erhalten:
 
-Java verwendet 15 native Zeilen einschließlich leerer Abstandszeilen. Dadurch liegt Minecrafts eigener Hintergrund vollständig innerhalb des Panels. Die Hauptfläche nutzt Alpha 128/255 und ergibt mit dem gewöhnlichen nativen Hintergrund etwa 65 % Deckkraft. Die tatsächliche Deckkraft hängt auch von den Text-Hintergrundeinstellungen des Clients ab. Bei maximaler Hintergrunddeckkraft im Client kann der native Hintergrund weiterhin deckend sein. Bedrock verwendet für das eigene Panel Alpha 166/255. Währungskarten bleiben etwas kräftiger. Es gibt keine globalen Shader-Änderungen und keine erzwungenen Client-Einstellungen. Die Alpha bleibt geschlossen.
-
-## Bestehenden Server aktualisieren
-
-1. Server ordentlich stoppen und Konfigurationen, UI-/Visual-JARs und Bedrock-Pack außerhalb aktiver Verzeichnisse sichern.
-2. Genau eine UI-Version und einen Visual-Zusatz aktiv halten: pap-smp-ui-1.0.3-card.1.jar sowie pap-smp-companion-visual-0.4.5-ui.1.jar. Companion 1.1.2 bleibt erhalten.
-3. Genau ein PAP-Bedrock-Pack mit UUID db742887-aab4-45b8-a41a-58433fd13b5b verwenden: PAP-SMP-Bedrock-3.2.16-Karten.mcpack. Alte Packdatei aus dem aktiven Geyser-packs-Verzeichnis nehmen.
-4. Die vorhandenen 42 Custom-Mappings bleiben bytegleich. Bei bestehenden Servern keine zweite Mapping-Datei daneben installieren. Die mitgelieferte Mapping-Datei ist für eine Neuinstallation vorgesehen.
-5. server.properties: bestehende resource-pack-id behalten, URL und Hash gemeinsam ersetzen:
+   ```properties
    resource-pack=https://papsmp.de/downloads/PAP-SMP-Full-Java-3.2.16-Karten-MC-1.21.11.zip
-   resource-pack-sha1=f34971b99265a50ef1ca4b40ad3de47db86a1d0b
-6. PAP-SMP-UI/config.yml pack.sha1 und PAP-SMP-Teleport/config.yml menu-resourcepack.full-pack-sha1 auf dieselbe SHA-1 setzen. Bedrock-Pfad: packs/PAP-SMP-Bedrock-3.2.16-Karten.mcpack; SHA-256: c7af02462a5341a93a8a66b21ee082568b01fba38444577250151a29b61578a5.
-7. Den scoreboard-Abschnitt der geprüften privaten TAB-Konfiguration einsetzen. Spielerliste, Header/Footer und übrige TAB-Einstellungen bleiben erhalten. Doctor erwartet UI 1.0.3-card.1 und Visual 0.4.5-ui.1.
-8. Server starten, papdoctor und Pack-Gates prüfen. Spieler vollständig neu verbinden und das aktualisierte Pack laden.
+   resource-pack-sha1=604554fab749e76564f7ed27e406c2865b08126e
+   ```
+
+   Bereits verwendete Pack-Hash-Felder in `plugins/PAP-SMP-UI/config.yml` und `plugins/PAP-SMP-Teleport/config.yml` müssen denselben neuen Java-Hash referenzieren. Übrige Konfigurationen beibehalten.
+4. Das vorhandene Bedrock-Pack in `plugins/Geyser-Spigot/packs/` durch `PAP-SMP-Bedrock-3.2.16-Karten.mcpack` ersetzen. Keine zweite Kopie derselben Pack-UUID daneben aktivieren. Bedrock-SHA-256: `2ab2259b079078d5fb010eaa81d01c8ca8caf987cc9ca30e40727d476d101407`.
+5. Die neuen Inhalte aus `PAP-SMP-Custom-Mappings-3.2.16.json` in die **bereits aktive** PAP-Mappingdatei übernehmen bzw. diese gezielt ersetzen. Auf Bloom kann deren bisheriger Dateiname `3.2.12` enthalten; dieser Name ist kein Grund, eine zweite aktive Mappingdatei hinzuzufügen. Das Download-Overlay enthält genau eine Mappingdatei mit dem stabilen Downloadnamen `3.2.16` und ist für vorhandene Server kein blindes Voll-Overlay.
+6. Bei einem geplanten regulären Start `/defense doctor` und die vorhandenen PAP-Pack-/Doctor-Prüfungen ausführen. Kein globales `/reload` verwenden. Anschließend in echten Java- und Bedrock-Clients neu verbinden, alle Anlagen ansehen und Fußkontakt, Blickrichtung, Höhenversatz und Kollision prüfen.
+
+## Prüfgrenze
+
+Archivstruktur, Referenzen und Modellgeometrie sind statisch geprüft. Die Darstellung verwendet unsichtbare Helmträger; deren tatsächliche Höhe und Orientierung müssen in Java und Bedrock noch grafisch kalibriert werden. Diese Ausgabe ist **keine bestandene Client-Abnahme**. Insbesondere sind offene Bedrock-Pausemenü-/PAP-/Bo-Grafiktests aus dem vorherigen Stand weiterhin getrennt zu beurteilen.
+
+Der Hotfix aus 3.2.17 bleibt enthalten: kein PAP-Eingriff in das native Bedrock-Pausemenü und keine zusätzliche doppelte Bo-Ringanimation. Bestehende Herz-, Rüstungs-, Elytra-, HUD- und Companion-Ressourcen werden durch Naturwerk nicht neu gestaltet.
 
 ## Rückweg
 
-Gesicherte Konfigurationen, alte UI-/Visual-JARs und altes Pack als zusammengehörigen Stand wiederherstellen. Welten, Inventare, Geld, Shards und Companion-Besitz werden durch das Update nicht ersetzt. Frühere öffentliche Downloads bleiben unverändert.
+Gesicherte zusammengehörige Plugin-, Pack-, Mapping- und Hash-Konfigurationen wiederherstellen. Dabei weder Spielerkonten noch Welt-, Claim-, Team- oder Herz-Daten durch alte Datenstände überschreiben. Diese Veröffentlichung ist kein Nachweis eines bereits abgeschlossenen Austauschs auf dem Live-Server.
