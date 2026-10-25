@@ -1,22 +1,21 @@
 ---
 import cards from '../content/editor/companions.json';
 import copy from '../content/editor/pack-highlights.json';
-import { packRelease } from '../data/pack-release';
 const companions = cards.items;
 ---
 <section id="pack-motive" class="section" aria-labelledby="pack-motive-title">
   <div class="container section-block pack-highlights">
-    <div class="section-heading"><p class="kicker">{copy.texts.text_1}</p><h2 id="pack-motive-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2><p>{copy.texts.text_2} {packRelease.revision} {copy.texts.text_3}</p></div>
+    <div class="section-heading"><p class="kicker">{copy.texts.text_1}</p><h2 id="pack-motive-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2><p>{copy.texts.text_2}</p></div>
     <div class="motif-grid">
       {companions.map(pet => <article class="motif-card"><img src={pet.src} alt={`${pet.name} – Modellmotiv des PAP-Packs`} width="96" height="96" loading="lazy" /><h3>{pet.name}</h3><p>{pet.text}</p></article>)}
     </div>
-    <p class="motif-note">{copy.texts.text_4}</p>
+    <p class="motif-note">{copy.texts.text_3}</p>
     <div class="motif-grid motif-items">
-      <article class="motif-card"><img src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_3}</h3><p>{copy.texts.text_5}</p></article>
-      <article class="motif-card"><img src={copy.images.bild_2} alt={copy.images.bild_2_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_4}</h3><p>{copy.texts.text_6}</p></article>
-      <article class="motif-card"><img src={copy.images.bild_3} alt={copy.images.bild_3_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_5}</h3><p>{copy.texts.text_7}</p></article>
+      <article class="motif-card"><img src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_3}</h3><p>{copy.texts.text_4}</p></article>
+      <article class="motif-card"><img src={copy.images.bild_2} alt={copy.images.bild_2_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_4}</h3><p>{copy.texts.text_5}</p></article>
+      <article class="motif-card"><img src={copy.images.bild_3} alt={copy.images.bild_3_alt} width="96" height="96" loading="lazy" /><h3>{copy.texts.titel_5}</h3><p>{copy.texts.text_6}</p></article>
     </div>
-    <details class="motif-recipes"><summary>{copy.texts.beschriftung_1}</summary><p>{copy.texts.text_8}</p><dl><div><dt>{copy.texts.beschriftung_2}</dt><dd>{copy.texts.text_9}</dd></div><div><dt>{copy.texts.beschriftung_3}</dt><dd>{copy.texts.text_10}</dd></div></dl><p>{copy.texts.text_11} <a href="#availability-title">{copy.texts.beschriftung_4}</a>.</p></details>
+    <details class="motif-recipes"><summary>{copy.texts.beschriftung_1}</summary><p>{copy.texts.text_7}</p><dl><div><dt>{copy.texts.beschriftung_2}</dt><dd>{copy.texts.text_8}</dd></div><div><dt>{copy.texts.beschriftung_3}</dt><dd>{copy.texts.text_9}</dd></div></dl><p>{copy.texts.text_10} <a href="#availability-title">{copy.texts.beschriftung_4}</a>.</p></details>
   </div>
 </section>
 <style>

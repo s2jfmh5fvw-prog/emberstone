@@ -27,7 +27,7 @@
     },
     {
       "question": "Welche Begleiter gibt es?",
-      "answer": "PAP, BO und Schinken nutzen das vorhandene Companion-Menü. Schinken ist ein kleines Schwein mit Cowboyhut und Halsband; nur sein Besitzer darf reiten. Der Startpreis liegt bei 500 Shards. Ein aktiver Begleiter pro Spieler. Das aktuelle Resourcepack liefert die Gestaltung; Fähigkeiten benötigen den passenden Serverstand.",
+      "answer": "PAP geht für dich auf Futtersuche und bringt kleine Fundstücke mit. BO sucht in der Oberwelt nach Bauwerken und führt dich dorthin. Auf Schinken kannst du als Besitzer reiten – wenn du ihn lässt, geht er unterwegs auch anderen Schweinen nach. Du kannst einen Begleiter gleichzeitig aktiv haben; Auswahl und Pflege findest du im Companion-Menü.",
       "fromRelease": false
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "question": "Brauche ich für die Verteidigungsanlagen Mods?",
-      "answer": "Client-Mods sind nicht nötig. Die sechs Anlagen nutzen echte Minecraft-Basisblöcke und die aktuellen PAP-Packs für Java und Bedrock für ihre Naturgestaltung. Ohne das aktuelle Pack fehlt die passende Optik. Die überarbeiteten Formen wurden in echten Java- und Bedrock-Clients unter Windows aufgenommen. Der verlinkte Prüfbericht unterscheidet sichtbare Gestaltung, getestete Funktionen und noch offene Prüfungen.",
+      "answer": "Nein, Clientmods sind nicht nötig. Für die eigenen Modelle und Texturen brauchst du das aktuelle PAP-Resourcepack. Die Anlagen selbst werden vom Server bereitgestellt.",
       "fromRelease": false
     }
   ]

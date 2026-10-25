@@ -8,7 +8,7 @@ import { packRelease, packSize } from '../data/pack-release';
     <div class="section-heading">
       <p class="kicker">{copy.texts.text_1} {packRelease.label}</p>
       <h2 id="availability-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2>
-      <p>{copy.texts.text_2} {packRelease.revision} {copy.texts.text_3}</p>
+      <p>{copy.texts.text_2} {packRelease.revision}.</p>
     </div>
 
     <div class="availability-grid">
@@ -16,7 +16,7 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">↓</span>
         <span class="phase-label">{copy.texts.beschriftung_1}</span>
         <h3>{copy.texts.titel_3} {packRelease.revision}</h3>
-        <p>{copy.texts.text_4}</p>
+        <p>{copy.texts.text_3}</p>
         <span class="availability-status">{copy.texts.beschriftung_2} {packSize(packRelease.java.bytes)}</span>
       </a>
 
@@ -24,26 +24,26 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">◌</span>
         <span class="phase-label">{copy.texts.beschriftung_3}</span>
         <h3>{copy.texts.titel_4} {packRelease.revision}</h3>
-        <p>{copy.texts.text_5}</p>
+        <p>{copy.texts.text_4}</p>
         <span class="availability-status">{copy.texts.beschriftung_4} {packSize(packRelease.bedrock.bytes)}</span>
       </a>
 
       <a class="download-card" href="#vip-shop">
         <span class="availability-icon">✦</span>
         <h3>{copy.texts.titel_5}</h3>
-        <p>{copy.texts.text_6}</p>
+        <p>{copy.texts.text_5}</p>
         <span class="availability-status">{copy.texts.beschriftung_5}</span>
       </a>
     </div>
 
     <div class="download-extras" aria-labelledby="download-extras-title">
       <h3 id="download-extras-title">{copy.texts.titel_6}</h3>
-      <p class="download-extras-intro">{copy.texts.text_7}</p>
+      <p class="download-extras-intro">{copy.texts.text_6}</p>
 
       <details class="download-disclosure">
         <summary><span>{copy.texts.beschriftung_6}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>{copy.texts.text_8}</p>
+          <p>{copy.texts.text_7}</p>
           <a class="download-extra-link download-extra-primary" href={packRelease.bundle.url} download>{copy.texts.beschriftung_7} <span>{packSize(packRelease.bundle.bytes)} ↓</span></a>
           <div class="download-extra-links">
             <a href={packRelease.installation}>{copy.texts.beschriftung_8}</a>
@@ -55,21 +55,21 @@ import { packRelease, packSize } from '../data/pack-release';
       <details class="download-disclosure">
         <summary><span>{copy.texts.beschriftung_10}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>{copy.texts.text_9}</p>
+          <p>{copy.texts.text_8}</p>
           <div class="download-extra-links">
             <a href={packRelease.overlay} download>{copy.texts.beschriftung_11} {packRelease.revision} ↓</a>
             <a href={packRelease.mappings} download>{copy.texts.beschriftung_12} {packRelease.revision} ↓</a>
             <a href={packRelease.handoff}>{copy.texts.beschriftung_13}</a>
             <a href={packRelease.preview} download>{copy.texts.beschriftung_14}</a>
           </div>
-          <p class="download-extra-note">{copy.texts.text_10}</p>
+          <p class="download-extra-note">{copy.texts.text_9}</p>
         </div>
       </details>
 
       <details class="download-disclosure">
         <summary><span>{copy.texts.beschriftung_15}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>{copy.texts.text_11}</p>
+          <p>{copy.texts.text_10}</p>
           <div class="download-extra-links">
             <a href={packRelease.java.versionedUrl} download>{copy.texts.beschriftung_16}</a>
             <a href={packRelease.java.originalUrl} download>{copy.texts.beschriftung_17}</a>

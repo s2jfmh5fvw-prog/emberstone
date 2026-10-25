@@ -33,7 +33,7 @@ content:
             type: string
             required: true
           - name: text_1
-            label: Text 1 · Deine Base, eure Pläne und eine Nacht, auf die ihr euch vo…
+            label: Text 1 · Baue deine Base, spiel mit Freunden und bereite dich auf d…
             type: text
             required: true
           - name: beschriftung_1
@@ -134,11 +134,11 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Survival.
+            label: Überschrift 1 · So läuft
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Mit anderem Takt.
+            label: Überschrift 2 · Peace & Purge.
             type: string
             required: true
           - name: text_2
@@ -150,7 +150,7 @@ content:
             type: string
             required: true
           - name: titel_3
-            label: Überschrift 3 · Aufbauen. Erkunden. Ankommen.
+            label: Überschrift 3 · Zeit für deine Base
             type: string
             required: true
           - name: text_3
@@ -174,7 +174,7 @@ content:
             type: string
             required: true
           - name: titel_4
-            label: Überschrift 4 · Vorbereiten. Aufpassen. Entscheiden.
+            label: Überschrift 4 · Bereit für die Nacht?
             type: string
             required: true
           - name: text_7
@@ -273,7 +273,7 @@ content:
         required: true
         fields:
           - name: text_1
-            label: Text 1 · Die PAP-Core-Mechanik
+            label: Text 1 · Herzen verlieren und zurückholen
             type: string
             required: true
           - name: text_2
@@ -281,27 +281,27 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Ein Herz.
+            label: Überschrift 1 · Was passiert
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Deine Wahl.
+            label: Überschrift 2 · mit deinem Herz?
             type: string
             required: true
           - name: text_3
-            label: Text 3 · Peace und Purge geben den Takt vor. Das
+            label: Text 3 · Bei bestimmten PvP-Toden in der Purge kann eines deiner Gr…
             type: string
             required: true
           - name: beschriftung_1
-            label: Beschriftung 1 · korrumpierte Herz
+            label: Beschriftung 1 · korrumpiertes Herz
             type: string
             required: true
           - name: text_4
-            label: Text 4 · macht ihn persönlich.
+            label: Text 4 · in Umlauf kommen.
             type: string
             required: true
           - name: text_5
-            label: Text 5 · Ein Teil von dir wird zum handelbaren Item. Kämpfe darum, …
+            label: Text 5 · Andere Spieler können das Herz mitnehmen, handeln oder ben…
             type: text
             required: true
           - name: beschriftung_2
@@ -313,7 +313,7 @@ content:
             type: string
             required: true
           - name: beschriftung_4
-            label: Beschriftung 4 · Im Spiel ein Item. Für dich mehr.
+            label: Beschriftung 4 · Das korrumpierte Herz
             type: string
             required: true
           - name: beschriftung_5
@@ -341,7 +341,7 @@ content:
             type: string
             required: true
           - name: text_8
-            label: Text 8 · Deine Macht
+            label: Text 8 · Ein fremdes Herz
             type: string
             required: true
           - name: titel_4
@@ -357,7 +357,7 @@ content:
             type: string
             required: true
           - name: text_10
-            label: Text 10 · Deine Entscheidung
+            label: Text 10 · Ein Herz zurückgeben
             type: string
             required: true
           - name: titel_5
@@ -365,7 +365,7 @@ content:
             type: string
             required: true
           - name: text_11
-            label: Text 11 · Hole dein eigenes Herz zurück – ohne Zusatzbonus. Oder gib…
+            label: Text 11 · Benutzt du dein eigenes Herz, bekommst du dein verlorenes …
             type: text
             required: true
           - name: beschriftung_9
@@ -449,15 +449,15 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Vorbereiten.
+            label: Überschrift 1 · Mach deine Base
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Standhalten.
+            label: Überschrift 2 · bereit für die Purge.
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Wurzeln, Holz und Amethyst werden Teil deiner Verteidigung…
+            label: Text 2 · Versperre Durchgänge, lass dich vor Angreifern warnen und …
             type: text
             required: true
           - name: beschriftung_1
@@ -481,11 +481,11 @@ content:
             type: text
             required: true
           - name: text_5
-            label: Text 5 · Sieh den Block aus höchstens fünf Blöcken Entfernung an. M…
+            label: Text 5 · Sieh den Block aus höchstens fünf Blöcken Entfernung an. Ö…
             type: string
             required: true
           - name: text_6
-            label: Text 6 · das Menü und kaufst dort das Upgrade.
+            label: Text 6 · das Menü und kaufe dort das Upgrade.
             type: string
             required: true
           - name: text_7
@@ -604,79 +604,75 @@ content:
         required: true
         fields:
           - name: text_1
-            label: Text 1 · Deine Begleiter · Deine Zeichen
+            label: Text 1 · Deine Begleiter
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Kleine Charaktere.
+            label: Überschrift 1 · PAP, BO
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Eigene Geschichten.
+            label: Überschrift 2 · und Schinken.
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Ressourcenstand
-            type: string
-            required: true
-          - name: text_3
-            label: Text 3 · bringt PAP, BO und Schinken, zwei unterschiedliche Kopfbed…
+            label: Text 2 · Futtersuche, neue Orte entdecken oder auf einem Schwein un…
             type: text
             required: true
-          - name: text_4
-            label: Text 4 · Ein aktiver Begleiter pro Spieler. Auswahl, Pflege und Bes…
+          - name: text_3
+            label: Text 3 · Du kannst einen Begleiter gleichzeitig aktiv haben. Auswah…
             type: text
             required: true
           - name: titel_3
             label: Überschrift 3 · Krone der Peace
             type: string
             required: true
-          - name: text_5
-            label: Text 5 · Offene goldene Zacken, ein kleiner violetter Siegelstein u…
+          - name: text_4
+            label: Text 4 · Eine goldene Krone mit einem kleinen violetten Stein. Du t…
             type: text
             required: true
           - name: titel_4
             label: Überschrift 4 · Maske der Purge
             type: string
             required: true
-          - name: text_6
-            label: Text 6 · Eine dunkle Banditenmaske mit klaren Pixelfalten und gebun…
+          - name: text_5
+            label: Text 5 · Eine dunkle Banditenmaske, die Mund und Nase bedeckt. Auge…
             type: text
             required: true
           - name: titel_5
             label: Überschrift 5 · Phönix-Elytra
             type: string
             required: true
-          - name: text_7
-            label: Text 7 · Obsidianviolette Federn mit warmen Sunrise-Akzenten. Dazu …
+          - name: text_6
+            label: Text 6 · Violette Flügel mit orangefarbenen Federspitzen für deinen…
             type: text
             required: true
           - name: beschriftung_1
             label: Beschriftung 1 · Krone und Maske herstellen
             type: string
             required: true
-          - name: text_8
-            label: Text 8 · Es gibt künftig nur diese zwei eigenen Rüstungsteile. Brus…
+          - name: text_7
+            label: Text 7 · Es gibt künftig nur diese zwei eigenen Rüstungsteile. Brus…
             type: text
             required: true
           - name: beschriftung_2
             label: Beschriftung 2 · Peace-Krone
             type: string
             required: true
-          - name: text_9
-            label: Text 9 · 4 Smaragdblöcke, 4 Echoscherben und ein Netherithelm. Rast…
+          - name: text_8
+            label: Text 8 · 4 Smaragdblöcke, 4 Echoscherben und ein Netherithelm. Rast…
             type: text
             required: true
           - name: beschriftung_3
             label: Beschriftung 3 · Purge-Maske
             type: string
             required: true
-          - name: text_10
-            label: Text 10 · 4 Redstoneblöcke, 4 weinender Obsidian und ein Netherithel…
+          - name: text_9
+            label: Text 9 · 4 Redstoneblöcke, 4 weinender Obsidian und ein Netherithel…
             type: text
             required: true
-          - name: text_11
-            label: Text 11 · Die beiden Rezepte gehören zum passenden Server-Datapack. …
+          - name: text_10
+            label: Text 10 · Die beiden Rezepte gehören zum passenden Server-Datapack. …
             type: text
             required: true
           - name: beschriftung_4
@@ -739,11 +735,11 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Dein Einstieg.
+            label: Überschrift 1 · Das Wichtigste
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Auf einen Blick.
+            label: Überschrift 2 · zur Alpha.
             type: string
             required: true
           - name: text_2
@@ -765,15 +761,15 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Dein Anfang.
+            label: Überschrift 1 · Bauen, erkunden,
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Eure Geschichte.
+            label: Überschrift 2 · zusammen spielen.
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Ein erster Bauplatz, eine überstandene Purge und die nächs…
+            label: Text 2 · Eine kleine Hütte oder gleich ein größeres Projekt? Such d…
             type: text
             required: true
           - name: beschriftung_1
@@ -805,7 +801,7 @@ content:
             type: string
             required: true
           - name: titel_5
-            label: Überschrift 5 · Der nächste Tag beginnt.
+            label: Überschrift 5 · Was baut ihr als Nächstes?
             type: string
             required: true
           - name: text_5
@@ -924,7 +920,7 @@ content:
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Für Java ist die Adresse angegeben. Kläre deine Freischalt…
+            label: Text 2 · Die Java-Adresse findest du hier. Kläre vorher auf Discord…
             type: text
             required: true
           - name: beschriftung_1
@@ -991,11 +987,11 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Kleine Runde.
+            label: Überschrift 1 · Bei der Alpha
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Mitten im Aufbau.
+            label: Überschrift 2 · mitspielen.
             type: string
             required: true
           - name: text_2
@@ -1079,15 +1075,15 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Eine Welt im Aufbau.
+            label: Überschrift 1 · Wir sehen uns
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · Eine Runde mittendrin.
+            label: Überschrift 2 · auf Discord.
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Ich baue PAP SMP als kleine Alpha auf. Bring Freunde und I…
+            label: Text 2 · Ich baue PAP SMP als kleine Alpha auf. Wenn du Lust hast m…
             type: text
             required: true
           - name: beschriftung_1
@@ -1142,11 +1138,7 @@ content:
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Ressourcenstand
-            type: string
-            required: true
-          - name: text_3
-            label: Text 3 · · Lade das Pack für deine Edition herunter. Es enthält die…
+            label: Text 2 · Mit dem Resourcepack bekommen Begleiter, Verteidigungsanla…
             type: text
             required: true
           - name: beschriftung_1
@@ -1157,8 +1149,8 @@ content:
             label: Überschrift 3 · Java Resource Pack ·
             type: string
             required: true
-          - name: text_4
-            label: "Text 4 · Für Minecraft Java 1.21.11: alle aktuellen PAP-Motive, dre…"
+          - name: text_3
+            label: "Text 3 · Für Minecraft Java 1.21.11: alle aktuellen PAP-Motive, dre…"
             type: text
             required: true
           - name: beschriftung_2
@@ -1173,8 +1165,8 @@ content:
             label: Überschrift 4 · Bedrock Resource Pack ·
             type: string
             required: true
-          - name: text_5
-            label: Text 5 · Passende Modelle und Texturen für Bedrock über Geyser. Der…
+          - name: text_4
+            label: Text 4 · Die passenden Modelle und Texturen für Bedrock-Spieler auf…
             type: text
             required: true
           - name: beschriftung_4
@@ -1185,8 +1177,8 @@ content:
             label: Überschrift 5 · VIP & Shop · Vorschau
             type: string
             required: true
-          - name: text_6
-            label: Text 6 · VIP für 4,99 € pro Monat, 150 Shards für 1,99 € und ein sh…
+          - name: text_5
+            label: Text 5 · VIP für 4,99 € pro Monat, 150 Shards für 1,99 € und ein sh…
             type: text
             required: true
           - name: beschriftung_5
@@ -1197,16 +1189,16 @@ content:
             label: Überschrift 6 · Weitere Downloads & Hinweise
             type: string
             required: true
-          - name: text_7
-            label: Text 7 · Alles Weitere zum Pack – öffne den Bereich, den du brauchs…
-            type: string
+          - name: text_6
+            label: Text 6 · Du richtest einen Server ein oder suchst eine ältere Versi…
+            type: text
             required: true
           - name: beschriftung_6
             label: Beschriftung 6 · Gesamtpaket & Installation
             type: string
             required: true
-          - name: text_8
-            label: Text 8 · Java, Bedrock, Geyser-Mappings und die Rezepte für Krone u…
+          - name: text_7
+            label: Text 7 · Java, Bedrock, Geyser-Mappings und die Rezepte für Krone u…
             type: text
             required: true
           - name: beschriftung_7
@@ -1225,8 +1217,8 @@ content:
             label: Beschriftung 10 · Für Serverbetreiber
             type: string
             required: true
-          - name: text_9
-            label: Text 9 · Das aktuelle Geyser-Overlay enthält das Bedrock-Pack und e…
+          - name: text_8
+            label: Text 8 · Das aktuelle Geyser-Overlay enthält das Bedrock-Pack und e…
             type: text
             required: true
           - name: beschriftung_11
@@ -1245,16 +1237,16 @@ content:
             label: Beschriftung 14 · Event-Icons als PNG herunterladen ↓
             type: string
             required: true
-          - name: text_10
-            label: Text 10 · Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthal…
+          - name: text_9
+            label: Text 9 · Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthal…
             type: text
             required: true
           - name: beschriftung_15
             label: Beschriftung 15 · Versionen & Prüfsummen
             type: string
             required: true
-          - name: text_11
-            label: Text 11 · Die aktuelle Version hat eine eigene Downloadadresse. Früh…
+          - name: text_10
+            label: Text 10 · Die aktuelle Version hat eine eigene Downloadadresse. Früh…
             type: text
             required: true
           - name: beschriftung_16
@@ -1467,11 +1459,11 @@ content:
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Kurz und
+            label: Überschrift 1 · Häufige
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · ehrlich.
+            label: Überschrift 2 · Fragen.
             type: string
             required: true
   - name: site-header

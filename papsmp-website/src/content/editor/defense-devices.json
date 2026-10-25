@@ -6,7 +6,7 @@
       "role": "Wege versperren",
       "base": "Dunkler Eichenzaun",
       "cost": "400 Cash + 2 Shards",
-      "text": "Eine schlichte Holzblockade oder ihre kräftigere Metallvariante sichert deinen Durchgang. Die feste Zaunkollision hält auch dich und dein Team auf – plane ein Tor oder einen freien Weg ein. Verursacht keinen Kontaktschaden und verbraucht keine Ladungen.",
+      "text": "Versperrt einen Durchgang, ohne Schaden zu verursachen. Die Barrikade hält auch dich und dein Team auf – lass euch also einen Weg frei. Sie braucht keine Ladungen.",
       "accent": "leaf"
     },
     {
@@ -15,7 +15,7 @@
       "role": "Frühwarnung",
       "base": "Glocke",
       "cost": "250 Cash",
-      "text": "Ein eigener kleiner Klangkörper unter einem natürlichen Astbogen, ohne überlagerte Vanilla-Glocke. Sie meldet erkannte Bedrohungen mit Standort an den Besitzer, solange er online ist. Klang und Partikel begleiten die Warnung.",
+      "text": "Die Windglocke warnt dich, wenn sie eine Bedrohung erkennt. Solange du online bist, bekommst du eine Meldung mit dem Standort. Dazu gibt es einen Klang und Partikel an der Anlage.",
       "accent": "gold"
     },
     {
@@ -24,7 +24,7 @@
       "role": "Zeit gewinnen",
       "base": "Blaueis",
       "cost": "600 Cash + 5 Shards",
-      "text": "Eine niedrige Eisblüte verlangsamt zulässige bodennahe Ziele kurz. Du gewinnst Zeit zum Reagieren; niemand wird festgehalten oder teleportiert.",
+      "text": "Verlangsamt Gegner in Bodennähe für kurze Zeit. Das verschafft dir etwas Luft, wenn jemand deiner Base zu nahe kommt. Welche Ziele die Anlage erfasst, hängt vom Zielmodus und den Schutzregeln ab.",
       "accent": "ice"
     },
     {
@@ -33,7 +33,7 @@
       "role": "Durchgänge sichern",
       "base": "Polierte Schwarzsteindruckplatte",
       "cost": "900 Cash + 8 Shards",
-      "text": "Deutliche Dornen ragen aus dichtem Laub; die frühere sichtbare Steinplatte entfällt. Die Falle reagiert erst bei Fußkontakt. Es verletzt zulässige fremde Spieler in der Purge und schwächt ihren Nahkampfangriff kurz. Auch feindliche Monster können Schaden erhalten.",
+      "text": "Wer hineintritt, kann Schaden bekommen und greift kurzzeitig schwächer an. Die Falle wirkt gegen feindliche Monster und während der Purge auch gegen fremde Spieler, sofern die Schutzregeln einen Angriff erlauben.",
       "accent": "leaf"
     },
     {
@@ -42,7 +42,7 @@
       "role": "Angreifer abwehren",
       "base": "Gemeißelte Steinziegel",
       "cost": "1.600 Cash + 15 Shards",
-      "text": "Der frei stehende, verwurzelte Holzbogen mit kleiner Bernsteinlinse trifft zulässige Ziele bei freier Sichtlinie. Standardmäßig wehrt er Monster ab; im erlaubten Purge-Spielermodus kann er auch fremde Angreifer verletzen.",
+      "text": "Schießt auf Gegner, wenn die Sicht frei ist. Standardmäßig wehrt er Monster ab. Im passenden Zielmodus kann er während der Purge auch fremde Angreifer verletzen; die Schutzregeln gelten weiterhin.",
       "accent": "gold"
     },
     {
@@ -51,7 +51,7 @@
       "role": "Blöcke schützen",
       "base": "Amethystblock",
       "cost": "1.200 Cash + 12 Shards",
-      "text": "Ein schwebender Amethyst über einer offenen Wurzelschale ohne sichtbaren Amethyst-Unterbau schützt gedeckte Claimblöcke vor Explosionen und wehrt bestimmte Mobprojektile und Mob-Blockänderungen ab. Der Anker bleibt angreifbar.",
+      "text": "Schützt die erfassten Blöcke deines Claims vor Explosionen und wehrt bestimmte Mobprojektile und Blockveränderungen durch Mobs ab. Der Anker selbst bleibt angreifbar. Spieler schützt er nicht vor Explosionsschaden.",
       "accent": "violet"
     }
   ]
