@@ -26,4 +26,4 @@ export function packSize(bytes: number) {
   return `${new Intl.NumberFormat('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(bytes / 1_000_000)} MB`;
 }
 
-export const resourcePackAnswer = `Die aktuellen Java- und Bedrock-Packs stehen im Downloadbereich: ${packRelease.label}, Ressourcenstand ${packRelease.revision}. Enthalten sind die überarbeiteten Schutzanlagen, PAP und BO, Schinken mit Cowboyhut und Halsband, Peace-Krone und Purge-Maske, PAP-Totem, das Herz mit erhaltenem Puls und die Phönix-Elytra. Eigene Brustpanzer, Hosen und Schuhe entfallen. Die Packs allein aktivieren keine Serverfunktionen und gewähren keinen Alpha-Zugang. Einspielhilfe, passendes Geyser-Overlay und Prüfsummen sind verlinkt; der Prüfbericht nennt echte Client-Nachweise und verbleibende Tests.`;
+export const resourcePackAnswer = `Im Downloadbereich findest du die aktuellen Java- und Bedrock-Packs, Stand ${packRelease.revision}. Wähle die Datei für deine Edition. Die Packs enthalten die eigenen Modelle, Texturen, Menüs und Event-Icons. Installation und weitere Dateien sind dort ebenfalls verlinkt. Für den Alpha-Zugang brauchst du weiterhin eine Freischaltung.`;
