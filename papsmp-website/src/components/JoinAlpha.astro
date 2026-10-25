@@ -1,0 +1,33 @@
+---
+import alpha from '../content/editor/alpha-access.json';
+import platform from '../content/editor/crossplay.json';
+---
+<section id="alpha" class="section section-join" aria-labelledby="alpha-title">
+  <div class="container section-block">
+    <span id="features" class="section-anchor" aria-hidden="true"></span>
+    <div class="section-heading">
+      <p class="kicker">{alpha.texts.text_1}</p>
+      <h2 id="alpha-title">{alpha.texts.titel_1}<br /><em>{alpha.texts.titel_2}</em></h2>
+      <p>{alpha.texts.text_2}</p>
+    </div>
+    <div class="join-grid">
+      <article class="join-card">
+        <h3>So kommst du dazu</h3>
+        <ol class="join-steps">
+          <li><strong>Discord beitreten.</strong> {alpha.texts.text_3}</li>
+          <li><strong>Regeln lesen.</strong> {alpha.texts.text_4}</li>
+          <li><strong>Teilnahme anfragen.</strong> {alpha.texts.text_5}</li>
+        </ol>
+        <a class="button" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noreferrer">{alpha.texts.beschriftung_2} <span>↗</span></a>
+      </article>
+      <article id="crossplay" class="join-card">
+        <h3>Java &amp; Bedrock</h3>
+        <p>{platform.texts.text_2}</p>
+        <div class="join-address"><span>{platform.texts.beschriftung_4}</span><strong>{platform.texts.beschriftung_5}</strong></div>
+        <p class="join-hint">Die Adresse allein schaltet dich nicht frei. Kläre deine Teilnahme vorher auf Discord.</p>
+        <a class="join-pack-link" href="#availability-title">Das passende Resourcepack holen ↓</a>
+      </article>
+    </div>
+    <p class="join-status"><span class="status-dot" aria-hidden="true"></span><span><strong>Noch in der Alpha:</strong> {alpha.texts.beschriftung_10}</span></p>
+  </div>
+</section>

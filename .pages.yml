@@ -649,32 +649,6 @@ content:
                 - ice
                 - violet
         list: true
-  - name: companions
-    label: 06 · Begleiter / Karten
-    type: file
-    path: papsmp-website/src/content/editor/companions.json
-    fields:
-      - name: items
-        label: Karten
-        type: object
-        required: true
-        fields:
-          - name: name
-            label: Name
-            type: string
-            required: true
-          - name: src
-            label: Bild
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-          - name: text
-            label: Beschreibung
-            type: text
-            required: true
-        list: true
   - name: pack-highlights
     label: 06 · Begleiter und Pack-Motive
     type: file
@@ -805,303 +779,34 @@ content:
             label: Bild 3 · Beschreibung für Vorlesefunktion
             type: string
             required: true
-  - name: features
-    label: 07 · Alpha-Fakten / Karten
+  - name: companions
+    label: 06 · Begleiter / Karten
     type: file
-    path: papsmp-website/src/content/editor/features.json
+    path: papsmp-website/src/content/editor/companions.json
     fields:
       - name: items
         label: Karten
         type: object
         required: true
         fields:
-          - name: eyebrow
-            label: Kategorie
+          - name: name
+            label: Name
             type: string
             required: true
-          - name: title
-            label: Überschrift
-            type: string
+          - name: src
+            label: Bild
+            type: image
             required: true
+            options:
+              media: uploads
+              path: papsmp-website/public/uploads
           - name: text
             label: Beschreibung
             type: text
             required: true
-          - name: emote
-            label: Bild
-            type: object
-            required: true
-            fields:
-              - name: src
-                label: Bild
-                type: image
-                required: true
-                options:
-                  media: uploads
-                  path: papsmp-website/public/uploads
-              - name: alt
-                label: Bildbeschreibung
-                type: string
-                required: true
         list: true
-  - name: feature-grid
-    label: 07 · Alpha-Fakten / Überschrift
-    type: file
-    path: papsmp-website/src/content/editor/feature-grid.json
-    fields:
-      - name: texts
-        label: Texte (in Seitenreihenfolge)
-        type: object
-        required: true
-        fields:
-          - name: text_1
-            label: Text 1 · PAP SMP auf einen Blick
-            type: string
-            required: true
-          - name: titel_1
-            label: Überschrift 1 · Das Wichtigste
-            type: string
-            required: true
-          - name: titel_2
-            label: Überschrift 2 · zur Alpha.
-            type: string
-            required: true
-          - name: text_2
-            label: Text 2 · So spielt sich PAP SMP – und so kommst du zur Alpha dazu.
-            type: string
-            required: true
-  - name: story-block
-    label: 08 · Einblicke / Bildergalerie
-    type: file
-    path: papsmp-website/src/content/editor/story-block.json
-    fields:
-      - name: texts
-        label: Texte (in Seitenreihenfolge)
-        type: object
-        required: true
-        fields:
-          - name: text_1
-            label: Text 1 · Einblicke in die Welt
-            type: string
-            required: true
-          - name: titel_1
-            label: Überschrift 1 · Bauen, erkunden,
-            type: string
-            required: true
-          - name: titel_2
-            label: Überschrift 2 · zusammen spielen.
-            type: string
-            required: true
-          - name: text_2
-            label: Text 2 · Eine kleine Hütte oder gleich ein größeres Projekt? Such d…
-            type: text
-            required: true
-          - name: beschriftung_1
-            label: Beschriftung 1 · 01 · Ankommen
-            type: string
-            required: true
-          - name: titel_3
-            label: Überschrift 3 · Finde deinen Platz.
-            type: string
-            required: true
-          - name: text_3
-            label: Text 3 · Such dir einen Bauplatz und leg den Grundstein für deine B…
-            type: string
-            required: true
-          - name: beschriftung_2
-            label: Beschriftung 2 · 02 · Purge
-            type: string
-            required: true
-          - name: titel_4
-            label: Überschrift 4 · Die Purge beginnt.
-            type: string
-            required: true
-          - name: text_4
-            label: Text 4 · Verteidigt eure Vorräte, zieht gemeinsam los oder sucht ei…
-            type: string
-            required: true
-          - name: beschriftung_3
-            label: Beschriftung 3 · 03 · Weitergehen
-            type: string
-            required: true
-          - name: titel_5
-            label: Überschrift 5 · Was baut ihr als Nächstes?
-            type: string
-            required: true
-          - name: text_5
-            label: Text 5 · Baut weiter, teilt eure Ideen und meldet uns, was in der A…
-            type: string
-            required: true
-          - name: beschriftung_4
-            label: Beschriftung 4 · Aus der PAP-Community
-            type: string
-            required: true
-      - name: images
-        label: Bilder und Animationen
-        type: object
-        required: true
-        fields:
-          - name: bild_1
-            label: Bild 1 · Yuuh als Skeleton und PAP planen ihren Bauplatz
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_1_alt
-            label: Bild 1 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-          - name: bild_2
-            label: Bild 2 · Yuuh und PAP halten nachts an einer Minecraft-Brücke Ausschau
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_2_alt
-            label: Bild 2 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-          - name: bild_3
-            label: Bild 3 · Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_3_alt
-            label: Bild 3 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-          - name: bild_4
-            label: Bild 4 · Chibi-PAP mit einem kleinen Herz
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_4_alt
-            label: Bild 4 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-          - name: animation_1
-            label: Animation 1 · pap-greeting-128.webp
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
-              reduzierter Bewegung verwendet.
-          - name: bild_5
-            label: Bild 5 · Chibi-PAP begrüßt die Community
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_5_alt
-            label: Bild 5 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-          - name: bild_6
-            label: Bild 6 · Chibi-PAP jubelt
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_6_alt
-            label: Bild 6 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
-  - name: crossplay
-    label: 09 · Plattformen und Zugang
-    type: file
-    path: papsmp-website/src/content/editor/crossplay.json
-    fields:
-      - name: texts
-        label: Texte (in Seitenreihenfolge)
-        type: object
-        required: true
-        fields:
-          - name: text_1
-            label: Text 1 · Editionen und Zugang
-            type: string
-            required: true
-          - name: titel_1
-            label: Überschrift 1 · Java zuerst.
-            type: string
-            required: true
-          - name: titel_2
-            label: Überschrift 2 · Bedrock in Prüfung.
-            type: string
-            required: true
-          - name: text_2
-            label: Text 2 · Die Java-Adresse findest du hier. Kläre vorher auf Discord…
-            type: text
-            required: true
-          - name: beschriftung_1
-            label: Beschriftung 1 · JAVA · ADRESSE ANGEGEBEN
-            type: string
-            required: true
-          - name: beschriftung_2
-            label: Beschriftung 2 · BEDROCK · IN PRÜFUNG
-            type: string
-            required: true
-          - name: beschriftung_3
-            label: Beschriftung 3 · GEYSER · IN PRÜFUNG
-            type: string
-            required: true
-          - name: beschriftung_4
-            label: Beschriftung 4 · JAVA-ADRESSE
-            type: string
-            required: true
-          - name: beschriftung_5
-            label: Beschriftung 5 · 104.204.219.211:25565
-            type: string
-            required: true
-          - name: beschriftung_6
-            label: Beschriftung 6 · Gemeinsam starten
-            type: string
-            required: true
-          - name: text_3
-            label: "Text 3 · Deine Edition, das passende Pack und die Freischaltung: Au…"
-            type: text
-            required: true
-      - name: images
-        label: Bilder und Animationen
-        type: object
-        required: true
-        fields:
-          - name: bild_1
-            label: Bild 1 · Yuuh als Skeleton und PAP an ihrem Minecraft-Bauplatz
-            type: image
-            required: true
-            options:
-              media: uploads
-              path: papsmp-website/public/uploads
-            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
-              Seitenverhältnis verwenden.
-          - name: bild_1_alt
-            label: Bild 1 · Beschreibung für Vorlesefunktion
-            type: string
-            required: true
   - name: alpha-access
-    label: 10 · Alpha-Anmeldung
+    label: 07 · Mitspielen / Anmeldung
     type: file
     path: papsmp-website/src/content/editor/alpha-access.json
     fields:
@@ -1193,10 +898,10 @@ content:
               path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
-  - name: community
-    label: 11 · Community
+  - name: crossplay
+    label: 07 · Mitspielen / Plattformen
     type: file
-    path: papsmp-website/src/content/editor/community.json
+    path: papsmp-website/src/content/editor/crossplay.json
     fields:
       - name: texts
         label: Texte (in Seitenreihenfolge)
@@ -1204,32 +909,48 @@ content:
         required: true
         fields:
           - name: text_1
-            label: Text 1 · Der Treffpunkt vor dem Start
+            label: Text 1 · Editionen und Zugang
             type: string
             required: true
           - name: titel_1
-            label: Überschrift 1 · Wir sehen uns
+            label: Überschrift 1 · Java zuerst.
             type: string
             required: true
           - name: titel_2
-            label: Überschrift 2 · auf Discord.
+            label: Überschrift 2 · Bedrock in Prüfung.
             type: string
             required: true
           - name: text_2
-            label: Text 2 · Ich baue PAP SMP als kleine Alpha auf. Wenn du Lust hast m…
+            label: Text 2 · Die Java-Adresse findest du hier. Kläre vorher auf Discord…
             type: text
             required: true
           - name: beschriftung_1
-            label: Beschriftung 1 · PAP SMP auf Discord
+            label: Beschriftung 1 · JAVA · ADRESSE ANGEGEBEN
             type: string
             required: true
           - name: beschriftung_2
-            label: Beschriftung 2 · PAP-Community
+            label: Beschriftung 2 · BEDROCK · IN PRÜFUNG
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · GEYSER · IN PRÜFUNG
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · JAVA-ADRESSE
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · 104.204.219.211:25565
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Gemeinsam starten
             type: string
             required: true
           - name: text_3
-            label: Text 3 · Baupläne teilen, Mitspieler finden und den nächsten Abend …
-            type: string
+            label: "Text 3 · Deine Edition, das passende Pack und die Freischaltung: Au…"
+            type: text
             required: true
       - name: images
         label: Bilder und Animationen
@@ -1237,7 +958,7 @@ content:
         required: true
         fields:
           - name: bild_1
-            label: Bild 1 · Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte
+            label: Bild 1 · Yuuh als Skeleton und PAP an ihrem Minecraft-Bauplatz
             type: image
             required: true
             options:
@@ -1250,7 +971,7 @@ content:
             type: string
             required: true
   - name: downloads-vip
-    label: 12 · Downloads / Beschreibungstexte
+    label: 08 · Resourcepacks / Downloads
     type: file
     path: papsmp-website/src/content/editor/downloads-vip.json
     fields:
@@ -1403,8 +1124,64 @@ content:
             label: Beschriftung 20 · Bedrock · SHA-256
             type: string
             required: true
+  - name: community
+    label: 09 · Community
+    type: file
+    path: papsmp-website/src/content/editor/community.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Der Treffpunkt vor dem Start
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Wir sehen uns
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · auf Discord.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Ich baue PAP SMP als kleine Alpha auf. Wenn du Lust hast m…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · PAP SMP auf Discord
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · PAP-Community
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Baupläne teilen, Mitspieler finden und den nächsten Abend …
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte
+            type: image
+            required: true
+            options:
+              media: uploads
+              path: papsmp-website/public/uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
   - name: vip-shop-demo
-    label: 13 · VIP und Shop / Vorschautexte
+    label: 10 · VIP und Shop / Vorschau
     type: file
     path: papsmp-website/src/content/editor/vip-shop-demo.json
     fields:
@@ -1580,8 +1357,30 @@ content:
             label: Bild 1 · Beschreibung für Vorlesefunktion
             type: string
             required: true
+  - name: faq
+    label: 11 · FAQ / Überschrift
+    type: file
+    path: papsmp-website/src/content/editor/faq.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Noch Fragen?
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Häufige
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Fragen.
+            type: string
+            required: true
   - name: questions
-    label: 14 · FAQ / Fragen und Antworten
+    label: 11 · FAQ / Fragen und Antworten
     type: file
     path: papsmp-website/src/content/editor/questions.json
     fields:
@@ -1605,28 +1404,6 @@ content:
             description: Für die Download-Frage aktiviert lassen, damit Versionsangaben
               aktuell bleiben.
         list: true
-  - name: faq
-    label: 14 · FAQ / Überschrift
-    type: file
-    path: papsmp-website/src/content/editor/faq.json
-    fields:
-      - name: texts
-        label: Texte (in Seitenreihenfolge)
-        type: object
-        required: true
-        fields:
-          - name: text_1
-            label: Text 1 · Noch Fragen?
-            type: string
-            required: true
-          - name: titel_1
-            label: Überschrift 1 · Häufige
-            type: string
-            required: true
-          - name: titel_2
-            label: Überschrift 2 · Fragen.
-            type: string
-            required: true
   - name: site-header
     label: 15 · Kopfbereich
     type: file

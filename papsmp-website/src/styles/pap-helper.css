@@ -57,3 +57,6 @@
 [data-renderer=pet-chibi-v12] .pap-caption{top:auto;bottom:1px;right:18%;font-size:6px;color:#e7c99d99}
 @media(max-width:600px){.pap-companion[data-renderer=pet-chibi-v12]{--pap-size:162px}}
 .pap-companion[data-renderer=pet-chibi-v12][data-compact=true]{--pap-size:108px}
+
+/* Keep the helper compact beside mobile reading content. */
+@media(max-width:600px){.pap-companion[data-renderer=pet-chibi-v12][data-compact=true]{--pap-size:80px}}

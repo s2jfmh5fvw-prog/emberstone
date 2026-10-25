@@ -2,7 +2,7 @@ export function createPapPosition(root:HTMLElement,conversation:HTMLElement,sett
   let ratioX=1,ratioY=1,x=0,y=0,wander=0;
   const viewport=()=>({left:visualViewport?.offsetLeft??0,top:visualViewport?.offsetTop??0,width:visualViewport?.width??innerWidth,height:visualViewport?.height??innerHeight});
   function fit(){
-    const v=viewport();root.dataset.compact=String(v.height<450);const size=root.offsetWidth;
+    const v=viewport();root.dataset.compact=String(v.width<=600||v.height<450);const size=root.offsetWidth;
     const bottom=Math.max(6,parseFloat(getComputedStyle(root).getPropertyValue('--pap-safe-bottom'))||0);
     const height=root.offsetHeight||size;
     x=Math.max(v.left+10,Math.min(v.left+10+ratioX*Math.max(0,v.width-size-22)+wander,v.left+Math.max(10,v.width-size-12)));y=v.top+16+ratioY*Math.max(0,v.height-height-bottom-16);

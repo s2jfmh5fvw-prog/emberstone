@@ -1,0 +1,49 @@
+/* Homepage reading rhythm: gameplay, join, packs, community, optional shop. */
+.home-page .section { padding: 2.5rem 0; }
+.home-page .section .section-block {
+  padding: clamp(1.2rem, 3vw, 2.5rem);
+  background: rgba(20, 16, 30, .93);
+  border: 1px solid rgba(199, 173, 226, .16);
+  border-radius: 12px;
+}
+.home-page .section-heading { max-width: 44rem; }
+.home-page .section-heading > p:last-child { max-width: 42rem; }
+.home-page :is(h2,h3,p,li,a) { overflow-wrap: break-word; }
+.home-page :is(#availability-title,#crossplay,.section-anchor) { scroll-margin-top: 5rem; }
+.home-page .availability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.home-page .motif-items-title { margin: 1rem 0 0; font-size: 1.1rem; }
+.home-page .motif-items { margin-top: 0; }
+.home-page .motif-image-note { font-size: .75rem; }
+.join-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.join-card { min-width: 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: #201929; }
+.join-card h3 { margin: 0 0 1rem; font-size: 1.2rem; }
+.join-card p { color: var(--muted); }
+.join-steps { margin: 0 0 1.5rem; padding-left: 1.3rem; }
+.join-steps li { padding-left: .3rem; margin: 0 0 .9rem; color: var(--muted); }
+.join-steps strong { color: var(--text); }
+.join-steps li::marker { color: var(--peace); font-weight: 700; }
+.join-address { display: grid; gap: .4rem; border-left: 2px solid var(--peace); padding: .65rem 1rem; margin: 1.2rem 0; }
+.join-address span { color: var(--muted); font-size: .75rem; }
+.join-address strong { color: var(--peace); font-size: clamp(.9rem, 1.5vw, 1.15rem); overflow-wrap: anywhere; }
+.home-page .join-card .join-hint { font-size: .8rem; }
+.join-pack-link { color: var(--peace); text-decoration: underline; text-underline-offset: 4px; }
+.join-status { display: flex; gap: .75rem; align-items: baseline; color: var(--muted); margin: 1.25rem 0 0; }
+.join-status .status-dot { flex: 0 0 .55rem; }
+.home-page .community-compact { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; }
+.community-compact .section-heading { margin: 0; }
+.community-compact .section-heading > p:last-child { margin-bottom: 0; }
+.community-compact .button { max-width: 100%; }
+@media (max-width: 800px) {
+  .home-page .section { padding: 1.5rem 0; }
+  .home-page .section .section-block { padding: 1.2rem; }
+  .home-page .availability-grid,.join-grid,.home-page .community-compact { grid-template-columns: minmax(0, 1fr); }
+  .join-card { padding: 1.1rem; }
+  .community-compact .button { justify-self: start; }
+  .home-page .section .section-block h2 { font-size: clamp(1rem, 3.8vw, 1.35rem); }
+}
+@media (max-width: 380px) {
+  .home-page .section .section-block { padding: 1rem; }
+  .home-page .section .section-block h2 { font-size: .95rem; }
+  .home-page .button { padding-inline: .8rem; font-size: .85rem; }
+}
+.home-page :is(dd,code,summary) { overflow-wrap: anywhere; }
