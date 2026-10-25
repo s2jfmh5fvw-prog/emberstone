@@ -1,25 +1,20 @@
 ---
-const devices = [
-  { name: 'Wurzelbarrikade', form: 'Holz- und Metallbarrikade', role: 'Wege versperren', base: 'Dunkler Eichenzaun', cost: '400 Cash + 2 Shards', text: 'Eine schlichte Holzblockade oder ihre kräftigere Metallvariante sichert deinen Durchgang. Die feste Zaunkollision hält auch dich und dein Team auf – plane ein Tor oder einen freien Weg ein. Verursacht keinen Kontaktschaden und verbraucht keine Ladungen.', accent: 'leaf' },
-  { name: 'Alarmrune', form: 'Windglocke', role: 'Frühwarnung', base: 'Glocke', cost: '250 Cash', text: 'Ein eigener kleiner Klangkörper unter einem natürlichen Astbogen, ohne überlagerte Vanilla-Glocke. Sie meldet erkannte Bedrohungen mit Standort an den Besitzer, solange er online ist. Klang und Partikel begleiten die Warnung.', accent: 'gold' },
-  { name: 'Frostsiegel', form: 'Reifblüte', role: 'Zeit gewinnen', base: 'Blaueis', cost: '600 Cash + 5 Shards', text: 'Eine niedrige Eisblüte verlangsamt zulässige bodennahe Ziele kurz. Du gewinnst Zeit zum Reagieren; niemand wird festgehalten oder teleportiert.', accent: 'ice' },
-  { name: 'Dornenfalle', form: 'Dornengestrüpp', role: 'Durchgänge sichern', base: 'Polierte Schwarzsteindruckplatte', cost: '900 Cash + 8 Shards', text: 'Deutliche Dornen ragen aus dichtem Laub; die frühere sichtbare Steinplatte entfällt. Die Falle reagiert erst bei Fußkontakt. Es verletzt zulässige fremde Spieler in der Purge und schwächt ihren Nahkampfangriff kurz. Auch feindliche Monster können Schaden erhalten.', accent: 'leaf' },
-  { name: 'Bolzenwächter', form: 'Wurzelbogen', role: 'Angreifer abwehren', base: 'Gemeißelte Steinziegel', cost: '1.600 Cash + 15 Shards', text: 'Der frei stehende, verwurzelte Holzbogen mit kleiner Bernsteinlinse trifft zulässige Ziele bei freier Sichtlinie. Standardmäßig wehrt er Monster ab; im erlaubten Purge-Spielermodus kann er auch fremde Angreifer verletzen.', accent: 'gold' },
-  { name: 'Bannfeld', form: 'Hainanker', role: 'Blöcke schützen', base: 'Amethystblock', cost: '1.200 Cash + 12 Shards', text: 'Ein schwebender Amethyst über einer offenen Wurzelschale ohne sichtbaren Amethyst-Unterbau schützt gedeckte Claimblöcke vor Explosionen und wehrt bestimmte Mobprojektile und Mob-Blockänderungen ab. Der Anker bleibt angreifbar.', accent: 'violet' },
-];
+import cards from '../content/editor/defense-devices.json';
+import copy from '../content/editor/claim-defense.json';
+const devices = cards.items;
 ---
 
 <section id="verteidigung" class="section section-defense" aria-labelledby="defense-title">
   <div class="container section-block defense-block">
     <div class="defense-heading">
       <div class="section-heading">
-        <p class="kicker">Dein Claim. Dein Plan.</p>
-        <h2 id="defense-title">Vorbereiten.<br /><em>Standhalten.</em></h2>
-        <p>Wurzeln, Holz und Amethyst werden Teil deiner Verteidigung: Wege sichern, früh warnen, Eindringlinge bremsen und Monster abwehren. Sechs Anlagen – mit eigenen Formen im PAP-Stil.</p>
+        <p class="kicker">{copy.texts.text_1}</p>
+        <h2 id="defense-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2>
+        <p>{copy.texts.text_2}</p>
       </div>
-      <img class="defense-emote" src="/pap-chibi-v1/pap-alert-128.webp" alt="Chibi-PAP hält Ausschau" width="128" height="128" loading="lazy" />
+      <img class="defense-emote" src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="128" height="128" loading="lazy" />
     </div>
-    <div class="defense-status"><span class="phase-label">Auf dem Alpha-Server verfügbar</span><p>Die sechs Anlagen sind auf dem geschlossenen Alpha-Server verfügbar. Nutze die aktuellen PAP-Packs für ihre Gestaltung. Zugang und Testtermine findest du auf <a href="#community">Discord</a>.</p></div>
+    <div class="defense-status"><span class="phase-label">{copy.texts.beschriftung_1}</span><p>{copy.texts.text_3} <a href="#community">{copy.texts.beschriftung_2}</a>.</p></div>
 
     <div class="defense-grid">
       {devices.map((device, index) => <article class={`defense-card defense-${device.accent}`}>
@@ -33,27 +28,27 @@ const devices = [
 
     <div class="defense-notes">
       <details>
-        <summary>So entsteht deine erste Anlage<span aria-hidden="true">＋</span></summary>
+        <summary>{copy.texts.beschriftung_3}<span aria-hidden="true">＋</span></summary>
         <ol>
-          <li>Baue den passenden Basisblock in deinem eigenen aktiven Claim. Halte mindestens drei Blöcke Abstand zu anderen Anlagen; Wurzelbarrikaden dürfen nebeneinander stehen.</li>
-          <li>Sieh den Block aus höchstens fünf Blöcken Entfernung an. Mit <code>/defense</code> das Menü und kaufst dort das Upgrade.</li>
-          <li>Aktive Fallen starten im Modus <code>mobs</code>. Per Rechtsklick auf den Block verwaltest du als Besitzer Betrieb, Zielmodus und Ladungen. Die Wurzelbarrikade ist eine passive Sperre und benötigt weder Zielmodus noch Ladungen.</li>
+          <li>{copy.texts.text_4}</li>
+          <li>{copy.texts.text_5} <code>/defense</code> {copy.texts.text_6}</li>
+          <li>{copy.texts.text_7} <code>mobs</code>{copy.texts.text_8}</li>
         </ol>
-        <p>Das Upgrade setzt keinen Block automatisch. Beim Abbau geht es verloren; beim Umzug kaufst du am neuen Standort eine neue Anlage. Die Gestaltung kommt mit den aktualisierten PAP-Packs für Java und Bedrock. Client-Mods sind nicht nötig.</p>
-        <p>Der Zaun einer Barrikade bleibt ein echter Block. Ausschalten oder Entfernen des Upgrades öffnet keinen Durchgang und baut den Zaun nicht ab.</p>
+        <p>{copy.texts.text_9}</p>
+        <p>{copy.texts.text_10}</p>
       </details>
       <details>
-        <summary>Peace, Purge und faire Ziele<span aria-hidden="true">＋</span></summary>
-        <p><strong>Monsterbetrieb:</strong> Im Standardmodus werden nur zulässige feindliche Monster erfasst. Gezähmte Tiere, deine Begleiter und Wachen bleiben verschont.</p>
-        <p><strong>Spielerbetrieb:</strong> Alarmrune, Frostsiegel, Dornenfalle und Bolzenwächter richten sich mit <code>raiders</code> auf zulässige fremde Spieler; <code>both</code> kombiniert Spieler- und Monsterziele. Spieler werden nur während der tatsächlichen Purge und bei erlaubten Kampfbedingungen erfasst. Besitzer, aktuelle Teammitglieder, vertraute Spieler und geschützte Neulinge werden geschont.</p>
-        <p><strong>Dornen und Bolzen können fremde Angreifer verletzen:</strong> Als Startwert verursachen beide 3 HP Spielerschaden, also anderthalb Vanilla-Herzen vor weiteren Schadensregeln. Gegen zulässige Monster sind es 4 HP. Die Dornenfalle setzt zusätzlich kurze Schwäche. Eine gemeinsame zehnsekündige Spielersperre verhindert das schnelle Stapeln mit weiteren Fallen. Alarmrune und Frostsiegel verursachen keinen direkten HP-Schaden.</p>
-        <p>Das Bannfeld macht niemanden unverwundbar. Explosionsschaden an Spielern, Nahkampfangriffe, Lava und leere Ladungen bleiben Gefahren. Reichweite, Sichtlinie und Claimregeln begrenzen die Wirkung.</p>
+        <summary>{copy.texts.beschriftung_4}<span aria-hidden="true">＋</span></summary>
+        <p><strong>{copy.texts.beschriftung_5}</strong> {copy.texts.text_11}</p>
+        <p><strong>{copy.texts.beschriftung_6}</strong> {copy.texts.text_12} <code>raiders</code> {copy.texts.text_13} <code>both</code> {copy.texts.text_14}</p>
+        <p><strong>{copy.texts.beschriftung_7}</strong> {copy.texts.text_15}</p>
+        <p>{copy.texts.text_16}</p>
       </details>
       <details>
-        <summary>Kosten, Ladungen und Grenzen<span aria-hidden="true">＋</span></summary>
-        <p>Die Kaufpreise oben sind die aktuellen Alpha-Startwerte. Alarmrune, Frostsiegel, Dornenfalle, Bolzenwächter und Bannfeld enthalten beim Kauf <strong>40 Ladungen</strong>, die Standardkapazität beträgt 200. Ein Paket mit <strong>25 Ladungen kostet 100 Cash und 1 Shard</strong>; es muss vollständig in die Anlage passen. Die passive Wurzelbarrikade benötigt keine Aufladung.</p>
-        <p>Alarmrune und Bolzenwächter verbrauchen eine Ladung pro Aktion, Frostsiegel und Dornenfalle zwei. Beim Bannfeld kosten gedeckte Explosionen drei Ladungen; einzelne abgewehrte Mobprojektile oder Mob-Blockänderungen jeweils eine. Abklingzeiten und leere Vorräte lassen Angreifern Gegenchancen.</p>
-        <p>Nur der Besitzer verwaltet und bezahlt seine Anlagen. Ausschalten, Entfernen und Abbau erstatten weder Kaufpreis noch Restladungen. Preise und Balance können sich im Alpha-Test ändern; die aktuellen Werte zeigt das Spielmenü.</p>
+        <summary>{copy.texts.beschriftung_8}<span aria-hidden="true">＋</span></summary>
+        <p>{copy.texts.text_17} <strong>{copy.texts.beschriftung_9}</strong>{copy.texts.text_18} <strong>{copy.texts.beschriftung_10}</strong>{copy.texts.text_19}</p>
+        <p>{copy.texts.text_20}</p>
+        <p>{copy.texts.text_21}</p>
       </details>
     </div>
   </div>

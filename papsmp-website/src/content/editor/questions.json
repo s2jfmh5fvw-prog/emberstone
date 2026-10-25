@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "question": "Was ist PAP SMP?",
+      "answer": "PAP SMP ist ein deutscher Minecraft-Survival-Server von yuuh92. In der Peace baust du, handelst und sicherst deine Base. In der Purge wird PvP aktiv und Claims sind offen. Regeln, Zeiten und Balance werden für die Alpha noch abgestimmt.",
+      "fromRelease": false
+    },
+    {
+      "question": "Wie bekomme ich Zugang zur Alpha?",
+      "answer": "Die Alpha soll voraussichtlich am 01.11.2026 öffnen. Melde dich auf Discord und kläre dort deine Freischaltung. Geplant sind höchstens 20 Spieler gleichzeitig.",
+      "fromRelease": false
+    },
+    {
+      "question": "Kann ich mit Java spielen?",
+      "answer": "Eine Java-Serveradresse ist auf dieser Seite angegeben. Die aktuellen Zugangshinweise und den Stand der Alpha findest du auf Discord.",
+      "fromRelease": false
+    },
+    {
+      "question": "Funktioniert der Server schon mit Bedrock oder Geyser?",
+      "answer": "Der Bedrock-/Geyser-Serverzugang wird noch geprüft. Die verfügbaren Bedrock-Dateien sind Resource Packs und bestätigen nicht, dass die Verbindung zum Server bereits möglich ist.",
+      "fromRelease": false
+    },
+    {
+      "question": "Wo finde ich die Resource Packs?",
+      "answer": "",
+      "fromRelease": true
+    },
+    {
+      "question": "Welche Begleiter gibt es?",
+      "answer": "PAP, BO und Schinken nutzen das vorhandene Companion-Menü. Schinken ist ein kleines Schwein mit Cowboyhut und Halsband; nur sein Besitzer darf reiten. Der Startpreis liegt bei 500 Shards. Ein aktiver Begleiter pro Spieler. Das aktuelle Resourcepack liefert die Gestaltung; Fähigkeiten benötigen den passenden Serverstand.",
+      "fromRelease": false
+    },
+    {
+      "question": "Gibt es noch ganze Peace- und Purge-Rüstungen?",
+      "answer": "Die eigene Gestaltung konzentriert sich auf zwei Helme: die offene Peace-Krone und die dunkle Purge-Banditenmaske. Eigene Brustpanzer, Hosen und Schuhe sowie deren Rezepte wurden entfernt. Bereits vorhandene Gegenstände bleiben erhalten und verwenden normale Netherit-Optik.",
+      "fromRelease": false
+    },
+    {
+      "question": "Gibt es VIP-Ränge oder einen Shop?",
+      "answer": "Für die Alpha ist VIP als Monatsabo für 4,99 € pro Monat geplant: VIP-Status, tägliche VIP-Crate, Alpha-Zugang zur PAP-Pet-Demo für Windows (.exe) und 500 Shards. Dazu kommen 150 Shards für 1,99 € und ein shop-key für 0,99 € mit einem Ingame-Key. Die Kaufanbindung wird noch eingerichtet. Kündigungsbedingungen und der Vergabezyklus der 500 Shards werden vor Shopöffnung ergänzt.",
+      "fromRelease": false
+    },
+    {
+      "question": "Was ist das Corrupted Heart?",
+      "answer": "Das korrumpierte Herz ist eine eigene PAP-Mechanik: Bei gewerteten PvP-Toden in der Purge kann ein Grundherz als handelbares Item in Umlauf kommen. Wer ein fremdes Herz konsumiert, erhält ein Zusatzherz und stellt das Grundherz seines ursprünglichen Besitzers wieder her. Dein eigenes Herz stellt nur dein verlorenes Grundherz wieder her. In Peace ermöglichen Herzrituale die freiwillige Rückgabe oder einen langsamen Wiederaufbau. Details und Limits stehen bei der Erklärung zum Corrupted Heart und auf Discord.",
+      "fromRelease": false
+    },
+    {
+      "question": "Wie kann ich meinen Claim mit Fallen schützen?",
+      "answer": "Auf dem geschlossenen Alpha-Server stehen Wurzelbarrikade, Alarmrune, Frostsiegel, Dornenfalle, Bolzenwächter und Bannfeld bereit. Werte passende, selbst gebaute Basisblöcke in deinem eigenen aktiven Claim über /defense auf. Anlagen kosten Cash und teilweise Shards; aktive Fallen haben begrenzte Ladungen. Die passive Barrikade braucht keine Ladungen und hält auch Freunde auf. Dornenfalle und Bolzenwächter können zulässige fremde Spieler unter erlaubten Purge- und Kampfbedingungen verletzen; Alarm und Frost verursachen keinen direkten HP-Schaden. Besitzer, Teammitglieder, Vertraute und geschützte Neulinge bleiben verschont.",
+      "fromRelease": false
+    },
+    {
+      "question": "Brauche ich für die Verteidigungsanlagen Mods?",
+      "answer": "Client-Mods sind nicht nötig. Die sechs Anlagen nutzen echte Minecraft-Basisblöcke und die aktuellen PAP-Packs für Java und Bedrock für ihre Naturgestaltung. Ohne das aktuelle Pack fehlt die passende Optik. Die überarbeiteten Formen wurden in echten Java- und Bedrock-Clients unter Windows aufgenommen. Der verlinkte Prüfbericht unterscheidet sichtbare Gestaltung, getestete Funktionen und noch offene Prüfungen.",
+      "fromRelease": false
+    }
+  ]
+}

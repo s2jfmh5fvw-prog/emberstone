@@ -1,4 +1,5 @@
 ---
+import copy from '../content/editor/faq.json';
 import { faqs } from '../data/faq';
 ---
-<section id="faq" class="section section-faq" aria-labelledby="faq-title"><div class="container section-block faq-grid faq-block"><div><p class="kicker">Noch Fragen?</p><h2 id="faq-title">Kurz und<br /><em>ehrlich.</em></h2></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}<span>＋</span></summary><p>{answer}</p></details>)}</div></div></section>
+<section id="faq" class="section section-faq" aria-labelledby="faq-title"><div class="container section-block faq-grid faq-block"><div><p class="kicker">{copy.texts.text_1}</p><h2 id="faq-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}<span>＋</span></summary><p>{answer}</p></details>)}</div></div></section>

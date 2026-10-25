@@ -1,0 +1,1799 @@
+# PAP SMP · Inhaltseditor
+# Bestehende Technik, Release-Links und IDs bleiben außerhalb des Editors.
+media:
+  - name: uploads
+    label: Eigene Website-Bilder
+    input: papsmp-website/public/uploads
+    output: /uploads
+    extensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
+      - gif
+      - avif
+    rename: safe
+content:
+  - name: hero
+    label: 01 · Startseite / Begrüßung
+    type: file
+    path: papsmp-website/src/content/editor/hero.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: titel_1
+            label: Überschrift 1 · PEACE AM TAG
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · PURGE IN DER NACHT
+            type: string
+            required: true
+          - name: text_1
+            label: Text 1 · Deine Base, eure Pläne und eine Nacht, auf die ihr euch vo…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · Das Konzept
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Chibi-PAP sitzt aufmerksam da
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: animation_1
+            label: Animation 1 · pap-greeting-512.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_2
+            label: Bild 2 · Derselbe Chibi-PAP winkt mit seiner Pfote
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_2_alt
+            label: Bild 2 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: server-strip
+    label: 02 · Statusleiste
+    type: file
+    path: papsmp-website/src/content/editor/server-strip.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: beschriftung_1
+            label: Beschriftung 1 · SPIELPRINZIP
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · PEACE & PURGE
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · ZUGANG
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · JAVA-ADRESSE · BEDROCK IN PRÜFUNG
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · JAVA-ADRESSE
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · 104.204.219.211:25565
+            type: string
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · ALPHA
+            type: string
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · MAX. 20 GLEICHZEITIG
+            type: string
+            required: true
+  - name: phase-panel
+    label: 03 · Spielprinzip / Peace und Purge
+    type: file
+    path: papsmp-website/src/content/editor/phase-panel.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Das Spielprinzip
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Survival.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Mit anderem Takt.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Tagsüber baust du deine Base aus. In der Purge werden PvP …
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · 01 · Peace
+            type: string
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · Aufbauen. Erkunden. Ankommen.
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Such dir einen Bauplatz, sammle Vorräte und handle mit and…
+            type: text
+            required: true
+          - name: text_4
+            label: Text 4 · Ressourcen sammeln und handeln
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Deine Base bauen und sichern
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · Die nächste Purge vorbereiten
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · 02 · Purge
+            type: string
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · Vorbereiten. Aufpassen. Entscheiden.
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · In der Purge wird PvP aktiv und Claims sind offen. Entsche…
+            type: text
+            required: true
+          - name: text_8
+            label: Text 8 · PvP und angreifbare Bases
+            type: string
+            required: true
+          - name: text_9
+            label: Text 9 · Vorräte, Rückwege und Absprachen
+            type: string
+            required: true
+          - name: text_10
+            label: Text 10 · Regeln und Balance im Alpha-Test
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: animation_1
+            label: Animation 1 · peace_loop.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_1
+            label: Bild 1 · Peace-Sigil
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_2
+            label: Bild 2 · Chibi-PAP freut sich
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_2_alt
+            label: Bild 2 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: animation_2
+            label: Animation 2 · purge_loop.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_3
+            label: Bild 3 · Purge-Sigil
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_3_alt
+            label: Bild 3 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_4
+            label: Bild 4 · Chibi-PAP ist wachsam
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_4_alt
+            label: Bild 4 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: corrupted-heart
+    label: 04 · Corrupted Heart
+    type: file
+    path: papsmp-website/src/content/editor/corrupted-heart.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Die PAP-Core-Mechanik
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Corrupted Heart
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Ein Herz.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Deine Wahl.
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Peace und Purge geben den Takt vor. Das
+            type: string
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · korrumpierte Herz
+            type: string
+            required: true
+          - name: text_4
+            label: Text 4 · macht ihn persönlich.
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Ein Teil von dir wird zum handelbaren Item. Kämpfe darum, …
+            type: text
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Was machst du mit einem Herz?
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · Zwischen Peace und Purge
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Im Spiel ein Item. Für dich mehr.
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · Illustriert nach dem originalen PAP-Herz.
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · 01
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · In der Purge
+            type: string
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · Verlieren.
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · Bei einem gewerteten PvP-Tod kann ein Grundherz als Item i…
+            type: text
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · 02
+            type: string
+            required: true
+          - name: text_8
+            label: Text 8 · Deine Macht
+            type: string
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · Absorbieren.
+            type: string
+            required: true
+          - name: text_9
+            label: Text 9 · Ein fremdes Herz gibt dir beim Konsum ein dauerhaftes Zusa…
+            type: text
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · 03
+            type: string
+            required: true
+          - name: text_10
+            label: Text 10 · Deine Entscheidung
+            type: string
+            required: true
+          - name: titel_5
+            label: Überschrift 5 · Zurückgeben.
+            type: string
+            required: true
+          - name: text_11
+            label: Text 11 · Hole dein eigenes Herz zurück – ohne Zusatzbonus. Oder gib…
+            type: text
+            required: true
+          - name: beschriftung_9
+            label: Beschriftung 9 · Herzregeln & Rituale
+            type: string
+            required: true
+          - name: beschriftung_10
+            label: Beschriftung 10 · Die Spielmechanik im Detail
+            type: string
+            required: true
+          - name: titel_6
+            label: Überschrift 6 · Ein eigenes Herz im Umlauf
+            type: string
+            required: true
+          - name: text_12
+            label: Text 12 · Pro Spieler kann gleichzeitig ein eigenes korrumpiertes He…
+            type: text
+            required: true
+          - name: text_13
+            label: Text 13 · Wenn du dein eigenes Herz konsumierst, erhältst du genau d…
+            type: text
+            required: true
+          - name: titel_7
+            label: Überschrift 7 · Ein anderer Weg in Peace
+            type: string
+            required: true
+          - name: text_14
+            label: Text 14 · gibt ein aktives fremdes Herz aus deiner Haupthand freiwil…
+            type: string
+            required: true
+          - name: text_15
+            label: Text 15 · baut ein verlorenes Grundherz bis zum Startwert wieder auf…
+            type: text
+            required: true
+          - name: text_16
+            label: Text 16 · Für Rituale gelten Peace, Überlebensmodus und die bestehen…
+            type: string
+            required: true
+          - name: text_17
+            label: Text 17 · Alpha-Regeln und Limits können sich noch ändern. Die aktue…
+            type: text
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: "Bild 1 · Das Corrupted Heart: ein kantiges dunkles Kristallherz mit
+              violetten Bruchkanten und einem goldenen Funken im Kern."
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_2
+            label: Bild 2 · corrupted_heart.png
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+  - name: claim-defense
+    label: 05 · Claim-Verteidigung
+    type: file
+    path: papsmp-website/src/content/editor/claim-defense.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Dein Claim. Dein Plan.
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Vorbereiten.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Standhalten.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Wurzeln, Holz und Amethyst werden Teil deiner Verteidigung…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · Auf dem Alpha-Server verfügbar
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Die sechs Anlagen sind auf dem geschlossenen Alpha-Server …
+            type: text
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Discord
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · So entsteht deine erste Anlage
+            type: string
+            required: true
+          - name: text_4
+            label: Text 4 · Baue den passenden Basisblock in deinem eigenen aktiven Cl…
+            type: text
+            required: true
+          - name: text_5
+            label: Text 5 · Sieh den Block aus höchstens fünf Blöcken Entfernung an. M…
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · das Menü und kaufst dort das Upgrade.
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · Aktive Fallen starten im Modus
+            type: string
+            required: true
+          - name: text_8
+            label: Text 8 · . Per Rechtsklick auf den Block verwaltest du als Besitzer…
+            type: text
+            required: true
+          - name: text_9
+            label: Text 9 · Das Upgrade setzt keinen Block automatisch. Beim Abbau geh…
+            type: text
+            required: true
+          - name: text_10
+            label: Text 10 · Der Zaun einer Barrikade bleibt ein echter Block. Ausschal…
+            type: text
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Peace, Purge und faire Ziele
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: "Beschriftung 5 · Monsterbetrieb:"
+            type: string
+            required: true
+          - name: text_11
+            label: Text 11 · Im Standardmodus werden nur zulässige feindliche Monster e…
+            type: text
+            required: true
+          - name: beschriftung_6
+            label: "Beschriftung 6 · Spielerbetrieb:"
+            type: string
+            required: true
+          - name: text_12
+            label: Text 12 · Alarmrune, Frostsiegel, Dornenfalle und Bolzenwächter rich…
+            type: string
+            required: true
+          - name: text_13
+            label: Text 13 · auf zulässige fremde Spieler;
+            type: string
+            required: true
+          - name: text_14
+            label: Text 14 · kombiniert Spieler- und Monsterziele. Spieler werden nur w…
+            type: text
+            required: true
+          - name: beschriftung_7
+            label: "Beschriftung 7 · Dornen und Bolzen können fremde Angreifer verletzen:"
+            type: string
+            required: true
+          - name: text_15
+            label: Text 15 · Als Startwert verursachen beide 3 HP Spielerschaden, also …
+            type: text
+            required: true
+          - name: text_16
+            label: Text 16 · Das Bannfeld macht niemanden unverwundbar. Explosionsschad…
+            type: text
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · Kosten, Ladungen und Grenzen
+            type: string
+            required: true
+          - name: text_17
+            label: Text 17 · Die Kaufpreise oben sind die aktuellen Alpha-Startwerte. A…
+            type: text
+            required: true
+          - name: beschriftung_9
+            label: Beschriftung 9 · 40 Ladungen
+            type: string
+            required: true
+          - name: text_18
+            label: Text 18 · , die Standardkapazität beträgt 200. Ein Paket mit
+            type: string
+            required: true
+          - name: beschriftung_10
+            label: Beschriftung 10 · 25 Ladungen kostet 100 Cash und 1 Shard
+            type: string
+            required: true
+          - name: text_19
+            label: Text 19 · ; es muss vollständig in die Anlage passen. Die passive Wu…
+            type: text
+            required: true
+          - name: text_20
+            label: Text 20 · Alarmrune und Bolzenwächter verbrauchen eine Ladung pro Ak…
+            type: text
+            required: true
+          - name: text_21
+            label: Text 21 · Nur der Besitzer verwaltet und bezahlt seine Anlagen. Auss…
+            type: text
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Chibi-PAP hält Ausschau
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: pack-highlights
+    label: 06 · Begleiter und Pack-Motive
+    type: file
+    path: papsmp-website/src/content/editor/pack-highlights.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Deine Begleiter · Deine Zeichen
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Kleine Charaktere.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Eigene Geschichten.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Ressourcenstand
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · bringt PAP, BO und Schinken, zwei unterschiedliche Kopfbed…
+            type: text
+            required: true
+          - name: text_4
+            label: Text 4 · Ein aktiver Begleiter pro Spieler. Auswahl, Pflege und Bes…
+            type: text
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · Krone der Peace
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Offene goldene Zacken, ein kleiner violetter Siegelstein u…
+            type: text
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · Maske der Purge
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · Eine dunkle Banditenmaske mit klaren Pixelfalten und gebun…
+            type: text
+            required: true
+          - name: titel_5
+            label: Überschrift 5 · Phönix-Elytra
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · Obsidianviolette Federn mit warmen Sunrise-Akzenten. Dazu …
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · Krone und Maske herstellen
+            type: string
+            required: true
+          - name: text_8
+            label: Text 8 · Es gibt künftig nur diese zwei eigenen Rüstungsteile. Brus…
+            type: text
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Peace-Krone
+            type: string
+            required: true
+          - name: text_9
+            label: Text 9 · 4 Smaragdblöcke, 4 Echoscherben und ein Netherithelm. Rast…
+            type: text
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · Purge-Maske
+            type: string
+            required: true
+          - name: text_10
+            label: Text 10 · 4 Redstoneblöcke, 4 weinender Obsidian und ein Netherithel…
+            type: text
+            required: true
+          - name: text_11
+            label: Text 11 · Die beiden Rezepte gehören zum passenden Server-Datapack. …
+            type: text
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Downloads
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Offene goldene Peace-Krone
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_2
+            label: Bild 2 · Dunkle Purge-Banditenmaske
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_2_alt
+            label: Bild 2 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_3
+            label: Bild 3 · Phönix-Elytra mit violetten Federn und warmen Akzenten
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_3_alt
+            label: Bild 3 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: feature-grid
+    label: 07 · Alpha-Fakten / Überschrift
+    type: file
+    path: papsmp-website/src/content/editor/feature-grid.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · PAP SMP auf einen Blick
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Dein Einstieg.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Auf einen Blick.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · So spielt sich PAP SMP – und so kommst du zur Alpha dazu.
+            type: string
+            required: true
+  - name: story-block
+    label: 08 · Einblicke / Bildergalerie
+    type: file
+    path: papsmp-website/src/content/editor/story-block.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Einblicke in die Welt
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Dein Anfang.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Eure Geschichte.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Ein erster Bauplatz, eine überstandene Purge und die nächs…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · 01 · Ankommen
+            type: string
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · Finde deinen Platz.
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Such dir einen Bauplatz und leg den Grundstein für deine B…
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · 02 · Purge
+            type: string
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · Die Purge beginnt.
+            type: string
+            required: true
+          - name: text_4
+            label: Text 4 · Verteidigt eure Vorräte, zieht gemeinsam los oder sucht ei…
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · 03 · Weitergehen
+            type: string
+            required: true
+          - name: titel_5
+            label: Überschrift 5 · Der nächste Tag beginnt.
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Baut weiter, teilt eure Ideen und meldet uns, was in der A…
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Aus der PAP-Community
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Yuuh als Skeleton und PAP planen ihren Bauplatz
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_2
+            label: Bild 2 · Yuuh und PAP halten nachts an einer Minecraft-Brücke Ausschau
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_2_alt
+            label: Bild 2 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_3
+            label: Bild 3 · Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_3_alt
+            label: Bild 3 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_4
+            label: Bild 4 · Chibi-PAP mit einem kleinen Herz
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_4_alt
+            label: Bild 4 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: animation_1
+            label: Animation 1 · pap-greeting-128.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_5
+            label: Bild 5 · Chibi-PAP begrüßt die Community
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_5_alt
+            label: Bild 5 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+          - name: bild_6
+            label: Bild 6 · Chibi-PAP jubelt
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_6_alt
+            label: Bild 6 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: crossplay
+    label: 09 · Plattformen und Zugang
+    type: file
+    path: papsmp-website/src/content/editor/crossplay.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Editionen und Zugang
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Java zuerst.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Bedrock in Prüfung.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Für Java ist die Adresse angegeben. Kläre deine Freischalt…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · JAVA · ADRESSE ANGEGEBEN
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · BEDROCK · IN PRÜFUNG
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · GEYSER · IN PRÜFUNG
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · JAVA-ADRESSE
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · 104.204.219.211:25565
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Gemeinsam starten
+            type: string
+            required: true
+          - name: text_3
+            label: "Text 3 · Deine Edition, das passende Pack und die Freischaltung: Au…"
+            type: text
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Yuuh als Skeleton und PAP an ihrem Minecraft-Bauplatz
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: alpha-access
+    label: 10 · Alpha-Anmeldung
+    type: file
+    path: papsmp-website/src/content/editor/alpha-access.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: beschriftung_1
+            label: Beschriftung 1 · Dein Browser unterstützt die Videowiedergabe nicht.
+            type: string
+            required: true
+          - name: text_1
+            label: Text 1 · ALPHA-ZUGANG · PAP SMP
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Kleine Runde.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Mitten im Aufbau.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Voraussichtlich öffnen wir die Alpha am 01.11.2026. Bis zu…
+            type: text
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Alpha-Infos auf Discord
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · 01
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Discord öffnen
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Dort findest du Startinfos und den Kontakt zum Team.
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · 02
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Aktuelle Hinweise lesen
+            type: string
+            required: true
+          - name: text_4
+            label: Text 4 · Lies die Regeln und Hinweise zur Freischaltung.
+            type: string
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · 03
+            type: string
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · Teilnahme anfragen
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Nach der Freischaltung kannst du zum Start mitspielen.
+            type: string
+            required: true
+          - name: beschriftung_9
+            label: Beschriftung 9 · Alpha-Status
+            type: string
+            required: true
+          - name: beschriftung_10
+            label: "Beschriftung 10 · Start geplant: 01.11.2026 · Teststand: Änderungen und
+              Zurü…"
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · pap-companion-reveal-poster.png
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+  - name: community
+    label: 11 · Community
+    type: file
+    path: papsmp-website/src/content/editor/community.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Der Treffpunkt vor dem Start
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Eine Welt im Aufbau.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Eine Runde mittendrin.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Ich baue PAP SMP als kleine Alpha auf. Bring Freunde und I…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · PAP SMP auf Discord
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · PAP-Community
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Baupläne teilen, Mitspieler finden und den nächsten Abend …
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: downloads-vip
+    label: 12 · Downloads / Beschreibungstexte
+    type: file
+    path: papsmp-website/src/content/editor/downloads-vip.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Downloads · PAP SMP
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Die aktuellen
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Alpha-Dateien.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Ressourcenstand
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · · Lade das Pack für deine Edition herunter. Es enthält die…
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · JAVA · MC 1.21.11
+            type: string
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · Java Resource Pack ·
+            type: string
+            required: true
+          - name: text_4
+            label: "Text 4 · Für Minecraft Java 1.21.11: alle aktuellen PAP-Motive, dre…"
+            type: text
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Herunterladen ·
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · BEDROCK · GEYSER
+            type: string
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · Bedrock Resource Pack ·
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Passende Modelle und Texturen für Bedrock über Geyser. Der…
+            type: text
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Herunterladen ·
+            type: string
+            required: true
+          - name: titel_5
+            label: Überschrift 5 · VIP & Shop · Vorschau
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · VIP für 4,99 € pro Monat, 150 Shards für 1,99 € und ein sh…
+            type: text
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · Angebote ansehen ↓
+            type: string
+            required: true
+          - name: titel_6
+            label: Überschrift 6 · Weitere Downloads & Hinweise
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · Alles Weitere zum Pack – öffne den Bereich, den du brauchs…
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Gesamtpaket & Installation
+            type: string
+            required: true
+          - name: text_8
+            label: Text 8 · Java, Bedrock, Geyser-Mappings und die Rezepte für Krone u…
+            type: text
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · Gesamtpaket herunterladen
+            type: string
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · Installation & Rückweg ↗
+            type: string
+            required: true
+          - name: beschriftung_9
+            label: Beschriftung 9 · Änderungs- & Prüfbericht ↗
+            type: string
+            required: true
+          - name: beschriftung_10
+            label: Beschriftung 10 · Für Serverbetreiber
+            type: string
+            required: true
+          - name: text_9
+            label: Text 9 · Das aktuelle Geyser-Overlay enthält das Bedrock-Pack und e…
+            type: text
+            required: true
+          - name: beschriftung_11
+            label: Beschriftung 11 · Geyser-Overlay ·
+            type: string
+            required: true
+          - name: beschriftung_12
+            label: Beschriftung 12 · Custom-Mappings ·
+            type: string
+            required: true
+          - name: beschriftung_13
+            label: Beschriftung 13 · Event-UI & Datapack-Hinweise ↗
+            type: string
+            required: true
+          - name: beschriftung_14
+            label: Beschriftung 14 · Event-Icons als PNG herunterladen ↓
+            type: string
+            required: true
+          - name: text_10
+            label: Text 10 · Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthal…
+            type: text
+            required: true
+          - name: beschriftung_15
+            label: Beschriftung 15 · Versionen & Prüfsummen
+            type: string
+            required: true
+          - name: text_11
+            label: Text 11 · Die aktuelle Version hat eine eigene Downloadadresse. Früh…
+            type: text
+            required: true
+          - name: beschriftung_16
+            label: Beschriftung 16 · Java-Pack · eindeutige Version ↓
+            type: string
+            required: true
+          - name: beschriftung_17
+            label: Beschriftung 17 · Java-Pack · Archiv 3.2.8 ↓
+            type: string
+            required: true
+          - name: beschriftung_18
+            label: Beschriftung 18 · Alle SHA-256-Prüfsummen ↗
+            type: string
+            required: true
+          - name: beschriftung_19
+            label: Beschriftung 19 · Java · SHA-256
+            type: string
+            required: true
+          - name: beschriftung_20
+            label: Beschriftung 20 · Bedrock · SHA-256
+            type: string
+            required: true
+  - name: vip-shop-demo
+    label: 13 · VIP und Shop / Vorschautexte
+    type: file
+    path: papsmp-website/src/content/editor/vip-shop-demo.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Der PAP-Shop · Alpha-Vorschau
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Deine PAP-Runde.
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · Deine Extras.
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · VIP als Monatsabo oder ein einzelnes Paket mit Shards und …
+            type: text
+            required: true
+          - name: beschriftung_1
+            label: Beschriftung 1 · Ein kleiner Begleiter.
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Auch nach dem Ausloggen.
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · VIP-Mitgliedschaft · Monatsabo
+            type: string
+            required: true
+          - name: titel_3
+            label: Überschrift 3 · PAP VIP
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Dein VIP-Status auf dem Server – und Zugang zur ersten Win…
+            type: string
+            required: true
+          - name: text_4
+            label: Text 4 · VIP-Status
+            type: string
+            required: true
+          - name: text_5
+            label: Text 5 · Tägliche VIP-Crate
+            type: string
+            required: true
+          - name: text_6
+            label: Text 6 · Alpha-Zugang zur PAP-Pet-Demo für Windows (.exe)
+            type: string
+            required: true
+          - name: text_7
+            label: Text 7 · 500 Shards
+            type: string
+            required: true
+          - name: text_8
+            label: Text 8 · 4,99 €
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · pro Monat · Monatsabo
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · Zum Alpha-Start geplant
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Startinfos auf Discord ↗
+            type: string
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · Shard Shop
+            type: string
+            required: true
+          - name: titel_4
+            label: Überschrift 4 · 150 Shards
+            type: string
+            required: true
+          - name: text_9
+            label: Text 9 · 150 Shards für dein verknüpftes Minecraft-Konto. Wofür du …
+            type: text
+            required: true
+          - name: text_10
+            label: Text 10 · 1,99 €
+            type: string
+            required: true
+          - name: beschriftung_8
+            label: Beschriftung 8 · einmalig · 150 Shards ingame
+            type: string
+            required: true
+          - name: beschriftung_9
+            label: Beschriftung 9 · Zum Alpha-Start geplant
+            type: string
+            required: true
+          - name: beschriftung_10
+            label: Beschriftung 10 · Key Shop · Platzhalter
+            type: string
+            required: true
+          - name: titel_5
+            label: Überschrift 5 · shop-key
+            type: string
+            required: true
+          - name: text_11
+            label: Text 11 · Ein shop-key für dein Minecraft-Konto. Die zugehörige Crat…
+            type: text
+            required: true
+          - name: text_12
+            label: Text 12 · 0,99 €
+            type: string
+            required: true
+          - name: beschriftung_11
+            label: Beschriftung 11 · einmalig · 1 shop-key ingame
+            type: string
+            required: true
+          - name: beschriftung_12
+            label: Beschriftung 12 · Zum Alpha-Start geplant
+            type: string
+            required: true
+          - name: beschriftung_13
+            label: Beschriftung 13 · Was vor der Shopöffnung noch ergänzt wird
+            type: string
+            required: true
+          - name: text_13
+            label: Text 13 · Die Kaufanbindung und die bestätigte Zustellung an dein Mi…
+            type: text
+            required: true
+          - name: text_14
+            label: Text 14 · Für VIP ergänzen wir Kündigungsbedingungen und den Vergabe…
+            type: text
+            required: true
+          - name: text_15
+            label: Text 15 · Die
+            type: string
+            required: true
+          - name: beschriftung_14
+            label: Beschriftung 14 · bisherige VIP-Infoseite ↗
+            type: string
+            required: true
+          - name: text_16
+            label: Text 16 · beschreibt den vorhandenen Kaufweg im Spiel. Ihre Konditio…
+            type: text
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: animation_1
+            label: Animation 1 · pap-greeting-512.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_1
+            label: Bild 1 · Chibi-PAP winkt dir zu
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: faq
+    label: 14 · FAQ / Überschrift
+    type: file
+    path: papsmp-website/src/content/editor/faq.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: text_1
+            label: Text 1 · Noch Fragen?
+            type: string
+            required: true
+          - name: titel_1
+            label: Überschrift 1 · Kurz und
+            type: string
+            required: true
+          - name: titel_2
+            label: Überschrift 2 · ehrlich.
+            type: string
+            required: true
+  - name: site-header
+    label: 15 · Kopfbereich
+    type: file
+    path: papsmp-website/src/content/editor/site-header.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: beschriftung_1
+            label: Beschriftung 1 · Zum Inhalt springen
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Alpha-Infos auf Discord
+            type: string
+            required: true
+          - name: text_1
+            label: Text 1 · MINECRAFT SURVIVAL · ALPHA
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Peace & Purge · Minecraft-Survival in der Alpha
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · Kontakt
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Impressum
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · Datenschutz
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · Zurück nach oben ↑
+            type: string
+            required: true
+          - name: text_3
+            label: Text 3 · Created by
+            type: string
+            required: true
+          - name: beschriftung_7
+            label: Beschriftung 7 · yuuh92
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: animation_1
+            label: Animation 1 · pap_smp_logo_duality_loop.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
+              reduzierter Bewegung verwendet.
+          - name: bild_1
+            label: Bild 1 · PAP SMP
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+          - name: bild_1_alt
+            label: Bild 1 · Beschreibung für Vorlesefunktion
+            type: string
+            required: true
+  - name: site-footer
+    label: 16 · Fußbereich
+    type: file
+    path: papsmp-website/src/content/editor/site-footer.json
+    fields:
+      - name: texts
+        label: Texte (in Seitenreihenfolge)
+        type: object
+        required: true
+        fields:
+          - name: beschriftung_1
+            label: Beschriftung 1 · PAP SMP
+            type: string
+            required: true
+          - name: text_1
+            label: Text 1 · Peace & Purge · Minecraft-Survival in der Alpha
+            type: string
+            required: true
+          - name: beschriftung_2
+            label: Beschriftung 2 · Kontakt
+            type: string
+            required: true
+          - name: beschriftung_3
+            label: Beschriftung 3 · Impressum
+            type: string
+            required: true
+          - name: beschriftung_4
+            label: Beschriftung 4 · Datenschutz
+            type: string
+            required: true
+          - name: beschriftung_5
+            label: Beschriftung 5 · Zurück nach oben ↑
+            type: string
+            required: true
+          - name: text_2
+            label: Text 2 · Created by
+            type: string
+            required: true
+          - name: beschriftung_6
+            label: Beschriftung 6 · yuuh92
+            type: string
+            required: true
+      - name: images
+        label: Bilder und Animationen
+        type: object
+        required: true
+        fields:
+          - name: bild_1
+            label: Bild 1 · pap_smp_logo_duality_loop.webp
+            type: image
+            required: true
+            options:
+              media: uploads
+            description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
+              Seitenverhältnis verwenden.
+  - name: features
+    label: 07 · Alpha-Fakten / Karten
+    type: file
+    path: papsmp-website/src/content/editor/features.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: Kategorie
+            type: string
+            required: true
+          - name: title
+            label: Überschrift
+            type: string
+            required: true
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+          - name: emote
+            label: Bild
+            type: object
+            required: true
+            fields:
+              - name: src
+                label: Bild
+                type: image
+                required: true
+                options:
+                  media: uploads
+              - name: alt
+                label: Bildbeschreibung
+                type: string
+                required: true
+        list: true
+  - name: questions
+    label: 14 · FAQ / Fragen und Antworten
+    type: file
+    path: papsmp-website/src/content/editor/questions.json
+    fields:
+      - name: items
+        label: Fragen (Reihenfolge veränderbar)
+        type: object
+        required: true
+        fields:
+          - name: question
+            label: Frage
+            type: string
+            required: true
+          - name: answer
+            label: Antwort
+            type: text
+            required: false
+          - name: fromRelease
+            label: Antwort automatisch aus aktuellem Pack-Release
+            type: boolean
+            required: true
+            description: Für die Download-Frage aktiviert lassen, damit Versionsangaben
+              aktuell bleiben.
+        list: true
+  - name: defense-devices
+    label: 05 · Claim-Verteidigung / Anlagen
+    type: file
+    path: papsmp-website/src/content/editor/defense-devices.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: form
+            label: Gestaltung
+            type: string
+            required: true
+          - name: role
+            label: Aufgabe
+            type: string
+            required: true
+          - name: base
+            label: Basisblock
+            type: string
+            required: true
+          - name: cost
+            label: Angezeigte Kosten
+            type: string
+            required: true
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+          - name: accent
+            label: Farbakzent
+            type: select
+            required: true
+            options:
+              values:
+                - leaf
+                - gold
+                - ice
+                - violet
+        list: true
+  - name: companions
+    label: 06 · Begleiter / Karten
+    type: file
+    path: papsmp-website/src/content/editor/companions.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: src
+            label: Bild
+            type: image
+            required: true
+            options:
+              media: uploads
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+        list: true
+  - name: appearance
+    label: 17 · Kleine Designänderungen
+    type: file
+    path: papsmp-website/src/content/editor/appearance.json
+    fields:
+      - name: spacing
+        label: Abstand zwischen Abschnitten
+        type: select
+        required: true
+        options:
+          values:
+            - name: original
+              label: Bisheriges Design
+            - name: compact
+              label: Etwas kompakter
+            - name: airy
+              label: Etwas luftiger
+      - name: imageCorners
+        label: Rundung der großen Szenenbilder
+        type: select
+        required: true
+        options:
+          values:
+            - name: original
+              label: Bisheriges Design
+            - name: square
+              label: Eckig
+            - name: soft
+              label: Leicht gerundet
+            - name: round
+              label: Stärker gerundet
+      - name: backgroundVideo
+        label: Hintergrundvideo anzeigen
+        type: boolean
+        required: true
+      - name: backgroundOpacity
+        label: Sichtbarkeit des Hintergrundvideos (Prozent)
+        type: number
+        required: true
+        options:
+          min: 0
+          max: 60
+        description: "Bisheriger Wert: 35. Kleinere Werte ergeben einen ruhigeren
+          Hintergrund."
+  - name: site
+    label: 18 · Seitentitel und Beschreibung
+    type: file
+    path: papsmp-website/src/content/editor/site.json
+    fields:
+      - name: title
+        label: Titel im Browsertab und bei Suchmaschinen
+        type: string
+        required: true
+      - name: description
+        label: Kurzbeschreibung für Suchmaschinen und geteilte Links
+        type: text
+        required: true
+settings:
+  content:
+    merge: true

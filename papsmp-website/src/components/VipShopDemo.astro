@@ -1,59 +1,62 @@
+---
+import copy from '../content/editor/vip-shop-demo.json';
+---
 <section id="vip-shop" class="section section-vip-demo" aria-labelledby="vip-shop-title">
   <div class="container section-block vip-demo-block">
     <div class="section-heading">
-      <p class="kicker">Der PAP-Shop · Alpha-Vorschau</p>
-      <h2 id="vip-shop-title">Deine PAP-Runde.<br /><em>Deine Extras.</em></h2>
-      <p>VIP als Monatsabo oder ein einzelnes Paket mit Shards und Keys. Hier siehst du die Angebote für den geplanten Alpha-Start.</p>
+      <p class="kicker">{copy.texts.text_1}</p>
+      <h2 id="vip-shop-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2>
+      <p>{copy.texts.text_2}</p>
     </div>
 
     <article class="shop-vip" aria-labelledby="pap-vip-title">
       <div class="shop-vip-art">
         <picture>
-          <source srcset="/pap-chibi-v1/pap-greeting-512.webp" media="(prefers-reduced-motion: no-preference)" />
-          <img src="/pap-chibi-v1/pap-wave-still-512.webp" alt="Chibi-PAP winkt dir zu" width="512" height="512" loading="lazy" />
+          <source srcset={copy.images.animation_1} media="(prefers-reduced-motion: no-preference)" />
+          <img src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="512" height="512" loading="lazy" />
         </picture>
-        <span>Ein kleiner Begleiter.<br />Auch nach dem Ausloggen.</span>
+        <span>{copy.texts.beschriftung_1}<br />{copy.texts.beschriftung_2}</span>
       </div>
       <div class="shop-vip-copy">
-        <span class="shop-label">VIP-Mitgliedschaft · Monatsabo</span>
-        <h3 id="pap-vip-title">PAP VIP</h3>
-        <p>Dein VIP-Status auf dem Server – und Zugang zur ersten Windows-Demo von PAP.</p>
+        <span class="shop-label">{copy.texts.beschriftung_3}</span>
+        <h3 id="pap-vip-title">{copy.texts.titel_3}</h3>
+        <p>{copy.texts.text_3}</p>
         <ul>
-          <li>VIP-Status</li>
-          <li>Tägliche VIP-Crate</li>
-          <li>Alpha-Zugang zur PAP-Pet-Demo für Windows (.exe)</li>
-          <li>500 Shards</li>
+          <li>{copy.texts.text_4}</li>
+          <li>{copy.texts.text_5}</li>
+          <li>{copy.texts.text_6}</li>
+          <li>{copy.texts.text_7}</li>
         </ul>
       </div>
       <div class="shop-vip-price">
-        <p class="shop-price">4,99 €<span>pro Monat · Monatsabo</span></p>
-        <span class="shop-state">Zum Alpha-Start geplant</span>
-        <a class="shop-info" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer">Startinfos auf Discord ↗</a>
+        <p class="shop-price">{copy.texts.text_8}<span>{copy.texts.beschriftung_4}</span></p>
+        <span class="shop-state">{copy.texts.beschriftung_5}</span>
+        <a class="shop-info" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer">{copy.texts.beschriftung_6}</a>
       </div>
     </article>
 
     <div class="shop-packages" aria-label="Einzelne Shop-Pakete">
       <article class="shop-package">
-        <div class="shop-package-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#ad7bef" d="m32 3 21 19-6 27-15 12-15-12-6-27Z"/><path fill="#e6d3ff" d="M32 3 11 22l21 10Z"/><path fill="#8051be" d="m32 32 21-10-6 27-15 12Z"/></svg><span class="shop-label">Shard Shop</span></div>
-        <h3>150 Shards</h3>
-        <p>150 Shards für dein verknüpftes Minecraft-Konto. Wofür du sie ausgibst, entscheidest du im Spiel.</p>
-        <p class="shop-price">1,99 €<span>einmalig · 150 Shards ingame</span></p>
-        <span class="shop-state">Zum Alpha-Start geplant</span>
+        <div class="shop-package-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#ad7bef" d="m32 3 21 19-6 27-15 12-15-12-6-27Z"/><path fill="#e6d3ff" d="M32 3 11 22l21 10Z"/><path fill="#8051be" d="m32 32 21-10-6 27-15 12Z"/></svg><span class="shop-label">{copy.texts.beschriftung_7}</span></div>
+        <h3>{copy.texts.titel_4}</h3>
+        <p>{copy.texts.text_9}</p>
+        <p class="shop-price">{copy.texts.text_10}<span>{copy.texts.beschriftung_8}</span></p>
+        <span class="shop-state">{copy.texts.beschriftung_9}</span>
       </article>
       <article class="shop-package">
-        <div class="shop-package-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#f4bf68" d="M10 6h28v28H28v24H18V34h-8Zm9 9v10h10V15Zm9 24h19v9H28Zm0 13h12v6H28Z"/></svg><span class="shop-label">Key Shop · Platzhalter</span></div>
-        <h3>shop-key</h3>
-        <p>Ein shop-key für dein Minecraft-Konto. Die zugehörige Crate und ihre Inhalte stellen wir vor dem Verkauf vor.</p>
-        <p class="shop-price">0,99 €<span>einmalig · 1 shop-key ingame</span></p>
-        <span class="shop-state">Zum Alpha-Start geplant</span>
+        <div class="shop-package-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#f4bf68" d="M10 6h28v28H28v24H18V34h-8Zm9 9v10h10V15Zm9 24h19v9H28Zm0 13h12v6H28Z"/></svg><span class="shop-label">{copy.texts.beschriftung_10}</span></div>
+        <h3>{copy.texts.titel_5}</h3>
+        <p>{copy.texts.text_11}</p>
+        <p class="shop-price">{copy.texts.text_12}<span>{copy.texts.beschriftung_11}</span></p>
+        <span class="shop-state">{copy.texts.beschriftung_12}</span>
       </article>
     </div>
 
     <details class="shop-details">
-      <summary>Was vor der Shopöffnung noch ergänzt wird</summary>
-      <p>Die Kaufanbindung und die bestätigte Zustellung an dein Minecraft-Konto werden noch eingerichtet. Diese Vorschau nimmt keine Bestellungen an.</p>
-      <p>Für VIP ergänzen wir Kündigungsbedingungen und den Vergabezyklus der 500 Shards. Zur Windows-Pet-Demo folgen Downloadzugang und Voraussetzungen; bei Crates die Inhalte und gegebenenfalls Gewinnchancen.</p>
-      <p>Die <a href="https://pap-vip-commerce.pap-vip-smp.workers.dev/vip" target="_blank" rel="noopener noreferrer">bisherige VIP-Infoseite ↗</a> beschreibt den vorhandenen Kaufweg im Spiel. Ihre Konditionen können vom geplanten Angebot abweichen.</p>
+      <summary>{copy.texts.beschriftung_13}</summary>
+      <p>{copy.texts.text_13}</p>
+      <p>{copy.texts.text_14}</p>
+      <p>{copy.texts.text_15} <a href="https://pap-vip-commerce.pap-vip-smp.workers.dev/vip" target="_blank" rel="noopener noreferrer">{copy.texts.beschriftung_14}</a> {copy.texts.text_16}</p>
     </details>
   </div>
 </section>

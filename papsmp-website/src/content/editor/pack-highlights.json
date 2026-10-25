@@ -1,0 +1,32 @@
+{
+  "texts": {
+    "text_1": "Deine Begleiter · Deine Zeichen",
+    "titel_1": "Kleine Charaktere.",
+    "titel_2": "Eigene Geschichten.",
+    "text_2": "Ressourcenstand",
+    "text_3": "bringt PAP, BO und Schinken, zwei unterschiedliche Kopfbedeckungen und das Phönix-Flügelgewand zusammen. Für Java und Bedrock über Geyser – ohne Clientmods.",
+    "text_4": "Ein aktiver Begleiter pro Spieler. Auswahl, Pflege und Besitz bleiben im bestehenden Companion-Menü. Schinkens Startpreis beträgt 500 Shards. Ohne bestätigtes Pack bleibt seine normale Baby-Schwein-Darstellung erhalten. Die Bilder oben sind Modellmotive; sie sind keine Ingame-Screenshots.",
+    "titel_3": "Krone der Peace",
+    "text_5": "Offene goldene Zacken, ein kleiner violetter Siegelstein und freie Sicht auf deinen Skin. Das Zeichen der Peace wird als Helm getragen.",
+    "titel_4": "Maske der Purge",
+    "text_6": "Eine dunkle Banditenmaske mit klaren Pixelfalten und gebundenen Enden. Sie bedeckt den unteren Teil des Gesichts; Augen und Haare bleiben sichtbar.",
+    "titel_5": "Phönix-Elytra",
+    "text_7": "Obsidianviolette Federn mit warmen Sunrise-Akzenten. Dazu passen das PAP-Totem und das Corrupted Heart mit seinem erhaltenen Puls.",
+    "beschriftung_1": "Krone und Maske herstellen",
+    "text_8": "Es gibt künftig nur diese zwei eigenen Rüstungsteile. Brustpanzer, Hose und Schuhe bleiben normale Minecraft-Rüstung; vorhandene Gegenstände werden nicht gelöscht.",
+    "beschriftung_2": "Peace-Krone",
+    "text_9": "4 Smaragdblöcke, 4 Echoscherben und ein Netherithelm. Raster: Smaragd – Echo – Smaragd / Echo – Helm – Echo / Smaragd – Echo – Smaragd.",
+    "beschriftung_3": "Purge-Maske",
+    "text_10": "4 Redstoneblöcke, 4 weinender Obsidian und ein Netherithelm. Raster: Redstone – Obsidian – Redstone / Obsidian – Helm – Obsidian / Redstone – Obsidian – Redstone.",
+    "text_11": "Die beiden Rezepte gehören zum passenden Server-Datapack. Das Resourcepack allein fügt weder Rezepte noch Companion-Fähigkeiten hinzu. Neue Dateien und Einspielhinweise findest du bei den",
+    "beschriftung_4": "Downloads"
+  },
+  "images": {
+    "bild_1": "/pack-motifs/peace.png",
+    "bild_1_alt": "Offene goldene Peace-Krone",
+    "bild_2": "/pack-motifs/purge.png",
+    "bild_2_alt": "Dunkle Purge-Banditenmaske",
+    "bild_3": "/pack-motifs/elytra.png",
+    "bild_3_alt": "Phönix-Elytra mit violetten Federn und warmen Akzenten"
+  }
+}

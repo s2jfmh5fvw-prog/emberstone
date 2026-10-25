@@ -1,0 +1,15 @@
+{
+  "texts": {
+    "titel_1": "PEACE AM TAG",
+    "titel_2": "PURGE IN DER NACHT",
+    "text_1": "Deine Base, eure Pläne und eine Nacht, auf die ihr euch vorbereiten müsst. PAP SMP startet voraussichtlich am 01.11.2026 in die Alpha – mit bis zu 20 Spielern gleichzeitig.",
+    "beschriftung_1": "Das Konzept"
+  },
+  "images": {
+    "bild_1": "/pap-chibi-v1/pap-idle-512.webp",
+    "bild_1_alt": "Chibi-PAP sitzt aufmerksam da",
+    "animation_1": "/pap-chibi-v1/pap-greeting-512.webp",
+    "bild_2": "/pap-chibi-v1/pap-wave-still-512.webp",
+    "bild_2_alt": "Derselbe Chibi-PAP winkt mit seiner Pfote"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "texts": {
+    "text_1": "Dein Claim. Dein Plan.",
+    "titel_1": "Vorbereiten.",
+    "titel_2": "Standhalten.",
+    "text_2": "Wurzeln, Holz und Amethyst werden Teil deiner Verteidigung: Wege sichern, früh warnen, Eindringlinge bremsen und Monster abwehren. Sechs Anlagen – mit eigenen Formen im PAP-Stil.",
+    "beschriftung_1": "Auf dem Alpha-Server verfügbar",
+    "text_3": "Die sechs Anlagen sind auf dem geschlossenen Alpha-Server verfügbar. Nutze die aktuellen PAP-Packs für ihre Gestaltung. Zugang und Testtermine findest du auf",
+    "beschriftung_2": "Discord",
+    "beschriftung_3": "So entsteht deine erste Anlage",
+    "text_4": "Baue den passenden Basisblock in deinem eigenen aktiven Claim. Halte mindestens drei Blöcke Abstand zu anderen Anlagen; Wurzelbarrikaden dürfen nebeneinander stehen.",
+    "text_5": "Sieh den Block aus höchstens fünf Blöcken Entfernung an. Mit",
+    "text_6": "das Menü und kaufst dort das Upgrade.",
+    "text_7": "Aktive Fallen starten im Modus",
+    "text_8": ". Per Rechtsklick auf den Block verwaltest du als Besitzer Betrieb, Zielmodus und Ladungen. Die Wurzelbarrikade ist eine passive Sperre und benötigt weder Zielmodus noch Ladungen.",
+    "text_9": "Das Upgrade setzt keinen Block automatisch. Beim Abbau geht es verloren; beim Umzug kaufst du am neuen Standort eine neue Anlage. Die Gestaltung kommt mit den aktualisierten PAP-Packs für Java und Bedrock. Client-Mods sind nicht nötig.",
+    "text_10": "Der Zaun einer Barrikade bleibt ein echter Block. Ausschalten oder Entfernen des Upgrades öffnet keinen Durchgang und baut den Zaun nicht ab.",
+    "beschriftung_4": "Peace, Purge und faire Ziele",
+    "beschriftung_5": "Monsterbetrieb:",
+    "text_11": "Im Standardmodus werden nur zulässige feindliche Monster erfasst. Gezähmte Tiere, deine Begleiter und Wachen bleiben verschont.",
+    "beschriftung_6": "Spielerbetrieb:",
+    "text_12": "Alarmrune, Frostsiegel, Dornenfalle und Bolzenwächter richten sich mit",
+    "text_13": "auf zulässige fremde Spieler;",
+    "text_14": "kombiniert Spieler- und Monsterziele. Spieler werden nur während der tatsächlichen Purge und bei erlaubten Kampfbedingungen erfasst. Besitzer, aktuelle Teammitglieder, vertraute Spieler und geschützte Neulinge werden geschont.",
+    "beschriftung_7": "Dornen und Bolzen können fremde Angreifer verletzen:",
+    "text_15": "Als Startwert verursachen beide 3 HP Spielerschaden, also anderthalb Vanilla-Herzen vor weiteren Schadensregeln. Gegen zulässige Monster sind es 4 HP. Die Dornenfalle setzt zusätzlich kurze Schwäche. Eine gemeinsame zehnsekündige Spielersperre verhindert das schnelle Stapeln mit weiteren Fallen. Alarmrune und Frostsiegel verursachen keinen direkten HP-Schaden.",
+    "text_16": "Das Bannfeld macht niemanden unverwundbar. Explosionsschaden an Spielern, Nahkampfangriffe, Lava und leere Ladungen bleiben Gefahren. Reichweite, Sichtlinie und Claimregeln begrenzen die Wirkung.",
+    "beschriftung_8": "Kosten, Ladungen und Grenzen",
+    "text_17": "Die Kaufpreise oben sind die aktuellen Alpha-Startwerte. Alarmrune, Frostsiegel, Dornenfalle, Bolzenwächter und Bannfeld enthalten beim Kauf",
+    "beschriftung_9": "40 Ladungen",
+    "text_18": ", die Standardkapazität beträgt 200. Ein Paket mit",
+    "beschriftung_10": "25 Ladungen kostet 100 Cash und 1 Shard",
+    "text_19": "; es muss vollständig in die Anlage passen. Die passive Wurzelbarrikade benötigt keine Aufladung.",
+    "text_20": "Alarmrune und Bolzenwächter verbrauchen eine Ladung pro Aktion, Frostsiegel und Dornenfalle zwei. Beim Bannfeld kosten gedeckte Explosionen drei Ladungen; einzelne abgewehrte Mobprojektile oder Mob-Blockänderungen jeweils eine. Abklingzeiten und leere Vorräte lassen Angreifern Gegenchancen.",
+    "text_21": "Nur der Besitzer verwaltet und bezahlt seine Anlagen. Ausschalten, Entfernen und Abbau erstatten weder Kaufpreis noch Restladungen. Preise und Balance können sich im Alpha-Test ändern; die aktuellen Werte zeigt das Spielmenü."
+  },
+  "images": {
+    "bild_1": "/pap-chibi-v1/pap-alert-128.webp",
+    "bild_1_alt": "Chibi-PAP hält Ausschau"
+  }
+}

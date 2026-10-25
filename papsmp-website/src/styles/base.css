@@ -4,7 +4,7 @@ body{margin:0;background:var(--ink);color:var(--text);font-family:'Inter',ui-san
 body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(135deg,rgba(255,255,255,.16) 1px,transparent 1px);background-size:5px 5px;mix-blend-mode:soft-light}
 .site-background{position:fixed;inset:0;z-index:-1;isolation:isolate;pointer-events:none;background:var(--ink)}
 .site-background::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,16,29,.08),rgba(18,16,29,.32));pointer-events:none}
-.site-background-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.35}
+.site-background-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:var(--cms-video-opacity,.35)}
 @media(prefers-reduced-motion:reduce){.site-background-video{display:none}}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -25,3 +25,12 @@ img{display:block;max-width:100%}
 .section-heading>p:last-child{color:var(--muted);max-width:35rem}
 @media(max-width:600px){.container{width:min(100% - 32px,var(--content))}.section{padding:3.25rem 0}.section-heading h2,.hero h1{font-size:clamp(2.25rem,11vw,3.6rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+/* Optional editor settings; original leaves the existing layout unchanged. */
+body[data-cms-spacing="compact"] .section{padding-block:3.25rem}
+body[data-cms-spacing="airy"] .section{padding-block:5.5rem}
+body[data-cms-video="off"] .site-background-video{display:none}
+body[data-cms-image-corners="square"] :is(.story-card-image,.scene-panel>img){border-radius:0}
+body[data-cms-image-corners="soft"] :is(.story-card-image,.scene-panel>img){border-radius:12px}
+body[data-cms-image-corners="round"] :is(.story-card-image,.scene-panel>img){border-radius:28px}
+@media(max-width:600px){body[data-cms-spacing="compact"] .section{padding-block:2.25rem}body[data-cms-spacing="airy"] .section{padding-block:4rem}}

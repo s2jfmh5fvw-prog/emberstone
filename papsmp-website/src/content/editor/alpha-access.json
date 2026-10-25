@@ -1,0 +1,24 @@
+{
+  "texts": {
+    "beschriftung_1": "Dein Browser unterstützt die Videowiedergabe nicht.",
+    "text_1": "ALPHA-ZUGANG · PAP SMP",
+    "titel_1": "Kleine Runde.",
+    "titel_2": "Mitten im Aufbau.",
+    "text_2": "Voraussichtlich öffnen wir die Alpha am 01.11.2026. Bis zu 20 Spieler können gleichzeitig mitbauen, testen und Feedback geben. Die Anmeldung läuft über Discord.",
+    "beschriftung_2": "Alpha-Infos auf Discord",
+    "beschriftung_3": "01",
+    "beschriftung_4": "Discord öffnen",
+    "text_3": "Dort findest du Startinfos und den Kontakt zum Team.",
+    "beschriftung_5": "02",
+    "beschriftung_6": "Aktuelle Hinweise lesen",
+    "text_4": "Lies die Regeln und Hinweise zur Freischaltung.",
+    "beschriftung_7": "03",
+    "beschriftung_8": "Teilnahme anfragen",
+    "text_5": "Nach der Freischaltung kannst du zum Start mitspielen.",
+    "beschriftung_9": "Alpha-Status",
+    "beschriftung_10": "Start geplant: 01.11.2026 · Teststand: Änderungen und Zurücksetzungen möglich"
+  },
+  "images": {
+    "bild_1": "/video/pap-companion-reveal-poster.png"
+  }
+}

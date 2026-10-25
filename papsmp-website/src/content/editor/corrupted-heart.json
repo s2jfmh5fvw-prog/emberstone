@@ -1,0 +1,43 @@
+{
+  "texts": {
+    "text_1": "Die PAP-Core-Mechanik",
+    "text_2": "Corrupted Heart",
+    "titel_1": "Ein Herz.",
+    "titel_2": "Deine Wahl.",
+    "text_3": "Peace und Purge geben den Takt vor. Das",
+    "beschriftung_1": "korrumpierte Herz",
+    "text_4": "macht ihn persönlich.",
+    "text_5": "Ein Teil von dir wird zum handelbaren Item. Kämpfe darum, hole es zurück oder entscheide dich, ein fremdes Herz freiwillig zurückzugeben.",
+    "beschriftung_2": "Was machst du mit einem Herz?",
+    "beschriftung_3": "Zwischen Peace und Purge",
+    "beschriftung_4": "Im Spiel ein Item. Für dich mehr.",
+    "beschriftung_5": "Illustriert nach dem originalen PAP-Herz.",
+    "beschriftung_6": "01",
+    "text_6": "In der Purge",
+    "titel_3": "Verlieren.",
+    "text_7": "Bei einem gewerteten PvP-Tod kann ein Grundherz als Item in Umlauf kommen. Dein Herz wird zu etwas, um das andere kämpfen können.",
+    "beschriftung_7": "02",
+    "text_8": "Deine Macht",
+    "titel_4": "Absorbieren.",
+    "text_9": "Ein fremdes Herz gibt dir beim Konsum ein dauerhaftes Zusatzherz. Sein ursprünglicher Besitzer erhält das gestohlene Grundherz zurück.",
+    "beschriftung_8": "03",
+    "text_10": "Deine Entscheidung",
+    "titel_5": "Zurückgeben.",
+    "text_11": "Hole dein eigenes Herz zurück – ohne Zusatzbonus. Oder gib ein fremdes Herz in Peace freiwillig zurück. Nicht jede Geschichte endet mit einem Kill.",
+    "beschriftung_9": "Herzregeln & Rituale",
+    "beschriftung_10": "Die Spielmechanik im Detail",
+    "titel_6": "Ein eigenes Herz im Umlauf",
+    "text_12": "Pro Spieler kann gleichzeitig ein eigenes korrumpiertes Herz aktiv sein. Weitere gewertete Kills können Grundherzen direkt übertragen – innerhalb der geltenden Grenzen. Am Zusatzherz-Limit bleibt ein fremdes Herz beim Konsumversuch erhalten.",
+    "text_13": "Wenn du dein eigenes Herz konsumierst, erhältst du genau das verlorene Grundherz zurück. Du bekommst dafür kein zusätzliches Herz.",
+    "titel_7": "Ein anderer Weg in Peace",
+    "text_14": "gibt ein aktives fremdes Herz aus deiner Haupthand freiwillig zurück.",
+    "text_15": "baut ein verlorenes Grundherz bis zum Startwert wieder auf: höchstens einmal in 24 Stunden und nur, wenn dein eigenes Herz nicht mehr im Umlauf ist.",
+    "text_16": "Für Rituale gelten Peace, Überlebensmodus und die bestehenden Kampfsperren.",
+    "text_17": "Alpha-Regeln und Limits können sich noch ändern. Die aktuellen Spielregeln findest du auf Discord."
+  },
+  "images": {
+    "bild_1": "/artwork/corrupted-heart-v1-960.webp",
+    "bild_1_alt": "Das Corrupted Heart: ein kantiges dunkles Kristallherz mit violetten Bruchkanten und einem goldenen Funken im Kern.",
+    "bild_2": "/items/corrupted_heart.png"
+  }
+}

@@ -1,82 +1,83 @@
 ---
+import copy from '../content/editor/downloads-vip.json';
 import { packRelease, packSize } from '../data/pack-release';
 ---
 
 <section class="section section-availability" aria-labelledby="availability-title">
   <div class="container section-block availability-block">
     <div class="section-heading">
-      <p class="kicker">Downloads · PAP SMP {packRelease.label}</p>
-      <h2 id="availability-title">Die aktuellen<br /><em>Alpha-Dateien.</em></h2>
-      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die überarbeiteten Schutzanlagen, PAP und BO, Schinken mit Cowboyhut, die Peace-Krone, die Purge-Maske, das PAP-Totem, das pulsierende Herz und die Phönix-Elytra. Menüs und Event-Icons sind weiterhin enthalten. Der Stand wird lokal in echten Java- und Bedrock-Clients unter Windows geprüft; den genauen Umfang und offene Tests nennt der Prüfbericht. Die Bereitstellung des Packs bestätigt keinen Neustart des öffentlichen Servers.</p>
+      <p class="kicker">{copy.texts.text_1} {packRelease.label}</p>
+      <h2 id="availability-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2>
+      <p>{copy.texts.text_2} {packRelease.revision} {copy.texts.text_3}</p>
     </div>
 
     <div class="availability-grid">
       <a class="download-card download-card-active" href={packRelease.java.url} download>
         <span class="availability-icon">↓</span>
-        <span class="phase-label">JAVA · MC 1.21.11</span>
-        <h3>Java Resource Pack · {packRelease.revision}</h3>
-        <p>Für Minecraft Java 1.21.11: alle aktuellen PAP-Motive, drei Companion-Modelle, Krone und Maske, Phönix-Elytra, Totem, Herz, HUD und Reisemenü.</p>
-        <span class="availability-status">Herunterladen · {packSize(packRelease.java.bytes)}</span>
+        <span class="phase-label">{copy.texts.beschriftung_1}</span>
+        <h3>{copy.texts.titel_3} {packRelease.revision}</h3>
+        <p>{copy.texts.text_4}</p>
+        <span class="availability-status">{copy.texts.beschriftung_2} {packSize(packRelease.java.bytes)}</span>
       </a>
 
       <a class="download-card download-card-active download-card-purple" href={packRelease.bedrock.url} download>
         <span class="availability-icon">◌</span>
-        <span class="phase-label">BEDROCK · GEYSER</span>
-        <h3>Bedrock Resource Pack · {packRelease.revision}</h3>
-        <p>Passende Modelle und Texturen für Bedrock über Geyser. Derselbe Gestaltungsstand wie Java; die Serverfunktionen benötigen zusätzlich das passende Plugin- und Mapping-Update.</p>
-        <span class="availability-status">Herunterladen · {packSize(packRelease.bedrock.bytes)}</span>
+        <span class="phase-label">{copy.texts.beschriftung_3}</span>
+        <h3>{copy.texts.titel_4} {packRelease.revision}</h3>
+        <p>{copy.texts.text_5}</p>
+        <span class="availability-status">{copy.texts.beschriftung_4} {packSize(packRelease.bedrock.bytes)}</span>
       </a>
 
       <a class="download-card" href="#vip-shop">
         <span class="availability-icon">✦</span>
-        <h3>VIP &amp; Shop · Vorschau</h3>
-        <p>VIP für 4,99 € pro Monat, 150 Shards für 1,99 € und ein shop-key für 0,99 € – die geplanten Alpha-Angebote.</p>
-        <span class="availability-status">Angebote ansehen ↓</span>
+        <h3>{copy.texts.titel_5}</h3>
+        <p>{copy.texts.text_6}</p>
+        <span class="availability-status">{copy.texts.beschriftung_5}</span>
       </a>
     </div>
 
     <div class="download-extras" aria-labelledby="download-extras-title">
-      <h3 id="download-extras-title">Weitere Downloads &amp; Hinweise</h3>
-      <p class="download-extras-intro">Alles Weitere zum Pack – öffne den Bereich, den du brauchst.</p>
+      <h3 id="download-extras-title">{copy.texts.titel_6}</h3>
+      <p class="download-extras-intro">{copy.texts.text_7}</p>
 
       <details class="download-disclosure">
-        <summary><span>Gesamtpaket &amp; Installation</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <summary><span>{copy.texts.beschriftung_6}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Java, Bedrock, Geyser-Mappings und die Rezepte für Krone und Maske in einem Paket. Einspielhilfe, Versionsliste und Prüfbericht erklären, welche Serverergänzungen nötig sind. Keine Welten oder Spielerdaten enthalten.</p>
-          <a class="download-extra-link download-extra-primary" href={packRelease.bundle.url} download>Gesamtpaket herunterladen <span>{packSize(packRelease.bundle.bytes)} ↓</span></a>
+          <p>{copy.texts.text_8}</p>
+          <a class="download-extra-link download-extra-primary" href={packRelease.bundle.url} download>{copy.texts.beschriftung_7} <span>{packSize(packRelease.bundle.bytes)} ↓</span></a>
           <div class="download-extra-links">
-            <a href={packRelease.installation}>Installation &amp; Rückweg ↗</a>
-            <a href={packRelease.report}>Änderungs- &amp; Prüfbericht ↗</a>
+            <a href={packRelease.installation}>{copy.texts.beschriftung_8}</a>
+            <a href={packRelease.report}>{copy.texts.beschriftung_9}</a>
           </div>
         </div>
       </details>
 
       <details class="download-disclosure">
-        <summary><span>Für Serverbetreiber</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <summary><span>{copy.texts.beschriftung_10}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Das aktuelle Geyser-Overlay enthält das Bedrock-Pack und eine zusammengeführte Mapping-Datei, einschließlich Schinkens Modellteilen und der zwei Kopfbedeckungen. Die sechs alten Zuordnungen für eigene Brustpanzer, Hosen und Schuhe entfallen. Genau eine aktuelle PAP-Mapping-Datei verwenden. Companion- und Visual-Plugin müssen zum neuen Stand passen; Versionen und Einspielreihenfolge stehen in der Installation.</p>
+          <p>{copy.texts.text_9}</p>
           <div class="download-extra-links">
-            <a href={packRelease.overlay} download>Geyser-Overlay · {packRelease.revision} ↓</a>
-            <a href={packRelease.mappings} download>Custom-Mappings · {packRelease.revision} ↓</a>
-            <a href={packRelease.handoff}>Event-UI &amp; Datapack-Hinweise ↗</a>
-            <a href={packRelease.preview} download>Event-Icons als PNG herunterladen ↓</a>
+            <a href={packRelease.overlay} download>{copy.texts.beschriftung_11} {packRelease.revision} ↓</a>
+            <a href={packRelease.mappings} download>{copy.texts.beschriftung_12} {packRelease.revision} ↓</a>
+            <a href={packRelease.handoff}>{copy.texts.beschriftung_13}</a>
+            <a href={packRelease.preview} download>{copy.texts.beschriftung_14}</a>
           </div>
-          <p class="download-extra-note">Das aktuelle RTP-Menü ist bereits im Java-Full-Pack enthalten. Für die Event-Integration werden Worldevents 1.0.1-hud.1 und der separate Java-Dialog-Datapack verwendet.</p>
+          <p class="download-extra-note">{copy.texts.text_10}</p>
         </div>
       </details>
 
       <details class="download-disclosure">
-        <summary><span>Versionen &amp; Prüfsummen</span><span class="download-chevron" aria-hidden="true"></span></summary>
+        <summary><span>{copy.texts.beschriftung_15}</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Die aktuelle Version hat eine eigene Downloadadresse. Frühere Downloadadressen bleiben erhalten. Auf dem Server müssen neue URL und zugehörige Prüfsumme gemeinsam eingestellt werden.</p>
+          <p>{copy.texts.text_11}</p>
           <div class="download-extra-links">
-            <a href={packRelease.java.versionedUrl} download>Java-Pack · eindeutige Version ↓</a>
-            <a href={packRelease.java.originalUrl} download>Java-Pack · Archiv 3.2.8 ↓</a>
-            <a href={packRelease.checksums}>Alle SHA-256-Prüfsummen ↗</a>
+            <a href={packRelease.java.versionedUrl} download>{copy.texts.beschriftung_16}</a>
+            <a href={packRelease.java.originalUrl} download>{copy.texts.beschriftung_17}</a>
+            <a href={packRelease.checksums}>{copy.texts.beschriftung_18}</a>
           </div>
           <dl class="download-checksums">
-            <div><dt>Java · SHA-256</dt><dd><code>{packRelease.java.sha256}</code></dd></div>
-            <div><dt>Bedrock · SHA-256</dt><dd><code>{packRelease.bedrock.sha256}</code></dd></div>
+            <div><dt>{copy.texts.beschriftung_19}</dt><dd><code>{packRelease.java.sha256}</code></dd></div>
+            <div><dt>{copy.texts.beschriftung_20}</dt><dd><code>{packRelease.bedrock.sha256}</code></dd></div>
           </dl>
         </div>
       </details>

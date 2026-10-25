@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "check": "astro check"
+    "check": "astro check",
+    "check:content": "node scripts/check-editor.mjs",
+    "prebuild": "npm run check:content"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "7.3.5",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "yaml": "^2.9.1"
   }
 }

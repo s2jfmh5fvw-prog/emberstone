@@ -1,14 +1,17 @@
+---
+import copy from '../content/editor/hero.json';
+---
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-glow"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <h1 id="hero-title"><span class="hero-title-peace">PEACE AM TAG</span><br /><em class="hero-title-purge">PURGE IN DER NACHT</em></h1>
-      <p class="hero-lede">Deine Base, eure Pläne und eine Nacht, auf die ihr euch vorbereiten müsst. PAP SMP startet voraussichtlich am 01.11.2026 in die Alpha – mit bis zu 20 Spielern gleichzeitig.</p>
-      <div class="hero-actions"><a class="text-link" href="#konzept">Das Konzept <span>↓</span></a></div>
+      <h1 id="hero-title"><span class="hero-title-peace">{copy.texts.titel_1}</span><br /><em class="hero-title-purge">{copy.texts.titel_2}</em></h1>
+      <p class="hero-lede">{copy.texts.text_1}</p>
+      <div class="hero-actions"><a class="text-link" href="#konzept">{copy.texts.beschriftung_1} <span>↓</span></a></div>
     </div>
     <div class="hero-art"><div class="hero-art-frame" tabindex="0" aria-label="PAP begrüßen"><div class="hero-art-stage">
-      <img class="hero-art-base" src="/pap-chibi-v1/pap-idle-512.webp" alt="Chibi-PAP sitzt aufmerksam da" width="512" height="512" decoding="async" />
-      <picture class="hero-art-hover"><source srcset="/pap-chibi-v1/pap-greeting-512.webp" media="(prefers-reduced-motion: no-preference)" /><img src="/pap-chibi-v1/pap-wave-still-512.webp" alt="Derselbe Chibi-PAP winkt mit seiner Pfote" width="512" height="512" decoding="async" /></picture>
+      <img class="hero-art-base" src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="512" height="512" decoding="async" />
+      <picture class="hero-art-hover"><source srcset={copy.images.animation_1} media="(prefers-reduced-motion: no-preference)" /><img src={copy.images.bild_2} alt={copy.images.bild_2_alt} width="512" height="512" decoding="async" /></picture>
     </div></div></div>
   </div>
 </section>

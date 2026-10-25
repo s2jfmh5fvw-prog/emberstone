@@ -1,0 +1,19 @@
+{
+  "texts": {
+    "text_1": "Editionen und Zugang",
+    "titel_1": "Java zuerst.",
+    "titel_2": "Bedrock in Prüfung.",
+    "text_2": "Für Java ist die Adresse angegeben. Kläre deine Freischaltung auf Discord, bevor du dich verbindest. Bedrock und Geyser testen wir noch; der Pack-Download allein schaltet den Zugang nicht frei.",
+    "beschriftung_1": "JAVA · ADRESSE ANGEGEBEN",
+    "beschriftung_2": "BEDROCK · IN PRÜFUNG",
+    "beschriftung_3": "GEYSER · IN PRÜFUNG",
+    "beschriftung_4": "JAVA-ADRESSE",
+    "beschriftung_5": "104.204.219.211:25565",
+    "beschriftung_6": "Gemeinsam starten",
+    "text_3": "Deine Edition, das passende Pack und die Freischaltung: Auf Discord helfen wir dir beim Einstieg."
+  },
+  "images": {
+    "bild_1": "/alpha-v2/alpha-camp-960.webp",
+    "bild_1_alt": "Yuuh als Skeleton und PAP an ihrem Minecraft-Bauplatz"
+  }
+}

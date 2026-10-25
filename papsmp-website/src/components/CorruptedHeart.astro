@@ -1,42 +1,45 @@
+---
+import copy from '../content/editor/corrupted-heart.json';
+---
 <section id="corrupted-heart" class="section heart-section" aria-labelledby="heart-title" data-heart-section data-motion="off">
   <div class="container section-block heart-block">
     <div class="heart-intro">
-      <p class="kicker"><span aria-hidden="true"></span> Die PAP-Core-Mechanik</p>
-      <p class="heart-name">Corrupted Heart</p>
-      <h2 id="heart-title">Ein Herz.<br /><em>Deine Wahl.</em></h2>
-      <p class="heart-lead">Peace und Purge geben den Takt vor. Das <strong>korrumpierte Herz</strong> macht ihn persönlich.</p>
-      <p>Ein Teil von dir wird zum handelbaren Item. Kämpfe darum, hole es zurück oder entscheide dich, ein fremdes Herz freiwillig zurückzugeben.</p>
-      <a class="heart-jump" href="#heart-decisions">Was machst du mit einem Herz? <span aria-hidden="true">↓</span></a>
+      <p class="kicker"><span aria-hidden="true"></span> {copy.texts.text_1}</p>
+      <p class="heart-name">{copy.texts.text_2}</p>
+      <h2 id="heart-title">{copy.texts.titel_1}<br /><em>{copy.texts.titel_2}</em></h2>
+      <p class="heart-lead">{copy.texts.text_3} <strong>{copy.texts.beschriftung_1}</strong> {copy.texts.text_4}</p>
+      <p>{copy.texts.text_5}</p>
+      <a class="heart-jump" href="#heart-decisions">{copy.texts.beschriftung_2} <span aria-hidden="true">↓</span></a>
     </div>
     <figure class="heart-figure">
       <div class="heart-stage">
-        <span class="heart-stage-label">Zwischen Peace und Purge</span>
+        <span class="heart-stage-label">{copy.texts.beschriftung_3}</span>
         <div class="heart-aura" aria-hidden="true"></div>
         <div class="heart-orbit" aria-hidden="true"></div>
         <div class="heart-artwork">
-          <img src="/artwork/corrupted-heart-v1-960.webp" srcset="/artwork/corrupted-heart-v1-480.webp 480w, /artwork/corrupted-heart-v1-960.webp 960w" sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1000px) 52vw, 470px" alt="Das Corrupted Heart: ein kantiges dunkles Kristallherz mit violetten Bruchkanten und einem goldenen Funken im Kern." width="960" height="960" loading="lazy" decoding="async" />
+          <img src={copy.images.bild_1} srcset={copy.images.bild_1 === "/artwork/corrupted-heart-v1-960.webp" ? "/artwork/corrupted-heart-v1-480.webp 480w, /artwork/corrupted-heart-v1-960.webp 960w" : undefined} sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1000px) 52vw, 470px" alt={copy.images.bild_1_alt} width="960" height="960" loading="lazy" decoding="async" />
         </div>
         <div class="heart-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <button class="heart-motion" type="button" aria-pressed="false" hidden><span class="heart-motion-icon" aria-hidden="true"></span><span data-motion-label>Animation pausieren</span></button>
       </div>
       <figcaption class="heart-item-reference">
-        <span class="heart-item-sprite" aria-hidden="true"><img src="/items/corrupted_heart.png" alt="" width="64" height="512" loading="lazy" /></span>
-        <span><strong>Im Spiel ein Item. Für dich mehr.</strong><br />Illustriert nach dem originalen PAP-Herz.</span>
+        <span class="heart-item-sprite" aria-hidden="true"><img src={copy.images.bild_2} alt="" width="64" height="512" loading="lazy" /></span>
+        <span><strong>{copy.texts.beschriftung_4}</strong><br />{copy.texts.beschriftung_5}</span>
       </figcaption>
     </figure>
     <div id="heart-decisions" class="heart-decisions" aria-label="Deine Entscheidungen mit einem korrumpierten Herz">
-      <article class="heart-choice"><p class="heart-choice-label"><span>01</span> In der Purge</p><h3>Verlieren.</h3><p>Bei einem gewerteten PvP-Tod kann ein Grundherz als Item in Umlauf kommen. Dein Herz wird zu etwas, um das andere kämpfen können.</p></article>
-      <article class="heart-choice"><p class="heart-choice-label"><span>02</span> Deine Macht</p><h3>Absorbieren.</h3><p>Ein fremdes Herz gibt dir beim Konsum ein dauerhaftes Zusatzherz. Sein ursprünglicher Besitzer erhält das gestohlene Grundherz zurück.</p></article>
-      <article class="heart-choice heart-choice-peace"><p class="heart-choice-label"><span>03</span> Deine Entscheidung</p><h3>Zurückgeben.</h3><p>Hole dein eigenes Herz zurück – ohne Zusatzbonus. Oder gib ein fremdes Herz in Peace freiwillig zurück. Nicht jede Geschichte endet mit einem Kill.</p></article>
+      <article class="heart-choice"><p class="heart-choice-label"><span>{copy.texts.beschriftung_6}</span> {copy.texts.text_6}</p><h3>{copy.texts.titel_3}</h3><p>{copy.texts.text_7}</p></article>
+      <article class="heart-choice"><p class="heart-choice-label"><span>{copy.texts.beschriftung_7}</span> {copy.texts.text_8}</p><h3>{copy.texts.titel_4}</h3><p>{copy.texts.text_9}</p></article>
+      <article class="heart-choice heart-choice-peace"><p class="heart-choice-label"><span>{copy.texts.beschriftung_8}</span> {copy.texts.text_10}</p><h3>{copy.texts.titel_5}</h3><p>{copy.texts.text_11}</p></article>
     </div>
     <details class="heart-details">
-      <summary><span>Herzregeln &amp; Rituale</span><span class="heart-details-hint">Die Spielmechanik im Detail</span><span class="heart-details-plus" aria-hidden="true">+</span></summary>
+      <summary><span>{copy.texts.beschriftung_9}</span><span class="heart-details-hint">{copy.texts.beschriftung_10}</span><span class="heart-details-plus" aria-hidden="true">+</span></summary>
       <div class="heart-details-body">
-        <div><h3>Ein eigenes Herz im Umlauf</h3><p>Pro Spieler kann gleichzeitig ein eigenes korrumpiertes Herz aktiv sein. Weitere gewertete Kills können Grundherzen direkt übertragen – innerhalb der geltenden Grenzen. Am Zusatzherz-Limit bleibt ein fremdes Herz beim Konsumversuch erhalten.</p><p>Wenn du dein eigenes Herz konsumierst, erhältst du genau das verlorene Grundherz zurück. Du bekommst dafür kein zusätzliches Herz.</p></div>
-        <div><h3>Ein anderer Weg in Peace</h3><p><code>/pap ritual return</code> gibt ein aktives fremdes Herz aus deiner Haupthand freiwillig zurück.</p><p><code>/pap ritual recover</code> baut ein verlorenes Grundherz bis zum Startwert wieder auf: höchstens einmal in 24 Stunden und nur, wenn dein eigenes Herz nicht mehr im Umlauf ist.</p><p>Für Rituale gelten Peace, Überlebensmodus und die bestehenden Kampfsperren.</p></div>
+        <div><h3>{copy.texts.titel_6}</h3><p>{copy.texts.text_12}</p><p>{copy.texts.text_13}</p></div>
+        <div><h3>{copy.texts.titel_7}</h3><p><code>/pap ritual return</code> {copy.texts.text_14}</p><p><code>/pap ritual recover</code> {copy.texts.text_15}</p><p>{copy.texts.text_16}</p></div>
       </div>
     </details>
-    <p class="heart-caption">Alpha-Regeln und Limits können sich noch ändern. Die aktuellen Spielregeln findest du auf Discord.</p>
+    <p class="heart-caption">{copy.texts.text_17}</p>
   </div>
 </section>
 <script>

@@ -1,0 +1,33 @@
+{
+  "texts": {
+    "text_1": "Einblicke in die Welt",
+    "titel_1": "Dein Anfang.",
+    "titel_2": "Eure Geschichte.",
+    "text_2": "Ein erster Bauplatz, eine überstandene Purge und die nächste Idee: Daraus wird eure Runde. Die Bilder zeigen PAP-Motive, keine Serveraufnahmen.",
+    "beschriftung_1": "01 · Ankommen",
+    "titel_3": "Finde deinen Platz.",
+    "text_3": "Such dir einen Bauplatz und leg den Grundstein für deine Base.",
+    "beschriftung_2": "02 · Purge",
+    "titel_4": "Die Purge beginnt.",
+    "text_4": "Verteidigt eure Vorräte, zieht gemeinsam los oder sucht einen sicheren Rückweg.",
+    "beschriftung_3": "03 · Weitergehen",
+    "titel_5": "Der nächste Tag beginnt.",
+    "text_5": "Baut weiter, teilt eure Ideen und meldet uns, was in der Alpha noch hakt.",
+    "beschriftung_4": "Aus der PAP-Community"
+  },
+  "images": {
+    "bild_1": "/alpha-v2/alpha-camp-960.webp",
+    "bild_1_alt": "Yuuh als Skeleton und PAP planen ihren Bauplatz",
+    "bild_2": "/alpha-v2/purge-night-960.webp",
+    "bild_2_alt": "Yuuh und PAP halten nachts an einer Minecraft-Brücke Ausschau",
+    "bild_3": "/alpha-v2/community-lodge-960.webp",
+    "bild_3_alt": "Yuuh und PAP am Lagerfeuer vor einer Minecraft-Hütte",
+    "bild_4": "/pap-chibi-v1/pap-love-128.webp",
+    "bild_4_alt": "Chibi-PAP mit einem kleinen Herz",
+    "animation_1": "/pap-chibi-v1/pap-greeting-128.webp",
+    "bild_5": "/pap-chibi-v1/pap-wave-still-128.webp",
+    "bild_5_alt": "Chibi-PAP begrüßt die Community",
+    "bild_6": "/pap-chibi-v1/pap-cheer-128.webp",
+    "bild_6_alt": "Chibi-PAP jubelt"
+  }
+}

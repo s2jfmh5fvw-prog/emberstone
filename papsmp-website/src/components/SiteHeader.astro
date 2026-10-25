@@ -1,14 +1,15 @@
 ---
+import copy from '../content/editor/site-header.json';
 import SocialLinks from './SocialLinks.astro';
 const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crossplay','Plattformen'],['alpha','Zugang'],['community','Community'],['vip-shop','VIP & Shop'],['faq','FAQ']];
 ---
 <header class="site-header">
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main">{copy.texts.beschriftung_1}</a>
   <div class="header-inner">
     <div class="brand-stack">
-      <a class="wordmark" href="/" aria-label="PAP SMP Startseite"><picture><source srcset="/brand/pap_smp_logo_duality_loop.webp" type="image/webp" media="(prefers-reduced-motion: no-preference)" /><img class="header-brand-logo" src="/brand/pap_smp_logo.webp" alt="PAP SMP" width="512" height="512" fetchpriority="high" decoding="async" /></picture></a>
-      <a class="header-alpha-message" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer">Alpha-Infos auf Discord</a>
-      <p class="kicker header-alpha-kicker">MINECRAFT SURVIVAL · ALPHA</p>
+      <a class="wordmark" href="/" aria-label="PAP SMP Startseite"><picture><source srcset={copy.images.animation_1} type="image/webp" media="(prefers-reduced-motion: no-preference)" /><img class="header-brand-logo" src={copy.images.bild_1} alt={copy.images.bild_1_alt} width="512" height="512" fetchpriority="high" decoding="async" /></picture></a>
+      <a class="header-alpha-message" href="https://discord.gg/hxgnJNTp4J" target="_blank" rel="noopener noreferrer">{copy.texts.beschriftung_2}</a>
+      <p class="kicker header-alpha-kicker">{copy.texts.text_1}</p>
     </div>
   </div>
 </header>
@@ -19,15 +20,15 @@ const items = [['konzept','Spielprinzip'],['features','Alpha-Fakten'],['crosspla
       <div class="site-nav-links">
         <div class="nav-list">{items.map(([href,label]) => <a href={`#${href}`}><span class="site-nav-link-text">{label}</span></a>)}</div>
         <div class="site-nav-footer">
-          <p class="site-nav-footer-tagline">Peace &amp; Purge · Minecraft-Survival in der Alpha</p>
+          <p class="site-nav-footer-tagline">{copy.texts.text_2}</p>
           <div class="site-nav-footer-links">
-            <a href="/kontakt/"><span class="site-nav-link-text">Kontakt</span></a>
-            <a href="/impressum/"><span class="site-nav-link-text">Impressum</span></a>
-            <a href="/datenschutz/"><span class="site-nav-link-text">Datenschutz</span></a>
-            <a href="#main"><span class="site-nav-link-text">Zurück nach oben ↑</span></a>
+            <a href="/kontakt/"><span class="site-nav-link-text">{copy.texts.beschriftung_3}</span></a>
+            <a href="/impressum/"><span class="site-nav-link-text">{copy.texts.beschriftung_4}</span></a>
+            <a href="/datenschutz/"><span class="site-nav-link-text">{copy.texts.beschriftung_5}</span></a>
+            <a href="#main"><span class="site-nav-link-text">{copy.texts.beschriftung_6}</span></a>
           </div>
           <SocialLinks footer />
-          <p class="site-nav-footer-credit">Created by <a href="https://www.twitch.tv/yuuh92" target="_blank" rel="noopener noreferrer">yuuh92</a></p>
+          <p class="site-nav-footer-credit">{copy.texts.text_3} <a href="https://www.twitch.tv/yuuh92" target="_blank" rel="noopener noreferrer">{copy.texts.beschriftung_7}</a></p>
         </div>
       </div>
     </nav>

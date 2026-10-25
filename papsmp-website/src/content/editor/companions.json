@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "PAP",
+      "text": "Der kleine Fuchs bleibt dein vertrauter Begleiter: mit eigener Chibi-Form und ruhigen, auf seine Bewegung abgestimmten Animationen.",
+      "src": "/pack-motifs/pap.png"
+    },
+    {
+      "name": "BO",
+      "text": "Der schwebende Windbegleiter mit obsidianviolettem Gesicht und beweglichen Ringen. Blickrichtung und Bewegung sind zwischen Java und Bedrock abgestimmt.",
+      "src": "/pack-motifs/bo.png"
+    },
+    {
+      "name": "Schinken",
+      "text": "Ein Chibi-Babyschwein mit Cowboyhut und passendem Lederhalsband. Nur sein Besitzer kann ihn reiten. Er läuft dabei geringfügig schneller als normales Gehen, steigt sichere Ein-Block-Stufen hinauf und schaut sich nach anderen Schweinen um.",
+      "src": "/pack-motifs/schinken.png"
+    }
+  ]
+}
