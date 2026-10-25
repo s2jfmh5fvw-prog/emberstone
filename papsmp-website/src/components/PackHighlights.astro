@@ -1,0 +1,42 @@
+---
+import { packRelease } from '../data/pack-release';
+const companions = [
+  { name: 'PAP', image: 'pap', text: 'Der kleine Fuchs bleibt dein vertrauter Begleiter: mit eigener Chibi-Form und ruhigen, auf seine Bewegung abgestimmten Animationen.' },
+  { name: 'BO', image: 'bo', text: 'Der schwebende Windbegleiter mit obsidianviolettem Gesicht und beweglichen Ringen. Blickrichtung und Bewegung sind zwischen Java und Bedrock abgestimmt.' },
+  { name: 'Schinken', image: 'schinken', text: 'Ein Chibi-Babyschwein mit Cowboyhut und passendem Lederhalsband. Nur sein Besitzer kann ihn reiten. Er lÃƒÂ¤uft dabei geringfÃƒÂ¼gig schneller als normales Gehen, steigt sichere Ein-Block-Stufen hinauf und schaut sich nach anderen Schweinen um.' },
+];
+---
+<section id="pack-motive" class="section" aria-labelledby="pack-motive-title">
+  <div class="container section-block pack-highlights">
+    <div class="section-heading"><p class="kicker">Deine Begleiter Ã‚Â· Deine Zeichen</p><h2 id="pack-motive-title">Kleine Charaktere.<br /><em>Eigene Geschichten.</em></h2><p>Ressourcenstand {packRelease.revision} bringt PAP, BO und Schinken, zwei unterschiedliche Kopfbedeckungen und das PhÃƒÂ¶nix-FlÃƒÂ¼gelgewand zusammen. FÃƒÂ¼r Java und Bedrock ÃƒÂ¼ber Geyser Ã¢â‚¬â€œ ohne Clientmods.</p></div>
+    <div class="motif-grid">
+      {companions.map(pet => <article class="motif-card"><img src={`/pack-motifs/${pet.image}.png`} alt={`${pet.name} Ã¢â‚¬â€œ Modellmotiv des PAP-Packs`} width="96" height="96" loading="lazy" /><h3>{pet.name}</h3><p>{pet.text}</p></article>)}
+    </div>
+    <p class="motif-note">Ein aktiver Begleiter pro Spieler. Auswahl, Pflege und Besitz bleiben im bestehenden Companion-MenÃƒÂ¼. Schinkens Startpreis betrÃƒÂ¤gt 500 Shards. Ohne bestÃƒÂ¤tigtes Pack bleibt seine normale Baby-Schwein-Darstellung erhalten. Die Bilder oben sind Modellmotive; sie sind keine Ingame-Screenshots.</p>
+    <div class="motif-grid motif-items">
+      <article class="motif-card"><img src="/pack-motifs/peace.png" alt="Offene goldene Peace-Krone" width="96" height="96" loading="lazy" /><h3>Krone der Peace</h3><p>Offene goldene Zacken, ein kleiner violetter Siegelstein und freie Sicht auf deinen Skin. Das Zeichen der Peace wird als Helm getragen.</p></article>
+      <article class="motif-card"><img src="/pack-motifs/purge.png" alt="Dunkle Purge-Banditenmaske" width="96" height="96" loading="lazy" /><h3>Maske der Purge</h3><p>Eine dunkle Banditenmaske mit klaren Pixelfalten und gebundenen Enden. Sie bedeckt den unteren Teil des Gesichts; Augen und Haare bleiben sichtbar.</p></article>
+      <article class="motif-card"><img src="/pack-motifs/elytra.png" alt="PhÃƒÂ¶nix-Elytra mit violetten Federn und warmen Akzenten" width="96" height="96" loading="lazy" /><h3>PhÃƒÂ¶nix-Elytra</h3><p>Obsidianviolette Federn mit warmen Sunrise-Akzenten. Dazu passen das PAP-Totem und das Corrupted Heart mit seinem erhaltenen Puls.</p></article>
+    </div>
+    <details class="motif-recipes"><summary>Krone und Maske herstellen</summary><p>Es gibt kÃƒÂ¼nftig nur diese zwei eigenen RÃƒÂ¼stungsteile. Brustpanzer, Hose und Schuhe bleiben normale Minecraft-RÃƒÂ¼stung; vorhandene GegenstÃƒÂ¤nde werden nicht gelÃƒÂ¶scht.</p><dl><div><dt>Peace-Krone</dt><dd>4 SmaragdblÃƒÂ¶cke, 4 Echoscherben und ein Netherithelm. Raster: Smaragd Ã¢â‚¬â€œ Echo Ã¢â‚¬â€œ Smaragd / Echo Ã¢â‚¬â€œ Helm Ã¢â‚¬â€œ Echo / Smaragd Ã¢â‚¬â€œ Echo Ã¢â‚¬â€œ Smaragd.</dd></div><div><dt>Purge-Maske</dt><dd>4 RedstoneblÃƒÂ¶cke, 4 weinender Obsidian und ein Netherithelm. Raster: Redstone Ã¢â‚¬â€œ Obsidian Ã¢â‚¬â€œ Redstone / Obsidian Ã¢â‚¬â€œ Helm Ã¢â‚¬â€œ Obsidian / Redstone Ã¢â‚¬â€œ Obsidian Ã¢â‚¬â€œ Redstone.</dd></div></dl><p>Die beiden Rezepte gehÃƒÂ¶ren zum passenden Server-Datapack. Das Resourcepack allein fÃƒÂ¼gt weder Rezepte noch Companion-FÃƒÂ¤higkeiten hinzu. Neue Dateien und Einspielhinweise findest du bei den <a href="#availability-title">Downloads</a>.</p></details>
+  </div>
+</section>
+<style>
+  .pack-highlights { display:grid; gap:1.2rem; }
+  .pack-highlights .section-heading { margin-bottom:0; }
+  .motif-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+  .motif-card { padding:1.2rem; border:1px solid var(--line); border-top:2px solid var(--peace); border-radius:8px; background:rgba(24,18,36,.8); }
+  .motif-card img { float:right; width:96px; height:96px; margin:-.3rem -.3rem .3rem .6rem; object-fit:contain; image-rendering:pixelated; }
+  .motif-card h3 { margin:.4rem 0 .8rem; }
+  .motif-card p { margin:0; clear:both; }
+  .motif-items .motif-card { border-top-color:var(--purge); }
+  .motif-note { margin:0; font-size:.85rem; color:var(--muted); }
+  .motif-recipes { border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; }
+  .motif-recipes summary { cursor:pointer; font-weight:600; }
+  .motif-recipes dl { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .motif-recipes dt { color:var(--peace); font-weight:600; }
+  .motif-recipes dd { margin:.4rem 0 0; }
+  .motif-recipes a { color:var(--peace); text-decoration:underline; }
+  @media(max-width:800px) { .motif-grid { grid-template-columns:1fr; } .motif-card p { clear:none; } }
+  @media(max-width:560px) { .motif-recipes dl { grid-template-columns:1fr; } }
+</style>

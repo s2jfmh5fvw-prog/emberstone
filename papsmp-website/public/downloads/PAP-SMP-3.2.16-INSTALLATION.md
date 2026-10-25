@@ -1,21 +1,30 @@
-# PAP SMP Alpha – Ressourcenstand 3.2.24 · 21.10.2026
+# PAP SMP 3.2.90 – Installation
 
-Java 1.21.11 und Bedrock 26.52 wurden mit echten Clients an einer lokalen Paper-/Geyser-Kopie geprüft. Das ist ein gezielter Alpha-Test, kein Mehrspieler-Lasttest oder Test jeder Bedrock-Plattform.
+Stand: 25.10.2026. Minecraft Java 1.21.11, Paper 1.21.11 und die vorhandene Geyser-/Floodgate-Kombination. Für den PAP-Alpha-Test vorbereitet; keine Clientmods erforderlich. Der Download des Packs ist keine Alpha-Zugangsberechtigung.
 
-Korrekturen: erreichbare Java-Texturen für alle sieben Naturmodelle; gemeinsame Achsenumrechnung der nativen Bedrock-Geometrie; normale unsichtbare Modellträger gegen schwarze Geyser-Modelle; streng passende Companion-Pack-Erkennung; ruhigere Körperdrehung, begrenzte Schrittfrequenz und geglättete Java-Posen; PAP mit schmalerer Schnauze und abgestuften Fuchsohren; getrennte Java-/Bedrock-Blickrichtung für PAP und BO sowie korrigierte native Höhe. Ursprüngliche Texturen, Farben, Pack-UUIDs, Modell-IDs und Downloadadressen bleiben erhalten.
+## Spieler
 
-Sechs Anlagen: Wurzelbarrikade, Windglocke, Reifblüte, Dornengestrüpp, Wurzelbogen und Hainanker. Echte Servertests bestätigen Zaunkollision, Alarm, Verlangsamung, Dornen-/Wächterschaden und Projektilabfang mit vorheriger Ladungsbuchung. Besitzer-, Team-, Trust- und Neulingsschutz sowie Purge-Bedingungen bleiben maßgeblich.
+Java: Das vom Server angebotene aktuelle Pack annehmen. Für manuelle Installation die Java-ZIP unverändert in den Resourcepack-Ordner legen und aktivieren. Bedrock: Beim Geyser-Beitritt das angebotene Pack laden; die MCPACK kann auf unterstützten Geräten auch manuell importiert werden. Die Packdateien allein installieren keine Serverfunktionen. Öffentlicher Bedrock-Serverzugang und Freischaltung richten sich nach den aktuellen Zugangshinweisen.
 
-## Installation auf einem bestehenden Server
+## Serverbetreiber
 
-1. Die tatsächlich ersetzten Dateien separat sichern. Welten, Spieler-, Wirtschafts-, Claim- und Companion-Daten behalten.
-2. Java-Pack unter der bisherigen öffentlichen Adresse veröffentlichen. `resource-pack-sha1=70568d5f857fdd6cf4527fd3502b34e451f407f9` setzen; vorhandene `resource-pack-id` behalten.
-3. Bedrock-Pack unter `plugins/Geyser-Spigot/packs/PAP-SMP-Bedrock-3.2.16-Karten.mcpack` ersetzen. Genau eine bestehende aktive Mappingdatei verwenden; keine zweite Kopie installieren. Die Definitionen sind in diesem Update unverändert.
-4. Alte Defense-/Companion-Visual-JARs außerhalb von `plugins/` sichern und durch Defense 1.1.1-alpha.1 und Companion-Visual 0.4.6-alpha.1 ersetzen. Companion 1.1.2 und seine Daten bleiben erhalten. Doctor-Erwartungswerte entsprechend anpassen.
-5. Regulär neu starten, anschließend mit beiden Editionen neu verbinden und das aktualisierte Pack annehmen. Kein globales Plugin-Reload.
+1. Server regulär stoppen. Nur die betroffenen bisherigen JARs, Packdateien, Mapping-Datei und das Factions-Datapack mit relativen Pfaden und Prüfsummen außerhalb des Serverordners sichern. Welten und Spielerdateien nicht durch ein Update ersetzen.
+2. Je genau eine Version installieren: Companion 1.2.0-schinken.pap.1, Companion-Visual 0.5.1-schinken.90, DefenseTrap 1.1.5-ward-r001. Alte Versionen dieser drei Plugins aus dem aktiven Plugin-Ordner nehmen. Andere PAP-Plugins, Geyser, Floodgate, UI und PacketEvents beibehalten. Die Ergänzungen benötigen die bestehende PAP-Serverumgebung; sie sind keine eigenständige Serversuite.
+3. Genau ein aktuelles PAP-Bedrock-Pack unter `plugins/Geyser-Spigot/packs/` und eine aktuelle PAP-Mapping-Datei unter `plugins/Geyser-Spigot/custom_mappings/` verwenden. Andere, unabhängige Packs/Mappings behalten. Alte PAP-Kopien außerhalb der aktiven Ordner sichern, damit gleiche IDs nicht doppelt geladen werden.
+4. `PAP_Factions-1.21.11.zip` in den Datapack-Ordner der tatsächlich verwendeten Hauptwelt legen. Der mitgelieferte Pfad `world/datapacks/` ist für eine Welt namens world. Keine zweite Kopie parallel aktiv lassen.
+5. Companion-Konfiguration additiv um `companions.schinken` und die Schinken-Werte ergänzen; vorhandene PAP-/BO-Namen, Preise, Besitzstände und Pflegewerte behalten. Die eingebetteten Defaults ergänzen fehlende Werte beim regulären Start. Startpreis: 500 Shards; Geschwindigkeitsbonus: 0.05; Suchradius: 8; Anhalteabstand: 2; Suchintervall: 20 Ticks; Eingabepause: 30 Ticks; kalibrierter Navigationswert: 0.3130431713.
+6. Doctor-Erwartungen nur für diese drei geänderten Plugin-Versionen aktualisieren. Die vorhandene Doctor-JAR nicht durch einen älteren Laborstand ersetzen.
+7. Java-Pack-URL und SHA-1 gemeinsam einstellen. Dann bewusst regulär starten, Doctor/Packstatus ansehen und mit beiden Editionen beitreten. Dieses Paket führt keinen automatischen Start oder Upload aus.
 
-Die stabilen 3.2.16-Dateinamen dienen vorhandenen Verknüpfungen; ihr Inhalt ist 3.2.24. Bedrock-Manifestversion: 3.2.24. Java- und Bedrock-Pack werden getrennt benötigt.
+Java-URL: https://papsmp.de/downloads/PAP-SMP-Full-Java-3.2.90-MC-1.21.11.zip
+SHA-1: 6613be5c0d5f97deffe3d554cb48398bcf740a6e
 
-## Grenzen des Tests
+## Krone und Maske
 
-Geprüft wurde die lokale, isolierte Kopie mit produktiven Plugin-Versionen und eigenen Wegwerf-Daten. Live-Start, öffentliche Downloads und Serverkonfiguration sind gesondert nach der Bereitstellung zu prüfen. Konsolen, Mobilgeräte und fremde Shader wurden nicht getestet.
+Nur zwei eigene Rüstungsteile bleiben: Krone der Peace und Maske der Purge. Brustpanzer-, Hosen- und Schuhrezepte der beiden Fraktionen entfallen. Alte Gegenstände werden nicht gelöscht; alte Körperteile verwenden normales Netherit-Aussehen. Beim Anlegen eines alten Fraktionshelms wird nur dessen frühere Equipment-Zuordnung normalisiert; Schaden, Verzauberungen und andere Daten bleiben erhalten. Ein Helm allein ersetzt die frühere Vollsatzbedingung im bestehenden Factions-Datapack.
+
+Peace-Raster: Smaragdblock / Echoscherbe / Smaragdblock; Echoscherbe / Netherithelm / Echoscherbe; Smaragdblock / Echoscherbe / Smaragdblock. Purge entsprechend mit Redstoneblock und weinendem Obsidian. Komponenten eines eingesetzten Helms werden durch das bestehende Crafting-Rezept nicht automatisch auf das neu hergestellte Ergebnis übertragen.
+
+## Rückweg
+
+Server stoppen, nur die gesicherten betroffenen Dateien und die zugehörige alte Pack-URL samt SHA-1 zurücklegen. Keine veralteten Spieler-, Economy- oder Weltdaten zurückspielen. Neue Schinken-Besitzstände beim Rückweg auf eine Version ohne Schinken aufbewahren; sie bleiben in den aktuellen Companion-Dateien. Alte und neue Version desselben Plugins niemals parallel aktiv lassen.

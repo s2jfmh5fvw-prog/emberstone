@@ -7,7 +7,7 @@ import { packRelease, packSize } from '../data/pack-release';
     <div class="section-heading">
       <p class="kicker">Downloads · PAP SMP {packRelease.label}</p>
       <h2 id="availability-title">Die aktuellen<br /><em>Alpha-Dateien.</em></h2>
-      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die PAP-Grafiken, Menüs, acht Event-Icons und sieben Naturmodelle für deine Schutzanlagen. Mit echten Java- und Bedrock-Clients unter Windows geprüft. PAP und Bo haben eine korrigierte Bedrock-Blickrichtung; PAPs Aussehen und Java-Bewegungen wurden verfeinert. Der laufende Server erhält diesen Stand im nächsten Wartungsschritt. Die Alpha bleibt geschlossen.</p>
+      <p>Ressourcenstand {packRelease.revision} · Lade das Pack für deine Edition herunter. Es enthält die überarbeiteten Schutzanlagen, PAP und BO, Schinken mit Cowboyhut, die Peace-Krone, die Purge-Maske, das PAP-Totem, das pulsierende Herz und die Phönix-Elytra. Menüs und Event-Icons sind weiterhin enthalten. Der Stand wird lokal in echten Java- und Bedrock-Clients unter Windows geprüft; den genauen Umfang und offene Tests nennt der Prüfbericht. Die Bereitstellung des Packs bestätigt keinen Neustart des öffentlichen Servers.</p>
     </div>
 
     <div class="availability-grid">
@@ -15,7 +15,7 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">↓</span>
         <span class="phase-label">JAVA · MC 1.21.11</span>
         <h3>Java Resource Pack · {packRelease.revision}</h3>
-        <p>Für Minecraft Java 1.21.11: PAP-Texturen, Totem, HUD, Reisemenü, Event-Icons und die Naturmodelle der Schutzanlagen.</p>
+        <p>Für Minecraft Java 1.21.11: alle aktuellen PAP-Motive, drei Companion-Modelle, Krone und Maske, Phönix-Elytra, Totem, Herz, HUD und Reisemenü.</p>
         <span class="availability-status">Herunterladen · {packSize(packRelease.java.bytes)}</span>
       </a>
 
@@ -23,7 +23,7 @@ import { packRelease, packSize } from '../data/pack-release';
         <span class="availability-icon">◌</span>
         <span class="phase-label">BEDROCK · GEYSER</span>
         <h3>Bedrock Resource Pack · {packRelease.revision}</h3>
-        <p>PAP-Texturen, Event-Bilder und Naturmodelle für Bedrock. Das Pack steht zum Testen bereit; der Zugang über Geyser wird noch geprüft.</p>
+        <p>Passende Modelle und Texturen für Bedrock über Geyser. Derselbe Gestaltungsstand wie Java; die Serverfunktionen benötigen zusätzlich das passende Plugin- und Mapping-Update.</p>
         <span class="availability-status">Herunterladen · {packSize(packRelease.bedrock.bytes)}</span>
       </a>
 
@@ -42,7 +42,7 @@ import { packRelease, packSize } from '../data/pack-release';
       <details class="download-disclosure">
         <summary><span>Gesamtpaket &amp; Installation</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Java, Bedrock und Geyser in einem Paket, inklusive Einspielhilfe und Grafiktests. Die Bedrock-Event-Bilder sind für den Alpha-Test aktiviert.</p>
+          <p>Java, Bedrock, Geyser-Mappings und die Rezepte für Krone und Maske in einem Paket. Einspielhilfe, Versionsliste und Prüfbericht erklären, welche Serverergänzungen nötig sind. Keine Welten oder Spielerdaten enthalten.</p>
           <a class="download-extra-link download-extra-primary" href={packRelease.bundle.url} download>Gesamtpaket herunterladen <span>{packSize(packRelease.bundle.bytes)} ↓</span></a>
           <div class="download-extra-links">
             <a href={packRelease.installation}>Installation &amp; Rückweg ↗</a>
@@ -54,7 +54,7 @@ import { packRelease, packSize } from '../data/pack-release';
       <details class="download-disclosure">
         <summary><span>Für Serverbetreiber</span><span class="download-chevron" aria-hidden="true"></span></summary>
         <div class="download-disclosure-content">
-          <p>Das Geyser-Overlay enthält Bedrock-Pack, UI-Zusatz 1.0.3-card.1 und Visual-Zusatz 0.4.5-ui.1. Die vorhandenen Custom-Mappings bleiben erhalten; sieben Zuordnungen für Schutzanlagen kommen hinzu. Genau eine Mapping-Datei verwenden. Companion 1.1.2 bleibt erhalten.</p>
+          <p>Das aktuelle Geyser-Overlay enthält das Bedrock-Pack und eine zusammengeführte Mapping-Datei, einschließlich Schinkens Modellteilen und der zwei Kopfbedeckungen. Die sechs alten Zuordnungen für eigene Brustpanzer, Hosen und Schuhe entfallen. Genau eine aktuelle PAP-Mapping-Datei verwenden. Companion- und Visual-Plugin müssen zum neuen Stand passen; Versionen und Einspielreihenfolge stehen in der Installation.</p>
           <div class="download-extra-links">
             <a href={packRelease.overlay} download>Geyser-Overlay · {packRelease.revision} ↓</a>
             <a href={packRelease.mappings} download>Custom-Mappings · {packRelease.revision} ↓</a>
