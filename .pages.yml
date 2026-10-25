@@ -1,10 +1,9 @@
 # PAP SMP · Inhaltseditor
-# Bestehende Technik, Release-Links und IDs bleiben außerhalb des Editors.
 media:
   - name: uploads
-    label: Eigene Website-Bilder
-    input: papsmp-website/public/uploads
-    output: /uploads
+    label: Website-Bilder
+    input: papsmp-website/public
+    output: /
     extensions:
       - png
       - jpg
@@ -12,7 +11,7 @@ media:
       - webp
       - gif
       - avif
-    rename: safe
+    rename: random
 content:
   - name: hero
     label: 01 · Startseite / Begrüßung
@@ -51,6 +50,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -63,6 +63,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_2
@@ -71,6 +72,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_2_alt
@@ -204,6 +206,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_1
@@ -212,6 +215,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -224,6 +228,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_2_alt
@@ -236,6 +241,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_3
@@ -244,6 +250,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_3_alt
@@ -256,6 +263,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_4_alt
@@ -420,6 +428,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -432,6 +441,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
   - name: claim-defense
@@ -587,12 +597,84 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
             label: Bild 1 · Beschreibung für Vorlesefunktion
             type: string
             required: true
+  - name: defense-devices
+    label: 05 · Claim-Verteidigung / Anlagen
+    type: file
+    path: papsmp-website/src/content/editor/defense-devices.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: form
+            label: Gestaltung
+            type: string
+            required: true
+          - name: role
+            label: Aufgabe
+            type: string
+            required: true
+          - name: base
+            label: Basisblock
+            type: string
+            required: true
+          - name: cost
+            label: Angezeigte Kosten
+            type: string
+            required: true
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+          - name: accent
+            label: Farbakzent
+            type: select
+            required: true
+            options:
+              values:
+                - leaf
+                - gold
+                - ice
+                - violet
+        list: true
+  - name: companions
+    label: 06 · Begleiter / Karten
+    type: file
+    path: papsmp-website/src/content/editor/companions.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: src
+            label: Bild
+            type: image
+            required: true
+            options:
+              media: uploads
+              path: papsmp-website/public/uploads
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+        list: true
   - name: pack-highlights
     label: 06 · Begleiter und Pack-Motive
     type: file
@@ -690,6 +772,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -702,6 +785,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_2_alt
@@ -714,12 +798,52 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_3_alt
             label: Bild 3 · Beschreibung für Vorlesefunktion
             type: string
             required: true
+  - name: features
+    label: 07 · Alpha-Fakten / Karten
+    type: file
+    path: papsmp-website/src/content/editor/features.json
+    fields:
+      - name: items
+        label: Karten
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: Kategorie
+            type: string
+            required: true
+          - name: title
+            label: Überschrift
+            type: string
+            required: true
+          - name: text
+            label: Beschreibung
+            type: text
+            required: true
+          - name: emote
+            label: Bild
+            type: object
+            required: true
+            fields:
+              - name: src
+                label: Bild
+                type: image
+                required: true
+                options:
+                  media: uploads
+                  path: papsmp-website/public/uploads
+              - name: alt
+                label: Bildbeschreibung
+                type: string
+                required: true
+        list: true
   - name: feature-grid
     label: 07 · Alpha-Fakten / Überschrift
     type: file
@@ -823,6 +947,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -835,6 +960,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_2_alt
@@ -847,6 +973,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_3_alt
@@ -859,6 +986,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_4_alt
@@ -871,6 +999,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_5
@@ -879,6 +1008,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_5_alt
@@ -891,6 +1021,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_6_alt
@@ -962,6 +1093,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -1058,6 +1190,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
   - name: community
@@ -1109,6 +1242,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -1430,6 +1564,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_1
@@ -1438,12 +1573,38 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
             label: Bild 1 · Beschreibung für Vorlesefunktion
             type: string
             required: true
+  - name: questions
+    label: 14 · FAQ / Fragen und Antworten
+    type: file
+    path: papsmp-website/src/content/editor/questions.json
+    fields:
+      - name: items
+        label: Fragen (Reihenfolge veränderbar)
+        type: object
+        required: true
+        fields:
+          - name: question
+            label: Frage
+            type: string
+            required: true
+          - name: answer
+            label: Antwort
+            type: text
+            required: false
+          - name: fromRelease
+            label: Antwort automatisch aus aktuellem Pack-Release
+            type: boolean
+            required: true
+            description: Für die Download-Frage aktiviert lassen, damit Versionsangaben
+              aktuell bleiben.
+        list: true
   - name: faq
     label: 14 · FAQ / Überschrift
     type: file
@@ -1527,6 +1688,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Bewegte Variante des folgenden Bildes. Das Standbild wird bei
               reduzierter Bewegung verwendet.
           - name: bild_1
@@ -1535,6 +1697,7 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
           - name: bild_1_alt
@@ -1594,141 +1757,9 @@ content:
             required: true
             options:
               media: uploads
+              path: papsmp-website/public/uploads
             description: Eigenes Bild hochladen oder auswählen. Möglichst das bisherige
               Seitenverhältnis verwenden.
-  - name: features
-    label: 07 · Alpha-Fakten / Karten
-    type: file
-    path: papsmp-website/src/content/editor/features.json
-    fields:
-      - name: items
-        label: Karten
-        type: object
-        required: true
-        fields:
-          - name: eyebrow
-            label: Kategorie
-            type: string
-            required: true
-          - name: title
-            label: Überschrift
-            type: string
-            required: true
-          - name: text
-            label: Beschreibung
-            type: text
-            required: true
-          - name: emote
-            label: Bild
-            type: object
-            required: true
-            fields:
-              - name: src
-                label: Bild
-                type: image
-                required: true
-                options:
-                  media: uploads
-              - name: alt
-                label: Bildbeschreibung
-                type: string
-                required: true
-        list: true
-  - name: questions
-    label: 14 · FAQ / Fragen und Antworten
-    type: file
-    path: papsmp-website/src/content/editor/questions.json
-    fields:
-      - name: items
-        label: Fragen (Reihenfolge veränderbar)
-        type: object
-        required: true
-        fields:
-          - name: question
-            label: Frage
-            type: string
-            required: true
-          - name: answer
-            label: Antwort
-            type: text
-            required: false
-          - name: fromRelease
-            label: Antwort automatisch aus aktuellem Pack-Release
-            type: boolean
-            required: true
-            description: Für die Download-Frage aktiviert lassen, damit Versionsangaben
-              aktuell bleiben.
-        list: true
-  - name: defense-devices
-    label: 05 · Claim-Verteidigung / Anlagen
-    type: file
-    path: papsmp-website/src/content/editor/defense-devices.json
-    fields:
-      - name: items
-        label: Karten
-        type: object
-        required: true
-        fields:
-          - name: name
-            label: Name
-            type: string
-            required: true
-          - name: form
-            label: Gestaltung
-            type: string
-            required: true
-          - name: role
-            label: Aufgabe
-            type: string
-            required: true
-          - name: base
-            label: Basisblock
-            type: string
-            required: true
-          - name: cost
-            label: Angezeigte Kosten
-            type: string
-            required: true
-          - name: text
-            label: Beschreibung
-            type: text
-            required: true
-          - name: accent
-            label: Farbakzent
-            type: select
-            required: true
-            options:
-              values:
-                - leaf
-                - gold
-                - ice
-                - violet
-        list: true
-  - name: companions
-    label: 06 · Begleiter / Karten
-    type: file
-    path: papsmp-website/src/content/editor/companions.json
-    fields:
-      - name: items
-        label: Karten
-        type: object
-        required: true
-        fields:
-          - name: name
-            label: Name
-            type: string
-            required: true
-          - name: src
-            label: Bild
-            type: image
-            required: true
-            options:
-              media: uploads
-          - name: text
-            label: Beschreibung
-            type: text
-            required: true
-        list: true
   - name: appearance
     label: 17 · Kleine Designänderungen
     type: file
