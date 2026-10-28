@@ -1,5 +1,5 @@
 export const packRelease = {
-  label: 'Alpha Â· PAP-Naturwerk & Begleiter',
+  label: 'Alpha · PAP-Naturwerk & Begleiter',
   revision: '3.2.90',
   java: {
     serverUrl: '/downloads/PAP-SMP-Full-Java-3.2.91-PAP-V07-MC-1.21.11.zip',
